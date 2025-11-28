@@ -2,8 +2,6 @@
 import os
 import sys
 import ioh
-import time
-import torch
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -105,7 +103,7 @@ if __name__ == "__main__":
     exp_name = "meta_surface"
     problem = get_meta_surface_problem()
     dim = problem.meta_data.n_variables
-    # if os.path.exists(f"data/ELA/{exp_name}"):
+    # if os.path.exists(f"data/ELA/ela_{exp_name}"):
     #     exit()
     ndoe = 150*dim
     doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,
