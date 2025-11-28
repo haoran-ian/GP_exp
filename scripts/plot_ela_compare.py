@@ -6,8 +6,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from modcma import modularcmaes
-from fluid_dynamics.topodiff import dist_util, logger
-from fluid_dynamics.topodiff.script_util import create_regressor
+from problems.fluid_dynamics.topodiff import dist_util, logger
+from problems.fluid_dynamics.topodiff.script_util import create_regressor
 from gp_fgenerator.create_pset import *
 from gp_fgenerator.sampling import sampling
 from gp_fgenerator.compute_ela import bootstrap_ela

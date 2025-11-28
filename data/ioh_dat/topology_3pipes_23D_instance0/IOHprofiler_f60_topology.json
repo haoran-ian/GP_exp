@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 60, 
+	"function_name": "topology", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 23,
+		"path": "data_f60_topology/IOHprofiler_f60_DIM23.dat",
+		"runs": [
+			{"instance": 1, "evals": 3450, "best": {"evals": 381, "y": 0.22952181100845337, "x": [-0.36, -0.61, 0.53, -0.46, 0.68, -0.66, 0.18, -0.67, -0.15, 0.18, 0.26, -0.42, -0.3, 0.25, -0.1, 0.12, -0.09, 0.27, 0.11, -0.04, 0.12, 0.02, 0.02]}}
+		]}
+	]
+}
