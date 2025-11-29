@@ -100,7 +100,7 @@ if __name__ == "__main__":
     rect_width = 2.0
     rect_height = 1.0
     # exp_name = f"topology_{num_pipes}pipes_{dim}D_instance{iid}"
-    exp_name = "meta_surface"
+    exp_name = "meta_surface_pca"
     problem = get_meta_surface_problem()
     dim = problem.meta_data.n_variables
     # if os.path.exists(f"data/ELA/ela_{exp_name}"):

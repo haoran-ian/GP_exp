@@ -5,6 +5,7 @@ import ioh
 import torch
 import numpy as np
 sys.path.insert(0, os.getcwd())
+from sklearn.decomposition import PCA
 from problems.meta_surface.wideresnet import WideResNet
 # fmt: on
 
@@ -29,10 +30,20 @@ class meta_surface:
         self.regressor_imaginary.load_state_dict(checkpoint['state_dict'])
         self.regressor_imaginary.eval()
         self.dim = 45
-        self.lb = [-1. for _ in range(self.dim)]
-        self.ub = [1. for _ in range(self.dim)]
+        self.lb = np.array([-1. for _ in range(self.dim)])
+        self.ub = np.array([1. for _ in range(self.dim)])
+        X_pca_train = np.random.uniform(self.lb, self.ub,
+                                        size=(1000*self.dim, self.lb.shape[0]))
+        self.pca_dim = 20
+        self.pca = PCA(n_components=self.pca_dim)
+        self.X_pca = self.pca.fit_transform(X_pca_train)
+        pca_min = np.min(self.X_pca, axis=0)
+        pca_max = np.max(self.X_pca, axis=0)
+        self.pca_lb = pca_min - 0.1
+        self.pca_ub = pca_max + 0.1
 
     def __call__(self, x):
+        x = self.pca.inverse_transform(x)
         x = np.where(x < 0, -1., 1.)
         triangle = self.vector_to_triangle(x)
         square_9 = self.reflect_triangle(triangle)
@@ -97,7 +108,7 @@ def get_meta_surface_problem(
     prob = meta_surface(RT_path=RT_path, IT_path=IT_path, device=device)
     ioh.problem.wrap_real_problem(prob, name="meta_surface",
                                   optimization_type=ioh.OptimizationType.MIN)
-    problem = ioh.get_problem("meta_surface", dimension=prob.dim)
-    problem.bounds.lb = prob.lb
-    problem.bounds.ub = prob.ub
+    problem = ioh.get_problem("meta_surface", dimension=prob.pca_dim)
+    problem.bounds.lb = prob.pca_lb
+    problem.bounds.ub = prob.pca_ub
     return problem

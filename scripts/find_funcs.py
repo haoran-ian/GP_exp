@@ -12,15 +12,15 @@ from gp_fgenerator.utils import read_pickle
 
 
 if __name__ == "__main__":
-    problem_label = "meta_surface"
-    path = "data/ELA/ela_meta_surface/"
+    problem_label = "meta_surface_pca"
+    path = "data/ELA/ela_meta_surface_pca/"
     problem = get_meta_surface_problem()
     dim = problem.meta_data.n_variables
     ndoe = 150*dim
     doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,
                      upper_bound=problem.bounds.ub, round_off=2, random_seed=42,
                      verbose=True).create_doe()
-    target_vector = pd.read_csv(f"{path}/ela_1121.csv").mean()
+    target_vector = pd.read_csv(f"{path}/ela_60.csv").mean()
     list_ela = read_pickle(f"{path}/ela_corr.pickle")
     ela_min = read_pickle(f"{path}/ela_min.pickle")
     ela_max = read_pickle(f"{path}/ela_max.pickle")
