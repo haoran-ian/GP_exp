@@ -9,7 +9,7 @@ import numpy as np
 sys.path.insert(0, os.getcwd())
 from sklearn.decomposition import PCA
 from scipy.spatial.distance import cdist
-from problems.fluid_dynamics.topodiff import dist_util, logger
+from problems.fluid_dynamics.topodiff import dist_util
 from problems.fluid_dynamics.topodiff.script_util import create_regressor
 # fmt: on
 
@@ -66,7 +66,6 @@ class pipes_topology:
         self.pca_lb = pca_min - 0.1
         self.pca_ub = pca_max + 0.1
         regressor_p_diff_path = '/home/ubuntu/GP_Compare/problems/fluid_dynamics/model025600.pt'
-        logger.log("loading regressor_p_diff...")
         self.regressor_p_diff = create_regressor(regressor_depth=4, in_channels=1,
                                                  image_size=64, regressor_use_fp16=False,
                                                  regressor_width=128,
