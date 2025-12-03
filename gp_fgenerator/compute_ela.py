@@ -1,4 +1,5 @@
 import math
+import warnings
 import statistics
 import numpy as np
 import pandas as pd
@@ -8,6 +9,8 @@ from scipy.stats import wasserstein_distance
 from sklearn.utils import resample
 from joblib import Parallel, delayed
 from gp_fgenerator.utils import dataCleaning
+
+warnings.filterwarnings('ignore', category=RuntimeWarning)
 
 
 def calculate_features_parallel_joblib(X, y, lower_bound=-5.0, upper_bound=5.0,
@@ -39,7 +42,7 @@ def calculate_features_parallel_joblib(X, y, lower_bound=-5.0, upper_bound=5.0,
         ('disp', pflacco_ela.calculate_dispersion, X, y),
         ('ic', pflacco_ela.calculate_information_content, X, y)
     ]
-    results = Parallel(n_jobs=n_jobs, verbose=10)(
+    results = Parallel(n_jobs=n_jobs, verbose=0)(
         delayed(compute_feature)(name, func, *args) for name, func, *args in tasks
     )
     ela_ = {}
@@ -80,7 +83,7 @@ def bootstrap_ela(X, y, lower_bound=-5.0, upper_bound=5.0, normalize_y=True,
         ela_ = compute_ela(X_, y_, lower_bound=lower_bound,
                            upper_bound=upper_bound, normalize_y=normalize_y)
         return ela_
-    results = Parallel(n_jobs=n_jobs, verbose=10)(
+    results = Parallel(n_jobs=n_jobs, verbose=0)(
         delayed(process_one_iteration)(
             i_bs, X, y, lower_bound, upper_bound,
             normalize_y, num_sample, bs_seed
@@ -96,6 +99,10 @@ def bootstrap_ela(X, y, lower_bound=-5.0, upper_bound=5.0, normalize_y=True,
 
 def process_ela(candidate_ela, target_ela, list_ela=[], dict_min={}, dict_max={}, dict_weight={}):
     if (list_ela):
+        missing_keys = [key for key in list_ela if key not in candidate_ela.columns]
+        list_ela = [key for key in list_ela if key in candidate_ela.columns]
+        if len(missing_keys) > 0:
+            print(f"Missing feature: {missing_keys}")
         candidate_ela = candidate_ela[list_ela]
         target_ela = target_ela[list_ela]
     if (dict_min and dict_max):
@@ -140,13 +147,6 @@ def dist_wasserstein(candidate_vector, target_vector, list_ela=[], dict_min={}, 
     list_dist = []
     cand_values = cand_.values
     targ_values = targ_.values
-    combined = np.vstack([cand_values, targ_values])
-    col_mins = np.min(combined, axis=0, keepdims=True)
-    col_maxs = np.max(combined, axis=0, keepdims=True)
-    col_ranges = col_maxs - col_mins
-    col_ranges[col_ranges == 0] = 1
-    cand_values = (cand_values - col_mins) / col_ranges
-    targ_values = (targ_values - col_mins) / col_ranges
     for i in range(cand_.shape[1]):
         list_dist.append(wasserstein_distance(
             list(cand_values[:, i]), [targ_values[i]]))

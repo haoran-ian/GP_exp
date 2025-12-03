@@ -1,6 +1,7 @@
 # fmt: off
 import os
 import sys
+import warnings
 import pandas as pd
 sys.path.insert(0, os.getcwd())
 from problems.fluid_dynamics.problem import get_pipes_topology_problem
@@ -10,10 +11,13 @@ from gp_fgenerator.gp_fgenerator import GP_func_generator
 from gp_fgenerator.utils import read_pickle
 # fmt: on
 
+warnings.filterwarnings('ignore', category=RuntimeWarning)
+warnings.filterwarnings('ignore', category=UserWarning)
+
 
 if __name__ == "__main__":
-    problem_label = "fluid_dynamics_3pipes_iid0_normalize"
-    path = "data/ELA/ela_topology_3pipes_23D_instance0/"
+    problem_label = "fluid_dynamics_3pipes_iid1"
+    path = "data/ELA/ela_topology_3pipes_23D_instance1/"
     problem = get_pipes_topology_problem(iid=0, num_pipes=3)
     dim = problem.meta_data.n_variables
     ndoe = 150*dim
@@ -31,9 +35,9 @@ if __name__ == "__main__":
                                 bs_ratio=0.8,
                                 bs_repeat=5,
                                 list_ela=list_ela,
-                                # ela_min=ela_min,
-                                # ela_max=ela_max,
-                                # ela_weight={},
+                                ela_min=ela_min,
+                                ela_max=ela_max,
+                                ela_weight={},
                                 dist_metric=dist_metric,
                                 problem_label=problem_label,
                                 filepath_save=f'data/GP_results/{problem_label}',
