@@ -99,10 +99,14 @@ def get_ela_corr(fid, exp_name):
 if __name__ == "__main__":
     rect_width = 2.0
     rect_height = 1.0
-    # exp_name = f"topology_{num_pipes}pipes_{dim}D_instance{iid}"
-    exp_name = "meta_surface_pca"
-    problem = get_meta_surface_problem()
+    num_pipes = 3
+    iid = 2
+    problem = get_pipes_topology_problem(iid=iid, num_pipes=num_pipes)
     dim = problem.meta_data.n_variables
+    exp_name = f"topology_{num_pipes}pipes_{dim}D_instance{iid}"
+    # exp_name = "fluid_dynamics_3pipes_iid0"
+    # problem = get_meta_surface_problem()
+    # dim = problem.meta_data.n_variables
     # if os.path.exists(f"data/ELA/ela_{exp_name}"):
     #     exit()
     ndoe = 150*dim
