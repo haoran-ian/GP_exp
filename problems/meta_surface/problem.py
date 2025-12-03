@@ -20,14 +20,14 @@ class meta_surface:
         self.device = device
         self.regressor_real = WideResNet(depth=16, num_classes=100,
                                          widen_factor=4, dropRate=0.3)
-        self.regressor_real = self.regressor_real.cuda()
-        checkpoint = torch.load(self.RT_path, weights_only=True)
+        # self.regressor_real = self.regressor_real.cuda()
+        checkpoint = torch.load(self.RT_path, weights_only=False, map_location=torch.device('cpu'))
         self.regressor_real.load_state_dict(checkpoint['state_dict'])
         self.regressor_real.eval()
         self.regressor_imaginary = WideResNet(depth=16, num_classes=100,
                                               widen_factor=4, dropRate=0.3)
-        self.regressor_imaginary = self.regressor_imaginary.cuda()
-        checkpoint = torch.load(self.IT_path, weights_only=True)
+        # self.regressor_imaginary = self.regressor_imaginary.cuda()
+        checkpoint = torch.load(self.IT_path, weights_only=False, map_location=torch.device('cpu'))
         self.regressor_imaginary.load_state_dict(checkpoint['state_dict'])
         self.regressor_imaginary.eval()
         self.dim = 45

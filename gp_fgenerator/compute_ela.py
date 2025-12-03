@@ -1,4 +1,5 @@
 import math
+import time
 import warnings
 import statistics
 import numpy as np
@@ -26,7 +27,9 @@ def calculate_features_parallel_joblib(X, y, lower_bound=-5.0, upper_bound=5.0,
     """
     def compute_feature(name, func, *args, **kwargs):
         try:
+            start_time = time.time()
             result = func(*args, **kwargs)
+            print(f"{name} done, {time.time()-start_time}s")
             return name, result
         except Exception as e:
             print(f"{name} failed: {e}")
@@ -34,18 +37,24 @@ def calculate_features_parallel_joblib(X, y, lower_bound=-5.0, upper_bound=5.0,
 
     tasks = [
         ('ela_meta', pflacco_ela.calculate_ela_meta, X, y),
-        ('ela_distr', pflacco_ela.calculate_ela_distribution, X, y),
-        ('ela_level', pflacco_ela.calculate_ela_level, X, y),
-        ('pca', pflacco_ela.calculate_pca, X, y),
-        # ('limo', pflacco_ela.calculate_limo, X, y, lower_bound, upper_bound),
-        ('nbc', pflacco_ela.calculate_nbc, X, y),
-        ('disp', pflacco_ela.calculate_dispersion, X, y),
-        ('ic', pflacco_ela.calculate_information_content, X, y)
+        # ('ela_distr', pflacco_ela.calculate_ela_distribution, X, y),
+        # ('ela_level', pflacco_ela.calculate_ela_level, X, y),
+        # ('pca', pflacco_ela.calculate_pca, X, y),
+        # # ('limo', pflacco_ela.calculate_limo, X, y, lower_bound, upper_bound),
+        # ('nbc', pflacco_ela.calculate_nbc, X, y),
+        # ('disp', pflacco_ela.calculate_dispersion, X, y),
+        # ('ic', pflacco_ela.calculate_information_content, X, y)
     ]
-    results = Parallel(n_jobs=n_jobs, verbose=0)(
+    results = Parallel(n_jobs=n_jobs, verbose=0, batch_size=5)(
         delayed(compute_feature)(name, func, *args) for name, func, *args in tasks
     )
-    ela_ = {}
+    ela_distr = pflacco_ela.calculate_ela_distribution(X, y)
+    ela_level = pflacco_ela.calculate_ela_level(X, y)
+    pca = pflacco_ela.calculate_pca(X, y)
+    nbc = pflacco_ela.calculate_nbc(X, y)
+    disp = pflacco_ela.calculate_dispersion(X, y)
+    ic = pflacco_ela.calculate_information_content(X, y, seed=100)
+    ela_ = {**ela_distr, **ela_level, **pca, **nbc, **disp, **ic}
     results_dict = {}
     for name, result in results:
         results_dict[name] = result

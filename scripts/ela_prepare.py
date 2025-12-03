@@ -2,6 +2,7 @@
 import os
 import sys
 import ioh
+import time
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -9,7 +10,7 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, os.getcwd())
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-from problems.fluid_dynamics.problem import get_pipes_topology_problem
+# from problems.fluid_dynamics.problem import get_pipes_topology_problem
 from problems.meta_surface.problem import get_meta_surface_problem
 from gp_fgenerator.sampling import sampling
 from gp_fgenerator.compute_ela import bootstrap_ela
@@ -47,8 +48,10 @@ def get_ela(f, X, y, exp_name):
     path_base = os.path.join(os.getcwd(), f"data/ELA/ela_{exp_name}")
     if not (os.path.isdir(path_base)):
         os.makedirs(path_base)
+    start_time = time.time()
     df_ela = bootstrap_ela(X, y, bs_ratio=0.8, bs_repeat=5,
-                           lower_bound=30., upper_bound=250.)
+                           lower_bound=30., upper_bound=250., n_jobs=30)
+    print(f"ela cost: {time.time()-start_time}s")
     fid = f.meta_data.problem_id
     filepath = os.path.join(path_base, f'ela_{fid}.csv')
     df_ela.to_csv(filepath, index=False)
@@ -100,8 +103,8 @@ if __name__ == "__main__":
     rect_width = 2.0
     rect_height = 1.0
     # exp_name = f"topology_{num_pipes}pipes_{dim}D_instance{iid}"
-    exp_name = "meta_surface_pca"
-    problem = get_meta_surface_problem()
+    exp_name = "meta_surface"
+    problem = get_meta_surface_problem(device="cpu")
     dim = problem.meta_data.n_variables
     # if os.path.exists(f"data/ELA/ela_{exp_name}"):
     #     exit()
