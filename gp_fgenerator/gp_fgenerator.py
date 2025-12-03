@@ -1,5 +1,6 @@
 
 import os
+import time
 import random
 import operator
 import numpy as np
@@ -74,6 +75,7 @@ class GP_func_generator:
     #%%
     def evalSymbReg(self, individual, points):
         self.neval += 1
+        start_time = time.time()
         func_ = self.toolbox.compile(expr=individual)
         fitness_ = symb_regr(func_, self.target_vector, self.bs_ratio, self.bs_repeat, self.list_ela, self.ela_min, self.ela_max, 
                              self.ela_weight, self.dist_metric, self.verbose, points)
@@ -83,7 +85,7 @@ class GP_func_generator:
             self.fopt = fitness_[1]
             self.id_best = self.neval
         if (self.verbose):
-            print(f'[GPFG] neval: {self.neval}, {fitness_[0]}, f: {fitness_[1]}; fbest: {self.fopt}; id_best: {self.id_best}')
+            print(f'[GPFG] neval: {self.neval}, {fitness_[0]}, f: {fitness_[1]}; fbest: {self.fopt}; time_cost: {time.time-start_time:.2f}s; id_best: {self.id_best}')
         return fitness_[1],
     
     #%%    

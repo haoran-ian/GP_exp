@@ -4,7 +4,7 @@ import sys
 import warnings
 import pandas as pd
 sys.path.insert(0, os.getcwd())
-from problems.fluid_dynamics.problem import get_pipes_topology_problem
+# from problems.fluid_dynamics.problem import get_pipes_topology_problem
 from problems.meta_surface.problem import get_meta_surface_problem
 from gp_fgenerator.sampling import sampling
 from gp_fgenerator.gp_fgenerator import GP_func_generator
@@ -16,9 +16,9 @@ warnings.filterwarnings('ignore', category=UserWarning)
 
 
 if __name__ == "__main__":
-    problem_label = "fluid_dynamics_3pipes_iid1"
-    path = "data/ELA/ela_topology_3pipes_23D_instance1/"
-    problem = get_pipes_topology_problem(iid=0, num_pipes=3)
+    problem_label = "meta_surface"
+    path = "data/ELA/ela_meta_surface/"
+    problem = get_meta_surface_problem(device="cpu")
     dim = problem.meta_data.n_variables
     ndoe = 150*dim
     doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,

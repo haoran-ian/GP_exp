@@ -29,7 +29,7 @@ def calculate_features_parallel_joblib(X, y, lower_bound=-5.0, upper_bound=5.0,
         try:
             start_time = time.time()
             result = func(*args, **kwargs)
-            print(f"{name} done, {time.time()-start_time}s")
+            # print(f"{name} done, {time.time()-start_time}s")
             return name, result
         except Exception as e:
             print(f"{name} failed: {e}")
