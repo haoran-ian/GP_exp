@@ -185,9 +185,10 @@ def get_pipes_topology_problem(iid, num_pipes, img_res=(256, 512), rect_width=2.
                           rect_width=rect_width, rect_height=rect_height,
                           num_of_bezier_points=num_of_bezier_points,
                           device=device)
-    ioh.problem.wrap_real_problem(prob, name="topology",
+    ioh.problem.wrap_real_problem(prob, name=f"fluid_dynamics_{num_pipes}pipes_iid{iid}",
                                   optimization_type=ioh.OptimizationType.MIN)
-    problem = ioh.get_problem("topology", dimension=prob.pca_dim)
+    problem = ioh.get_problem(f"fluid_dynamics_{num_pipes}pipes_iid{iid}",
+                              dimension=prob.pca_dim)
     problem.bounds.lb = prob.pca_lb
     problem.bounds.ub = prob.pca_ub
     return problem
