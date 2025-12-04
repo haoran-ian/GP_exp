@@ -19,31 +19,6 @@ from gp_fgenerator.utils import export_pickle, dataCleaning, dropFeatCorr
 # fmt: on
 
 
-def feature_importance_heatmap(X, feature_names=None, annot=False, cmap='RdBu_r',
-                               center=0, title=""):
-    scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)
-    num_pipes = int(X.shape[1]/19)
-    # n_components=int(num_pipes*7+2)
-    n_components = 11
-    pca = PCA(n_components=n_components)
-    X_pca = pca.fit_transform(X_scaled)
-    loadings = pca.components_.T * np.sqrt(pca.explained_variance_)
-    loadings_df = pd.DataFrame(
-        loadings,
-        columns=[f'PC{i+1}' for i in range(loadings.shape[1])],
-        index=feature_names
-    )
-    plt.figure(figsize=(20, 8))
-    sns.heatmap(loadings_df.T, annot=annot, square=True, cmap='coolwarm',
-                center=0, fmt='.2f', linewidths=0.5)
-    plt.title(
-        f'PCA Factor Loadings Matrix\n{num_pipes} pipes and n_components={n_components}')
-    plt.tight_layout()
-    plt.savefig(f"results/{num_pipes}pipes_PCA_{n_components}_loadings.png")
-    plt.close()
-
-
 def get_ela(f, X, y, exp_name):
     path_base = os.path.join(os.getcwd(), f"data/ELA/ela_{exp_name}")
     if not (os.path.isdir(path_base)):
