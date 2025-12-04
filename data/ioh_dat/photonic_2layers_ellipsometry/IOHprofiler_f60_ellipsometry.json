@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 60, 
+	"function_name": "ellipsometry", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f60_ellipsometry/IOHprofiler_f60_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 300, "best": {"evals": 224, "y": 0.3221935386802883, "x": [1.2, 123.05]}}
+		]}
+	]
+}

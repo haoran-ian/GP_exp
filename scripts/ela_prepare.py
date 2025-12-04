@@ -11,6 +11,7 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from problems.fluid_dynamics.problem import get_pipes_topology_problem
 from problems.meta_surface.problem import get_meta_surface_problem
+from problems.photovotaic_problems.problem import PROBLEM_TYPE, get_photonic_problem
 from gp_fgenerator.sampling import sampling
 from gp_fgenerator.compute_ela import bootstrap_ela
 from gp_fgenerator.create_pset import *
@@ -97,18 +98,21 @@ def get_ela_corr(fid, exp_name):
 
 
 if __name__ == "__main__":
-    rect_width = 2.0
-    rect_height = 1.0
-    num_pipes = 3
-    iid = 2
-    problem = get_pipes_topology_problem(iid=iid, num_pipes=num_pipes)
-    dim = problem.meta_data.n_variables
-    exp_name = f"topology_{num_pipes}pipes_{dim}D_instance{iid}"
+    ############################################################################
+    # num_pipes = 3
+    # iid = 2
+    # problem = get_pipes_topology_problem(iid=iid, num_pipes=num_pipes)
+    # dim = problem.meta_data.n_variables
+    # exp_name = f"topology_{num_pipes}pipes_{dim}D_instance{iid}"
+    ############################################################################
     # exp_name = "fluid_dynamics_3pipes_iid0"
     # problem = get_meta_surface_problem()
     # dim = problem.meta_data.n_variables
-    # if os.path.exists(f"data/ELA/ela_{exp_name}"):
-    #     exit()
+    ############################################################################
+    problem = get_photonic_problem(20, PROBLEM_TYPE.PHOTOVOLTAIC)
+    dim = problem.meta_data.n_variables
+    exp_name = f"photonic_{dim}layers_photovoltaic"
+    ############################################################################
     ndoe = 150*dim
     doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,
                      upper_bound=problem.bounds.ub, round_off=2, random_seed=42,
@@ -122,8 +126,7 @@ if __name__ == "__main__":
         problem.attach_logger(l1)
         y = problem(doe_x)
         np.save(f"data/y/{exp_name}.npy", y)
-    else:
-        y = np.load(f"data/y/{exp_name}.npy")
+    y = np.load(f"data/y/{exp_name}.npy")
     fid = problem.meta_data.problem_id
     get_ela(problem, doe_x, y, exp_name)
     get_ela_normalize(fid, exp_name)

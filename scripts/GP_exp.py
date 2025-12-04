@@ -12,6 +12,7 @@ from problems.fluid_dynamics.problem import get_pipes_topology_problem
 
 if __name__ == "__main__":
     problem = get_pipes_topology_problem(0, 3)
+    print(problem.bounds.lb)
     y = np.load("data/y/topology_3pipes_23D_instance0.npy")
     # problem = get_meta_surface_problem()
     y = np.load("data/y/meta_surface.npy")

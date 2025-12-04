@@ -41,6 +41,7 @@ class ellipsometry(photonic_problem):
         Returns:
             PyMoosh.structure: multi-layer structure object
         """
+        x = np.clip(x, self.lb, self.ub)
         x = list(x)
         # available materials
         materials = [self.mat_env] + \

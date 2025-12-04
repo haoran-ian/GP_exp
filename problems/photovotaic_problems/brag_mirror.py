@@ -32,6 +32,7 @@ class brag_mirror(photonic_problem):
         Returns:
             PyMoosh.structure: multi-layer structure object
         """
+        x = np.clip(x, self.lb, self.ub)
         x = list(x)
         # n = len(x)
         materials = [self.mat_env**2, self.mat1 **
