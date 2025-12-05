@@ -1,0 +1,64 @@
+import numpy as np
+
+class HybridPSODE:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.lower_bound = -5.0
+        self.upper_bound = 5.0
+        self.population_size = 30
+        self.c1 = 1.5  # Cognitive parameter for PSO
+        self.c2 = 1.5  # Social parameter for PSO
+        self.w = 0.5   # Inertia weight for PSO
+        self.F = 0.8   # Differential mutation factor for DE
+        self.CR = 0.9  # Crossover rate for DE
+
+    def __call__(self, func):
+        np.random.seed(42)
+        # Initialize particles and their velocities
+        particles = np.random.uniform(self.lower_bound, self.upper_bound, (self.population_size, self.dim))
+        velocities = np.zeros((self.population_size, self.dim))
+        personal_best = particles.copy()
+        personal_best_fitness = np.array([func(ind) for ind in personal_best])
+        global_best = personal_best[np.argmin(personal_best_fitness)]
+        
+        eval_count = self.population_size
+        while eval_count < self.budget:
+            # PSO Update
+            self.w = 0.9 - 0.8 * (eval_count / self.budget)  # Adaptive inertia weight
+            for i in range(self.population_size):
+                r1, r2 = np.random.rand(self.dim), np.random.rand(self.dim)
+                velocities[i] = (self.w * velocities[i] +
+                                 self.c1 * r1 * (personal_best[i] - particles[i]) +
+                                 self.c2 * r2 * (global_best - particles[i]))
+                particles[i] += velocities[i]
+                particles[i] = np.clip(particles[i], self.lower_bound, self.upper_bound)
+                
+                fitness = func(particles[i])
+                eval_count += 1
+                if fitness < personal_best_fitness[i]:
+                    personal_best[i], personal_best_fitness[i] = particles[i], fitness
+                    if fitness < func(global_best):
+                        global_best = particles[i]
+            
+            if eval_count >= self.budget:
+                break
+
+            # DE Update (only if budget allows further evaluations)
+            for i in range(self.population_size):
+                if eval_count >= self.budget:
+                    break
+                a, b, c = np.random.choice([idx for idx in range(self.population_size) if idx != i], 3, replace=False)
+                mutant_vector = personal_best[a] + self.F * (personal_best[b] - personal_best[c])
+                trial_vector = np.array([mutant_vector[j] if np.random.rand() < self.CR else particles[i, j]
+                                         for j in range(self.dim)])
+                trial_vector = np.clip(trial_vector, self.lower_bound, self.upper_bound)
+
+                trial_fitness = func(trial_vector)
+                eval_count += 1
+                if trial_fitness < personal_best_fitness[i]:
+                    personal_best[i], personal_best_fitness[i] = trial_vector, trial_fitness
+                    if trial_fitness < func(global_best):
+                        global_best = trial_vector
+
+        return global_best

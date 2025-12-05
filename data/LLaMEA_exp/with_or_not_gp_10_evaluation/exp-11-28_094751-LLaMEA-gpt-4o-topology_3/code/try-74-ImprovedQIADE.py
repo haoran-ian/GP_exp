@@ -1,0 +1,54 @@
+import numpy as np
+
+class ImprovedQIADE:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.population_size = max(4, int(0.6 * dim))  # Increased population size
+        self.bounds = (-5.0, 5.0)
+
+    def initialize_population(self):
+        return np.random.uniform(self.bounds[0] * 0.9, self.bounds[1] * 0.9, (self.population_size, self.dim))  # Adjusted bounds
+
+    def quantum_superposition(self, population):
+        return np.mean(population, axis=0) + np.random.normal(0, 0.3, self.dim)  # Used normal distribution for mutation
+
+    def mutate(self, population, F):
+        idxs = np.random.choice(range(self.population_size), 3, replace=False)
+        a, b, c = population[idxs]
+        diversity = np.mean(np.std(population, axis=0))  # Calculate population diversity
+        F = 0.1 + 0.5 * diversity  # Dynamic mutation scaling
+        return a + F * (b - c)
+
+    def crossover(self, target, mutant, CR):
+        diversity = np.std(mutant - target)  # Calculate diversity for adaptive CR
+        CR = 0.3 + 0.6 * (1 - np.exp(-diversity))  # Adaptive crossover probability
+        cross_points = np.random.rand(self.dim) < CR
+        return np.where(cross_points, mutant, target)
+
+    def select(self, population, scores, trial, trial_score):
+        if trial_score < scores[np.argmax(scores)]:
+            idx = scores.argmax()
+            population[idx] = trial
+            scores[idx] = trial_score
+
+    def __call__(self, func):
+        population = self.initialize_population()
+        scores = np.array([func(ind) for ind in population])
+        evaluations = 0
+        while evaluations < self.budget:
+            local_search = evaluations < (0.3 * self.budget)  # Local search in the first 30% of evaluations
+            for i, target in enumerate(population):
+                if evaluations >= self.budget:
+                    break
+                F = 0.5 + (0.2 if local_search else 0.6) * np.std(population) / np.sqrt(self.dim)  # Adaptive scaling
+                mutant = self.mutate(population, F)
+                trial = self.crossover(target, mutant, CR=0.5)  # CR is now adaptive
+                trial = np.clip(trial, *self.bounds)
+                trial_score = func(trial)
+                evaluations += 1
+                self.select(population, scores, trial, trial_score)
+            if not local_search:
+                population = np.apply_along_axis(self.quantum_superposition, 0, population)
+        best_idx = scores.argmin()
+        return population[best_idx], scores[best_idx]

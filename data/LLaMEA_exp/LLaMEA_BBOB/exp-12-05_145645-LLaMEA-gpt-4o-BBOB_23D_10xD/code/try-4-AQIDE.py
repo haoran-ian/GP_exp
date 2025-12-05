@@ -1,0 +1,67 @@
+import numpy as np
+
+class AQIDE:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.lower_bound = -5.0
+        self.upper_bound = 5.0
+        self.population_size = 20
+        self.prob_mutate = 0.1
+        self.F = 0.7  # Changed scaling factor F
+        self.CR = 0.9
+        self.budget_used = 0
+
+    def __call__(self, func):
+        # Initialize population
+        population = self.lower_bound + np.random.rand(self.population_size, self.dim) * (self.upper_bound - self.lower_bound)
+        fitness = np.array([func(ind) for ind in population])
+        self.budget_used += self.population_size
+        best_idx = np.argmin(fitness)  # Initialize best solution tracking
+
+        # Main loop
+        while self.budget_used < self.budget:
+            new_population = np.copy(population)
+            for i in range(self.population_size):
+                if self.budget_used >= self.budget:
+                    break
+
+                # Mutation
+                indices = [idx for idx in range(self.population_size) if idx != i]
+                a, b, c = population[np.random.choice(indices, 3, replace=False)]
+                mutant = a + self.F * (b - c)
+                mutant = np.clip(mutant, self.lower_bound, self.upper_bound)
+
+                # Crossover
+                crossover = np.random.rand(self.dim) < np.random.uniform(0.8, 1.0)
+                if not np.any(crossover):
+                    crossover[np.random.randint(0, self.dim)] = True
+                trial = np.where(crossover, mutant, population[i])
+
+                # Selection
+                trial_fitness = func(trial)
+                self.budget_used += 1
+                if trial_fitness < fitness[i]:
+                    new_population[i] = trial
+                    fitness[i] = trial_fitness
+                    if trial_fitness < fitness[best_idx]:  # Update best solution
+                        best_idx = i
+
+            # Probabilistic population update
+            for i in range(self.population_size):
+                if self.budget_used >= self.budget:
+                    break
+                if np.random.rand() < np.random.uniform(0.05, 0.15):
+                    new_population[i] = self.lower_bound + np.random.rand(self.dim) * (self.upper_bound - self.lower_bound)
+                    fitness[i] = func(new_population[i])
+                    self.budget_used += 1
+
+            # Elitism: Ensure best individual is retained
+            new_population[0] = population[best_idx]
+            fitness[0] = fitness[best_idx]
+
+            population = new_population
+
+        # Return the best solution found
+        best_idx = np.argmin(fitness)
+        return population[best_idx], fitness[best_idx]

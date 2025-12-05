@@ -1,0 +1,177 @@
+# fmt: off
+import os
+import sys
+import ioh
+import torch
+import warnings
+import numpy as np
+sys.path.insert(0, os.getcwd())
+from ioh import get_problem, logger
+from LLaMEA.llamea import LLaMEA, OpenAI_LLM
+from LLaMEA.misc import aoc_logger, correct_aoc, OverBudgetException
+from utils.extract_top_funcs import extract_top_funcs
+from problems.fluid_dynamics.problem import get_pipes_topology_problem
+# fmt: on
+
+warnings.filterwarnings('ignore', category=RuntimeWarning)
+
+
+def find_y_bounds(problem):
+    x = np.random.uniform(problem.bounds.lb, problem.bounds.ub,
+                          (1000*problem.meta_data.n_variables,
+                           problem.meta_data.n_variables))
+    y = problem(x)
+    y_min = np.min(y)
+    y_max = np.max(y)
+    return y_max + (y_max - y_min) * 0.2
+
+
+if torch.cuda.is_available():
+    print(
+        f"CUDA is available. PyTorch is using GPU: {torch.cuda.get_device_name(0)}")
+    print(f"GPU device count: {torch.cuda.device_count()}")
+    print(f"Current device index: {torch.cuda.current_device()}")
+else:
+    print("CUDA is not available. Using CPU.")
+torch.cuda.empty_cache()
+# Execution code starts here
+api_key = os.getenv("OPENAI_API_KEY")
+ai_model = "gpt-4o"
+llm = OpenAI_LLM(api_key, ai_model)
+# Llama-3.2-1B-Instruct, Llama-3.2-3B-Instruct,
+# Meta-Llama-3.1-8B-Instruct, Meta-Llama-3.1-70B-Instruct,
+# CodeLlama-7b-Instruct-hf, CodeLlama-13b-Instruct-hf,
+# CodeLlama-34b-Instruct-hf, CodeLlama-70b-Instruct-hf,
+dim = 23
+budget_cof = 100
+# gp_exp_name = "fluid_dynamics_3pipes_iid0"
+# real_problem = get_pipes_topology_problem(iid=0, num_pipes=3)
+
+budget = budget_cof * dim
+# experiment_name = f"gp_func_{gp_exp_name}_{budget_cof}xD"
+experiment_name = f"BBOB_{dim}D_{budget_cof}xD"
+# lb = real_problem.bounds.lb
+# ub = real_problem.bounds.ub
+# gp_problems = extract_top_funcs(
+#     gp_exp_path=f"data/GP_results/{gp_exp_name}",
+#     dim=dim, real_lb=lb, real_ub=ub, nbest=3)
+# gp_uppers = [find_y_bounds(problem) for problem in gp_problems]
+
+
+def evaluateBBOB(solution, explogger=None, details=False):
+    auc_mean = 0
+    auc_std = 0
+    code = solution.code
+    algorithm_name = solution.name
+    exec(code, globals())
+    aucs = []
+    algorithm = None
+    l2 = aoc_logger(budget, upper=1e2, triggers=[logger.trigger.ALWAYS])
+    for fid in np.arange(1, 25):
+        problem = get_problem(fid, instance=0, dimension=dim,
+                              problem_class=ioh.ProblemClass.BBOB)
+        problem.attach_logger(l2)
+        for rep in range(3):
+            np.random.seed(rep)
+            try:
+                algorithm = globals()[algorithm_name](budget=budget, dim=dim)
+                algorithm(problem)
+            except OverBudgetException:
+                pass
+            auc = correct_aoc(problem, l2, budget)
+            aucs.append(auc)
+            l2.reset(problem)
+            problem.reset()
+    auc_mean = np.mean(aucs)
+    auc_std = np.std(aucs)
+    i = 0
+    while os.path.exists(f"currentexp/aucs-{algorithm_name}-{i}.npy"):
+        i += 1
+    np.save(f"currentexp/aucs-{algorithm_name}-{i}.npy", aucs)
+
+    feedback = f"The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.2f} with standard deviation {auc_std:0.2f}."
+
+    print(algorithm_name, algorithm, auc_mean, auc_std)
+    solution.add_metadata("aucs", aucs)
+    solution.set_scores(auc_mean, feedback)
+
+    return solution
+
+
+def evaluate_gp_func(solution, explogger=None, details=False):
+    auc_mean = 0
+    auc_std = 0
+    code = solution.code
+    algorithm_name = solution.name
+    exec(code, globals())
+    aucs = []
+    algorithm = None
+    for i in range(len(gp_problems)):
+        problem = gp_problems[i]
+        l2 = aoc_logger(budget, upper=gp_uppers[i],
+                        triggers=[logger.trigger.ALWAYS])
+        problem.attach_logger(l2)
+        l2.reset(problem)
+        problem.reset()
+        for rep in range(3):
+            np.random.seed(rep)
+            try:
+                algorithm = globals()[algorithm_name](budget=budget, dim=dim)
+                algorithm(problem)
+            except OverBudgetException:
+                pass
+            auc = correct_aoc(problem, l2, budget)
+            aucs.append(auc)
+            l2.reset(problem)
+            problem.reset()
+    auc_mean = np.mean(aucs)
+    auc_std = np.std(aucs)
+    i = 0
+    while os.path.exists(f"currentexp/aucs-{algorithm_name}-{i}.npy"):
+        i += 1
+    np.save(f"currentexp/aucs-{algorithm_name}-{i}.npy", aucs)
+
+    feedback = f"The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.2f} with standard deviation {auc_std:0.2f}."
+
+    print(algorithm_name, algorithm, auc_mean, auc_std)
+    solution.add_metadata("aucs", aucs)
+    solution.set_scores(auc_mean, feedback)
+
+    return solution
+
+
+task_prompt_bbob = """
+The optimization algorithm should handle a wide range of tasks, which is evaluated on the BBOB test suite of 24 noiseless functions. Your task is to write the optimization algorithm in Python code. The code should contain an `__init__(self, budget, dim)` function and the function `def __call__(self, func)`, which should optimize the black box function `func` using `self.budget` function evaluations.
+The func() can only be called as many times as the budget allows, not more. Each of the optimization functions has a search space between -5.0 (lower bound) and 5.0 (upper bound). The dimensionality can be varied.
+Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
+"""
+
+task_prompt_gp = """
+The optimization algorithm should handle a wide range of tasks, which is evaluated on the similar problems of a real-world problem. Your task is to write the optimization algorithm in Python code. The code should contain an `__init__(self, budget, dim)` function and the function `def __call__(self, func)`, which should optimize the black box function `func` using `self.budget` function evaluations.
+The func() can only be called as many times as the budget allows, not more. Each of the optimization functions has a search space between -5.0 (lower bound) and 5.0 (upper bound). The dimensionality can be varied.
+Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
+"""
+
+for experiment_i in range(5):
+    # A 1+1 strategy
+    es = LLaMEA(
+        evaluateBBOB,
+        llm=llm,
+        n_parents=1,
+        n_offspring=1,
+        task_prompt=task_prompt_bbob,
+        experiment_name=experiment_name,
+        elitism=True,
+        HPO=False,
+        budget=100,
+    )
+    print(es.run())
+
+
+# lb = real_problem.bounds.lb
+# ub = real_problem.bounds.ub
+# gp_problems = extract_top_funcs(
+#     gp_exp_path=f"data/GP_results/{gp_exp_name}", dim=dim, lb=lb, ub=ub, nbest=3)
+# for problem in gp_problems:
+#     lower, upper = find_y_bounds(problem)
+#     print(lower, upper)
