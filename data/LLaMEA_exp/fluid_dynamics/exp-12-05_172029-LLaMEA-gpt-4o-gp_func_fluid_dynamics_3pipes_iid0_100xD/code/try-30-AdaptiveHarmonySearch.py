@@ -1,0 +1,51 @@
+import numpy as np
+
+class AdaptiveHarmonySearch:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.lower_bound = -5.0
+        self.upper_bound = 5.0
+        self.memory_size = max(30, dim * 2)  # Adaptive memory size based on dimension
+        self.hmcr = 0.9
+        self.par = 0.45  # Increased pitch adjustment rate
+        self.bw = 0.02  # Increased bandwidth
+        self.memory = np.random.uniform(self.lower_bound, self.upper_bound, (self.memory_size, self.dim))
+        self.memory_fitness = None
+
+    def initialize_memory(self, func):
+        self.memory_fitness = np.apply_along_axis(func, 1, self.memory)
+
+    def generate_new_harmony(self):
+        new_harmony = np.zeros(self.dim)
+        diversity = np.std(self.memory, axis=0)  # Calculate diversity
+        for i in range(self.dim):
+            if np.random.rand() < self.hmcr:
+                idx = np.random.randint(0, self.memory_size)
+                new_harmony[i] = self.memory[idx, i]
+                if np.random.rand() < self.par:
+                    dynamic_par = self.par * (1 - diversity[i] / (np.mean(diversity) + 1e-6)) # Adjust par based on diversity
+                    new_harmony[i] += np.random.uniform(-self.bw, self.bw) * dynamic_par
+            else:
+                new_harmony[i] = np.random.uniform(self.lower_bound, self.upper_bound)
+        new_harmony = np.clip(new_harmony, self.lower_bound, self.upper_bound)
+        return new_harmony
+
+    def update_memory(self, new_harmony, new_fitness):
+        worst_idx = np.argmax(self.memory_fitness)
+        if new_fitness < self.memory_fitness[worst_idx]:
+            self.memory[worst_idx] = new_harmony
+            self.memory_fitness[worst_idx] = new_fitness
+
+    def __call__(self, func):
+        self.initialize_memory(func)
+        evaluations = self.memory_size
+
+        while evaluations < self.budget:
+            new_harmony = self.generate_new_harmony()
+            new_fitness = func(new_harmony)
+            evaluations += 1
+            self.update_memory(new_harmony, new_fitness)
+
+        best_idx = np.argmin(self.memory_fitness)
+        return self.memory[best_idx], self.memory_fitness[best_idx]

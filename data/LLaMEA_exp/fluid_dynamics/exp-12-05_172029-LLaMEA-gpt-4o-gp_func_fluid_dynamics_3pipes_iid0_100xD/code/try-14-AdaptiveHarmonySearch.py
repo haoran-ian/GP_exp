@@ -1,0 +1,55 @@
+import numpy as np
+
+class AdaptiveHarmonySearch:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.lower_bound = -5.0
+        self.upper_bound = 5.0
+        self.memory_size = 50
+        self.hmcr = 0.9  # Harmony memory consideration rate
+        self.par = 0.35  # Pitch adjustment rate
+        self.bw = 0.01  # Bandwidth for pitch adjustment
+        self.memory = np.random.uniform(self.lower_bound, self.upper_bound, (self.memory_size, self.dim))
+        self.memory_fitness = None
+
+    def initialize_memory(self, func):
+        self.memory_fitness = np.apply_along_axis(func, 1, self.memory)
+
+    def generate_new_harmony(self):
+        new_harmony = np.zeros(self.dim)
+        for i in range(self.dim):
+            if np.random.rand() < self.hmcr:
+                idx = np.random.randint(0, self.memory_size)
+                new_harmony[i] = self.memory[idx, i]
+                if np.random.rand() < self.par:
+                    self.par = 0.35 * (1 - (np.min(self.memory_fitness) / np.max(self.memory_fitness)))  # Adjust par dynamically
+                    adaptive_bw = self.bw * (1 - np.min(self.memory_fitness) / (np.mean(self.memory_fitness) + 1e-9))  # Adaptive bandwidth
+                    new_harmony[i] += np.random.uniform(-adaptive_bw, adaptive_bw)
+            else:
+                new_harmony[i] = np.random.uniform(self.lower_bound, self.upper_bound)
+        new_harmony = np.clip(new_harmony, self.lower_bound, self.upper_bound)
+        return new_harmony
+
+    def update_memory(self, new_harmony, new_fitness):
+        worst_idx = np.argmax(self.memory_fitness)
+        if new_fitness < self.memory_fitness[worst_idx]:
+            self.memory[worst_idx] = new_harmony
+            self.memory_fitness[worst_idx] = new_fitness
+        elif np.random.rand() < 0.05:  # Memory diversification by random replacement
+            random_idx = np.random.randint(self.memory_size)
+            self.memory[random_idx] = np.random.uniform(self.lower_bound, self.upper_bound, self.dim)
+            self.memory_fitness[random_idx] = func(self.memory[random_idx])
+
+    def __call__(self, func):
+        self.initialize_memory(func)
+        evaluations = self.memory_size
+
+        while evaluations < self.budget:
+            new_harmony = self.generate_new_harmony()
+            new_fitness = func(new_harmony)
+            evaluations += 1
+            self.update_memory(new_harmony, new_fitness)
+
+        best_idx = np.argmin(self.memory_fitness)
+        return self.memory[best_idx], self.memory_fitness[best_idx]
