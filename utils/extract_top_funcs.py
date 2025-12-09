@@ -35,7 +35,7 @@ class cheap_problem_{i}:
         y = np.array([self.cheap_func(x) for x in X])
         y_min = np.min(y)
         y_max = np.max(y)
-        self.y_bias = y_min - (y_max - y_min) * 0.1
+        self.y_bias = y_min - (y_max - y_min)
 
     def cheap_func(self, x):
         y = {expression}

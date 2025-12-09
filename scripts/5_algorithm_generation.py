@@ -11,6 +11,7 @@ from LLaMEA.llamea import LLaMEA, OpenAI_LLM
 from LLaMEA.misc import aoc_logger, correct_aoc, OverBudgetException
 from utils.extract_top_funcs import extract_top_funcs
 from problems.fluid_dynamics.problem import get_pipes_topology_problem
+from problems.meta_surface.problem import get_meta_surface_problem
 # fmt: on
 
 warnings.filterwarnings('ignore', category=RuntimeWarning)
@@ -42,20 +43,21 @@ llm = OpenAI_LLM(api_key, ai_model)
 # Meta-Llama-3.1-8B-Instruct, Meta-Llama-3.1-70B-Instruct,
 # CodeLlama-7b-Instruct-hf, CodeLlama-13b-Instruct-hf,
 # CodeLlama-34b-Instruct-hf, CodeLlama-70b-Instruct-hf,
-dim = 23
+# dim = 45
 budget_cof = 100
-# gp_exp_name = "fluid_dynamics_3pipes_iid0"
-# real_problem = get_pipes_topology_problem(iid=0, num_pipes=3)
+gp_exp_name = "meta_surface"
+real_problem = get_meta_surface_problem()
+dim = real_problem.meta_data.n_variables
+experiment_name = f"gp_func_{gp_exp_name}_{budget_cof}xD"
+# experiment_name = f"BBOB_{budget_cof}xD"
 
 budget = budget_cof * dim
-# experiment_name = f"gp_func_{gp_exp_name}_{budget_cof}xD"
-experiment_name = f"BBOB_{dim}D_{budget_cof}xD"
-# lb = real_problem.bounds.lb
-# ub = real_problem.bounds.ub
-# gp_problems = extract_top_funcs(
-#     gp_exp_path=f"data/GP_results/{gp_exp_name}",
-#     dim=dim, real_lb=lb, real_ub=ub, nbest=3)
-# gp_uppers = [find_y_bounds(problem) for problem in gp_problems]
+lb = real_problem.bounds.lb
+ub = real_problem.bounds.ub
+gp_problems = extract_top_funcs(
+    gp_exp_path=f"data/GP_results/{gp_exp_name}",
+    dim=dim, real_lb=lb, real_ub=ub, nbest=3)
+gp_uppers = [find_y_bounds(problem) for problem in gp_problems]
 
 
 def evaluateBBOB(solution, explogger=None, details=False):
@@ -66,22 +68,23 @@ def evaluateBBOB(solution, explogger=None, details=False):
     exec(code, globals())
     aucs = []
     algorithm = None
-    l2 = aoc_logger(budget, upper=1e2, triggers=[logger.trigger.ALWAYS])
-    for fid in np.arange(1, 25):
-        problem = get_problem(fid, instance=0, dimension=dim,
-                              problem_class=ioh.ProblemClass.BBOB)
-        problem.attach_logger(l2)
-        for rep in range(3):
-            np.random.seed(rep)
-            try:
-                algorithm = globals()[algorithm_name](budget=budget, dim=dim)
-                algorithm(problem)
-            except OverBudgetException:
-                pass
-            auc = correct_aoc(problem, l2, budget)
-            aucs.append(auc)
-            l2.reset(problem)
-            problem.reset()
+    for dim_bbob in [5, 10, 20]:
+        l2 = aoc_logger(budget_cof*dim_bbob, upper=1e2, triggers=[logger.trigger.ALWAYS])
+        for fid in range(1, 25):
+            problem = get_problem(fid, instance=0, dimension=dim_bbob,
+                                problem_class=ioh.ProblemClass.BBOB)
+            problem.attach_logger(l2)
+            for rep in range(3):
+                np.random.seed(rep)
+                try:
+                    algorithm = globals()[algorithm_name](budget=budget, dim=dim_bbob)
+                    algorithm(problem)
+                except OverBudgetException:
+                    pass
+                auc = correct_aoc(problem, l2, budget)
+                aucs.append(auc)
+                l2.reset(problem)
+                problem.reset()
     auc_mean = np.mean(aucs)
     auc_std = np.std(aucs)
     i = 0
@@ -89,7 +92,7 @@ def evaluateBBOB(solution, explogger=None, details=False):
         i += 1
     np.save(f"currentexp/aucs-{algorithm_name}-{i}.npy", aucs)
 
-    feedback = f"The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.2f} with standard deviation {auc_std:0.2f}."
+    feedback = f"The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.5f} with standard deviation {auc_std:0.5f}."
 
     print(algorithm_name, algorithm, auc_mean, auc_std)
     solution.add_metadata("aucs", aucs)
@@ -106,10 +109,9 @@ def evaluate_gp_func(solution, explogger=None, details=False):
     exec(code, globals())
     aucs = []
     algorithm = None
+    l2 = aoc_logger(budget, upper=max(gp_uppers), triggers=[logger.trigger.ALWAYS])
     for i in range(len(gp_problems)):
         problem = gp_problems[i]
-        l2 = aoc_logger(budget, upper=gp_uppers[i],
-                        triggers=[logger.trigger.ALWAYS])
         problem.attach_logger(l2)
         l2.reset(problem)
         problem.reset()
@@ -131,7 +133,7 @@ def evaluate_gp_func(solution, explogger=None, details=False):
         i += 1
     np.save(f"currentexp/aucs-{algorithm_name}-{i}.npy", aucs)
 
-    feedback = f"The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.2f} with standard deviation {auc_std:0.2f}."
+    feedback = f"The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.5f} with standard deviation {auc_std:0.5f}."
 
     print(algorithm_name, algorithm, auc_mean, auc_std)
     solution.add_metadata("aucs", aucs)
@@ -152,14 +154,14 @@ The func() can only be called as many times as the budget allows, not more. Each
 Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
 """
 
-for experiment_i in range(5):
+for experiment_i in range(2):
     # A 1+1 strategy
     es = LLaMEA(
-        evaluateBBOB,
+        evaluate_gp_func,
         llm=llm,
         n_parents=1,
         n_offspring=1,
-        task_prompt=task_prompt_bbob,
+        task_prompt=task_prompt_gp,
         experiment_name=experiment_name,
         elitism=True,
         HPO=False,
