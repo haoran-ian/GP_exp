@@ -4,11 +4,14 @@ import sys
 import ioh
 sys.path.insert(0, os.getcwd())
 from problems.fluid_dynamics.problem import get_pipes_topology_problem
+from problems.meta_surface.problem import get_meta_surface_problem
 from utils.extract_top_algs import extract_top_algs
 # fmt: on
 
 
-def benchmark_alg(solution, problem, budget, exp_name, runs=20):
+def benchmark_alg(solution, problem, budget, exp_name, runs=10):
+    if os.path.exists(f"data/benchmark_algs/{exp_name}"):
+        return
     code = solution.code
     algorithm_name = solution.name
     dim = problem.meta_data.n_variables
@@ -31,10 +34,11 @@ def benchmark_alg(solution, problem, budget, exp_name, runs=20):
 
 
 if __name__ == "__main__":
-    budget_cof = 10
-    problem_name = "fluid_dynamics_3pipes_iid0"
-    exp_name = f"{problem_name}/gp_func_fluid_dynamics_3pipes_iid0_100xD"
-    problem = get_pipes_topology_problem(iid=0, num_pipes=3)
+    budget_cof = 100
+    problem_name = "meta_surface"
+    exp_name = f"{problem_name}/BBOB_45D_100xD"
+    # problem = get_pipes_topology_problem(iid=0, num_pipes=3)
+    problem = get_meta_surface_problem()
     dim = problem.meta_data.n_variables
     if not os.path.exists(f"data/benchmark_algs/{problem_name}"):
         os.mkdir(f"data/benchmark_algs/{problem_name}")
@@ -53,18 +57,27 @@ if __name__ == "__main__":
     #     "data/LLaMEA_exp/LLaMEA_BBOB/exp-12-06_020115-LLaMEA-gpt-4o-BBOB_23D_100xD",
     # ]
     # exp_paths = [
-    #     "data/LLaMEA_exp/fluid_dynamics/exp-12-05_164348-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_10xD",
     #     "data/LLaMEA_exp/fluid_dynamics/exp-12-05_170250-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_10xD",
     #     "data/LLaMEA_exp/fluid_dynamics/exp-12-05_171530-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_10xD",
     #     "data/LLaMEA_exp/fluid_dynamics/exp-12-05_173408-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_10xD",
     #     "data/LLaMEA_exp/fluid_dynamics/exp-12-05_175010-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_10xD",
+    #     "data/LLaMEA_exp/fluid_dynamics/exp-12-05_164348-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_10xD",
+    # ]
+    # exp_paths = [
+    #     # "data/LLaMEA_exp/fluid_dynamics/exp-12-05_164716-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
+    #     "data/LLaMEA_exp/fluid_dynamics/exp-12-05_172029-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
+    #     # "data/LLaMEA_exp/fluid_dynamics/exp-12-05_180009-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
+    #     # "data/LLaMEA_exp/fluid_dynamics/exp-12-05_182943-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
+    #     "data/LLaMEA_exp/fluid_dynamics/exp-12-05_185757-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
+    # ]
+    # exp_paths = [
+    #     "exp-12-07_055850-LLaMEA-gpt-4o-gp_func_meta_surface_100xD",
+    #     "exp-12-07_082107-LLaMEA-gpt-4o-gp_func_meta_surface_100xD",
+    #     "exp-12-07_084236-LLaMEA-gpt-4o-gp_func_meta_surface_100xD",
     # ]
     exp_paths = [
-        "data/LLaMEA_exp/fluid_dynamics/exp-12-05_164716-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
-        "data/LLaMEA_exp/fluid_dynamics/exp-12-05_172029-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
-        "data/LLaMEA_exp/fluid_dynamics/exp-12-05_180009-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
-        "data/LLaMEA_exp/fluid_dynamics/exp-12-05_182943-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
-        "data/LLaMEA_exp/fluid_dynamics/exp-12-05_185757-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
+        "exp-12-07_054231-LLaMEA-gpt-4o-BBOB_45D_100xD",
+        "exp-12-07_082023-LLaMEA-gpt-4o-BBOB_100xD",
     ]
     for i in range(len(exp_paths)):
         exp_path = exp_paths[i]
