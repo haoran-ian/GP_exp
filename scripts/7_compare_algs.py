@@ -8,23 +8,30 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, os.getcwd())
 # fmt: on
 
+colors = ['b', 'r', 'g',
+          # 'c',
+          'b', 'r', 'g', 'b', 'r', 'g']
+linestyles = ['solid', 'solid', 'solid',
+              # 'solid',
+              'dotted', 'dotted', 'dotted', 'dashed', 'dashed', 'dashed']
 
-def extrat_ys_from_ioh_dat(ioh_dat_path):
+
+def extrat_ys_from_ioh_dat(ioh_dat_path: str):
     y_runs = []
-    f = open(ioh_dat_path, "r")
+    f = open(ioh_dat_path, 'r')
     lines = f.readlines()
     y = []
     evaluations = 0
     alg_run = 0
     for line in lines:
-        if line[:11] == "evaluations":
+        if line[:11] == 'evaluations':
             y_runs += [y]
             y = []
             evaluations = 0
             alg_run += 1
         else:
             evaluations += 1
-            content = line.split(" ")
+            content = line.split(' ')
             y += [[alg_run, evaluations, float(content[1])]]
     f.close()
     return y_runs
@@ -32,7 +39,7 @@ def extrat_ys_from_ioh_dat(ioh_dat_path):
 
 def unit_y_runs_from_LLaMEA_exps(y_exps):
     records = []
-    keys = ["LLaMEA_run", "alg_run", "evaluations", "raw_y"]
+    keys = ['LLaMEA_run', 'alg_run', 'evaluations', 'raw_y']
     for i in range(len(y_exps)):
         y_exp = y_exps[i]
         for y_run in y_exp:
@@ -43,16 +50,19 @@ def unit_y_runs_from_LLaMEA_exps(y_exps):
 
 
 def calculate_auc_vectorized(group):
-    budget = 4500
-    filtered = group[
-        (group['evaluations'] >= 1) &
-        (group['evaluations'] <= budget)
-    ].sort_values('evaluations')
-    raw_y_positive = filtered['raw_y_normalized'].clip(lower=1e-8)
+    budget = group['evaluations'].max()
+    raw_y_positive = group['raw_y_normalized'].clip(lower=1e-8)
     auc = (((np.log10(raw_y_positive) + 8) / 8).sum()) / budget
     AOCC = 1 - auc
     group = group.copy()
     group['AOCC'] = AOCC
+    return group
+
+
+def calcuate_std_vectorized(group):
+    group = group.copy()
+    group['mean'] = np.mean(group['raw_y_normalized'])
+    group['std'] = np.std(group['raw_y_normalized'])
     return group
 
 
@@ -64,26 +74,45 @@ def box_plot(df, column: str, by: str, title: str):
     plt.xlabel('Source')
     plt.ylabel('AOCC')
     plt.tight_layout()
-    plt.savefig(f"results/{title}")
+    plt.savefig(f'results/{title}')
     plt.close()
 
 
-def compare_AOCC_by_source(problem_name: str, algorithm_source_names,
-                           algorithm_source_labels,
-                           dim: int, nbest: int = 1, LLaMEA_runs: int = 5):
-    root_path = f"data/benchmark_algs/{problem_name}"
+def curve_plot(df, by: str, curve_subset, title: str):
+    plt.figure(figsize=(14, 6))
+    x = np.arange(df['evaluations'].max())
+    for i in range(len(curve_subset)):
+        curve_label = curve_subset[i]
+        df_subset = df[df[by] == curve_label]
+        plt.plot(x, df_subset['mean'], color=colors[i], linestyle=linestyles[i],
+                 label=curve_label)
+        plt.fill_between(x, df_subset['mean'] - df_subset['std'],
+                         df_subset['mean'] + df_subset['std'],
+                         color=colors[i], alpha=0.05)
+    plt.xlabel('evaluations')
+    plt.ylabel('AOCC')
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(f'results/{title}.png')
+    plt.close()
+
+
+def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
+                            algorithm_source_labels, dim: int, budget_cof: int,
+                            nbest: int = 1, LLaMEA_runs: int = 5):
+    root_path = f'data/benchmark_algs/{problem_name}'
     y_exps_by_source = []
     dfs = []
     for source_name in algorithm_source_names:
         for i in range(LLaMEA_runs):
             for j in range(nbest):
                 exp_folder = os.path.join(
-                    root_path, f"{source_name}_run{i}_best{j}")
+                    root_path, f'{source_name}_run{i}_best{j}')
                 if not os.path.exists(exp_folder):
                     continue
                 ioh_dat_path = os.path.join(
                     exp_folder,
-                    f"data_f60_{problem_name}/IOHprofiler_f60_DIM{dim}.dat")
+                    f'data_f60_{problem_name}/IOHprofiler_f60_DIM{dim}.dat')
                 y_runs = extrat_ys_from_ioh_dat(ioh_dat_path)
                 y_exps_by_source += [y_runs]
         df = unit_y_runs_from_LLaMEA_exps(y_exps_by_source)
@@ -94,6 +123,11 @@ def compare_AOCC_by_source(problem_name: str, algorithm_source_names,
     df_merged = pd.concat(dfs, ignore_index=True)
     df_merged['raw_y_normalized'] = (df_merged['raw_y'] - df_merged['raw_y'].min()) / (
         df_merged['raw_y'].max() - df_merged['raw_y'].min())
+    df_merged = df_merged[df_merged['evaluations'] <= budget_cof*dim]
+    return df_merged
+
+
+def compare_AOCC_by_source(df_merged):
     df_merged = df_merged.groupby(
         ['LLaMEA_run', 'alg_run', 'source']).apply(calculate_auc_vectorized)
     df_merged = df_merged.reset_index(drop=True)
@@ -108,16 +142,32 @@ def compare_AOCC_by_source(problem_name: str, algorithm_source_names,
     box_plot(df_AOCC, 'AOCC', 'source', 'AOCC_compare_meta_surface_boxplot')
 
 
-if __name__ == "__main__":
+def compare_convergence_curve_by_source(df_merged):
+    df_merged = df_merged.groupby(
+        ['source', 'evaluations']).apply(calcuate_std_vectorized)
+    selected_columns = ['source', 'evaluations', 'mean', 'std']
+    df = df_merged[selected_columns].copy()
+    df = df.drop_duplicates(subset=['source', 'evaluations'])
+    df = df.replace([np.inf, -np.inf], np.nan).dropna(subset=['mean', 'std'])
+    df = df.reset_index(drop=True)
+    curve_plot(df, 'source', ['baseline', 'feature-based proxy'],
+               'optimization_curve_compare_meta_surface')
+
+
+if __name__ == '__main__':
     nbest = 1
     LLaMEA_runs = 5
     dim = 45
     budget_cof = 100
-    problem_name = "meta_surface"
-    baseline_name = f"BBOB_{dim}D_{budget_cof}xD"
-    gp_name = f"gp_func_{problem_name}_{budget_cof}xD"
-    compare_AOCC_by_source(problem_name=problem_name,
-                           algorithm_source_names=[baseline_name, gp_name],
-                           algorithm_source_labels=[
-                               'baseline', 'feature-based proxy'],
-                           dim=dim, nbest=nbest, LLaMEA_runs=LLaMEA_runs)
+    problem_name = 'meta_surface'
+    baseline_name = f'BBOB_{dim}D_{budget_cof}xD'
+    gp_name = f'gp_func_{problem_name}_{budget_cof}xD'
+    df_merged = build_ioh_dat_by_source(problem_name=problem_name,
+                                        algorithm_source_names=[
+                                            baseline_name, gp_name],
+                                        algorithm_source_labels=[
+                                            'baseline', 'feature-based proxy'],
+                                        dim=dim, budget_cof=budget_cof,
+                                        nbest=nbest, LLaMEA_runs=LLaMEA_runs)
+    compare_AOCC_by_source(df_merged)
+    compare_convergence_curve_by_source(df_merged)
