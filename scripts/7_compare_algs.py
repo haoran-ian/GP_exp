@@ -67,7 +67,8 @@ def calcuate_std_vectorized(group):
 
 
 def box_plot(df, column: str, by: str, title: str):
-    plt.figure(figsize=(8, 5))
+    plt.figure(figsize=(14, 6))
+    # plt.figure(figsize=(8, 5))
     df.boxplot(column=column, by=by, grid=True)
     plt.title('AOCC by Source')
     plt.suptitle(title)
@@ -88,7 +89,7 @@ def curve_plot(df, by: str, curve_subset, title: str):
                  label=curve_label)
         plt.fill_between(x, df_subset['mean'] - df_subset['std'],
                          df_subset['mean'] + df_subset['std'],
-                         color=colors[i], alpha=0.05)
+                         color=colors[i], alpha=0.05, edgecolor=colors[i])
     plt.xlabel('evaluations')
     plt.ylabel('AOCC')
     plt.legend()
@@ -127,7 +128,7 @@ def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
     return df_merged
 
 
-def compare_AOCC_by_source(df_merged):
+def compare_AOCC_by_source(df_merged, problem_name):
     df_merged = df_merged.groupby(
         ['LLaMEA_run', 'alg_run', 'source']).apply(calculate_auc_vectorized)
     df_merged = df_merged.reset_index(drop=True)
@@ -139,10 +140,10 @@ def compare_AOCC_by_source(df_merged):
         [np.inf, -np.inf], np.nan).dropna(subset=['AOCC'])
     df_AOCC = df_AOCC.sort_values(['AOCC'])
     df_AOCC = df_AOCC.reset_index(drop=True)
-    box_plot(df_AOCC, 'AOCC', 'source', 'AOCC_compare_meta_surface_boxplot')
+    box_plot(df_AOCC, 'AOCC', 'source', f'AOCC_compare_{problem_name}_boxplot')
 
 
-def compare_convergence_curve_by_source(df_merged):
+def compare_convergence_curve_by_source(df_merged, problem_name):
     df_merged = df_merged.groupby(
         ['source', 'evaluations']).apply(calcuate_std_vectorized)
     selected_columns = ['source', 'evaluations', 'mean', 'std']
@@ -151,7 +152,7 @@ def compare_convergence_curve_by_source(df_merged):
     df = df.replace([np.inf, -np.inf], np.nan).dropna(subset=['mean', 'std'])
     df = df.reset_index(drop=True)
     curve_plot(df, 'source', ['baseline', 'feature-based proxy'],
-               'optimization_curve_compare_meta_surface')
+               f'optimization_curve_compare_{problem_name}')
 
 
 if __name__ == '__main__':
@@ -169,5 +170,5 @@ if __name__ == '__main__':
                                             'baseline', 'feature-based proxy'],
                                         dim=dim, budget_cof=budget_cof,
                                         nbest=nbest, LLaMEA_runs=LLaMEA_runs)
-    compare_AOCC_by_source(df_merged)
-    compare_convergence_curve_by_source(df_merged)
+    compare_AOCC_by_source(df_merged, problem_name)
+    compare_convergence_curve_by_source(df_merged, problem_name)

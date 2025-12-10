@@ -35,8 +35,8 @@ def benchmark_alg(solution, problem, budget, exp_name, runs=10):
 
 if __name__ == "__main__":
     budget_cof = 100
-    problem_name = "meta_surface"
-    exp_name = f"{problem_name}/BBOB_45D_100xD"
+    problem_name = "temp"
+    exp_name = f"{problem_name}/gp_func_meta_surface_100xD"
     # problem = get_pipes_topology_problem(iid=0, num_pipes=3)
     problem = get_meta_surface_problem()
     dim = problem.meta_data.n_variables
@@ -70,15 +70,15 @@ if __name__ == "__main__":
     #     # "data/LLaMEA_exp/fluid_dynamics/exp-12-05_182943-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
     #     "data/LLaMEA_exp/fluid_dynamics/exp-12-05_185757-LLaMEA-gpt-4o-gp_func_fluid_dynamics_3pipes_iid0_100xD",
     # ]
-    # exp_paths = [
-    #     "exp-12-07_055850-LLaMEA-gpt-4o-gp_func_meta_surface_100xD",
-    #     "exp-12-07_082107-LLaMEA-gpt-4o-gp_func_meta_surface_100xD",
-    #     "exp-12-07_084236-LLaMEA-gpt-4o-gp_func_meta_surface_100xD",
-    # ]
     exp_paths = [
-        "exp-12-07_054231-LLaMEA-gpt-4o-BBOB_45D_100xD",
-        "exp-12-07_082023-LLaMEA-gpt-4o-BBOB_100xD",
+        "exp-12-07_055850-LLaMEA-gpt-4o-gp_func_meta_surface_100xD",
+        # "exp-12-07_082107-LLaMEA-gpt-4o-gp_func_meta_surface_100xD",
+        # "exp-12-07_084236-LLaMEA-gpt-4o-gp_func_meta_surface_100xD",
     ]
+    # exp_paths = [
+    #     "exp-12-07_054231-LLaMEA-gpt-4o-BBOB_45D_100xD",
+    #     "exp-12-07_082023-LLaMEA-gpt-4o-BBOB_100xD",
+    # ]
     for i in range(len(exp_paths)):
         exp_path = exp_paths[i]
         solutions = extract_top_algs(exp_path)

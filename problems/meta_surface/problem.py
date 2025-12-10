@@ -1,6 +1,7 @@
 # fmt: off
 import os
 import sys
+import cv2
 import ioh
 import torch
 import joblib
@@ -12,7 +13,7 @@ from problems.meta_surface.wideresnet import WideResNet
 
 
 class meta_surface:
-    def __init__(self, RT_path="problems/meta_surface/model_best_IT.pth.tar",
+    def __init__(self, RT_path="problems/meta_surface/model_best_RT.pth.tar",
                  IT_path="problems/meta_surface/model_best_IT.pth.tar",
                  device="cuda:0"):
         self.RT_path = RT_path
@@ -30,7 +31,7 @@ class meta_surface:
         checkpoint = torch.load(self.IT_path, weights_only=True)
         self.regressor_imaginary.load_state_dict(checkpoint['state_dict'])
         self.regressor_imaginary.eval()
-        self.dim = 45
+        self.dim = int(18*19/2)
         self.lb = np.array([-1. for _ in range(self.dim)])
         self.ub = np.array([1. for _ in range(self.dim)])
         # X_pca_train = np.random.uniform(self.lb, self.ub,
@@ -45,11 +46,12 @@ class meta_surface:
 
     def __call__(self, x):
         # x = self.pca.inverse_transform(x)
-        x = np.where(x < 0, -1., 1.)
+        x = np.where(x <= 0, 0., 1.)
         triangle = self.vector_to_triangle(x)
-        square_9 = self.reflect_triangle(triangle)
-        square_18 = self.rotate_around_corner(square_9)
-        x_in = self.create_final_image(square_18).reshape((1, 1, 36, 36))
+        square_18 = self.reflect_triangle(triangle)
+        square_36 = self.rotate_around_corner(square_18)
+        # x_in = self.create_final_image(square_18).reshape((1, 1, 36, 36))
+        x_in = square_36.reshape((1, 1, 36, 36))
         x_in = torch.tensor(x_in).float().to(self.device)
         logits_re = self.regressor_real(x_in)  # 1x100
         logits_im = self.regressor_imaginary(x_in)  # 1x100
@@ -60,12 +62,12 @@ class meta_surface:
         target = target.reshape(1, -1)
         target = target.cuda()
         mae = torch.mean(torch.abs(predicted - target))  # MAE
-        return mae - 0.237
+        return mae
 
     def vector_to_triangle(self, x):
-        triangle = np.zeros((9, 9))
+        triangle = np.zeros((18, 18))
         idx = 0
-        for i in range(9):
+        for i in range(18):
             for j in range(i + 1):
                 triangle[i, j] = x[idx]
                 idx += 1
@@ -73,8 +75,8 @@ class meta_surface:
 
     def reflect_triangle(self, triangle):
         square_9 = triangle.copy()
-        for i in range(9):
-            for j in range(i + 1, 9):
+        for i in range(18):
+            for j in range(i + 1, 18):
                 square_9[i, j] = triangle[j, i]
         return square_9
 
@@ -91,15 +93,18 @@ class meta_surface:
         return square_18
 
     def create_final_image(self, square_18):
-        square_36 = np.zeros((36, 36))
-        for i in range(2):
-            for j in range(2):
-                start_i = i * 18
-                end_i = (i + 1) * 18
-                start_j = j * 18
-                end_j = (j + 1) * 18
-                square_36[start_i:end_i, start_j:end_j] = square_18
+        square_36 = cv2.resize(square_18, (36, 36))
+        square_36 = np.where(square_36 <= 0, -1., 1.)
         return square_36
+        # square_36 = np.zeros((36, 36))
+        # for i in range(2):
+        #     for j in range(2):
+        #         start_i = i * 18
+        #         end_i = (i + 1) * 18
+        #         start_j = j * 18
+        #         end_j = (j + 1) * 18
+        #         square_36[start_i:end_i, start_j:end_j] = square_18
+        # return square_36
 
 
 def get_meta_surface_problem(
