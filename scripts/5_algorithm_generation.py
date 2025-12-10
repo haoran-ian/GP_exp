@@ -12,6 +12,7 @@ from LLaMEA.misc import aoc_logger, correct_aoc, OverBudgetException
 from utils.extract_top_funcs import extract_top_funcs
 from problems.fluid_dynamics.problem import get_pipes_topology_problem
 from problems.meta_surface.problem import get_meta_surface_problem
+from problems.photovotaic_problems.problem import PROBLEM_TYPE, get_photonic_problem
 # fmt: on
 
 warnings.filterwarnings('ignore', category=RuntimeWarning)
@@ -44,11 +45,13 @@ llm = OpenAI_LLM(api_key, ai_model)
 # CodeLlama-7b-Instruct-hf, CodeLlama-13b-Instruct-hf,
 # CodeLlama-34b-Instruct-hf, CodeLlama-70b-Instruct-hf,
 # dim = 45
-budget_cof = 100
-gp_exp_name = "meta_surface"
-real_problem = get_meta_surface_problem()
+budget_cof = 10
+gp_exp_name = "photonic_10layers_bragg"
+real_problem = get_photonic_problem(
+    num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
 dim = real_problem.meta_data.n_variables
 experiment_name = f"gp_func_{gp_exp_name}_{budget_cof}xD"
+print(real_problem.bounds.ub)
 # experiment_name = f"BBOB_{budget_cof}xD"
 
 budget = budget_cof * dim
@@ -69,15 +72,17 @@ def evaluateBBOB(solution, explogger=None, details=False):
     aucs = []
     algorithm = None
     for dim_bbob in [5, 10, 20]:
-        l2 = aoc_logger(budget_cof*dim_bbob, upper=1e2, triggers=[logger.trigger.ALWAYS])
+        l2 = aoc_logger(budget_cof*dim_bbob, upper=1e2,
+                        triggers=[logger.trigger.ALWAYS])
         for fid in range(1, 25):
             problem = get_problem(fid, instance=0, dimension=dim_bbob,
-                                problem_class=ioh.ProblemClass.BBOB)
+                                  problem_class=ioh.ProblemClass.BBOB)
             problem.attach_logger(l2)
             for rep in range(3):
                 np.random.seed(rep)
                 try:
-                    algorithm = globals()[algorithm_name](budget=budget, dim=dim_bbob)
+                    algorithm = globals()[algorithm_name](
+                        budget=budget, dim=dim_bbob)
                     algorithm(problem)
                 except OverBudgetException:
                     pass
@@ -109,7 +114,8 @@ def evaluate_gp_func(solution, explogger=None, details=False):
     exec(code, globals())
     aucs = []
     algorithm = None
-    l2 = aoc_logger(budget, upper=max(gp_uppers), triggers=[logger.trigger.ALWAYS])
+    l2 = aoc_logger(budget, upper=max(gp_uppers),
+                    triggers=[logger.trigger.ALWAYS])
     for i in range(len(gp_problems)):
         problem = gp_problems[i]
         problem.attach_logger(l2)
@@ -150,30 +156,21 @@ Give an excellent and novel heuristic algorithm to solve this task and also give
 
 task_prompt_gp = """
 The optimization algorithm should handle a wide range of tasks, which is evaluated on the similar problems of a real-world problem. Your task is to write the optimization algorithm in Python code. The code should contain an `__init__(self, budget, dim)` function and the function `def __call__(self, func)`, which should optimize the black box function `func` using `self.budget` function evaluations.
-The func() can only be called as many times as the budget allows, not more. Each of the optimization functions has a search space between -5.0 (lower bound) and 5.0 (upper bound). The dimensionality can be varied.
+The func() can only be called as many times as the budget allows, not more. Each of the optimization functions has a search space between func.bounds.lb and func.bounds.ub. The dimensionality can be varied.
 Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
 """
 
-for experiment_i in range(2):
-    # A 1+1 strategy
-    es = LLaMEA(
-        evaluate_gp_func,
-        llm=llm,
-        n_parents=1,
-        n_offspring=1,
-        task_prompt=task_prompt_gp,
-        experiment_name=experiment_name,
-        elitism=True,
-        HPO=False,
-        budget=100,
-    )
-    print(es.run())
-
-
-# lb = real_problem.bounds.lb
-# ub = real_problem.bounds.ub
-# gp_problems = extract_top_funcs(
-#     gp_exp_path=f"data/GP_results/{gp_exp_name}", dim=dim, lb=lb, ub=ub, nbest=3)
-# for problem in gp_problems:
-#     lower, upper = find_y_bounds(problem)
-#     print(lower, upper)
+# for experiment_i in range(2):
+#     # A 1+1 strategy
+#     es = LLaMEA(
+#         evaluateBBOB,
+#         llm=llm,
+#         n_parents=1,
+#         n_offspring=1,
+#         task_prompt=task_prompt_bbob,
+#         experiment_name=experiment_name,
+#         elitism=True,
+#         HPO=False,
+#         budget=100,
+#     )
+#     print(es.run())
