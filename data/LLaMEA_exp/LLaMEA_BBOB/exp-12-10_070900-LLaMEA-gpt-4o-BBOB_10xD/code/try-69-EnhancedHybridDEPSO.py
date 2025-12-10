@@ -1,0 +1,71 @@
+import numpy as np
+
+class EnhancedHybridDEPSO:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.population_size = max(4, self.dim * 2)
+        self.lb = -5.0
+        self.ub = 5.0
+        self.population = np.random.uniform(self.lb, self.ub, (self.population_size, dim))
+        self.velocities = np.zeros((self.population_size, dim))
+        self.best_positions = np.copy(self.population)
+        self.global_best_position = np.copy(self.population[0])
+        self.best_values = np.full(self.population_size, np.inf)
+        self.global_best_value = np.inf
+        self.f_evals = 0
+
+    def evaluate(self, func, pos):
+        if self.f_evals < self.budget:
+            value = func(pos)
+            self.f_evals += 1
+            return value
+        return np.inf
+
+    def update_positions(self, func):
+        for i in range(self.population_size):
+            fitness_value = self.evaluate(func, self.population[i])
+            if fitness_value < self.best_values[i]:
+                self.best_values[i] = fitness_value
+                self.best_positions[i] = self.population[i]
+
+            if fitness_value < self.global_best_value:
+                self.global_best_value = fitness_value
+                self.global_best_position = self.population[i]
+
+    def differential_evolution_step(self, func):
+        for i in range(self.population_size):
+            indices = np.random.choice(self.population_size, 3, replace=False)
+            x1, x2, x3 = self.population[indices]
+            F = 0.5 + 0.3 * np.random.rand()  # Adaptive mutation factor
+            mutant = x1 + F * (x2 - x3)
+            mutant = np.clip(mutant, self.lb, self.ub)
+            diversity = np.std(self.population) / (self.ub - self.lb)
+            crossover_rate = 0.9 * (1 - diversity)  # Adaptive crossover rate
+            trial = np.where(np.random.rand(self.dim) < crossover_rate, mutant, self.population[i])
+            trial_fitness = self.evaluate(func, trial)
+            if trial_fitness < self.best_values[i]:
+                self.population[i] = trial
+                self.best_values[i] = trial_fitness
+
+    def particle_swarm_optimization_step(self):
+        for i in range(self.population_size):
+            r1, r2 = np.random.rand(2)
+            diversity = np.std(self.population, axis=0)
+            adapt_cognitive = 1.5 + 1.5 * (1 - diversity / (self.ub - self.lb))
+            adapt_social = 1.5 + 1.5 * (diversity / (self.ub - self.lb))
+            inertia_weight = 0.5 + (0.5 * (1 - self.f_evals / self.budget))
+            cognitive = adapt_cognitive * r1 * (self.best_positions[i] - self.population[i])
+            social = adapt_social * r2 * (self.global_best_position - self.population[i])
+            self.velocities[i] = inertia_weight * self.velocities[i] + cognitive + social
+            self.population[i] = np.clip(self.population[i] + self.velocities[i], self.lb, self.ub)
+
+        if self.f_evals / self.budget > 0.5 and np.std(self.best_values) < 1e-5:
+            self.population = np.random.uniform(self.lb, self.ub, (self.population_size, self.dim))
+
+    def __call__(self, func):
+        while self.f_evals < self.budget:
+            self.update_positions(func)
+            self.differential_evolution_step(func)
+            self.particle_swarm_optimization_step()
+        return self.global_best_position, self.global_best_value
