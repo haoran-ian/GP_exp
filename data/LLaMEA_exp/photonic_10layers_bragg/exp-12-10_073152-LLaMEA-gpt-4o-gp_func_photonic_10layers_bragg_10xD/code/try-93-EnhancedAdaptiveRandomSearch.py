@@ -1,0 +1,50 @@
+import numpy as np
+
+class EnhancedAdaptiveRandomSearch:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.evaluations = 0
+
+    def __call__(self, func):
+        lb = func.bounds.lb
+        ub = func.bounds.ub
+        best_solution = None
+        best_value = float('inf')
+        
+        while self.evaluations < self.budget:
+            current_best = np.random.uniform(lb, ub)
+            current_best_value = func(current_best)
+            self.evaluations += 1
+            no_improvement_count = 0
+            max_no_improvement = 7  # Changed from 5 to 7
+            adaptive_step_size = (ub - lb) / 6  # Changed from 5 to 6
+            reduction_factor = 0.2  # Changed from 0.25 to 0.2
+
+            while self.evaluations < self.budget:
+                stochastic_perturbation = np.random.normal(scale=adaptive_step_size / 10, size=self.dim)  # New line
+                candidate = np.clip(current_best + np.random.uniform(-adaptive_step_size, adaptive_step_size, self.dim) + stochastic_perturbation, lb, ub)  # Modified line
+                candidate_value = func(candidate)
+                self.evaluations += 1
+                
+                if candidate_value < current_best_value:
+                    current_best = candidate
+                    current_best_value = candidate_value
+                    no_improvement_count = 0
+                    adaptive_step_size *= 1.1  # Changed from 1.2 to 1.1
+                else:
+                    no_improvement_count += 1
+                    adaptive_step_size *= 0.75  # Changed from 0.8 to 0.75
+
+                if no_improvement_count >= max_no_improvement:
+                    adaptive_step_size *= reduction_factor
+                    no_improvement_count = 0
+                    reduction_factor *= 1.15  # Changed from 1.1 to 1.15
+
+            if current_best_value < best_value:
+                best_solution = current_best
+                best_value = current_best_value
+
+            adaptive_step_size = (ub - lb) / 8  # Changed from 10 to 8
+
+        return best_solution

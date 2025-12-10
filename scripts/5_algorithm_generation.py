@@ -44,24 +44,28 @@ llm = OpenAI_LLM(api_key, ai_model)
 # Meta-Llama-3.1-8B-Instruct, Meta-Llama-3.1-70B-Instruct,
 # CodeLlama-7b-Instruct-hf, CodeLlama-13b-Instruct-hf,
 # CodeLlama-34b-Instruct-hf, CodeLlama-70b-Instruct-hf,
-# dim = 45
-budget_cof = 10
-gp_exp_name = "photonic_10layers_bragg"
-real_problem = get_photonic_problem(
-    num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
+
+
+budget_cof = 100
+gp_exp_name = "meta_surface"
+# real_problem = get_photonic_problem(
+#     num_layers=10, problem_type=PROBLEM_TYPE.PHOTOVOLTAIC)
+real_problem = get_meta_surface_problem()
 dim = real_problem.meta_data.n_variables
-experiment_name = f"gp_func_{gp_exp_name}_{budget_cof}xD"
-print(real_problem.bounds.ub)
+# experiment_name = f"gp_func_{gp_exp_name}_{budget_cof}xD"
+experiment_name = f"{gp_exp_name}_{budget_cof}xD"
 # experiment_name = f"BBOB_{budget_cof}xD"
 
 budget = budget_cof * dim
 lb = real_problem.bounds.lb
 ub = real_problem.bounds.ub
-gp_problems = extract_top_funcs(
-    gp_exp_path=f"data/GP_results/{gp_exp_name}",
-    dim=dim, real_lb=lb, real_ub=ub, nbest=3)
-gp_uppers = [find_y_bounds(problem) for problem in gp_problems]
-
+# gp_problems = extract_top_funcs(
+#     gp_exp_path=f"data/GP_results/{gp_exp_name}",
+#     dim=dim, real_lb=lb, real_ub=ub, nbest=3)
+gp_problems = [real_problem]
+# gp_uppers = [find_y_bounds(problem) for problem in gp_problems]
+# print(gp_uppers)
+gp_uppers = [1.]
 
 def evaluateBBOB(solution, explogger=None, details=False):
     auc_mean = 0
@@ -160,17 +164,17 @@ The func() can only be called as many times as the budget allows, not more. Each
 Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
 """
 
-# for experiment_i in range(2):
-#     # A 1+1 strategy
-#     es = LLaMEA(
-#         evaluateBBOB,
-#         llm=llm,
-#         n_parents=1,
-#         n_offspring=1,
-#         task_prompt=task_prompt_bbob,
-#         experiment_name=experiment_name,
-#         elitism=True,
-#         HPO=False,
-#         budget=100,
-#     )
-#     print(es.run())
+for experiment_i in range(1):
+    # A 1+1 strategy
+    es = LLaMEA(
+        evaluate_gp_func,
+        llm=llm,
+        n_parents=1,
+        n_offspring=1,
+        task_prompt=task_prompt_gp,
+        experiment_name=experiment_name,
+        elitism=True,
+        HPO=False,
+        budget=100,
+    )
+    print(es.run())

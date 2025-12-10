@@ -1,0 +1,93 @@
+import numpy as np
+
+class AdvancedHybridPSO_DE:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.population_size = 60
+        self.inertia_weight = 0.9  # Starts higher for exploration
+        self.c1 = 2.0  # Cognitive component starts higher
+        self.c2 = 2.0  # Social component starts higher
+        self.F = 0.7
+        self.CR = 0.85
+        self.population = None
+        self.velocities = None
+        self.best_positions = None
+        self.global_best_position = None
+        self.global_best_fitness = float('inf')
+        self.eval_count = 0
+
+    def initialize_population(self, bounds):
+        lb, ub = bounds.lb, bounds.ub
+        self.population = np.random.uniform(low=lb, high=ub, size=(self.population_size, self.dim))
+        self.velocities = np.random.uniform(low=-abs(ub - lb), high=abs(ub - lb), size=(self.population_size, self.dim))
+        self.best_positions = self.population.copy()
+        fitness = self.evaluate_population(func=lambda x: np.inf)
+        self.update_global_best(fitness)
+
+    def evaluate_population(self, func):
+        fitness = np.array([func(ind) for ind in self.population])
+        self.eval_count += self.population_size
+        return fitness
+
+    def update_personal_best(self, fitness):
+        for i in range(self.population_size):
+            personal_fitness = func(self.best_positions[i])
+            if fitness[i] < personal_fitness:
+                self.best_positions[i] = self.population[i].copy()
+
+    def update_global_best(self, fitness):
+        min_index = np.argmin(fitness)
+        if fitness[min_index] < self.global_best_fitness:
+            self.global_best_fitness = fitness[min_index]
+            self.global_best_position = self.population[min_index].copy()
+
+    def update_velocities_and_positions(self, bounds):
+        lb, ub = bounds.lb, bounds.ub
+        r1, r2 = np.random.rand(self.population_size, self.dim), np.random.rand(self.population_size, self.dim)
+        cognitive_component = self.c1 * r1 * (self.best_positions - self.population)
+        social_component = self.c2 * r2 * (self.global_best_position - self.population)
+        
+        self.velocities = self.inertia_weight * self.velocities + cognitive_component + social_component
+        self.population += self.velocities
+        self.population = np.clip(self.population, lb, ub)
+
+        diversity = np.std(self.population, axis=0)
+        self.inertia_weight = max(0.4, self.inertia_weight - 0.0001)  # Decrease inertia over time
+        self.c1 = max(0.5, self.c1 - 0.001)  # Decrease cognitive component
+        self.c2 = min(2.5, self.c2 + 0.001)  # Increase social component
+
+    def differential_evolution(self, bounds, fitness, func):
+        lb, ub = bounds.lb, bounds.ub
+        new_population = self.population.copy()
+        for i in range(self.population_size):
+            indices = list(range(self.population_size))
+            indices.remove(i)
+            a, b, c = np.random.choice(indices, 3, replace=False)
+            mutant = self.population[a] + self.F * (self.population[b] - self.population[c])
+            mutant = np.clip(mutant, lb, ub)
+            crossover = np.random.rand(self.dim) < self.CR
+            if not np.any(crossover):
+                crossover[np.random.randint(0, self.dim)] = True
+            trial = np.where(crossover, mutant, self.population[i])
+            trial_fitness = func(trial)
+            self.eval_count += 1
+            if trial_fitness < fitness[i]:
+                new_population[i] = trial
+        self.population = new_population
+
+    def __call__(self, func):
+        func_bounds = func.bounds
+        self.initialize_population(func_bounds)
+        fitness = self.evaluate_population(func)
+        self.update_personal_best(fitness)
+        self.update_global_best(fitness)
+
+        while self.eval_count < self.budget:
+            self.update_velocities_and_positions(func_bounds)
+            self.differential_evolution(func_bounds, fitness, func)
+            fitness = self.evaluate_population(func)
+            self.update_personal_best(fitness)
+            self.update_global_best(fitness)
+
+        return self.global_best_position

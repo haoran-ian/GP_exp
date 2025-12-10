@@ -1,0 +1,73 @@
+import numpy as np
+
+class Enhanced_APSO_DTA_Plus:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.pop_size = 30
+        self.w_max = 0.9  # Maximum inertia weight
+        self.w_min = 0.4  # Minimum inertia weight
+        self.c1 = 1.5  # Cognitive component
+        self.c2 = 1.5  # Social component
+        self.initial_temp = 1.0  # Initial temperature for annealing
+        self.final_temp = 0.01  # Final temperature for annealing
+        self.particles = np.random.rand(self.pop_size, dim)
+        self.velocities = np.random.uniform(-0.1, 0.1, (self.pop_size, dim))
+        self.best_personal_positions = np.copy(self.particles)
+        self.best_personal_scores = np.full(self.pop_size, np.inf)
+        self.best_global_position = np.zeros(dim)
+        self.best_global_score = np.inf
+        self.func_eval_count = 0
+
+    def __call__(self, func):
+        bounds_lb = func.bounds.lb
+        bounds_ub = func.bounds.ub
+        
+        # Normalize particles to the function's bounds
+        self.particles = bounds_lb + self.particles * (bounds_ub - bounds_lb)
+        
+        while self.func_eval_count < self.budget:
+            for i in range(self.pop_size):
+                current_score = func(self.particles[i])
+                self.func_eval_count += 1
+                
+                # Update personal best
+                if current_score < self.best_personal_scores[i]:
+                    self.best_personal_scores[i] = current_score
+                    self.best_personal_positions[i] = self.particles[i].copy()
+                
+                # Update global best
+                if current_score < self.best_global_score:
+                    self.best_global_score = current_score
+                    self.best_global_position = self.particles[i].copy()
+            
+            # Adaptive inertia weight
+            w = self.w_max - (self.w_max - self.w_min) * (self.func_eval_count / self.budget)
+            
+            r1 = np.random.rand(self.pop_size, self.dim)
+            r2 = np.random.rand(self.pop_size, self.dim)
+            adapt_c1 = self.c1 * (1 - self.func_eval_count / self.budget)
+            adapt_c2 = self.c2 * (self.func_eval_count / self.budget)
+            
+            # Dynamic neighborhood learning
+            neighborhood_size = max(1, self.pop_size // 5)
+            for i in range(self.pop_size):
+                neighbors = np.random.choice(self.pop_size, neighborhood_size, replace=False)
+                best_neighbor = neighbors[np.argmin(self.best_personal_scores[neighbors])]
+                diversity_factor = np.random.rand(self.dim)  # Diversity-enhancing factor
+                self.velocities[i] = (w * self.velocities[i] +
+                                      adapt_c1 * r1[i] * (self.best_personal_positions[i] - self.particles[i]) +
+                                      adapt_c2 * r2[i] * (self.best_personal_positions[best_neighbor] - self.particles[i]) +
+                                      diversity_factor * (np.mean(self.particles, axis=0) - self.particles[i]))
+            
+            self.particles += self.velocities
+            
+            # Dynamic temperature annealing inspired perturbation
+            temp = self.initial_temp * ((self.final_temp / self.initial_temp) ** (self.func_eval_count / self.budget))
+            perturbation = np.random.normal(0, temp, (self.pop_size, self.dim))
+            self.particles += perturbation
+            
+            # Keep particles inside bounds
+            self.particles = np.clip(self.particles, bounds_lb, bounds_ub)
+        
+        return self.best_global_position, self.best_global_score

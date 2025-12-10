@@ -1,0 +1,65 @@
+import numpy as np
+
+class EnhancedLevyFlightParticleSwarm:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.swarm_size = min(40, budget // 3)
+        self.w = 0.5  # Initial inertia weight
+        self.c1 = 1.5 + np.random.rand()  # Cognitive coefficient
+        self.c2 = 1.5 + np.random.rand()  # Social coefficient
+        self.func_evals = 0
+
+    def levy_flight(self, size):
+        beta = 1.5
+        sigma = (np.math.gamma(1 + beta) * np.sin(np.pi * beta / 2) /
+                 (np.math.gamma((1 + beta) / 2) * beta * 2 ** ((beta - 1) / 2))) ** (1 / beta)
+        u = np.random.normal(0, 1, size) * sigma
+        v = np.random.normal(0, 1, size)
+        step = u / np.abs(v) ** (1 / beta)
+        return step
+
+    def __call__(self, func):
+        lb, ub = np.array(func.bounds.lb), np.array(func.bounds.ub)
+        chaotic_map = np.random.rand(self.swarm_size, self.dim)
+        for i in range(1, self.budget//10):
+            chaotic_map = np.sin(np.pi * chaotic_map)
+        swarm = lb + (ub - lb) * chaotic_map  # Chaotic map initialization
+        velocities = np.random.uniform(-1, 1, (self.swarm_size, self.dim))
+        personal_best = swarm.copy()
+        personal_best_scores = np.array([func(x) for x in personal_best])
+        self.func_evals += self.swarm_size
+
+        global_best = personal_best[np.argmin(personal_best_scores)]
+        global_best_score = personal_best_scores.min()
+
+        while self.func_evals < self.budget:
+            self.w = 0.5 + 0.5 * (1 - self.func_evals / self.budget)  # Dynamic inertia weight adjustment
+            r1, r2 = np.random.rand(self.swarm_size, self.dim), np.random.rand(self.swarm_size, self.dim)
+
+            # Adaptive coefficients
+            c1_dynamic = self.c1 * (1 - self.func_evals / self.budget)
+            c2_dynamic = self.c2 * (self.func_evals / self.budget)
+            
+            velocities = (self.w * velocities +
+                          c1_dynamic * r1 * (personal_best - swarm) +
+                          c2_dynamic * r2 * (global_best - swarm))
+
+            swarm = swarm + velocities
+            swarm += self.levy_flight((self.swarm_size, self.dim)) * (1.0 - self.func_evals / self.budget)  # Levy flight integration
+            swarm = np.clip(swarm, lb, ub)
+
+            scores = np.array([func(x) for x in swarm])
+            self.func_evals += self.swarm_size
+
+            for i in range(self.swarm_size):
+                if scores[i] < personal_best_scores[i]:
+                    personal_best[i] = swarm[i]
+                    personal_best_scores[i] = scores[i]
+
+            min_idx = personal_best_scores.argmin()
+            if personal_best_scores[min_idx] < global_best_score:
+                global_best = personal_best[min_idx]
+                global_best_score = personal_best_scores[min_idx]
+
+        return global_best
