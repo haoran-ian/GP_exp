@@ -84,9 +84,13 @@ if __name__ == "__main__":
     # problem = get_meta_surface_problem()
     # dim = problem.meta_data.n_variables
     ############################################################################
-    problem = get_photonic_problem(20, PROBLEM_TYPE.PHOTOVOLTAIC)
+    # problem = get_photonic_problem(20, PROBLEM_TYPE.PHOTOVOLTAIC)
+    # dim = problem.meta_data.n_variables
+    # exp_name = f"photonic_{dim}layers_photovoltaic"
+    ############################################################################
+    exp_name = 'meta_surface'
+    problem = get_meta_surface_problem()
     dim = problem.meta_data.n_variables
-    exp_name = f"photonic_{dim}layers_photovoltaic"
     ############################################################################
     ndoe = 150*dim
     doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,

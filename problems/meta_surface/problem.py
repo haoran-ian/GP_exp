@@ -55,9 +55,10 @@ class meta_surface:
         return mae
 
     def vector_to_triangle(self, x):
-        triangle = np.zeros((18, 18))
+        triangle = np.zeros(
+            (self.triangle_edge_length, self.triangle_edge_length))
         idx = 0
-        for i in range(18):
+        for i in range(self.triangle_edge_length):
             for j in range(i + 1):
                 triangle[i, j] = x[idx]
                 idx += 1
@@ -65,8 +66,8 @@ class meta_surface:
 
     def reflect_triangle(self, triangle):
         quarter_square = triangle.copy()
-        for i in range(18):
-            for j in range(i + 1, 18):
+        for i in range(self.triangle_edge_length):
+            for j in range(i + 1, self.triangle_edge_length):
                 quarter_square[i, j] = triangle[j, i]
         return quarter_square
 
@@ -89,14 +90,21 @@ class meta_surface:
     def create_final_image(self, square):
         square_36 = cv2.resize(square, (36, 36))
         square_36 = np.where(square_36 <= 0.5, 0., 1.)
+        # img = np.where(square_36 <= 0.5, 0, 255)
+        # i = 0
+        # while os.path.exists(f'data/temp/{i}.png'):
+        #     i += 1
+        # cv2.imwrite(f'data/temp/{i}.png', img)
         return square_36
 
 
 def get_meta_surface_problem(
-        RT_path='problems/meta_surface/model_best_IT.pth.tar',
+        triangle_edge_length=9,
+        RT_path='problems/meta_surface/model_best_RT.pth.tar',
         IT_path='problems/meta_surface/model_best_IT.pth.tar',
         device='cuda:0'):
-    prob = meta_surface(RT_path=RT_path, IT_path=IT_path, device=device)
+    prob = meta_surface(triangle_edge_length=triangle_edge_length,
+                        RT_path=RT_path, IT_path=IT_path, device=device)
     ioh.problem.wrap_real_problem(prob, name='meta_surface',
                                   optimization_type=ioh.OptimizationType.MIN)
     problem = ioh.get_problem('meta_surface', dimension=prob.dim)
