@@ -62,10 +62,10 @@ def benchmark_baseline(problem, budget, problem_name, runs=10):
     algorithms = [RS, None, None, None]
     algorithm_names = ['RandomSearch', 'CMA-ES', 'DE', 'LSHADE']
     for i in range(len(algorithms)):
-        if os.path.exists(f'data/benchmark_algs/{problem_name}/{algorithm_names[i]}_run0_best0'):
+        if os.path.exists(f'data/benchmark_algs/{problem_name}/{algorithm_names[i]}_{int(budget/dim)}xD_run0_best0'):
             continue
         l1 = ioh.logger.Analyzer(
-            folder_name=f'data/benchmark_algs/{problem_name}/{algorithm_names[i]}_run0_best0',
+            folder_name=f'data/benchmark_algs/{problem_name}/{algorithm_names[i]}_{int(budget/dim)}xD_run0_best0',
             algorithm_name=algorithm_names[i],
             triggers=[ioh.logger.trigger.ALWAYS],
             store_positions=True
@@ -81,17 +81,26 @@ def benchmark_baseline(problem, budget, problem_name, runs=10):
                 modularcmaes.fmin(
                     func=problem, x0=np.zeros(dim), budget=budget)
             elif i == 2:
-                lshade = ModularDE(problem, budget=budget)
+                lb_expanded = problem.bounds.lb[:, np.newaxis]
+                ub_expanded = problem.bounds.ub[:, np.newaxis]
+                lshade = ModularDE(problem, budget=budget,
+                                   lb=lb_expanded, ub=ub_expanded)
                 lshade.run()
             elif i == 3:
+                lb_expanded = problem.bounds.lb[:, np.newaxis]
+                ub_expanded = problem.bounds.ub[:, np.newaxis]
                 lshade = ModularDE(problem, budget=budget,
-                                   base_sampler='uniform',
-                                   mutation_base='target',
-                                   mutation_reference='pbest',
-                                   bound_correction='expc_center',
-                                   crossover='bin', lpsr=True, lambda_=18*5,
-                                   memory_size=6, use_archive=True,
-                                   init_stats=True, adaptation_method_F='shade',
+                                   lb=lb_expanded, ub=ub_expanded,
+                                #    base_sampler='uniform',
+                                #       mutation_base='target',
+                                #    mutation_reference='pbest',
+                                #    bound_correction='expc_center',
+                                   #    crossover='bin', 
+                                   lpsr=True, 
+                                #    lambda_=18*5,
+                                #    memory_size=6, use_archive=True,
+                                #    init_stats=True, 
+                                   adaptation_method_F='shade',
                                    adaptation_method_CR='shade')
                 lshade.run()
             problem.reset()
@@ -113,7 +122,7 @@ def extract_exp_paths_from_name(exp_name: str, problem_name: str,
 
 
 if __name__ == '__main__':
-    budget_cof = 10
+    budget_cof = 100
     # problem_name = 'meta_surface'
     problem_name = 'photonic_10layers_bragg'
     problem = get_photonic_problem(
@@ -123,7 +132,7 @@ if __name__ == '__main__':
     if not os.path.exists(f'data/benchmark_algs/{problem_name}'):
         os.mkdir(f'data/benchmark_algs/{problem_name}')
     exp_names = [
-        # f'BBOB_{10}xD',
+        f'BBOB_{10}xD',
         f'{problem_name}_{budget_cof}xD',
         f'gp_func_{problem_name}_{budget_cof}xD',
     ]

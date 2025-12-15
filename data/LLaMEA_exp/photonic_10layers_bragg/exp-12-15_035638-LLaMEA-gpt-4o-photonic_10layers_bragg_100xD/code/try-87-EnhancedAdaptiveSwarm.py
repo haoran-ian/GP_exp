@@ -1,0 +1,95 @@
+import numpy as np
+
+class EnhancedAdaptiveSwarm:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.population_size = min(max(dim * 2, 20), self.budget // 10)
+        self.positions = None
+        self.velocities = None
+        self.best_positions = None
+        self.best_scores = None
+        self.global_best_position = None
+        self.global_best_score = float('inf')
+        self.c1 = 2.05  # cognitive component
+        self.c2 = 2.05  # social component
+        self.w = 0.9  # initial inertia weight
+        self.bounds = None
+        self.func_evals = 0
+        self.local_search_intensity = 0.1  # Probability of local search per particle
+
+    def initialize(self, bounds):
+        self.bounds = bounds
+        lb, ub = bounds.lb, bounds.ub
+        self.positions = np.random.uniform(lb, ub, (self.population_size, self.dim))
+        self.velocities = np.zeros((self.population_size, self.dim))
+        self.best_positions = np.copy(self.positions)
+        self.best_scores = np.full(self.population_size, float('inf'))
+        self.global_best_position = np.full(self.dim, (ub + lb) / 2)
+
+    def __call__(self, func):
+        self.initialize(func.bounds)
+
+        while self.func_evals < self.budget:
+            for i in range(self.population_size):
+                self.update_particle(i, func)
+
+            self.update_parameters()
+
+        return self.global_best_position, self.global_best_score
+
+    def update_particle(self, i, func):
+        r1, r2 = np.random.rand(), np.random.rand()
+
+        neighborhood_size = 3 + int(2 * self.func_evals / self.budget)  # Adaptive neighborhood size
+        neighborhood_indices = np.random.choice(self.population_size, size=neighborhood_size, replace=False)
+        neighborhood_best_position = self.best_positions[neighborhood_indices[np.argmin(self.best_scores[neighborhood_indices])]]
+
+        cognitive_component = self.c1 * r1 * (self.best_positions[i] - self.positions[i])
+        social_component = self.c2 * r2 * (self.global_best_position - self.positions[i])
+
+        # Modified velocity update with adaptive rejuvenation
+        self.velocities[i] = self.w * np.random.uniform(0.5, 0.9) * self.velocities[i] + 0.6 * cognitive_component + 0.4 * social_component + 0.6 * (neighborhood_best_position - self.positions[i])
+        self.velocities[i] = np.clip(self.velocities[i], -0.18 * (self.bounds.ub - self.bounds.lb), 0.18 * (self.bounds.ub - self.bounds.lb))
+
+        self.positions[i] = self.positions[i] + self.velocities[i]
+        self.positions[i] = np.clip(self.positions[i], self.bounds.lb, self.bounds.ub)
+
+        score = func(self.positions[i])
+        self.func_evals += 1
+        
+        if np.random.rand() < self.local_search_intensity:
+            self.local_search(i, func)
+
+        if score < self.best_scores[i]:
+            self.best_scores[i] = score
+            self.best_positions[i] = self.positions[i]
+
+        if score < self.global_best_score:
+            self.global_best_score = score
+            self.global_best_position = self.positions[i]
+
+    def local_search(self, i, func):
+        local_search_steps = int(self.dim * 0.1)
+        for _ in range(local_search_steps):
+            perturbation = np.random.normal(scale=0.1, size=self.dim)
+            candidate_position = self.positions[i] + perturbation
+            candidate_position = np.clip(candidate_position, self.bounds.lb, self.bounds.ub)
+            candidate_score = func(candidate_position)
+            self.func_evals += 1
+
+            if candidate_score < self.best_scores[i]:
+                self.best_scores[i] = candidate_score
+                self.best_positions[i] = candidate_position
+                self.positions[i] = candidate_position
+
+            if candidate_score < self.global_best_score:
+                self.global_best_score = candidate_score
+                self.global_best_position = candidate_position
+
+    def update_parameters(self):
+        progress = self.func_evals / self.budget
+        self.c1 = 2.4 - 1.1 * progress
+        self.c2 = 1.6 + 1.7 * progress
+        self.w = 0.88 - 0.65 * progress  # Dynamic inertia weight adjustment
+        self.local_search_intensity = 0.1 * (1 - progress)  # Decreases as we progress

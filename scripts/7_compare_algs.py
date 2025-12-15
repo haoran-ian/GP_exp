@@ -90,7 +90,7 @@ def curve_plot(df, by: str, curve_subset, title: str):
                          df_subset['mean'] + df_subset['std'],
                          color=colors[i], alpha=0.05)
     plt.xlabel('evaluations')
-    plt.ylabel('AOCC')
+    plt.ylabel('fitness')
     plt.legend()
     plt.tight_layout()
     plt.savefig(f'results/{title}.png')
@@ -159,25 +159,26 @@ if __name__ == '__main__':
     nbest = 1
     LLaMEA_runs = 5
     dim = 10
-    budget_cof = 10
+    budget_cof = 100
     # problem_name = 'meta_surface'
     problem_name = 'photonic_10layers_bragg'
     source_names = [
         'RandomSearch',
-        # 'CMA-ES',
         'DE',
         'LSHADE',
-        # f'BBOB_{budget_cof}xD',
         f'{problem_name}_{budget_cof}xD',
         f'gp_func_{problem_name}_{budget_cof}xD',
+        f'BBOB_{10}xD',
+        # 'CMA-ES',
     ]
     labels = ['RandomSearch',
-              #   'CMA-ES',
               'DE',
               'LSHADE',
-              #   'baseline',
               'real problem',
-              'feature-based proxy']
+              'feature-based proxy',
+              'BBOB',
+            #   'CMA-ES',
+              ]
     df_merged = build_ioh_dat_by_source(problem_name=problem_name,
                                         algorithm_source_names=source_names,
                                         algorithm_source_labels=labels,

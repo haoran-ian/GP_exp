@@ -47,25 +47,26 @@ llm = OpenAI_LLM(api_key, ai_model)
 
 
 budget_cof = 100
-gp_exp_name = "meta_surface"
-# real_problem = get_photonic_problem(
-#     num_layers=10, problem_type=PROBLEM_TYPE.PHOTOVOLTAIC)
-real_problem = get_meta_surface_problem()
+# gp_exp_name = "meta_surface"
+gp_exp_name = 'photonic_10layers_bragg'
+real_problem = get_photonic_problem(
+    num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
+# real_problem = get_meta_surface_problem()
 dim = real_problem.meta_data.n_variables
-# experiment_name = f"gp_func_{gp_exp_name}_{budget_cof}xD"
-experiment_name = f"{gp_exp_name}_{budget_cof}xD"
+experiment_name = f"gp_func_{gp_exp_name}_{budget_cof}xD"
+# experiment_name = f"{gp_exp_name}_{budget_cof}xD"
 # experiment_name = f"BBOB_{budget_cof}xD"
 
 budget = budget_cof * dim
 lb = real_problem.bounds.lb
 ub = real_problem.bounds.ub
-# gp_problems = extract_top_funcs(
-#     gp_exp_path=f"data/GP_results/{gp_exp_name}",
-#     dim=dim, real_lb=lb, real_ub=ub, nbest=3)
+gp_problems = extract_top_funcs(
+    gp_exp_path=f"data/GP_results/{gp_exp_name}",
+    dim=dim, real_lb=lb, real_ub=ub, nbest=3)
 gp_problems = [real_problem]
-# gp_uppers = [find_y_bounds(problem) for problem in gp_problems]
+gp_uppers = [find_y_bounds(problem) for problem in gp_problems]
 # print(gp_uppers)
-gp_uppers = [1.]
+# gp_uppers = [1.]
 
 def evaluateBBOB(solution, explogger=None, details=False):
     auc_mean = 0
