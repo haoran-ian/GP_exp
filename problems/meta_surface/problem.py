@@ -60,7 +60,7 @@ class meta_surface:
         target = target.reshape(1, -1)
         target = target.cuda()
         mae = torch.mean(torch.abs(predicted - target))  # MAE
-        return mae - 0.23
+        return mae - 0.237
 
     def vector_to_triangle(self, x):
         triangle = np.zeros((9, 9))

@@ -9,7 +9,7 @@ sys.path.insert(0, os.getcwd())
 # fmt: on
 
 colors = ['b', 'r', 'g',
-          # 'c',
+          'c',
           'b', 'r', 'g', 'b', 'r', 'g']
 linestyles = ['solid', 'solid', 'solid',
               # 'solid',
@@ -109,6 +109,7 @@ def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
                 exp_folder = os.path.join(
                     root_path, f'{source_name}_run{i}_best{j}')
                 if not os.path.exists(exp_folder):
+                    print(exp_folder)
                     continue
                 ioh_dat_path = os.path.join(
                     exp_folder,
@@ -159,15 +160,24 @@ if __name__ == '__main__':
     LLaMEA_runs = 5
     dim = 10
     budget_cof = 10
+    # problem_name = 'meta_surface'
     problem_name = 'photonic_10layers_bragg'
     source_names = [
         'RandomSearch',
-        f'BBOB_{budget_cof}xD',
+        # 'CMA-ES',
+        'DE',
+        'LSHADE',
+        # f'BBOB_{budget_cof}xD',
         f'{problem_name}_{budget_cof}xD',
         f'gp_func_{problem_name}_{budget_cof}xD',
     ]
-    labels = ['RandomSearch', 'baseline',
-              'real problem', 'feature-based proxy']
+    labels = ['RandomSearch',
+              #   'CMA-ES',
+              'DE',
+              'LSHADE',
+              #   'baseline',
+              'real problem',
+              'feature-based proxy']
     df_merged = build_ioh_dat_by_source(problem_name=problem_name,
                                         algorithm_source_names=source_names,
                                         algorithm_source_labels=labels,
