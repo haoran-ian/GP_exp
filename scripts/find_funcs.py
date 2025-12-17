@@ -24,7 +24,7 @@ if __name__ == "__main__":
     doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,
                      upper_bound=problem.bounds.ub, round_off=2, random_seed=42,
                      verbose=True).create_doe()
-    target_vector = pd.read_csv(f"{path}/ela_1121.csv").mean()
+    target_vector = pd.read_csv(f"{path}/ela_60.csv").mean()
     list_ela = read_pickle(f"{path}/ela_corr.pickle")
     ela_min = read_pickle(f"{path}/ela_min.pickle")
     ela_max = read_pickle(f"{path}/ela_max.pickle")
