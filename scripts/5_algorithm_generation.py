@@ -47,11 +47,11 @@ llm = OpenAI_LLM(api_key, ai_model)
 
 
 budget_cof = 100
-# gp_exp_name = "meta_surface"
-gp_exp_name = 'photonic_10layers_bragg'
-real_problem = get_photonic_problem(
-    num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
-# real_problem = get_meta_surface_problem()
+gp_exp_name = "meta_surface"
+# gp_exp_name = 'photonic_10layers_bragg'
+# real_problem = get_photonic_problem(
+#     num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
+real_problem = get_meta_surface_problem()
 dim = real_problem.meta_data.n_variables
 experiment_name = f"gp_func_{gp_exp_name}_{budget_cof}xD"
 # experiment_name = f"{gp_exp_name}_{budget_cof}xD"
@@ -63,7 +63,7 @@ ub = real_problem.bounds.ub
 gp_problems = extract_top_funcs(
     gp_exp_path=f"data/GP_results/{gp_exp_name}",
     dim=dim, real_lb=lb, real_ub=ub, nbest=3)
-gp_problems = [real_problem]
+# gp_problems = [real_problem]
 gp_uppers = [find_y_bounds(problem) for problem in gp_problems]
 # print(gp_uppers)
 # gp_uppers = [1.]
@@ -165,7 +165,7 @@ The func() can only be called as many times as the budget allows, not more. Each
 Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
 """
 
-for experiment_i in range(1):
+for experiment_i in range(5):
     # A 1+1 strategy
     es = LLaMEA(
         evaluate_gp_func,
