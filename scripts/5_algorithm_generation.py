@@ -165,7 +165,7 @@ The func() can only be called as many times as the budget allows, not more. Each
 Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
 """
 
-for experiment_i in range(5):
+for experiment_i in range(4):
     # A 1+1 strategy
     es = LLaMEA(
         evaluate_gp_func,

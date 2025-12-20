@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 20,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM20.dat",
+		"runs": [
+			{"instance": 1, "evals": 3000, "best": {"evals": 422, "y": 406.8031551159652, "x": [4.32, 0.57, -0.53, 0.88, 3.93, 4.79, 1.74, 1.58, 3.07, 0.84, 3.03, -1.62, -0.25, -0.64, 0.96, 1.23, 2.09, -3.93, -2.29, 2.95]}}
+		]}
+	]
+}

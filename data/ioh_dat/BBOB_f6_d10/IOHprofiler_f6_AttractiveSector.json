@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1500, "best": {"evals": 1242, "y": 62.123791071067835, "x": [1.77, 4.82, 3.89, 2.64, 0.92, -3.16, -3.01, -2.84, -3.77, 1.13]}}
+		]}
+	]
+}

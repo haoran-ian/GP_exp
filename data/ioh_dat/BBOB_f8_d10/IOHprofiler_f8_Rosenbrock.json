@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1500, "best": {"evals": 1157, "y": 3820.278398810162, "x": [-1.12, -1.67, 1, 1.78, -4.62, -1.67, 0.03, -2.13, -2.13, 3.55]}}
+		]}
+	]
+}

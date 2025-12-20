@@ -90,14 +90,16 @@ if __name__ == "__main__":
     ############################################################################
     for fid in range(1, 25):
         for dim in [2, 10, 20, 45]:
+            if os.path.exists(f'data/ELA/ela_BBOB_f{fid}_d{dim}/ela_{fid}.csv'):
+                continue
             problem = ioh.get_problem(fid=fid, instance=1, dimension=dim,
                                       problem_class=ioh.ProblemClass.BBOB)
             exp_name = f"BBOB_f{fid}_d{dim}"
     ############################################################################
             ndoe = 150*dim
             doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,
-                            upper_bound=problem.bounds.ub, round_off=2, random_seed=42,
-                            verbose=True).create_doe()
+                             upper_bound=problem.bounds.ub, round_off=2,
+                             random_seed=42, verbose=True).create_doe()
             if not os.path.exists(f"data/y/{exp_name}.npy"):
                 l1 = ioh.logger.Analyzer(
                     folder_name=f"data/ioh_dat/{exp_name}",
