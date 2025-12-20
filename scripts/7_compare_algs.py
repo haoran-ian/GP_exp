@@ -49,23 +49,6 @@ def unit_y_runs_from_LLaMEA_exps(y_exps):
     return df
 
 
-def calculate_auc_vectorized(group):
-    budget = group['evaluations'].max()
-    raw_y_positive = group['raw_y_normalized'].clip(lower=1e-8)
-    auc = (((np.log10(raw_y_positive) + 8) / 8).sum()) / budget
-    AOCC = 1 - auc
-    group = group.copy()
-    group['AOCC'] = AOCC
-    return group
-
-
-def calcuate_std_vectorized(group):
-    group = group.copy()
-    group['mean'] = np.mean(group['raw_y_normalized'])
-    group['std'] = np.std(group['raw_y_normalized'])
-    return group
-
-
 def box_plot(df, column: str, by: str, title: str):
     plt.figure(figsize=(8, 5))
     df.boxplot(column=column, by=by, grid=True)
@@ -78,9 +61,9 @@ def box_plot(df, column: str, by: str, title: str):
     plt.close()
 
 
-def curve_plot(df, by: str, curve_subset, title: str):
+def curve_plot(df, by: str, curve_subset, evaluations: int, title: str):
     plt.figure(figsize=(14, 6))
-    x = np.arange(df['evaluations'].max())
+    x = np.arange(evaluations)
     for i in range(len(curve_subset)):
         curve_label = curve_subset[i]
         df_subset = df[df[by] == curve_label]
@@ -128,7 +111,34 @@ def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
     return df_merged
 
 
-def compare_AOCC_by_source(df_merged, problem_name):
+def select_nbest_algs_from_LLaMEA_runs(df_AOCC, n: int = 1):
+    def calculate_mean_AOCC(group):
+        group = group.copy()
+        group['mean_AOCC'] = group['AOCC'].mean()
+        return group
+    df = df_AOCC.copy()
+    df = df.groupby(['LLaMEA_run', 'source']).apply(calculate_mean_AOCC)
+    df = df.reset_index(drop=True)
+    selected_columns = ['LLaMEA_run', 'source', 'mean_AOCC']
+    df = df[selected_columns]
+    df = df.drop_duplicates()
+    df = df.reset_index(drop=True)
+    return (
+        df.groupby('source')
+        .apply(lambda x: x.nlargest(n, 'mean_AOCC')['LLaMEA_run'].tolist())
+        .to_dict()
+    )
+
+
+def compare_AOCC_by_source(df_merged, problem_name, nbest: int = 1):
+    def calculate_auc_vectorized(group):
+        budget = group['evaluations'].max()
+        raw_y_positive = group['raw_y_normalized'].clip(lower=1e-8)
+        auc = (((np.log10(raw_y_positive) + 8) / 8).sum()) / budget
+        AOCC = 1 - auc
+        group = group.copy()
+        group['AOCC'] = AOCC
+        return group
     df_merged = df_merged.groupby(
         ['LLaMEA_run', 'alg_run', 'source']).apply(calculate_auc_vectorized)
     df_merged = df_merged.reset_index(drop=True)
@@ -140,28 +150,44 @@ def compare_AOCC_by_source(df_merged, problem_name):
         [np.inf, -np.inf], np.nan).dropna(subset=['AOCC'])
     df_AOCC = df_AOCC.sort_values(['AOCC'])
     df_AOCC = df_AOCC.reset_index(drop=True)
+    best_LLaMEA_algs = select_nbest_algs_from_LLaMEA_runs(df_AOCC, nbest)
     box_plot(df_AOCC, 'AOCC', 'source', f'AOCC_compare_{problem_name}_boxplot')
+    return best_LLaMEA_algs
 
 
-def compare_convergence_curve_by_source(df_merged, problem_name, labels):
+def compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
+                                        problem_name, labels, evaluations):
+    def calcuate_std_vectorized(group):
+        group = group.copy()
+        group['mean'] = np.mean(group['raw_y_normalized'])
+        group['std'] = np.std(group['raw_y_normalized'])
+        return group
+    df_merged = df_merged.copy()
+    conditions = []
+    for source, runs in best_LLaMEA_algs.items():
+        runs_str = ', '.join(map(str, runs))
+        condition = f"(source == '{source}' and LLaMEA_run in [{runs_str}])"
+        conditions.append(condition)
+    query_str = ' or '.join(conditions)
+    df_merged = df_merged.query(query_str)
     df_merged = df_merged.groupby(
-        ['source', 'evaluations']).apply(calcuate_std_vectorized)
-    selected_columns = ['source', 'evaluations', 'mean', 'std']
+        ['LLaMEA_run', 'evaluations', 'source']).apply(calcuate_std_vectorized)
+    selected_columns = ['LLaMEA_run', 'evaluations', 'source', 'mean', 'std']
     df = df_merged[selected_columns].copy()
-    df = df.drop_duplicates(subset=['source', 'evaluations'])
+    df = df.drop_duplicates(subset=['LLaMEA_run', 'evaluations', 'source', ])
     df = df.replace([np.inf, -np.inf], np.nan).dropna(subset=['mean', 'std'])
     df = df.reset_index(drop=True)
-    curve_plot(df, 'source', labels,
+    curve_plot(df, 'source', labels, evaluations,
                f'optimization_curve_compare_{problem_name}')
 
 
 if __name__ == '__main__':
     nbest = 1
     LLaMEA_runs = 5
-    dim = 10
+    dim = 45
     budget_cof = 100
-    # problem_name = 'meta_surface'
-    problem_name = 'photonic_10layers_bragg'
+    problem_name = 'meta_surface'
+    # problem_name = 'photonic_10layers_bragg'
     source_names = [
         'RandomSearch',
         'DE',
@@ -171,19 +197,22 @@ if __name__ == '__main__':
         f'BBOB_{10}xD',
         # 'CMA-ES',
     ]
-    labels = ['RandomSearch',
-              'DE',
-              'LSHADE',
-              'real problem',
-              'feature-based proxy',
-              'BBOB',
-            #   'CMA-ES',
-              ]
+    labels = [
+        'RandomSearch',
+        'DE',
+        'LSHADE',
+        'real problem',
+        'feature-based proxy',
+        'BBOB',
+        # 'CMA-ES',
+    ]
     df_merged = build_ioh_dat_by_source(problem_name=problem_name,
                                         algorithm_source_names=source_names,
                                         algorithm_source_labels=labels,
                                         dim=dim, budget_cof=budget_cof,
                                         nbest=nbest, LLaMEA_runs=LLaMEA_runs)
     df_merged.to_csv("test.csv", index=False)
-    compare_AOCC_by_source(df_merged, problem_name)
-    compare_convergence_curve_by_source(df_merged, problem_name, labels)
+    best_LLaMEA_algs = compare_AOCC_by_source(df_merged, problem_name, nbest=1)
+    compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
+                                        problem_name, labels,
+                                        evaluations=dim*budget_cof)
