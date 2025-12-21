@@ -1,0 +1,70 @@
+import numpy as np
+
+class EnhancedAMESHRefined:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.memory_size = 5
+        self.memory = []
+
+    def __call__(self, func):
+        lb, ub = func.bounds.lb, func.bounds.ub
+        population_size = 10
+        initial_mutation_rate = 0.2
+        sigma_init = 0.3
+
+        # Initialize population
+        population = np.random.uniform(lb, ub, (population_size, self.dim))
+        fitness = np.array([func(ind) for ind in population])
+        self.budget -= population_size
+
+        # Initialize memory with best individuals
+        self.update_memory(population, fitness)
+        
+        # Dynamic mutation rate based on success history
+        success_hist = np.zeros(population_size)
+        mutation_rates = np.full(population_size, initial_mutation_rate)
+        
+        while self.budget > 0:
+            # Adapt mutation rate for each individual
+            for i in range(population_size):
+                if success_hist[i] > 0:
+                    mutation_rates[i] *= 1.1
+                else:
+                    mutation_rates[i] *= 0.9
+                mutation_rates[i] = np.clip(mutation_rates[i], 0.01, 0.5)
+            
+            # Generate offspring
+            offspring = []
+            for i, parent in enumerate(population):
+                memory_sample = self.memory[np.random.choice(len(self.memory))]
+                direction = memory_sample - parent
+                if np.random.rand() < mutation_rates[i]:
+                    direction += np.random.normal(0, sigma_init, self.dim)
+                child = np.clip(parent + direction, lb, ub)
+                offspring.append(child)
+            
+            # Evaluate offspring
+            offspring_fitness = np.array([func(ind) for ind in offspring])
+            self.budget -= population_size
+            
+            # Success history update
+            success_hist = offspring_fitness < fitness
+
+            # Select the best individuals
+            combined_population = np.vstack((population, offspring))
+            combined_fitness = np.hstack((fitness, offspring_fitness))
+            best_indices = np.argsort(combined_fitness)[:population_size]
+            population = combined_population[best_indices]
+            fitness = combined_fitness[best_indices]
+            
+            # Update memory with best individuals
+            self.update_memory(population, fitness)
+        
+        # Return the best solution found
+        best_index = np.argmin(fitness)
+        return population[best_index]
+    
+    def update_memory(self, population, fitness):
+        best_individuals = population[np.argsort(fitness)[:self.memory_size]]
+        self.memory = list(best_individuals)

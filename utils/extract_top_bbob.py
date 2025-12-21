@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def extract_top_bbob(problem_name: str, dim: int, nbest: int = 3):
-    instnaces = []
+    instances = []
     df = pd.read_csv(f'data/GP_results/dist_bbob_{problem_name}.csv')
     row = df.iloc[0]
     sorted_indices = np.argsort(row.values)[:nbest]
@@ -14,4 +14,4 @@ def extract_top_bbob(problem_name: str, dim: int, nbest: int = 3):
     for fid in fids:
         instances += [ioh.get_problem(fid=fid, instance=1, dimension=dim,
                                       problem_class=ioh.ProblemClass.BBOB)]
-    return instnaces
+    return instances
