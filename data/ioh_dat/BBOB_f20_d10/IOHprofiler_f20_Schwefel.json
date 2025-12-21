@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1500, "best": {"evals": 1256, "y": 2686.215742537633, "x": [-3.38, 2.16, -2.51, -2.83, 2.95, 0.43, -3.48, 0.76, -2.06, 0.35]}}
+		]}
+	]
+}

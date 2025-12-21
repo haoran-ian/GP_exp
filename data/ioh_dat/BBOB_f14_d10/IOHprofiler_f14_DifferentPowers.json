@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1500, "best": {"evals": 105, "y": 7.420465757818731, "x": [-2.73, -0.55, 0.86, -3.36, -4.3, 3.05, -4.14, -0.86, 1.95, -2.42]}}
+		]}
+	]
+}
