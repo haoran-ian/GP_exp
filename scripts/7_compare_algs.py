@@ -105,7 +105,6 @@ def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
                 ioh_dat_path = os.path.join(
                     exp_folder,
                     f'data_f60_{problem_name}/IOHprofiler_f60_DIM{dim}.dat')
-                # f'data_f60_ellipsometry/IOHprofiler_f60_DIM{dim}.dat')
                 y_runs = extrat_ys_from_ioh_dat(ioh_dat_path)
                 y_exps_by_source += [y_runs]
         df = unit_y_runs_from_LLaMEA_exps(y_exps_by_source)
@@ -204,11 +203,11 @@ def compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
 if __name__ == '__main__':
     nbest = 1
     LLaMEA_runs = 5
-    dim = 45
+    dim = 2
     budget_cof = 100
-    problem_name = 'meta_surface'
+    # problem_name = 'meta_surface'
     # problem_name = 'photonic_10layers_bragg'
-    # problem_name = 'photonic_2layers_ellipsometry'
+    problem_name = 'photonic_2layers_ellipsometry'
     source_names = [
         f'RandomSearch_{budget_cof}xD',
         f'DE_{budget_cof}xD',
