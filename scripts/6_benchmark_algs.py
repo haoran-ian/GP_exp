@@ -1,14 +1,17 @@
 # fmt: off
+from ast import Param
 import os
 import sys
 import ioh
 import numpy as np
+from pytest import param
 sys.path.insert(0, os.getcwd())
 from problems.fluid_dynamics.problem import get_pipes_topology_problem
 from problems.meta_surface.problem import get_meta_surface_problem
 from problems.photovotaic_problems.problem import PROBLEM_TYPE, get_photonic_problem
 from utils.extract_top_algs import extract_top_algs
-from modcma import modularcmaes
+from modcma.modularcmaes import ModularCMAES
+from modcma.parameters import Parameters
 from modde import ModularDE
 # fmt: on
 
@@ -78,8 +81,12 @@ def benchmark_baseline(problem, budget, problem_name, runs=10):
                 algorithm = algorithms[i]
                 algorithm(problem)
             elif i == 1:
-                modularcmaes.fmin(
-                    func=problem, x0=np.zeros(dim), budget=budget)
+                x0 = np.array([(problem.bounds.lb[i]+problem.bounds.ub[i]) /
+                              2 for i in range(problem.bounds.ub.shape[0])])
+                params = Parameters(d=dim, x0=x0, budget=budget,
+                                    lb=problem.bounds.lb, ub=problem.bounds.ub)
+                cma_es = ModularCMAES(fitness_func=problem, parameters=params)
+                cma_es.run()
             elif i == 2:
                 lb_expanded = problem.bounds.lb[:, np.newaxis]
                 ub_expanded = problem.bounds.ub[:, np.newaxis]
@@ -123,13 +130,13 @@ def extract_exp_paths_from_name(exp_name: str, problem_name: str,
 
 if __name__ == '__main__':
     budget_cof = 100
-    problem_name = 'meta_surface'
-    # problem_name = 'photonic_2layers_ellipsometry'
+    # problem_name = 'meta_surface'
+    problem_name = 'photonic_2layers_ellipsometry'
     # problem_name = 'photonic_10layers_bragg'
-    # problem = get_photonic_problem(problem_type=PROBLEM_TYPE.ELLIPSOMETRY)
+    problem = get_photonic_problem(problem_type=PROBLEM_TYPE.ELLIPSOMETRY)
     # problem = get_photonic_problem(
     #     num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
-    problem = get_meta_surface_problem()
+    # problem = get_meta_surface_problem()
     dim = problem.meta_data.n_variables
     if not os.path.exists(f'data/benchmark_algs/{problem_name}'):
         os.mkdir(f'data/benchmark_algs/{problem_name}')

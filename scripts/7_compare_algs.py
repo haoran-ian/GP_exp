@@ -215,7 +215,7 @@ if __name__ == '__main__':
         f'{problem_name}_{budget_cof}xD',
         f'gp_func_{problem_name}_{budget_cof}xD',
         f'BBOB_{dim}D_{budget_cof}xD',
-        # 'CMA-ES',
+        f'CMA-ES_{budget_cof}xD',
     ]
     labels = [
         'RandomSearch',
@@ -224,7 +224,7 @@ if __name__ == '__main__':
         'real problem',
         'feature-based proxy',
         'BBOB',
-        # 'CMA-ES',
+        'CMA-ES',
     ]
     df_merged = build_ioh_dat_by_source(problem_name=problem_name,
                                         algorithm_source_names=source_names,

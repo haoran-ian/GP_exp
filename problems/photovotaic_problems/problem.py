@@ -24,7 +24,8 @@ def get_photonic_problem(num_layers: int = 10,
         ioh.problem.wrap_real_problem(prob, name=f"photonic_{nb_layers}layers_bragg",
                                       optimization_type=ioh.OptimizationType.MIN,
                                       lb=prob.min_thick, ub=prob.max_thick)
-        problem = ioh.get_problem(f"photonic_{nb_layers}layers_bragg", dimension=prob.n)
+        problem = ioh.get_problem(f"photonic_{nb_layers}layers_bragg",
+                                  dimension=prob.n)
         return problem
     elif problem_type == PROBLEM_TYPE.ELLIPSOMETRY:
         mat_env = 1.0
@@ -38,9 +39,10 @@ def get_photonic_problem(num_layers: int = 10,
         angle = 40*np.pi/180  # rad
         prob = ellipsometry(mat_env, mat_substrate, nb_layers, min_thick, max_thick,
                             min_eps, max_eps, wavelengths, angle)
-        ioh.problem.wrap_real_problem(prob, name="ellipsometry",
+        ioh.problem.wrap_real_problem(prob, name="photonic_2layers_ellipsometry",
                                       optimization_type=ioh.OptimizationType.MIN,)
-        problem = ioh.get_problem("ellipsometry", dimension=prob.n)
+        problem = ioh.get_problem("photonic_2layers_ellipsometry",
+                                  dimension=prob.n)
         problem.bounds.lb = prob.lb
         problem.bounds.ub = prob.ub
         return problem
@@ -52,10 +54,10 @@ def get_photonic_problem(num_layers: int = 10,
         wl_max = 750
         prob = sophisticated_antireflection_design(nb_layers, min_thick, max_thick,
                                                    wl_min, wl_max)
-        ioh.problem.wrap_real_problem(prob, name=f"sophisticated_antireflection_design_{nb_layers}",
+        ioh.problem.wrap_real_problem(prob, name=f"photonic_{nb_layers}layers_photovoltaic",
                                       optimization_type=ioh.OptimizationType.MIN,
                                       lb=prob.min_thick, ub=prob.max_thick)
-        problem = ioh.get_problem(f"sophisticated_antireflection_design_{nb_layers}",
+        problem = ioh.get_problem(f"photonic_{nb_layers}layers_photovoltaic",
                                   dimension=prob.n)
         return problem
     else:
