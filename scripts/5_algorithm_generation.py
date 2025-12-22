@@ -49,15 +49,18 @@ llm = OpenAI_LLM(api_key, ai_model)
 
 
 budget_cof = 100
-gp_exp_name = 'meta_surface'
+# gp_exp_name = 'meta_surface'
+# gp_exp_name = 'photonic_2layers_ellipsometry'
 # gp_exp_name = 'photonic_10layers_bragg'
-# real_problem = get_photonic_problem(
-#     num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
-real_problem = get_meta_surface_problem()
+gp_exp_name = 'photonic_10layers_photovoltaic'
+# real_problem = get_photonic_problem(problem_type=PROBLEM_TYPE.ELLIPSOMETRY)
+real_problem = get_photonic_problem(
+    num_layers=10, problem_type=PROBLEM_TYPE.PHOTOVOLTAIC)
+# real_problem = get_meta_surface_problem()
 dim = real_problem.meta_data.n_variables
 # experiment_name = f'gp_func_{gp_exp_name}_{budget_cof}xD'
-# experiment_name = f'{gp_exp_name}_{budget_cof}xD'
-experiment_name = f'BBOB_{dim}D_{budget_cof}xD'
+experiment_name = f'{gp_exp_name}_{budget_cof}xD'
+# experiment_name = f'BBOB_{dim}D_{budget_cof}xD'
 
 budget = budget_cof * dim
 lb = real_problem.bounds.lb

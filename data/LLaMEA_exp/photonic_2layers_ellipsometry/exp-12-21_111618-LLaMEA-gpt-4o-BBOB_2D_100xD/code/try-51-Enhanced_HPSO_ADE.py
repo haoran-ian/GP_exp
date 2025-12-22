@@ -1,0 +1,84 @@
+import numpy as np
+
+class Enhanced_HPSO_ADE:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.initial_population_size = 20
+        self.population_size = self.initial_population_size
+        self.w = 0.9  # Dynamic initial inertia weight
+        self.w_min = 0.4  # Minimum inertia weight
+        self.c1 = 1.5  # Cognitive (personal) weight
+        self.c2 = 1.5  # Social weight
+        self.f = 0.8  # Differential weight
+        self.cr = 0.9  # Crossover probability
+        self.adaptive_c1 = lambda t, T: 2.5 - 1.5 * (t / T)  # Adaptive cognitive weight
+        self.adaptive_c2 = lambda t, T: 0.5 + 1.5 * (t / T)  # Adaptive social weight
+        self.chaotic_map = lambda x: 4 * x * (1 - x)  # Logistic map for chaotic initialization
+
+    def __call__(self, func):
+        lb, ub = func.bounds.lb, func.bounds.ub
+        x0 = np.random.rand(self.dim)
+        chaotic_sequence = [x0]
+        for _ in range(1, self.population_size):
+            x0 = self.chaotic_map(x0)
+            chaotic_sequence.append(x0)
+        population = lb + np.array(chaotic_sequence) * (ub - lb)
+        
+        velocities = np.random.uniform(-1, 1, (self.population_size, self.dim))
+        personal_best_positions = np.copy(population)
+        personal_best_scores = np.array([func(ind) for ind in population])
+        self.budget -= self.population_size
+
+        global_best_idx = np.argmin(personal_best_scores)
+        global_best_position = np.copy(personal_best_positions[global_best_idx])
+        global_best_score = personal_best_scores[global_best_idx]
+
+        iteration = 0
+        max_iterations = self.budget // self.initial_population_size
+        
+        while self.budget > 0:
+            # Dynamic population size reduction
+            if iteration > 0 and iteration % 10 == 0 and self.population_size > 10:
+                self.population_size -= 1
+            
+            self.w = self.w_min + (0.9 - self.w_min) * ((max_iterations - iteration) / max_iterations)
+            c1 = self.adaptive_c1(iteration, max_iterations)
+            c2 = self.adaptive_c2(iteration, max_iterations)
+            r1, r2 = np.random.rand(self.population_size, self.dim), np.random.rand(self.population_size, self.dim)
+            velocities = (self.w * velocities[:self.population_size] + 
+                          c1 * r1 * (personal_best_positions[:self.population_size] - population[:self.population_size]) +
+                          c2 * r2 * (global_best_position - population[:self.population_size]))
+            trial_population = population[:self.population_size] + velocities
+            trial_population = np.clip(trial_population, lb, ub)
+            
+            temperature = 1 - (iteration / max_iterations)  # Temperature-based annealing
+            for i in range(self.population_size):
+                if np.random.rand() < self.cr * temperature:  # Adapt crossover probability
+                    indices = np.random.choice(self.population_size, 5, replace=False)
+                    a, b, c, d, e = population[indices[0]], population[indices[1]], population[indices[2]], population[indices[3]], population[indices[4]]
+                    adaptive_f = self.f * (1 - (iteration / max_iterations) ** 2)  # Adaptive differential weight
+                    mutant = np.clip(a + adaptive_f * (b - c + d - e), lb, ub)
+                    j_rand = np.random.randint(self.dim)
+                    trial_population[i] = np.array([mutant[j] if np.random.rand() < self.cr or j == j_rand else trial_population[i][j] for j in range(self.dim)])
+            
+            trial_scores = np.array([func(ind) for ind in trial_population])
+            self.budget -= self.population_size
+            
+            improvement = trial_scores < personal_best_scores[:self.population_size]
+            personal_best_scores[:self.population_size][improvement] = trial_scores[improvement]
+            personal_best_positions[:self.population_size][improvement] = trial_population[improvement]
+            
+            best_trial_idx = np.argmin(trial_scores)
+            if trial_scores[best_trial_idx] < global_best_score:
+                global_best_score = trial_scores[best_trial_idx]
+                global_best_position = np.copy(trial_population[best_trial_idx])
+            
+            # Adaptive chaotic mutation
+            if np.random.rand() < 0.1:
+                chaotic_factor = np.random.rand()
+                global_best_position = lb + self.chaotic_map(chaotic_factor) * (ub - lb)
+            
+            iteration += 1
+            
+        return global_best_position

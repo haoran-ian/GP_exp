@@ -91,15 +91,15 @@ def benchmark_baseline(problem, budget, problem_name, runs=10):
                 ub_expanded = problem.bounds.ub[:, np.newaxis]
                 lshade = ModularDE(problem, budget=budget,
                                    lb=lb_expanded, ub=ub_expanded,
-                                #    base_sampler='uniform',
-                                #       mutation_base='target',
-                                #    mutation_reference='pbest',
-                                #    bound_correction='expc_center',
-                                   #    crossover='bin', 
-                                   lpsr=True, 
-                                #    lambda_=18*5,
-                                #    memory_size=6, use_archive=True,
-                                #    init_stats=True, 
+                                   base_sampler='uniform',
+                                   mutation_base='target',
+                                   mutation_reference='pbest',
+                                   bound_correction='expc_center',
+                                   crossover='bin',
+                                   lpsr=True,
+                                   lambda_=18*5,
+                                   memory_size=6, use_archive=True,
+                                   init_stats=True,
                                    adaptation_method_F='shade',
                                    adaptation_method_CR='shade')
                 lshade.run()
@@ -112,8 +112,8 @@ def extract_exp_paths_from_name(exp_name: str, problem_name: str,
                                 LLaMEA_exp_root: str = 'data/LLaMEA_exp'):
     exp_paths = []
     parent_folder = problem_name
-    if 'BBOB' in exp_name:
-        parent_folder = 'LLaMEA_BBOB'
+    # if 'BBOB' in exp_name:
+    #     parent_folder = 'LLaMEA_BBOB'
     folders = os.listdir(os.path.join(LLaMEA_exp_root, parent_folder))
     for folder in folders:
         if folder.split('-')[-1] == exp_name:
@@ -123,16 +123,18 @@ def extract_exp_paths_from_name(exp_name: str, problem_name: str,
 
 if __name__ == '__main__':
     budget_cof = 100
-    # problem_name = 'meta_surface'
-    problem_name = 'photonic_10layers_bragg'
-    problem = get_photonic_problem(
-        num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
-    # problem = get_meta_surface_problem()
+    problem_name = 'meta_surface'
+    # problem_name = 'photonic_2layers_ellipsometry'
+    # problem_name = 'photonic_10layers_bragg'
+    # problem = get_photonic_problem(problem_type=PROBLEM_TYPE.ELLIPSOMETRY)
+    # problem = get_photonic_problem(
+    #     num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
+    problem = get_meta_surface_problem()
     dim = problem.meta_data.n_variables
     if not os.path.exists(f'data/benchmark_algs/{problem_name}'):
         os.mkdir(f'data/benchmark_algs/{problem_name}')
     exp_names = [
-        f'BBOB_{10}xD',
+        f'BBOB_{dim}D_{budget_cof}xD',
         f'{problem_name}_{budget_cof}xD',
         f'gp_func_{problem_name}_{budget_cof}xD',
     ]

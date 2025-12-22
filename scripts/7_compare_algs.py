@@ -66,11 +66,19 @@ def curve_plot(df, by: str, curve_subset, evaluations: int, title: str):
     x = np.arange(evaluations)
     for i in range(len(curve_subset)):
         curve_label = curve_subset[i]
-        df_subset = df[df[by] == curve_label]
-        plt.plot(x, df_subset['mean'], color=colors[i], linestyle=linestyles[i],
+        df_subset = df[(df[by] == curve_label) & (
+            df['evaluations'] <= evaluations)]
+        window_size = int(evaluations/100)
+        smoothed_mean = df_subset['mean'].rolling(window=window_size,
+                                                  center=True,
+                                                  min_periods=1).median()
+        smoothed_std = df_subset['std'].rolling(window=window_size,
+                                                center=True,
+                                                min_periods=1).median()
+        plt.plot(x, smoothed_mean, color=colors[i], linestyle=linestyles[i],
                  label=curve_label)
-        plt.fill_between(x, df_subset['mean'] - df_subset['std'],
-                         df_subset['mean'] + df_subset['std'],
+        plt.fill_between(x, smoothed_mean - smoothed_std,
+                         smoothed_mean + smoothed_std,
                          color=colors[i], alpha=0.05)
     plt.xlabel('evaluations')
     plt.ylabel('fitness')
@@ -97,6 +105,7 @@ def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
                 ioh_dat_path = os.path.join(
                     exp_folder,
                     f'data_f60_{problem_name}/IOHprofiler_f60_DIM{dim}.dat')
+                # f'data_f60_ellipsometry/IOHprofiler_f60_DIM{dim}.dat')
                 y_runs = extrat_ys_from_ioh_dat(ioh_dat_path)
                 y_exps_by_source += [y_runs]
         df = unit_y_runs_from_LLaMEA_exps(y_exps_by_source)
@@ -130,7 +139,8 @@ def select_nbest_algs_from_LLaMEA_runs(df_AOCC, n: int = 1):
     )
 
 
-def compare_AOCC_by_source(df_merged, problem_name, nbest: int = 1):
+def compare_AOCC_by_source(df_merged, problem_name, evaluations: int,
+                           nbest: int = 1):
     def calculate_auc_vectorized(group):
         budget = group['evaluations'].max()
         raw_y_positive = group['raw_y_normalized'].clip(lower=1e-8)
@@ -139,6 +149,7 @@ def compare_AOCC_by_source(df_merged, problem_name, nbest: int = 1):
         group = group.copy()
         group['AOCC'] = AOCC
         return group
+    df_merged = df_merged[df_merged['evaluations'] <= evaluations]
     df_merged = df_merged.groupby(
         ['LLaMEA_run', 'alg_run', 'source']).apply(calculate_auc_vectorized)
     df_merged = df_merged.reset_index(drop=True)
@@ -151,7 +162,16 @@ def compare_AOCC_by_source(df_merged, problem_name, nbest: int = 1):
     df_AOCC = df_AOCC.sort_values(['AOCC'])
     df_AOCC = df_AOCC.reset_index(drop=True)
     best_LLaMEA_algs = select_nbest_algs_from_LLaMEA_runs(df_AOCC, nbest)
-    box_plot(df_AOCC, 'AOCC', 'source', f'AOCC_compare_{problem_name}_boxplot')
+    filtered_rows = []
+    for source in df_AOCC['source'].unique():
+        if source in best_LLaMEA_algs:
+            best_algs = best_LLaMEA_algs[source]
+            source_mask = (df_AOCC['source'] == source) & (
+                df_AOCC['LLaMEA_run'].isin(best_algs))
+            filtered_rows.append(df_AOCC[source_mask])
+    df_AOCC_best = pd.concat(filtered_rows, ignore_index=True)
+    box_plot(df_AOCC_best, 'AOCC', 'source',
+             f'AOCC_compare_{problem_name}_boxplot')
     return best_LLaMEA_algs
 
 
@@ -188,13 +208,14 @@ if __name__ == '__main__':
     budget_cof = 100
     problem_name = 'meta_surface'
     # problem_name = 'photonic_10layers_bragg'
+    # problem_name = 'photonic_2layers_ellipsometry'
     source_names = [
-        'RandomSearch',
-        'DE',
-        'LSHADE',
+        f'RandomSearch_{budget_cof}xD',
+        f'DE_{budget_cof}xD',
+        f'LSHADE_{budget_cof}xD',
         f'{problem_name}_{budget_cof}xD',
         f'gp_func_{problem_name}_{budget_cof}xD',
-        f'BBOB_{10}xD',
+        f'BBOB_{dim}D_{budget_cof}xD',
         # 'CMA-ES',
     ]
     labels = [
@@ -212,7 +233,8 @@ if __name__ == '__main__':
                                         dim=dim, budget_cof=budget_cof,
                                         nbest=nbest, LLaMEA_runs=LLaMEA_runs)
     df_merged.to_csv("test.csv", index=False)
-    best_LLaMEA_algs = compare_AOCC_by_source(df_merged, problem_name, nbest=1)
+    best_LLaMEA_algs = compare_AOCC_by_source(df_merged, problem_name, nbest=1,
+                                              evaluations=dim*50)
     compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
                                         problem_name, labels,
-                                        evaluations=dim*budget_cof)
+                                        evaluations=dim*50)
