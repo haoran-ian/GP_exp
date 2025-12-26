@@ -20,7 +20,7 @@ from gp_fgenerator.utils import export_pickle, dataCleaning, dropFeatCorr
 
 
 def get_ela(f, X, y, exp_name):
-    path_base = os.path.join(os.getcwd(), f"data/ELA/ela_{exp_name}")
+    path_base = os.path.join(os.getcwd(), f'data/ELA/ela_{exp_name}')
     if not (os.path.isdir(path_base)):
         os.makedirs(path_base)
     df_ela = bootstrap_ela(X, y, bs_ratio=0.8, bs_repeat=5,
@@ -31,7 +31,7 @@ def get_ela(f, X, y, exp_name):
 
 
 def get_ela_normalize(fid, exp_name):
-    df_ela = pd.read_csv(f"data/ELA/ela_{exp_name}/ela_{fid}.csv")
+    df_ela = pd.read_csv(f'data/ELA/ela_{exp_name}/ela_{fid}.csv')
     df_ela = dataCleaning(df_ela, replace_nan=False, inf_as_nan=True,
                           col_allnan=False, col_anynan=False, row_anynan=False,
                           col_null_var=False, row_dupli=False, filter_key=[],
@@ -56,7 +56,7 @@ def get_ela_normalize(fid, exp_name):
 
 
 def get_ela_corr(fid, exp_name):
-    df_ela = pd.read_csv(f"data/ELA/ela_{exp_name}/ela_{fid}.csv")
+    df_ela = pd.read_csv(f'data/ELA/ela_{exp_name}/ela_{fid}.csv')
     df_clean = dataCleaning(df_ela, replace_nan=False, inf_as_nan=True,
                             col_allnan=True, col_anynan=True, row_anynan=False,
                             col_null_var=True, row_dupli=False, filter_key=[
@@ -69,24 +69,24 @@ def get_ela_corr(fid, exp_name):
         ignore_keys=[], verbose=True)
     list_ela = list(df_corr.keys())
     export_pickle(os.path.join(
-        os.getcwd(), f"data/ELA/ela_{exp_name}", 'ela_corr.pickle'), list_ela)
+        os.getcwd(), f'data/ELA/ela_{exp_name}', 'ela_corr.pickle'), list_ela)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     ############################################################################
     # num_pipes = 3
     # iid = 2
     # problem = get_pipes_topology_problem(iid=iid, num_pipes=num_pipes)
     # dim = problem.meta_data.n_variables
-    # exp_name = f"topology_{num_pipes}pipes_{dim}D_instance{iid}"
+    # exp_name = f'topology_{num_pipes}pipes_{dim}D_instance{iid}'
     ############################################################################
-    # exp_name = "fluid_dynamics_3pipes_iid0"
+    # exp_name = 'fluid_dynamics_3pipes_iid0'
     # problem = get_meta_surface_problem()
     # dim = problem.meta_data.n_variables
     ############################################################################
     # problem = get_photonic_problem(20, PROBLEM_TYPE.PHOTOVOLTAIC)
     # dim = problem.meta_data.n_variables
-    # exp_name = f"photonic_{dim}layers_photovoltaic"
+    # exp_name = f'photonic_{dim}layers_photovoltaic'
     ############################################################################
     for fid in range(1, 25):
         for dim in [2, 10, 20, 45]:
@@ -94,22 +94,22 @@ if __name__ == "__main__":
                 continue
             problem = ioh.get_problem(fid=fid, instance=1, dimension=dim,
                                       problem_class=ioh.ProblemClass.BBOB)
-            exp_name = f"BBOB_f{fid}_d{dim}"
+            exp_name = f'BBOB_f{fid}_d{dim}'
     ############################################################################
             ndoe = 150*dim
             doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,
                              upper_bound=problem.bounds.ub, round_off=2,
                              random_seed=42, verbose=True).create_doe()
-            if not os.path.exists(f"data/y/{exp_name}.npy"):
+            if not os.path.exists(f'data/y/{exp_name}.npy'):
                 l1 = ioh.logger.Analyzer(
-                    folder_name=f"data/ioh_dat/{exp_name}",
+                    folder_name=f'data/ioh_dat/{exp_name}',
                     triggers=[ioh.logger.trigger.ALWAYS],
                     store_positions=True
                 )
                 problem.attach_logger(l1)
                 y = problem(doe_x)
-                np.save(f"data/y/{exp_name}.npy", y)
-            y = np.load(f"data/y/{exp_name}.npy")
+                np.save(f'data/y/{exp_name}.npy', y)
+            y = np.load(f'data/y/{exp_name}.npy')
             fid = problem.meta_data.problem_id
             get_ela(problem, doe_x, y, exp_name)
             get_ela_normalize(fid, exp_name)
