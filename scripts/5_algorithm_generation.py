@@ -1,7 +1,6 @@
 # fmt: off
 import os
 import sys
-from cv2 import exp
 import ioh
 import torch
 import warnings

@@ -1,10 +1,8 @@
 # fmt: off
-from ast import Param
 import os
 import sys
 import ioh
 import numpy as np
-from pytest import param
 sys.path.insert(0, os.getcwd())
 from problems.fluid_dynamics.problem import get_pipes_topology_problem
 from problems.meta_surface.problem import get_meta_surface_problem
