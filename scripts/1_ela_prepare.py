@@ -84,25 +84,33 @@ if __name__ == "__main__":
     # problem = get_meta_surface_problem()
     # dim = problem.meta_data.n_variables
     ############################################################################
-    problem = get_photonic_problem(20, PROBLEM_TYPE.PHOTOVOLTAIC)
-    dim = problem.meta_data.n_variables
-    exp_name = f"photonic_{dim}layers_photovoltaic"
+    # problem = get_photonic_problem(20, PROBLEM_TYPE.PHOTOVOLTAIC)
+    # dim = problem.meta_data.n_variables
+    # exp_name = f"photonic_{dim}layers_photovoltaic"
     ############################################################################
-    ndoe = 150*dim
-    doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,
-                     upper_bound=problem.bounds.ub, round_off=2, random_seed=42,
-                     verbose=True).create_doe()
-    if not os.path.exists(f"data/y/{exp_name}.npy"):
-        l1 = ioh.logger.Analyzer(
-            folder_name=f"data/ioh_dat/{exp_name}",
-            triggers=[ioh.logger.trigger.ALWAYS],
-            store_positions=True
-        )
-        problem.attach_logger(l1)
-        y = problem(doe_x)
-        np.save(f"data/y/{exp_name}.npy", y)
-    y = np.load(f"data/y/{exp_name}.npy")
-    fid = problem.meta_data.problem_id
-    get_ela(problem, doe_x, y, exp_name)
-    get_ela_normalize(fid, exp_name)
-    get_ela_corr(fid, exp_name)
+    for fid in range(1, 25):
+        for dim in [2, 10, 20, 45]:
+            if os.path.exists(f'data/ELA/ela_BBOB_f{fid}_d{dim}/ela_{fid}.csv'):
+                continue
+            problem = ioh.get_problem(fid=fid, instance=1, dimension=dim,
+                                      problem_class=ioh.ProblemClass.BBOB)
+            exp_name = f"BBOB_f{fid}_d{dim}"
+    ############################################################################
+            ndoe = 150*dim
+            doe_x = sampling('sobol', n=ndoe, lower_bound=problem.bounds.lb,
+                             upper_bound=problem.bounds.ub, round_off=2,
+                             random_seed=42, verbose=True).create_doe()
+            if not os.path.exists(f"data/y/{exp_name}.npy"):
+                l1 = ioh.logger.Analyzer(
+                    folder_name=f"data/ioh_dat/{exp_name}",
+                    triggers=[ioh.logger.trigger.ALWAYS],
+                    store_positions=True
+                )
+                problem.attach_logger(l1)
+                y = problem(doe_x)
+                np.save(f"data/y/{exp_name}.npy", y)
+            y = np.load(f"data/y/{exp_name}.npy")
+            fid = problem.meta_data.problem_id
+            get_ela(problem, doe_x, y, exp_name)
+            get_ela_normalize(fid, exp_name)
+            get_ela_corr(fid, exp_name)

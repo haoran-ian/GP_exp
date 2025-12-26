@@ -13,7 +13,7 @@ class PROBLEM_TYPE(Enum):
 
 
 def get_photonic_problem(num_layers: int = 10,
-                           problem_type: PROBLEM_TYPE = PROBLEM_TYPE.BRAGG):
+                         problem_type: PROBLEM_TYPE = PROBLEM_TYPE.BRAGG):
     if problem_type == PROBLEM_TYPE.BRAGG:
         nb_layers = num_layers
         target_wl = 600.0  # nm
@@ -21,11 +21,11 @@ def get_photonic_problem(num_layers: int = 10,
         mat1 = 1.4
         mat2 = 1.8
         prob = brag_mirror(nb_layers, target_wl, mat_env, mat1, mat2)
-        ioh.problem.wrap_real_problem(prob, name=f"brag_mirror_{nb_layers}",
-                                      optimization_type=ioh.OptimizationType.MIN)
-        problem = ioh.get_problem(f"brag_mirror_{nb_layers}", dimension=prob.n)
-        problem.bounds.lb = prob.lb
-        problem.bounds.ub = prob.ub
+        ioh.problem.wrap_real_problem(prob, name=f"photonic_{nb_layers}layers_bragg",
+                                      optimization_type=ioh.OptimizationType.MIN,
+                                      lb=prob.min_thick, ub=prob.max_thick)
+        problem = ioh.get_problem(f"photonic_{nb_layers}layers_bragg",
+                                  dimension=prob.n)
         return problem
     elif problem_type == PROBLEM_TYPE.ELLIPSOMETRY:
         mat_env = 1.0
@@ -39,9 +39,10 @@ def get_photonic_problem(num_layers: int = 10,
         angle = 40*np.pi/180  # rad
         prob = ellipsometry(mat_env, mat_substrate, nb_layers, min_thick, max_thick,
                             min_eps, max_eps, wavelengths, angle)
-        ioh.problem.wrap_real_problem(prob, name="ellipsometry",
+        ioh.problem.wrap_real_problem(prob, name="photonic_2layers_ellipsometry",
                                       optimization_type=ioh.OptimizationType.MIN,)
-        problem = ioh.get_problem("ellipsometry", dimension=prob.n)
+        problem = ioh.get_problem("photonic_2layers_ellipsometry",
+                                  dimension=prob.n)
         problem.bounds.lb = prob.lb
         problem.bounds.ub = prob.ub
         return problem
@@ -53,12 +54,11 @@ def get_photonic_problem(num_layers: int = 10,
         wl_max = 750
         prob = sophisticated_antireflection_design(nb_layers, min_thick, max_thick,
                                                    wl_min, wl_max)
-        ioh.problem.wrap_real_problem(prob, name=f"sophisticated_antireflection_design_{nb_layers}",
-                                      optimization_type=ioh.OptimizationType.MIN)
-        problem = ioh.get_problem(f"sophisticated_antireflection_design_{nb_layers}",
+        ioh.problem.wrap_real_problem(prob, name=f"photonic_{nb_layers}layers_photovoltaic",
+                                      optimization_type=ioh.OptimizationType.MIN,
+                                      lb=prob.min_thick, ub=prob.max_thick)
+        problem = ioh.get_problem(f"photonic_{nb_layers}layers_photovoltaic",
                                   dimension=prob.n)
-        problem.bounds.lb = prob.lb
-        problem.bounds.ub = prob.ub
         return problem
     else:
         print(f"PROBLEM_TYPE {problem_type} is not supported.")

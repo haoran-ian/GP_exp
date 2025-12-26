@@ -1,0 +1,75 @@
+import numpy as np
+
+class EnhancedHybridPSO_DE:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.pop_size = 20
+        self.w_max = 0.9
+        self.w_min = 0.4
+        self.c1 = 1.5
+        self.c2 = 1.5
+        self.F_max = 1.0
+        self.F_min = 0.5
+        self.CR = 0.9
+        self.epsilon = 1e-8  # Small constant to prevent division by zero
+        self.dynamic_pop_size_factor = 0.2  # Factor indicating how much to adjust the population size
+
+    def __call__(self, func):
+        lower_bound, upper_bound = func.bounds.lb, func.bounds.ub
+        swarm = np.random.uniform(lower_bound, upper_bound, (self.pop_size, self.dim))
+        velocities = np.random.uniform(-1, 1, (self.pop_size, self.dim))
+        personal_best_positions = np.copy(swarm)
+        personal_best_scores = np.array([func(ind) for ind in swarm])
+        global_best_position = personal_best_positions[np.argmin(personal_best_scores)]
+        
+        eval_count = self.pop_size
+
+        while eval_count < self.budget:
+            # Calculate diversity
+            diversity = np.mean(np.std(swarm, axis=0))
+            # Adapt inertia weight based on diversity
+            self.w = self.w_max - (self.w_max - self.w_min) * (diversity / (diversity + self.epsilon))
+            
+            # Calculate improvement rate
+            improvement = np.mean(personal_best_scores) - np.min(personal_best_scores)
+            # Adjust population size based on improvement rate
+            if improvement < self.epsilon:
+                self.pop_size = min(self.pop_size + int(self.dynamic_pop_size_factor * self.pop_size), self.budget - eval_count)
+                new_swarm = np.random.uniform(lower_bound, upper_bound, (self.pop_size - len(swarm), self.dim))
+                new_velocities = np.random.uniform(-1, 1, (self.pop_size - len(velocities), self.dim))
+                swarm = np.vstack((swarm, new_swarm))
+                velocities = np.vstack((velocities, new_velocities))
+                personal_best_positions = np.vstack((personal_best_positions, new_swarm))
+                personal_best_scores = np.append(personal_best_scores, [func(ind) for ind in new_swarm])
+                eval_count += len(new_swarm)
+
+            # PSO Update
+            r1, r2 = np.random.rand(self.pop_size, self.dim), np.random.rand(self.pop_size, self.dim)
+            velocities = (self.w * velocities +
+                          self.c1 * r1 * (personal_best_positions - swarm) +
+                          self.c2 * r2 * (global_best_position - swarm))
+            swarm = np.clip(swarm + velocities, lower_bound, upper_bound)
+            
+            # DE Update
+            for i in range(self.pop_size):
+                if eval_count >= self.budget:
+                    break
+                indices = [idx for idx in range(self.pop_size) if idx != i]
+                a, b, c = np.random.choice(indices, 3, replace=False)
+                # Adaptive F based on diversity
+                self.F = self.F_max - (self.F_max - self.F_min) * (diversity / (diversity + self.epsilon))
+                mutant = np.clip(swarm[a] + self.F * (swarm[b] - swarm[c]), lower_bound, upper_bound)
+                crossover = np.random.rand(self.dim) < self.CR
+                if not np.any(crossover):
+                    crossover[np.random.randint(0, self.dim)] = True
+                trial = np.where(crossover, mutant, swarm[i])
+                trial_score = func(trial)
+                eval_count += 1
+                if trial_score < personal_best_scores[i]:
+                    personal_best_positions[i] = trial
+                    personal_best_scores[i] = trial_score
+                    if trial_score < func(global_best_position):
+                        global_best_position = trial
+
+        return global_best_position

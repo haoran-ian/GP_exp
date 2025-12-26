@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 10, 
+	"function_name": "EllipsoidRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f10_EllipsoidRotated/IOHprofiler_f10_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1500, "best": {"evals": 1375, "y": 63555.39207153515, "x": [0.62, -0.55, -1.05, 0.98, 0.9, 4.75, -4.28, 4.53, 4.29, 2.71]}}
+		]}
+	]
+}

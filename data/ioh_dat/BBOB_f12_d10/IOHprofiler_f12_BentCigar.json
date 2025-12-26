@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1500, "best": {"evals": 1346, "y": 24579014.055236798, "x": [0.31, 4.76, 0.51, -1.21, -0.66, -3.06, -2.09, -0.16, 2.73, -1.35]}}
+		]}
+	]
+}

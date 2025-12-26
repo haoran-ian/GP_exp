@@ -1,0 +1,62 @@
+import numpy as np
+
+class HybridDEPSO:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.population_size = max(4, self.dim * 2)  # Adaptive population size
+        self.lb = -5.0  # Lower bound
+        self.ub = 5.0   # Upper bound
+        self.population = np.random.uniform(self.lb, self.ub, (self.population_size, dim))
+        self.velocities = np.random.uniform(-1, 1, (self.population_size, dim))
+        self.best_positions = np.copy(self.population)
+        self.global_best_position = None
+        self.best_values = np.full(self.population_size, np.inf)
+        self.global_best_value = np.inf
+        self.f_evals = 0
+
+    def evaluate(self, func, pos):
+        if self.f_evals < self.budget:
+            value = func(pos)
+            self.f_evals += 1
+            return value
+        return np.inf
+
+    def update_positions(self, func):
+        for i in range(self.population_size):
+            fitness_value = self.evaluate(func, self.population[i])
+            if fitness_value < self.best_values[i]:
+                self.best_values[i] = fitness_value
+                self.best_positions[i] = self.population[i]
+
+            if fitness_value < self.global_best_value:
+                self.global_best_value = fitness_value
+                self.global_best_position = self.population[i]
+
+    def differential_evolution_step(self):
+        for i in range(self.population_size):
+            indices = np.random.choice(self.population_size, 3, replace=False)
+            x1, x2, x3 = self.population[indices]
+            mutant = x1 + 0.8 * (x2 - x3)
+            mutant = np.clip(mutant, self.lb, self.ub)
+            trial = np.where(np.random.rand(self.dim) < 0.9, mutant, self.population[i])
+            trial_fitness = self.evaluate(func, trial)
+            if trial_fitness < self.best_values[i]:
+                self.population[i] = trial
+                self.best_values[i] = trial_fitness
+
+    def particle_swarm_optimization_step(self):
+        inertia_weight = 0.5 + np.random.rand() / 2  # Dynamic inertia weight
+        for i in range(self.population_size):
+            r1, r2 = np.random.rand(2)
+            cognitive = 2.0 * r1 * (self.best_positions[i] - self.population[i])
+            social = 2.0 * r2 * (self.global_best_position - self.population[i])
+            self.velocities[i] = inertia_weight * self.velocities[i] + cognitive + social
+            self.population[i] = np.clip(self.population[i] + self.velocities[i], self.lb, self.ub)
+
+    def __call__(self, func):
+        while self.f_evals < self.budget:
+            self.update_positions(func)
+            self.differential_evolution_step()
+            self.particle_swarm_optimization_step()
+        return self.global_best_position, self.global_best_value

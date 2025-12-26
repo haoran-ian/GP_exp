@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1500, "best": {"evals": 504, "y": 134.7324803850697, "x": [-3.11, 3.14, 0.96, 1.58, 2.91, 1.89, 3.07, 0.25, 2.83, -1.11]}}
+		]}
+	]
+}
