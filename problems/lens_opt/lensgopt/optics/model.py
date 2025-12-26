@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import NamedTuple, Sequence
+from typing import NamedTuple, Sequence, Tuple
 
 import jax.numpy as jnp
 
@@ -104,10 +104,10 @@ class LensSystemConstants(NamedTuple):
     # Number of surfaces and parameters per surface
     num_surfaces: int
     num_parameters_per_surface: tuple  # shape = (num_surfaces,)
-    surface_types: tuple[str, ...]  # shape = (num_surfaces,) (Spheric, Aspheric, ...)
+    surface_types: Tuple[str, ...]  # shape = (num_surfaces,) (Spheric, Aspheric, ...)
 
     # Refractive index catalogs assigned to each surface
-    ior_catalogs: tuple[ior_catalogs.RefractiveIndexCatalog, ...]
+    ior_catalogs: Tuple[ior_catalogs.RefractiveIndexCatalog, ...]
     aperture_stop_index: int
 
     # Target performance values

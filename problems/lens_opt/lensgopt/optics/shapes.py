@@ -1,6 +1,7 @@
 import sys
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+from typing import Tuple
 
 import jax
 import jax.numpy as jnp
@@ -171,7 +172,8 @@ class Spheric(RotSymSurface):
             D = inner_ed**2 - (ne2 - r2)
 
             valid = D > 1e-8  # rays with real intersection
-            sqrtD = jnp.sqrt(jnp.where(valid, D, 1.0))  # safe dummy value for AD
+            # safe dummy value for AD
+            sqrtD = jnp.sqrt(jnp.where(valid, D, 1.0))
 
             # Compute alpha for converging (r > 0) or diverging (r < 0) surfaces
             alpha_raw = jnp.where(
@@ -190,11 +192,13 @@ class Spheric(RotSymSurface):
             hi = jnp.maximum(d, limiting_vertex_z) + self.eps
             valid &= (z >= lo) & (z <= hi)  # combine with existing mask
 
-            sol = jnp.where(valid[..., None], sol, 0.0)  # reapply z-bound masking
+            # reapply z-bound masking
+            sol = jnp.where(valid[..., None], sol, 0.0)
             return valid, sol
 
         is_plane = jnp.isinf(self.r)
-        valid, sol = jax.lax.cond(is_plane, planar_case, sphere_case, operand=None)
+        valid, sol = jax.lax.cond(
+            is_plane, planar_case, sphere_case, operand=None)
 
         return valid, sol
 
@@ -263,7 +267,7 @@ def create_surface_by_name(
     return cls.create(vertice_z, params)
 
 
-def flatten_surfaces(surfaces: tuple[RotSymSurface, ...]):
+def flatten_surfaces(surfaces: Tuple[RotSymSurface, ...]):
     num_parameters_per_surface = []
     surface_types = []
     curvature_parameters = []
@@ -280,6 +284,6 @@ def flatten_surfaces(surfaces: tuple[RotSymSurface, ...]):
     return (
         tuple(num_parameters_per_surface),
         tuple(surface_types),
-        jnp.concat(curvature_parameters, axis=0),
+        jnp.concatenate(curvature_parameters, axis=0),
         jnp.array(distances_z),
     )

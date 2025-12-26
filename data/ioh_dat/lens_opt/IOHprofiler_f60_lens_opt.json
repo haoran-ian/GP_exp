@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 60, 
+	"function_name": "lens_opt", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 18,
+		"path": "data_f60_lens_opt/IOHprofiler_f60_DIM18.dat",
+		"runs": [
+			{"instance": 1, "evals": 2700, "best": {"evals": 2450, "y": 14873.356115839464, "x": [0.21, 0.02, 0.29, 0.86, 0.45, -0.1, -0.21, -0.37, -0.11, -0.28, 0.5, -0.79, -0.89, 0.77, 0.35, 0.35, 0.41, -0.7]}}
+		]}
+	]
+}

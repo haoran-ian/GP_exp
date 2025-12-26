@@ -1,9 +1,12 @@
 # fmt: off
 from importlib import reload
 
-import jax
-import jax.numpy as jnp
+import os
+import sys
+import ioh
 import numpy as np
+import jax.numpy as jnp
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import lensgopt.materials.refractive_index_catalogs as refractive_index_catalogs
 import lensgopt.optics.loss as loss
@@ -26,103 +29,97 @@ reload(lens_creation)
 
 
 class lens_opt:
-    def __init__(self, triangle_edge_length: int = 18,
-                 RT_path: str = 'problems/meta_surface/model_best_RT.pth.tar',
-                 IT_path: str = 'problems/meta_surface/model_best_IT.pth.tar',
-                 device: str = 'cuda:0'):
-        self.triangle_edge_length = triangle_edge_length
-        self.RT_path = RT_path
-        self.IT_path = IT_path
-        self.device = device
-        self.regressor_real = WideResNet(depth=16, num_classes=100,
-                                         widen_factor=4, dropRate=0.3)
-        self.regressor_real = self.regressor_real.cuda()
-        checkpoint = torch.load(self.RT_path, weights_only=True)
-        self.regressor_real.load_state_dict(checkpoint['state_dict'])
-        self.regressor_real.eval()
-        self.regressor_imaginary = WideResNet(depth=16, num_classes=100,
-                                              widen_factor=4, dropRate=0.3)
-        self.regressor_imaginary = self.regressor_imaginary.cuda()
-        checkpoint = torch.load(self.IT_path, weights_only=True)
-        self.regressor_imaginary.load_state_dict(checkpoint['state_dict'])
-        self.regressor_imaginary.eval()
-        self.dim = int(self.triangle_edge_length *
-                       (self.triangle_edge_length + 1) / 2)
-        self.lb = np.array([0. for _ in range(self.dim)])
-        self.ub = np.array([1. for _ in range(self.dim)])
+
+    def __init__(self):
+        cnst, vars, material_ids = lens_creation.create_double_gauss(
+            sensor_z_mode="paraxial_solve"
+        )
+        len_catalog = 120
+        curvatures_optimized_idx = jnp.array([0, 1, 2, 3, 4, 6, 7, 8, 9, 10])
+        distances_optimized_idx = jnp.array([0, 1, 2, 3, 6, 7, 8, 9])
+        # materials_optimized_idx = jnp.array([1, 3, 4, 7, 8, 10])
+        self.materials_optimized_idx = jnp.empty(0)
+
+        low_distances = []
+        high_distances = []
+        internal_idx = set([0, 2, 3, 6, 7, 9])
+        for i in np.asarray(distances_optimized_idx):
+            if i in internal_idx:
+                low_distance = 0.5
+                high_distance = 15.0
+            else:
+                low_distance = 0.5
+                high_distance = 20.0
+            low_distances.append(low_distance)
+            high_distances.append(high_distance)
+
+        self.original_lb = (
+            [-0.1] * curvatures_optimized_idx.size
+            + low_distances
+            + [0] * self.materials_optimized_idx.size
+        )
+        self.original_ub = (
+            [0.1] * curvatures_optimized_idx.size
+            + high_distances
+            + [len_catalog - 1] * self.materials_optimized_idx.size
+        )
+        self.dim = len(self.original_lb)
+
+        self.lb = (
+            [-1.0] * curvatures_optimized_idx.size
+            + [-1.0] * distances_optimized_idx.size
+            + [0] * self.materials_optimized_idx.size
+        )
+        self.ub = (
+            [1.0] * curvatures_optimized_idx.size
+            + [1.0] * distances_optimized_idx.size
+            + [len_catalog - 1] * self.materials_optimized_idx.size
+        )
+
+        forward_transform, backward_transform = loss.create_affine_transforms(
+            (jnp.array(self.original_lb), jnp.array(self.original_ub)),
+            (jnp.array(self.lb), jnp.array(self.ub)),
+        )
+
+        self.resolver = loss.InverseCurvatureParameterBlockResolver(
+            curvatures_template=vars.curvature_parameters,
+            distances_template=vars.distances_z,
+            iors_template=vars.iors,
+            material_ids_template=material_ids,
+            curvatures_optimized_idx=curvatures_optimized_idx,
+            distances_optimized_idx=distances_optimized_idx,
+            materials_optimized_idx=self.materials_optimized_idx,
+            catalogs=cnst.ior_catalogs,
+            transform=forward_transform,
+            inverse_transform=backward_transform,
+            is_inverse_curvatures=True,
+        )
+        self.factory = loss.AutoLossFactory(
+            loss_full=lambda flat_params_, dists_, iors_: loss.loss(
+                cnst, flat_params_, dists_, iors_
+            ),
+            resolver=self.resolver,
+        )
+        self.f_loss_full = self.factory.make_jit_loss_full()
+        self.f_loss = self.factory.make_jit_loss()
+        self.f_grad = self.factory.make_grad()
+        self.f_loss_vmap = self.factory.make_vmap_loss()
 
     def __call__(self, x):
-        x = np.where(x <= 0.5, 0., 1.)
-        triangle = self.vector_to_triangle(x)
-        quarter_square = self.reflect_triangle(triangle)
-        square = self.rotate_around_corner(quarter_square)
-        x_in = self.create_final_image(square).reshape((1, 1, 36, 36))
-        x_in = torch.tensor(x_in).float().to(self.device)
-        logits_re = self.regressor_real(x_in)  # 1x100
-        logits_im = self.regressor_imaginary(x_in)  # 1x100
-        predicted = torch.sqrt(logits_re**2 + logits_im**2)  # Magnitude
-        predicted = predicted.reshape(1, 100)
-        x_axes = torch.linspace(0, 1, 100)  # Define x axis
-        target = 1 - 2 * (x_axes - 0.5) ** 2  # Obtain y values
-        target = target.reshape(1, -1)
-        target = target.cuda()
-        mae = torch.mean(torch.abs(predicted - target))  # MAE
-        return mae
+        values = self.f_loss_full(jnp.array(x))
+        loss = float(jnp.sum(values))
+        self.constr = np.asarray(values[1:]).tolist()
+        return loss
 
-    def vector_to_triangle(self, x):
-        triangle = np.zeros(
-            (self.triangle_edge_length, self.triangle_edge_length))
-        idx = 0
-        for i in range(self.triangle_edge_length):
-            for j in range(i + 1):
-                triangle[i, j] = x[idx]
-                idx += 1
-        return triangle
-
-    def reflect_triangle(self, triangle):
-        quarter_square = triangle.copy()
-        for i in range(self.triangle_edge_length):
-            for j in range(i + 1, self.triangle_edge_length):
-                quarter_square[i, j] = triangle[j, i]
-        return quarter_square
-
-    def rotate_around_corner(self, quarter_square):
-        size = quarter_square.shape[0] * 2
-        square = np.zeros((size, size))
-        rotated_90 = np.rot90(quarter_square)
-        rotated_180 = np.rot90(quarter_square, 2)
-        rotated_270 = np.rot90(quarter_square, 3)
-        square[:quarter_square.shape[0],
-               :quarter_square.shape[1]] = quarter_square
-        square[:quarter_square.shape[0],
-               quarter_square.shape[1]:] = rotated_270
-        square[quarter_square.shape[0]:,
-               quarter_square.shape[1]:] = rotated_180
-        square[quarter_square.shape[0]:,
-               :quarter_square.shape[1]] = rotated_90
-        return square
-
-    def create_final_image(self, square):
-        square_36 = cv2.resize(square, (36, 36))
-        square_36 = np.where(square_36 <= 0.5, 0., 1.)
-        # img = np.where(square_36 <= 0.5, 0, 255)
-        # i = 0
-        # while os.path.exists(f'data/temp/{i}.png'):
-        #     i += 1
-        # cv2.imwrite(f'data/temp/{i}.png', img)
-        return square_36
+    def constraints(self):
+        return self.constr
 
 
-def get_meta_surface_problem(
-        triangle_edge_length=9,
-        RT_path='problems/meta_surface/model_best_RT.pth.tar',
-        IT_path='problems/meta_surface/model_best_IT.pth.tar',
-        device='cuda:0'):
-    prob = meta_surface(triangle_edge_length=triangle_edge_length,
-                        RT_path=RT_path, IT_path=IT_path, device=device)
-    ioh.problem.wrap_real_problem(prob, name='meta_surface',
+def get_lens_opt_problem():
+    prob = lens_opt()
+    ioh.problem.wrap_real_problem(prob, name='lens_opt',
                                   optimization_type=ioh.OptimizationType.MIN)
-    problem = ioh.get_problem('meta_surface', dimension=prob.dim)
+    problem = ioh.get_problem('lens_opt', dimension=prob.dim)
     problem.bounds.lb = prob.lb
     problem.bounds.ub = prob.ub
     return problem

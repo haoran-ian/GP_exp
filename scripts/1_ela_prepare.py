@@ -10,6 +10,7 @@ sys.path.insert(0, os.getcwd())
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from problems.fluid_dynamics.problem import get_pipes_topology_problem
+from problems.lens_opt.problem import get_lens_opt_problem
 from problems.meta_surface.problem import get_meta_surface_problem
 from problems.photovotaic_problems.problem import PROBLEM_TYPE, get_photonic_problem
 from gp_fgenerator.sampling import sampling
@@ -88,9 +89,13 @@ if __name__ == '__main__':
     # dim = problem.meta_data.n_variables
     # exp_name = f'photonic_{dim}layers_photovoltaic'
     ############################################################################
+    # problem = get_lens_opt_problem()
+    # dim = problem.meta_data.n_variables
+    # exp_name = 'lens_opt'
+    ############################################################################
     for fid in range(1, 25):
-        for dim in [2, 10, 20, 45]:
-            if os.path.exists(f'data/ELA/ela_BBOB_f{fid}_d{dim}/ela_{fid}.csv'):
+        for dim in [2, 10, 18, 20, 45]:
+            if os.path.exists(f'data/ELA/BBOB/ela_BBOB_f{fid}_d{dim}/ela_{fid}.csv'):
                 continue
             problem = ioh.get_problem(fid=fid, instance=1, dimension=dim,
                                       problem_class=ioh.ProblemClass.BBOB)

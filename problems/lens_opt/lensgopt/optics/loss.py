@@ -1081,7 +1081,7 @@ def numerical_grad_vec(f, x, h=1e-5):
 def create_lens_descriptor_bounds(
     curvatures_optimized_ids: jnp.ndarray,
     materials_optimized_ids: jnp.ndarray,
-    catalogs_full: tuple[ior_catalogs.RefractiveIndexCatalog],
+    catalogs_full: Tuple[ior_catalogs.RefractiveIndexCatalog],
 ) -> Tuple[jnp.ndarray, jnp.ndarray]:
     sz = curvatures_optimized_ids.size + materials_optimized_ids.size
     lower = [0] * sz
@@ -1104,7 +1104,7 @@ def unpack_materail_ids(
 
 
 def compute_curvatures_bb_by_descriptor(
-    descriptor: tuple[int, ...],
+    descriptor: Tuple[int, ...],
     len_optimized_curvatures: int,
 ):
     lo, hi = [], []
@@ -1140,7 +1140,7 @@ class LossFactoryFixedDescriptor:
         curvatures_optimized_idx: jnp.ndarray,
         distances_optimized_idx: jnp.ndarray,
         materials_optimized_idx: jnp.ndarray,
-        descriptor: tuple[int, ...],
+        descriptor: Tuple[int, ...],
     ):
         packed_material_ids = descriptor[curvatures_optimized_idx.size :]
         full_material_ids = material_ids_template.at[materials_optimized_idx].set(

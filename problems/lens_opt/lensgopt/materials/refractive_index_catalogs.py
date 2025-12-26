@@ -2,7 +2,7 @@ import math
 import sys
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Dict, List, Sequence
+from typing import Dict, List, Sequence, Optional
 
 import jax.numpy as jnp
 import numpy as np
@@ -110,7 +110,7 @@ class SellmeierGlassCatalog(RefractiveIndexCatalog):
         l2 = (lambda_nm / 1000.0) ** 2
         return np.sqrt(1.0 + l2 * (B1 / (l2 - C1) + B2 / (l2 - C2) + B3 / (l2 - C3)))
 
-    def precompute_iors(self) -> dict[str, jnp.ndarray]:
+    def precompute_iors(self) -> Dict[str, jnp.ndarray]:
         # Retrieve Sellmeier constants for all materials: shape (n_materials, 6)
         constants = self.get_all_sellmeier_constants()
         # Split into B coefficients and C coefficients
@@ -170,7 +170,7 @@ class SellmeierGlassCatalog(RefractiveIndexCatalog):
         """
         return name in self.df["Glass"].values
 
-    def get_index_by_glass_name(self, name: str) -> int | None:
+    def get_index_by_glass_name(self, name: str) -> Optional[int]:
         """
         Get the index of a glass by its name.
 

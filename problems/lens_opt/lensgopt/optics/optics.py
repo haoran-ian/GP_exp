@@ -228,8 +228,8 @@ class RayRMSSpotSize(NamedTuple):
 
     @staticmethod
     def create_edge_thickness_rays(
-        factor_angle: tuple[float, ...],
-        factor_dEP: tuple[float, ...],
+        factor_angle: Tuple[float, ...],
+        factor_dEP: Tuple[float, ...],
         entrance_pupil_dist: float,
         entrance_pupil_diam: float,
         lens_field: model.Field,
@@ -321,7 +321,7 @@ def paraxial_trace_backward(
     paraxial_ray: jnp.ndarray,
     start_surface: int,
     stop_surface: int,
-    iors: tuple[jnp.ndarray, ...],
+    iors: Tuple[jnp.ndarray, ...],
 ):
     for i in range(start_surface, stop_surface, -1):
         d = vertices[i]
@@ -342,7 +342,7 @@ def paraxial_trace_forward(
     paraxial_ray: jnp.ndarray,
     start_surface: int,
     stop_surface: int,
-    iors: tuple[jnp.ndarray, ...],
+    iors: Tuple[jnp.ndarray, ...],
 ):
     for i in range(start_surface, stop_surface + 1):
         d = vertices[i]
@@ -361,7 +361,7 @@ def find_entrance_pupil_dist(
     vertices_z: jnp.ndarray,
     aperture_stop_index: int,
     pangle: float,
-    iors: tuple[jnp.ndarray, ...],
+    iors: Tuple[jnp.ndarray, ...],
 ):
     ray = paraxial_trace_backward(
         rs=rs,
@@ -375,7 +375,7 @@ def find_entrance_pupil_dist(
 
 
 def find_effective_focal_length(
-    rs: jnp.ndarray, vertices_z: jnp.ndarray, y1: float, iors: tuple[jnp.array, ...]
+    rs: jnp.ndarray, vertices_z: jnp.ndarray, y1: float, iors: Tuple[jnp.array, ...]
 ):
     _, alpha = paraxial_trace_forward(
         rs=rs,
@@ -393,7 +393,7 @@ def find_image_plane_z(
     vertices_z: jnp.ndarray,
     marginal_ray_y0: float,
     marginal_ray_u0: float,
-    iors: tuple[jnp.array, ...],
+    iors: Tuple[jnp.array, ...],
 ):
     """
     Paraxial solve for sensor z-coordinate
@@ -410,33 +410,55 @@ def find_image_plane_z(
 
 
 def find_entrance_pupil_diameter(aperture: model.Aperture, object_z: float):
-    match aperture.type:
-        case "ED":
-            if object_z != -jnp.inf:
-                raise NotImplementedError(
-                    "Finite distances to the object are not supported yet"
-                )
-            else:
-                return aperture.max_d
-        case _:
-            raise ValueError(
-                f"Apperture type {aperture.type} is unknown or not implemented yet"
+    # match aperture.type:
+    #     case "ED":
+    #         if object_z != -jnp.inf:
+    #             raise NotImplementedError(
+    #                 "Finite distances to the object are not supported yet"
+    #             )
+    #         else:
+    #             return aperture.max_d
+    #     case _:
+    #         raise ValueError(
+    #             f"Apperture type {aperture.type} is unknown or not implemented yet"
+    #         )
+    if aperture.type == "ED":
+        if object_z != -jnp.inf:
+            raise NotImplementedError(
+                "Finite distances to the object are not supported yet"
             )
+        else:
+            return aperture.max_d
+    else:
+        raise ValueError(
+            f"Apperture type {aperture.type} is unknown or not implemented yet"
+        )
 
 
 def find_paraxial_marginal_ray(aperture: model.Aperture, object_z: float):
-    match aperture.type:
-        case "ED":
-            if object_z != -jnp.inf:
-                raise NotImplementedError(
-                    "Finite distances to the object are not supported yet"
-                )
-            else:
-                return jnp.array([aperture.max_d / 2, 0.0])
-        case _:
-            raise ValueError(
-                f"Apperture type {aperture.type} is unknown or not implemented yet"
+    # match aperture.type:
+    #     case "ED":
+    #         if object_z != -jnp.inf:
+    #             raise NotImplementedError(
+    #                 "Finite distances to the object are not supported yet"
+    #             )
+    #         else:
+    #             return jnp.array([aperture.max_d / 2, 0.0])
+    #     case _:
+    #         raise ValueError(
+    #             f"Apperture type {aperture.type} is unknown or not implemented yet"
+    #         )
+    if aperture.type == "ED":
+        if object_z != -jnp.inf:
+            raise NotImplementedError(
+                "Finite distances to the object are not supported yet"
             )
+        else:
+            return jnp.array([aperture.max_d / 2, 0.0])
+    else:
+        raise ValueError(
+            f"Apperture type {aperture.type} is unknown or not implemented yet"
+        )
 
 
 def apply_to_surfaces(f, vertices_z, flat_params, cnt_per_surface, types):

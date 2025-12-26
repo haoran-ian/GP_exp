@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 18,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM18.dat",
+		"runs": [
+			{"instance": 1, "evals": 2700, "best": {"evals": 1231, "y": 24.80837930733236, "x": [0.83, -3.62, 4.83, -2.05, 4.99, 2.15, -3.95, -1.9, 2.79, -1.68, -4.48, 3.63, 3.59, -3.69, 0.97, 2.91, 3.51, -2.05]}}
+		]}
+	]
+}

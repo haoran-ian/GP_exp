@@ -1,5 +1,5 @@
 import json
-from typing import Any, NamedTuple
+from typing import Any, NamedTuple, Tuple
 
 import jax.numpy as jnp
 import numpy as np
@@ -11,12 +11,12 @@ import lensgopt.optics.shapes as shapes
 class LensFromZMAXFormat(NamedTuple):
     lens_aperture: model.Aperture
     lens_field: model.Field
-    surfaces: tuple[shapes.RotSymSurface, ...]
-    thicknesses: tuple[float, ...]
+    surfaces: Tuple[shapes.RotSymSurface, ...]
+    thicknesses: Tuple[float, ...]
     object_distance: float
     sensor_distance: float
     aperture_stop_index: int
-    material_names: tuple[str, ...]
+    material_names: Tuple[str, ...]
 
 
 def parse_field_line(line: str) -> model.Field:
@@ -126,12 +126,12 @@ def parse_lens_zmax_format(
     """
     lens_aperture: model.Aperture = None
     lens_field: model.Field = None
-    surfaces: tuple[shapes.RotSymSurface, ...] = []
-    thicknesses: tuple[float, ...] = []
+    surfaces: Tuple[shapes.RotSymSurface, ...] = []
+    thicknesses: Tuple[float, ...] = []
     object_distance: float = None
     sensor_distance: float = None
     aperture_stop_index: int = None
-    material_names: tuple[str, ...] = []
+    material_names: Tuple[str, ...] = []
 
     # Running total of distance along z
     z_total = 0.0

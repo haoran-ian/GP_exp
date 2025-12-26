@@ -21,7 +21,7 @@ def compare_BBOB_real_problem(problem: ioh.problem.RealSingleObjective,
     values = [[]]
     keys = []
     for fid in range(1, 25):
-        bbob_ela_path = f'data/ELA/ela_BBOB_f{fid}_d{dim}'
+        bbob_ela_path = f'data/ELA/BBOB/ela_BBOB_f{fid}_d{dim}'
         if not os.path.exists(os.path.join(bbob_ela_path, f'ela_{fid}.csv')):
             continue
         candidate = pd.read_csv(os.path.join(bbob_ela_path, f'ela_{fid}.csv'))
