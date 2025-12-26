@@ -5,6 +5,7 @@ import ioh
 import pandas as pd
 sys.path.insert(0, os.getcwd())
 from problems.meta_surface.problem import get_meta_surface_problem
+from problems.lens_opt.problem import get_lens_opt_problem
 from problems.photovotaic_problems.problem import PROBLEM_TYPE, get_photonic_problem
 from gp_fgenerator.compute_ela import dist_wasserstein
 from gp_fgenerator.utils import read_pickle
@@ -37,6 +38,7 @@ def compare_BBOB_real_problem(problem: ioh.problem.RealSingleObjective,
 if __name__ == "__main__":
     problems = [
         get_meta_surface_problem(),
+        get_lens_opt_problem(),
         get_photonic_problem(problem_type=PROBLEM_TYPE.ELLIPSOMETRY),
         get_photonic_problem(num_layers=10, problem_type=PROBLEM_TYPE.BRAGG),
         get_photonic_problem(
@@ -47,6 +49,7 @@ if __name__ == "__main__":
     ]
     problem_names = [
         'meta_surface',
+        'lens_opt',
         'photonic_2layers_ellipsometry',
         'photonic_10layers_bragg',
         'photonic_10layers_photovoltaic',

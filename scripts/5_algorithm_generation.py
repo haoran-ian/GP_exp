@@ -61,9 +61,9 @@ real_problem = get_photonic_problem(
     num_layers=20, problem_type=PROBLEM_TYPE.PHOTOVOLTAIC)
 # real_problem = get_meta_surface_problem()
 dim = real_problem.meta_data.n_variables
-experiment_name = f'gp_func_{gp_exp_name}_{budget_cof}xD'
+# experiment_name = f'gp_func_{gp_exp_name}_{budget_cof}xD'
 # experiment_name = f'{gp_exp_name}_{budget_cof}xD'
-# experiment_name = f'BBOB_{gp_exp_name}_{budget_cof}xD'
+experiment_name = f'BBOB_{gp_exp_name}_{budget_cof}xD'
 
 budget = budget_cof * dim
 lb = real_problem.bounds.lb
@@ -175,7 +175,7 @@ The func() can only be called as many times as the budget allows, not more. Each
 Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
 '''
 
-for experiment_i in range(5):
+for experiment_i in range(3):
     # A 1+1 strategy
     es = LLaMEA(
         evaluateBBOB if 'BBOB' in experiment_name else evaluate_gp_func,
