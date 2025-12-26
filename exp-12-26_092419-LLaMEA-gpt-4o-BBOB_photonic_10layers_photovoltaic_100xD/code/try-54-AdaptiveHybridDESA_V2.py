@@ -1,0 +1,99 @@
+import numpy as np
+
+class AdaptiveHybridDESA_V2:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.initial_population_size = min(50, budget // 10)
+        self.population_size = self.initial_population_size
+        self.mutation_factor = 0.8
+        self.crossover_rate = 0.7
+        self.temperature = 1.0
+        self.cooling_rate = 0.99
+        self.population_management_interval = 5
+
+    def differential_evolution(self, population, fitness, func):
+        new_population = np.copy(population)
+        diversity = np.mean(np.std(population, axis=0))
+        adaptive_mutation_factor = self.mutation_factor * (1 + diversity)
+        adaptive_crossover_rate = self.crossover_rate * (1 - diversity)
+        
+        inertia_weight = 0.9 - (0.9 - 0.4) * (fitness - min(fitness)) / (max(fitness) - min(fitness) + 1e-7)
+
+        for i in range(self.population_size):
+            indices = list(range(self.population_size))
+            indices.remove(i)
+            a, b, c = np.random.choice(indices, 3, replace=False)
+            mutant_vector = (1 - inertia_weight[i]) * population[i] + inertia_weight[i] * (population[a] + adaptive_mutation_factor * (population[b] - population[c]))
+            trial_vector = np.copy(population[i])
+            crossover_points = np.random.rand(self.dim) < adaptive_crossover_rate
+            trial_vector[crossover_points] = mutant_vector[crossover_points]
+            trial_fitness = func(trial_vector)
+            if trial_fitness < fitness[i]:
+                new_population[i] = trial_vector
+                fitness[i] = trial_fitness
+        return new_population, fitness
+
+    def simulated_annealing(self, candidate, candidate_fitness, func, bounds):
+        perturbation = np.random.normal(0, 1, self.dim) * (bounds.ub - bounds.lb) * 0.1
+        new_candidate = np.clip(candidate + perturbation, bounds.lb, bounds.ub)
+        new_fitness = func(new_candidate)
+        if new_fitness < candidate_fitness or np.random.rand() < np.exp((candidate_fitness - new_fitness) / self.temperature):
+            return new_candidate, new_fitness
+        return candidate, candidate_fitness
+
+    def local_search(self, candidate, candidate_fitness, func, bounds):
+        step_size = (bounds.ub - bounds.lb) * 0.01
+        for _ in range(10):
+            perturbation = np.random.uniform(-step_size, step_size, self.dim)
+            new_candidate = np.clip(candidate + perturbation, bounds.lb, bounds.ub)
+            new_fitness = func(new_candidate)
+            if new_fitness < candidate_fitness:
+                candidate, candidate_fitness = new_candidate, new_fitness
+        return candidate, candidate_fitness
+
+    def manage_population(self, population, fitness):
+        if len(population) < self.initial_population_size * 2:
+            new_individuals = np.random.rand(self.initial_population_size, self.dim) * (func.bounds.ub - func.bounds.lb) + func.bounds.lb
+            new_fitness = np.array([func(ind) for ind in new_individuals])
+            population = np.concatenate((population, new_individuals))
+            fitness = np.concatenate((fitness, new_fitness))
+        else:
+            sorted_indices = np.argsort(fitness)
+            population = population[sorted_indices][:self.initial_population_size]
+            fitness = fitness[sorted_indices][:self.initial_population_size]
+        self.population_size = len(population)
+        return population, fitness
+
+    def __call__(self, func):
+        bounds = func.bounds
+        population = np.random.rand(self.population_size, self.dim) * (bounds.ub - bounds.lb) + bounds.lb
+        fitness = np.array([func(ind) for ind in population])
+        evaluations = self.population_size
+
+        while evaluations < self.budget:
+            if evaluations % self.population_management_interval == 0:
+                population, fitness = self.manage_population(population, fitness)
+
+            population, fitness = self.differential_evolution(population, fitness, func)
+            evaluations += self.population_size
+
+            best_idx = np.argmin(fitness)
+            best_candidate, best_fitness = population[best_idx], fitness[best_idx]
+            new_candidate, new_fitness = self.simulated_annealing(best_candidate, best_fitness, func, bounds)
+
+            if new_fitness < best_fitness:
+                population[best_idx] = new_candidate
+                fitness[best_idx] = new_fitness
+
+            evaluations += 1
+            self.temperature *= self.cooling_rate
+
+            if evaluations + 10 <= self.budget:
+                best_candidate, best_fitness = self.local_search(best_candidate, best_fitness, func, bounds)
+                if best_fitness < fitness[best_idx]:
+                    population[best_idx] = best_candidate
+                    fitness[best_idx] = best_fitness
+                evaluations += 10
+
+        return population[np.argmin(fitness)]

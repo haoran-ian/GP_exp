@@ -1,0 +1,63 @@
+import numpy as np
+
+class EnhancedEMADE:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.initial_population_size = 20
+        self.F = 0.9
+        self.CR = 0.7
+        self.best_solution = None
+        self.best_fitness = np.inf
+
+    def __call__(self, func):
+        lb, ub = func.bounds.lb, func.bounds.ub
+        pop_size = self.initial_population_size
+        pop = np.random.uniform(lb, ub, (pop_size, self.dim))
+        fitness = np.array([func(ind) for ind in pop])
+        evals = pop_size
+
+        while evals < self.budget:
+            for i in range(pop_size):
+                indices = [idx for idx in range(pop_size) if idx != i]
+                a, b, c = pop[np.random.choice(indices, 3, replace=False)]
+                F_adaptive = 0.5 + 0.5 * np.sin(np.pi * (fitness[i] / self.best_fitness))  # Adaptive scaling factor
+                mutant = np.clip(a + F_adaptive * (b - c), lb, ub)  # Use adaptive F
+
+                self.CR = 0.5 + 0.5 * np.cos(np.pi * (evals / self.budget))
+                crossover = np.random.rand(self.dim) < self.CR
+                trial = np.where(crossover, mutant, pop[i])
+
+                trial_fitness = func(trial)
+                evals += 1
+                if evals >= self.budget:
+                    break
+
+                if trial_fitness < fitness[i]:
+                    pop[i] = trial
+                    fitness[i] = trial_fitness
+                
+                if trial_fitness < self.best_fitness:
+                    self.best_fitness = trial_fitness
+                    self.best_solution = trial
+
+            self.F = 0.5 + 0.4 * np.sin((evals / self.budget)**2 * np.pi)
+
+            if evals < self.budget:
+                neighbors = self.get_neighbors(pop, self.best_solution, lb, ub)
+                for neighbor in neighbors:
+                    ns_fitness = func(neighbor)
+                    evals += 1
+                    if ns_fitness < self.best_fitness:
+                        self.best_fitness = ns_fitness
+                        self.best_solution = neighbor
+
+            if evals / self.budget > 0.5:
+                pop_size = max(10, int(self.initial_population_size * (1 - (evals / self.budget))))
+
+        return self.best_solution, self.best_fitness
+
+    def get_neighbors(self, pop, solution, lb, ub):
+        epsilon = 0.1 * (ub - lb)
+        neighbors = [np.clip(solution + np.random.uniform(-epsilon, epsilon), lb, ub) for _ in range(5)]
+        return neighbors
