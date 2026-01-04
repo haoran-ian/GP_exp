@@ -203,28 +203,29 @@ def compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
 if __name__ == '__main__':
     nbest = 1
     LLaMEA_runs = 5
-    dim = 2
+    dim = 10
     budget_cof = 100
     # problem_name = 'meta_surface'
-    # problem_name = 'photonic_10layers_bragg'
-    problem_name = 'photonic_2layers_ellipsometry'
+    problem_name = 'photonic_10layers_bragg'
+    # problem_name = 'photonic_2layers_ellipsometry'
     source_names = [
+        f'{problem_name}_{budget_cof}xD',
+        f'gp_func_{problem_name}_{budget_cof}xD',
+        # f'BBOB_{problem_name}_{budget_cof}xD',
+        f'BBOB_{dim}D_{budget_cof}xD',
         f'RandomSearch_{budget_cof}xD',
         f'DE_{budget_cof}xD',
         f'LSHADE_{budget_cof}xD',
-        f'{problem_name}_{budget_cof}xD',
-        f'gp_func_{problem_name}_{budget_cof}xD',
-        f'BBOB_{dim}D_{budget_cof}xD',
-        f'CMA-ES_{budget_cof}xD',
+        # f'CMA-ES_{budget_cof}xD',
     ]
     labels = [
-        'RandomSearch',
-        'DE',
-        'LSHADE',
         'real problem',
         'feature-based proxy',
         'BBOB',
-        'CMA-ES',
+        'RandomSearch',
+        'DE',
+        'LSHADE',
+        # 'CMA-ES',
     ]
     df_merged = build_ioh_dat_by_source(problem_name=problem_name,
                                         algorithm_source_names=source_names,

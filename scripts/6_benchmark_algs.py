@@ -129,17 +129,20 @@ def extract_exp_paths_from_name(exp_name: str, problem_name: str,
 if __name__ == '__main__':
     budget_cof = 100
     # problem_name = 'meta_surface'
-    problem_name = 'photonic_2layers_ellipsometry'
-    # problem_name = 'photonic_10layers_bragg'
-    problem = get_photonic_problem(problem_type=PROBLEM_TYPE.ELLIPSOMETRY)
+    # problem_name = 'photonic_2layers_ellipsometry'
+    # problem_name = 'photonic_20layers_bragg'
+    problem_name = 'photonic_10layers_photovoltaic'
+    # problem = get_photonic_problem(problem_type=PROBLEM_TYPE.ELLIPSOMETRY)
     # problem = get_photonic_problem(
     #     num_layers=10, problem_type=PROBLEM_TYPE.BRAGG)
+    problem = get_photonic_problem(
+        num_layers=10, problem_type=PROBLEM_TYPE.PHOTOVOLTAIC)
     # problem = get_meta_surface_problem()
     dim = problem.meta_data.n_variables
     if not os.path.exists(f'data/benchmark_algs/{problem_name}'):
         os.mkdir(f'data/benchmark_algs/{problem_name}')
     exp_names = [
-        f'BBOB_{dim}D_{budget_cof}xD',
+        f'BBOB_{problem_name}_{budget_cof}xD',
         f'{problem_name}_{budget_cof}xD',
         f'gp_func_{problem_name}_{budget_cof}xD',
     ]

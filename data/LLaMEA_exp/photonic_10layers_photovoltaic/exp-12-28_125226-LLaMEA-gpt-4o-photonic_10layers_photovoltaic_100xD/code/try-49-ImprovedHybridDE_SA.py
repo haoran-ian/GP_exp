@@ -1,0 +1,76 @@
+import numpy as np
+
+class ImprovedHybridDE_SA:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.population_size = 10 * dim
+        self.cr = 0.9
+        self.f_min = 0.5
+        self.f_max = 0.9
+        self.init_temperature = 100
+        self.cooling_rate = 0.99
+        self.temperature = self.init_temperature
+        self.eval_count = 0
+        self.dynamic_population_factor = 0.5
+
+    def opposition_based_learning(self, pop, lb, ub):
+        opposite_pop = lb + ub - pop
+        return np.clip(opposite_pop, lb, ub)
+
+    def adaptive_cooling_schedule(self):
+        self.temperature = self.init_temperature * (1 - self.eval_count / self.budget)
+
+    def adaptive_f(self):
+        return self.f_min + (self.f_max - self.f_min) * np.exp(-5 * self.eval_count / self.budget)
+
+    def dynamic_population_size(self):
+        return int(self.population_size * (1 + self.dynamic_population_factor * np.sin(np.pi * self.eval_count / self.budget)))
+
+    def stochastic_ranking(self, population, fitness):
+        sort_idx = np.argsort(fitness)
+        return population[sort_idx], fitness[sort_idx]
+
+    def __call__(self, func):
+        lb, ub = func.bounds.lb, func.bounds.ub
+        population = np.random.rand(self.population_size, self.dim) * (ub - lb) + lb
+        fitness = np.array([func(ind) for ind in population])
+        self.eval_count += self.population_size
+
+        while self.eval_count < self.budget:
+            current_population_size = self.dynamic_population_size()
+            new_population = []
+            for i in range(current_population_size):
+                idxs = [idx for idx in range(current_population_size) if idx != i]
+                a, b, c = population[np.random.choice(idxs, 3, replace=False)]
+                adaptive_f = self.adaptive_f()
+                mutant = np.clip(a + adaptive_f * (b - c), lb, ub)
+                cross_points = np.random.rand(self.dim) < self.cr
+                trial = np.where(cross_points, mutant, population[i % self.population_size])
+
+                trial_fitness = func(trial)
+                self.eval_count += 1
+
+                if trial_fitness < fitness[i % self.population_size] or np.random.rand() < np.exp(-(trial_fitness - fitness[i % self.population_size]) / self.temperature):
+                    new_population.append(trial)
+                    fitness[i % self.population_size] = trial_fitness
+                else:
+                    new_population.append(population[i % self.population_size])
+
+                if self.eval_count >= self.budget:
+                    break
+
+            self.adaptive_cooling_schedule()
+            opposite_population = self.opposition_based_learning(new_population, lb, ub)
+            opposite_fitness = np.array([func(ind) for ind in opposite_population])
+            self.eval_count += current_population_size
+
+            for j in range(current_population_size):
+                if opposite_fitness[j] < fitness[j % self.population_size]:
+                    new_population[j] = opposite_population[j]
+                    fitness[j % self.population_size] = opposite_fitness[j]
+
+            population, fitness = self.stochastic_ranking(np.array(new_population), fitness)
+
+        best_idx = np.argmin(fitness)
+        return population[best_idx], fitness[best_idx]
