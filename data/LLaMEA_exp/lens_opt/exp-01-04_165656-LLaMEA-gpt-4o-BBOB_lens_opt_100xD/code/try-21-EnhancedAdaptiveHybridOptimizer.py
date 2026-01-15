@@ -1,0 +1,72 @@
+import numpy as np
+
+class EnhancedAdaptiveHybridOptimizer:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.initial_population_size = 15 * dim
+        self.temp_schedule = lambda t: max(0.01, 1.0 - t / self.budget)
+        self.success_rate_threshold = 0.2  # Threshold to adapt mutation factor
+
+    def local_search(self, individual, lb, ub):
+        step_size = 0.05 * (ub - lb)
+        perturbation = np.random.normal(0, step_size, self.dim)
+        return np.clip(individual + perturbation, lb, ub)
+
+    def dynamic_population_resizing(self, evaluations):
+        return max(4, int(self.initial_population_size * (1 - (evaluations / self.budget)**0.5)))
+
+    def adaptive_mutation_factor(self, success_rate):
+        if success_rate > self.success_rate_threshold:
+            return 0.5 + np.random.rand() * 0.3  # Favor exploration
+        else:
+            return 0.2 + np.random.rand() * 0.2  # Favor exploitation
+
+    def __call__(self, func):
+        lb, ub = func.bounds.lb, func.bounds.ub
+        population_size = self.initial_population_size
+        population = np.random.uniform(lb, ub, (population_size, self.dim))
+        fitness = np.apply_along_axis(func, 1, population)
+        best_idx = np.argmin(fitness)
+        global_best = population[best_idx]
+        global_best_fitness = fitness[best_idx]
+
+        evaluations = population_size
+        successful_trials = 0
+
+        while evaluations < self.budget:
+            population_size = self.dynamic_population_resizing(evaluations)
+            new_population = []
+            diversity = np.mean(np.std(population, axis=0))
+            dynamic_crossover_prob = max(0.5, min(1.0, 1.5 * diversity))
+            success_rate = successful_trials / max(1, evaluations)
+
+            for i in range(population_size):
+                idxs = [idx for idx in range(len(population)) if idx != i]
+                a, b, c = population[np.random.choice(idxs, 3, replace=False)]
+                mutation_factor = self.adaptive_mutation_factor(success_rate)
+                mutant = np.clip(a + mutation_factor * (b - c), lb, ub)
+                crossover = np.random.rand(self.dim) < dynamic_crossover_prob
+                trial = np.where(crossover, mutant, population[i % len(population)])
+
+                trial_fitness = func(trial)
+                evaluations += 1
+                if evaluations >= self.budget:
+                    break
+
+                if trial_fitness < fitness[i % len(fitness)] or np.random.rand() < np.exp((fitness[i % len(fitness)] - trial_fitness) / self.temp_schedule(evaluations)):
+                    new_population.append(self.local_search(trial, lb, ub))
+                    if len(fitness) > i:
+                        fitness[i] = trial_fitness
+                    successful_trials += 1
+                else:
+                    new_population.append(population[i % len(population)])
+
+                if trial_fitness < global_best_fitness:
+                    global_best = trial
+                    global_best_fitness = trial_fitness
+
+            population = np.array(new_population)
+            fitness = fitness[:population_size]
+
+        return global_best

@@ -206,13 +206,14 @@ if __name__ == '__main__':
     dim = 10
     budget_cof = 100
     # problem_name = 'meta_surface'
-    problem_name = 'photonic_10layers_bragg'
+    # problem_name = 'photonic_10layers_bragg'
+    problem_name = 'photonic_10layers_photovoltaic'
     # problem_name = 'photonic_2layers_ellipsometry'
     source_names = [
         f'{problem_name}_{budget_cof}xD',
         f'gp_func_{problem_name}_{budget_cof}xD',
-        # f'BBOB_{problem_name}_{budget_cof}xD',
-        f'BBOB_{dim}D_{budget_cof}xD',
+        f'BBOB_{problem_name}_{budget_cof}xD',
+        # f'BBOB_{dim}D_{budget_cof}xD',
         f'RandomSearch_{budget_cof}xD',
         f'DE_{budget_cof}xD',
         f'LSHADE_{budget_cof}xD',

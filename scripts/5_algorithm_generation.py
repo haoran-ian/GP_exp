@@ -14,6 +14,7 @@ from utils.extract_top_bbob import extract_top_bbob
 from problems.fluid_dynamics.problem import get_pipes_topology_problem
 from problems.meta_surface.problem import get_meta_surface_problem
 from problems.photovotaic_problems.problem import PROBLEM_TYPE, get_photonic_problem
+from problems.lens_opt.problem import get_lens_opt_problem
 # fmt: on
 
 warnings.filterwarnings('ignore', category=RuntimeWarning)
@@ -53,17 +54,19 @@ budget_cof = 100
 # gp_exp_name = 'photonic_10layers_bragg'
 # gp_exp_name = 'photonic_10layers_photovoltaic'
 # gp_exp_name = 'photonic_20layers_bragg'
-gp_exp_name = 'photonic_20layers_photovoltaic'
+# gp_exp_name = 'photonic_20layers_photovoltaic'
+gp_exp_name = 'lens_opt'
 # real_problem = get_photonic_problem(problem_type=PROBLEM_TYPE.ELLIPSOMETRY)
 # real_problem = get_photonic_problem(
 #     num_layers=20, problem_type=PROBLEM_TYPE.BRAGG)
-real_problem = get_photonic_problem(
-    num_layers=20, problem_type=PROBLEM_TYPE.PHOTOVOLTAIC)
+# real_problem = get_photonic_problem(
+#     num_layers=20, problem_type=PROBLEM_TYPE.PHOTOVOLTAIC)
 # real_problem = get_meta_surface_problem()
+real_problem = get_lens_opt_problem()
 dim = real_problem.meta_data.n_variables
 # experiment_name = f'gp_func_{gp_exp_name}_{budget_cof}xD'
-# experiment_name = f'{gp_exp_name}_{budget_cof}xD'
-experiment_name = f'BBOB_{gp_exp_name}_{budget_cof}xD'
+experiment_name = f'{gp_exp_name}_{budget_cof}xD'
+# experiment_name = f'BBOB_{gp_exp_name}_{budget_cof}xD'
 
 budget = budget_cof * dim
 lb = real_problem.bounds.lb
@@ -75,7 +78,7 @@ if experiment_name == f'gp_func_{gp_exp_name}_{budget_cof}xD':
     gp_uppers = [find_y_bounds(problem) for problem in gp_problems]
 elif experiment_name == f'{gp_exp_name}_{budget_cof}xD':
     gp_problems = [real_problem]
-    gp_uppers = [1.]
+    gp_uppers = [1e6]
 elif experiment_name == f'BBOB_{gp_exp_name}_{budget_cof}xD':
     gp_problems = extract_top_bbob(problem_name=gp_exp_name, dim=dim)
 
@@ -175,7 +178,7 @@ The func() can only be called as many times as the budget allows, not more. Each
 Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
 '''
 
-for experiment_i in range(1):
+for experiment_i in range(5):
     # A 1+1 strategy
     es = LLaMEA(
         evaluateBBOB if 'BBOB' in experiment_name else evaluate_gp_func,

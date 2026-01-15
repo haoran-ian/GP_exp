@@ -1,0 +1,97 @@
+import numpy as np
+
+class EnhancedHybridPSO_SADE_V2:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.population_size = 10 + int(2 * np.sqrt(dim))
+        self.c1_start, self.c1_end = 2.5, 0.5  # linearly decrease cognitive component
+        self.c2_start, self.c2_end = 0.5, 2.5  # linearly increase social component
+        self.w_start, self.w_end = 0.9, 0.4  # linearly decrease inertia weight
+        self.cr_memory = [0.1, 0.2, 0.5, 0.9]
+        self.f_memory = [0.4, 0.6, 0.8, 1.0]
+        self.success_cr = [0] * len(self.cr_memory)
+        self.success_f = [0] * len(self.f_memory)
+
+    def __call__(self, func):
+        lb, ub = func.bounds.lb, func.bounds.ub
+        pop = np.random.uniform(lb, ub, (self.population_size, self.dim))
+        vel = np.random.uniform(-1, 1, (self.population_size, self.dim))
+        personal_best = np.copy(pop)
+        personal_best_value = np.array([func(ind) for ind in pop])
+        global_best = personal_best[np.argmin(personal_best_value)]
+        global_best_value = np.min(personal_best_value)
+
+        evaluations = self.population_size
+        iter_count = 0
+
+        while evaluations < self.budget:
+            # Dynamic parameter update
+            w = self.w_start - (self.w_start - self.w_end) * (evaluations / self.budget)
+            c1 = self.c1_start - (self.c1_start - self.c1_end) * (evaluations / self.budget)
+            c2 = self.c2_start + (self.c2_end - self.c2_start) * (evaluations / self.budget)
+
+            # Update velocities and positions (Enhanced PSO)
+            r1, r2 = np.random.rand(self.population_size, self.dim), np.random.rand(self.population_size, self.dim)
+            vel = w * vel + c1 * r1 * (personal_best - pop) + c2 * r2 * (global_best - pop)
+            pop = pop + vel
+            pop = np.clip(pop, lb, ub)
+
+            # Evaluate new positions
+            new_values = np.array([func(ind) for ind in pop])
+            evaluations += self.population_size
+
+            # Update personal and global bests
+            improvement = new_values < personal_best_value
+            personal_best[improvement] = pop[improvement]
+            personal_best_value[improvement] = new_values[improvement]
+
+            if np.min(personal_best_value) < global_best_value:
+                global_best = personal_best[np.argmin(personal_best_value)]
+                global_best_value = np.min(personal_best_value)
+
+            # Adaptive SADE
+            if evaluations < self.budget:
+                for i in range(self.population_size):
+                    indices = list(range(self.population_size))
+                    indices.remove(i)
+                    a, b, c = pop[np.random.choice(indices, 3, replace=False)]
+
+                    memory_idx = np.random.choice(len(self.cr_memory))
+                    cr = self.cr_memory[memory_idx]
+                    f = self.f_memory[memory_idx]
+
+                    mutant = np.clip(a + f * (b - c), lb, ub)
+                    crossover = np.random.rand(self.dim) < cr
+                    trial = np.where(crossover, mutant, pop[i])
+                    trial_value = func(trial)
+                    evaluations += 1
+
+                    # Selection and memory update
+                    if trial_value < new_values[i]:
+                        pop[i] = trial
+                        new_values[i] = trial_value
+                        # Update memory based on success
+                        self.success_cr[memory_idx] += 1
+                        self.success_f[memory_idx] += 1
+                        if trial_value < personal_best_value[i]:
+                            personal_best[i] = trial
+                            personal_best_value[i] = trial_value
+                            if trial_value < global_best_value:
+                                global_best = trial
+                                global_best_value = trial_value
+
+                # Adapt memory probabilities
+                if iter_count % 10 == 0 and evaluations < self.budget:
+                    cr_succ_total = sum(self.success_cr)
+                    f_succ_total = sum(self.success_f)
+                    if cr_succ_total > 0:
+                        self.cr_memory = [cr / cr_succ_total for cr in self.success_cr]
+                    if f_succ_total > 0:
+                        self.f_memory = [f / f_succ_total for f in self.success_f]
+                    self.success_cr = [0] * len(self.cr_memory)
+                    self.success_f = [0] * len(self.f_memory)
+
+            iter_count += 1
+
+        return global_best
