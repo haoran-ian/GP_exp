@@ -4,16 +4,25 @@ import sys
 import ioh
 import numpy as np
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
+from sympy import false
 sys.path.insert(0, os.getcwd())
+from matplotlib import rcParams
 # fmt: on
 
-colors = ['b', 'r', 'g',
-          'c',
-          'b', 'r', 'g', 'b', 'r', 'g']
+colors = [
+    '#1F78B4',
+    '#33A02C',
+    '#E31A1C',
+    '#FF7F00',
+    '#6A3D9A',
+    '#B15928',
+]
 linestyles = ['solid', 'solid', 'solid',
-              # 'solid',
-              'dotted', 'dotted', 'dotted', 'dashed', 'dashed', 'dashed']
+              'dashed', 'dashed', 'dashed',
+              'dotted', 'dotted', 'dotted']
+rcParams.update({'font.size': 18})
 
 
 def extrat_ys_from_ioh_dat(ioh_dat_path: str):
@@ -50,10 +59,16 @@ def unit_y_runs_from_LLaMEA_exps(y_exps):
 
 
 def box_plot(df, column: str, by: str, title: str):
-    plt.figure(figsize=(8, 5))
-    df.boxplot(column=column, by=by, grid=True)
-    plt.title('AOCC by Source')
-    plt.suptitle(title)
+    plt.figure(figsize=(12, 8))
+    desired_order = ['RandomSearch', 'DE', 'LSHADE',
+                     'BBOB', 'feature-based proxy', 'real problem']
+    # ax = df.boxplot(column=column, by=by, grid=True, figsize=(12, 8), order=desired_order)
+    ax = sns.violinplot(x=by, y=column, data=df,
+                        order=desired_order,
+                        linewidth=1.5, cut=0, fill=false)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=30, ha='center')
+    # plt.title('AOCC by Source')
+    # plt.suptitle(title)
     plt.xlabel('Source')
     plt.ylabel('AOCC')
     plt.tight_layout()
@@ -75,11 +90,15 @@ def curve_plot(df, by: str, curve_subset, evaluations: int, title: str):
         smoothed_std = df_subset['std'].rolling(window=window_size,
                                                 center=True,
                                                 min_periods=1).median()
+        # print(x.shape)
+        # print(smoothed_mean.shape)
+        # print(curve_label)
         plt.plot(x, smoothed_mean, color=colors[i], linestyle=linestyles[i],
                  label=curve_label)
-        plt.fill_between(x, smoothed_mean - smoothed_std,
-                         smoothed_mean + smoothed_std,
-                         color=colors[i], alpha=0.05)
+        # plt.fill_between(x, smoothed_mean - smoothed_std,
+        #                  smoothed_mean + smoothed_std,
+        #                  color=colors[i], alpha=0.05)
+    plt.yscale('logit')
     plt.xlabel('evaluations')
     plt.ylabel('fitness')
     plt.legend()
@@ -91,7 +110,7 @@ def curve_plot(df, by: str, curve_subset, evaluations: int, title: str):
 def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
                             algorithm_source_labels, dim: int, budget_cof: int,
                             nbest: int = 1, LLaMEA_runs: int = 5):
-    root_path = f'data/benchmark_algs/{problem_name}'
+    root_path = f'data/benchmark_algs/{problem_name}_solver'
     y_exps_by_source = []
     dfs = []
     for source_name in algorithm_source_names:
@@ -104,7 +123,7 @@ def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
                     continue
                 ioh_dat_path = os.path.join(
                     exp_folder,
-                    f'data_f60_{problem_name}/IOHprofiler_f60_DIM{dim}.dat')
+                    f'data_f1121_{problem_name}/IOHprofiler_f1121_DIM{dim}.dat')
                 y_runs = extrat_ys_from_ioh_dat(ioh_dat_path)
                 y_exps_by_source += [y_runs]
         df = unit_y_runs_from_LLaMEA_exps(y_exps_by_source)
@@ -178,8 +197,10 @@ def compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
                                         problem_name, labels, evaluations):
     def calcuate_std_vectorized(group):
         group = group.copy()
-        group['mean'] = np.mean(group['raw_y_normalized'])
-        group['std'] = np.std(group['raw_y_normalized'])
+        # group['mean'] = np.mean(group['raw_y_normalized'])
+        # group['std'] = np.std(group['raw_y_normalized'])
+        group['mean'] = np.mean(group['current_best_y'])
+        group['std'] = np.std(group['current_best_y'])
         return group
     df_merged = df_merged.copy()
     conditions = []
@@ -203,17 +224,17 @@ def compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
 if __name__ == '__main__':
     nbest = 1
     LLaMEA_runs = 5
-    dim = 10
+    dim = 45
     budget_cof = 100
-    # problem_name = 'meta_surface'
+    problem_name = 'meta_surface'
     # problem_name = 'photonic_10layers_bragg'
-    problem_name = 'photonic_10layers_photovoltaic'
+    # problem_name = 'photonic_10layers_photovoltaic'
     # problem_name = 'photonic_2layers_ellipsometry'
     source_names = [
         f'{problem_name}_{budget_cof}xD',
-        f'gp_func_{problem_name}_{budget_cof}xD',
-        f'BBOB_{problem_name}_{budget_cof}xD',
-        # f'BBOB_{dim}D_{budget_cof}xD',
+        # f'gp_func_{problem_name}_{budget_cof}xD',
+        # f'BBOB_{problem_name}_{budget_cof}xD',
+        f'BBOB_{dim}D_{budget_cof}xD',
         f'RandomSearch_{budget_cof}xD',
         f'DE_{budget_cof}xD',
         f'LSHADE_{budget_cof}xD',
@@ -221,7 +242,7 @@ if __name__ == '__main__':
     ]
     labels = [
         'real problem',
-        'feature-based proxy',
+        # 'feature-based proxy',
         'BBOB',
         'RandomSearch',
         'DE',
@@ -233,6 +254,12 @@ if __name__ == '__main__':
                                         algorithm_source_labels=labels,
                                         dim=dim, budget_cof=budget_cof,
                                         nbest=nbest, LLaMEA_runs=LLaMEA_runs)
+    df_merged['current_best_y'] = (
+        df_merged.sort_values(['LLaMEA_run', 'alg_run', 'evaluations'])
+        .groupby(['LLaMEA_run', 'alg_run', 'source'])['raw_y_normalized']
+        .cummin()
+        .reindex(df_merged.index)
+    )
     df_merged.to_csv("test.csv", index=False)
     best_LLaMEA_algs = compare_AOCC_by_source(df_merged, problem_name, nbest=1,
                                               evaluations=dim*50)
