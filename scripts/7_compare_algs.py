@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sympy import false
 sys.path.insert(0, os.getcwd())
 from matplotlib import rcParams
 # fmt: on
@@ -65,7 +64,7 @@ def box_plot(df, column: str, by: str, title: str):
     # ax = df.boxplot(column=column, by=by, grid=True, figsize=(12, 8), order=desired_order)
     ax = sns.violinplot(x=by, y=column, data=df,
                         order=desired_order,
-                        linewidth=1.5, cut=0, fill=false)
+                        linewidth=1.5, cut=0, fill=False)
     ax.set_xticklabels(ax.get_xticklabels(), rotation=10, ha='center')
     # plt.title('AOCC by Source')
     # plt.suptitle(title)
@@ -77,7 +76,7 @@ def box_plot(df, column: str, by: str, title: str):
 
 
 def curve_plot(df, by: str, curve_subset, evaluations: int, title: str):
-    plt.figure(figsize=(14, 6))
+    plt.figure(figsize=(10, 4.5))
     x = np.arange(evaluations)
     for i in range(len(curve_subset)):
         curve_label = curve_subset[i]
@@ -224,46 +223,52 @@ def compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
 if __name__ == '__main__':
     nbest = 1
     LLaMEA_runs = 5
-    dim = 45
     budget_cof = 100
-    problem_name = 'meta_surface'
-    # problem_name = 'meta_surface_solver'
-    # problem_name = 'photonic_10layers_bragg'
-    # problem_name = 'photonic_10layers_photovoltaic'
-    # problem_name = 'photonic_2layers_ellipsometry'
-    source_names = [
-        f'{problem_name}_{budget_cof}xD',
-        f'gp_func_{problem_name}_{budget_cof}xD',
-        # f'BBOB_{problem_name}_{budget_cof}xD',
-        f'BBOB_{dim}D_{budget_cof}xD',
-        f'RandomSearch_{budget_cof}xD',
-        f'DE_{budget_cof}xD',
-        f'LSHADE_{budget_cof}xD',
-        # f'CMA-ES_{budget_cof}xD',
+    dims = [45, 45, 10, 20, 2, 10]
+    problem_names = [
+        'meta_surface',
+        'meta_surface_solver',
+        'photonic_10layers_bragg',
+        'photonic_20layers_bragg',
+        'photonic_2layers_ellipsometry',
+        'photonic_10layers_photovoltaic',
     ]
-    labels = [
-        'LLaMEA+real instance',
-        'LLaMEA+proxy',
-        'LLaMEA+BBOB',
-        'RS',
-        'DE',
-        'LSHADE',
-        # 'CMA-ES',
-    ]
-    df_merged = build_ioh_dat_by_source(problem_name=problem_name,
-                                        algorithm_source_names=source_names,
-                                        algorithm_source_labels=labels,
-                                        dim=dim, budget_cof=budget_cof,
-                                        nbest=nbest, LLaMEA_runs=LLaMEA_runs)
-    df_merged['current_best_y'] = (
-        df_merged.sort_values(['LLaMEA_run', 'alg_run', 'evaluations'])
-        .groupby(['LLaMEA_run', 'alg_run', 'source'])['raw_y_normalized']
-        .cummin()
-        .reindex(df_merged.index)
-    )
-    df_merged.to_csv("test.csv", index=False)
-    best_LLaMEA_algs = compare_AOCC_by_source(df_merged, problem_name, nbest=1,
-                                              evaluations=dim*50)
-    compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
-                                        problem_name, labels,
-                                        evaluations=dim*50)
+    for i in range(6):
+        dim = dims[i]
+        problem_name = problem_names[i]
+        source_names = [
+            f'{problem_name}_{budget_cof}xD',
+            f'gp_func_{problem_name}_{budget_cof}xD',
+            # f'BBOB_{problem_name}_{budget_cof}xD',
+            f'BBOB_{dim}D_{budget_cof}xD' if i not in [
+                3, 5] else f'BBOB_{problem_name}_{budget_cof}xD',
+            f'RandomSearch_{budget_cof}xD',
+            f'DE_{budget_cof}xD',
+            f'LSHADE_{budget_cof}xD',
+            # f'CMA-ES_{budget_cof}xD',
+        ]
+        labels = [
+            'LLaMEA+real instance',
+            'LLaMEA+proxy',
+            'LLaMEA+BBOB',
+            'RS',
+            'DE',
+            'LSHADE',
+            # 'CMA-ES',
+        ]
+        df_merged = build_ioh_dat_by_source(problem_name=problem_name,
+                                            algorithm_source_names=source_names,
+                                            algorithm_source_labels=labels,
+                                            dim=dim, budget_cof=budget_cof,
+                                            nbest=nbest, LLaMEA_runs=LLaMEA_runs)
+        df_merged['current_best_y'] = (
+            df_merged.sort_values(['LLaMEA_run', 'alg_run', 'evaluations'])
+            .groupby(['LLaMEA_run', 'alg_run', 'source'])['raw_y_normalized']
+            .cummin()
+            .reindex(df_merged.index)
+        )
+        best_LLaMEA_algs = compare_AOCC_by_source(df_merged, problem_name, nbest=1,
+                                                  evaluations=dim*50)
+        compare_convergence_curve_by_source(df_merged, best_LLaMEA_algs,
+                                            problem_name, labels,
+                                            evaluations=dim*50)
