@@ -22,7 +22,7 @@ colors = [
 linestyles = ['solid', 'solid', 'solid',
               'dashed', 'dashed', 'dashed',
               'dotted', 'dotted', 'dotted']
-rcParams.update({'font.size': 18})
+rcParams.update({'font.size': 16})
 
 
 def extrat_ys_from_ioh_dat(ioh_dat_path: str):
@@ -59,17 +59,17 @@ def unit_y_runs_from_LLaMEA_exps(y_exps):
 
 
 def box_plot(df, column: str, by: str, title: str):
-    plt.figure(figsize=(12, 8))
-    desired_order = ['RandomSearch', 'DE', 'LSHADE',
-                     'BBOB', 'feature-based proxy', 'real problem']
+    plt.figure(figsize=(8, 5))
+    desired_order = ['RS', 'DE', 'LSHADE', 'LLaMEA+BBOB', 'LLaMEA+proxy',
+                     'LLaMEA+real instance']
     # ax = df.boxplot(column=column, by=by, grid=True, figsize=(12, 8), order=desired_order)
     ax = sns.violinplot(x=by, y=column, data=df,
                         order=desired_order,
                         linewidth=1.5, cut=0, fill=false)
-    ax.set_xticklabels(ax.get_xticklabels(), rotation=30, ha='center')
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=10, ha='center')
     # plt.title('AOCC by Source')
     # plt.suptitle(title)
-    plt.xlabel('Source')
+    plt.xlabel('Algorithms')
     plt.ylabel('AOCC')
     plt.tight_layout()
     plt.savefig(f'results/{title}')
@@ -110,7 +110,7 @@ def curve_plot(df, by: str, curve_subset, evaluations: int, title: str):
 def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
                             algorithm_source_labels, dim: int, budget_cof: int,
                             nbest: int = 1, LLaMEA_runs: int = 5):
-    root_path = f'data/benchmark_algs/{problem_name}_solver'
+    root_path = f'data/benchmark_algs/{problem_name}'
     y_exps_by_source = []
     dfs = []
     for source_name in algorithm_source_names:
@@ -123,7 +123,7 @@ def build_ioh_dat_by_source(problem_name: str, algorithm_source_names,
                     continue
                 ioh_dat_path = os.path.join(
                     exp_folder,
-                    f'data_f1121_{problem_name}/IOHprofiler_f1121_DIM{dim}.dat')
+                    f'data_f60_{problem_name}/IOHprofiler_f60_DIM{dim}.dat')
                 y_runs = extrat_ys_from_ioh_dat(ioh_dat_path)
                 y_exps_by_source += [y_runs]
         df = unit_y_runs_from_LLaMEA_exps(y_exps_by_source)
@@ -227,12 +227,13 @@ if __name__ == '__main__':
     dim = 45
     budget_cof = 100
     problem_name = 'meta_surface'
+    # problem_name = 'meta_surface_solver'
     # problem_name = 'photonic_10layers_bragg'
     # problem_name = 'photonic_10layers_photovoltaic'
     # problem_name = 'photonic_2layers_ellipsometry'
     source_names = [
         f'{problem_name}_{budget_cof}xD',
-        # f'gp_func_{problem_name}_{budget_cof}xD',
+        f'gp_func_{problem_name}_{budget_cof}xD',
         # f'BBOB_{problem_name}_{budget_cof}xD',
         f'BBOB_{dim}D_{budget_cof}xD',
         f'RandomSearch_{budget_cof}xD',
@@ -241,10 +242,10 @@ if __name__ == '__main__':
         # f'CMA-ES_{budget_cof}xD',
     ]
     labels = [
-        'real problem',
-        # 'feature-based proxy',
-        'BBOB',
-        'RandomSearch',
+        'LLaMEA+real instance',
+        'LLaMEA+proxy',
+        'LLaMEA+BBOB',
+        'RS',
         'DE',
         'LSHADE',
         # 'CMA-ES',
