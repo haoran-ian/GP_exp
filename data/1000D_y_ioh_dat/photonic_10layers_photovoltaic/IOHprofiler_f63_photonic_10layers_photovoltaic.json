@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 63, 
+	"function_name": "photonic_10layers_photovoltaic", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f63_photonic_10layers_photovoltaic/IOHprofiler_f63_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 10000, "best": {"evals": 356, "y": 0.14685532151089853, "x": [94.88, 165.35, 39.88, 210.04, 34.73, 199.73, 246.13, 141.29, 94.88, 80.27]}}
+		]}
+	]
+}
