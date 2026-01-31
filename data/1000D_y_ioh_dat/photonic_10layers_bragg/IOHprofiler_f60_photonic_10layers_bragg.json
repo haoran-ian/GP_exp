@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 60, 
+	"function_name": "photonic_10layers_bragg", 
+	"maximization": false, 
+	"algorithm": {"name": "algorithm_name", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f60_photonic_10layers_bragg/IOHprofiler_f60_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 10000, "best": {"evals": 1829, "y": 0.26633078894909423, "x": [91.34, 103.48, 53.05, 139.68, 100.76, 133.41, 67.91, 88, 113.11, 111.43]}}
+		]}
+	]
+}
