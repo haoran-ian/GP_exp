@@ -1,6 +1,7 @@
 ## Access Problems
 ### environment
-pyhton=3.8 (mandotory)
+pyhton=3.8 (mandotory for calculating ELA)
+python>=3.11 (mandotory for lens_opt)
 ### tutorial
 To access problems, you may need to add below first, depending on where you execute your code:
 ```python
@@ -31,15 +32,19 @@ problem = get_photonic_problem(num_layers=10, problem_type=PROBLEM_TYPE.PHOTOVOL
 # lens_opt
 problem = get_lens_opt_problem()
 ```
-Here is the simple usage of these problems, for more details about the usage of **ioh**, please check:
+Here is the simple usage of these problems, for more details about the usage of **ioh**, please check [IOHExperimenter](https://github.com/IOHprofiler/IOHexperimenter/tree/master/example/tutorial.ipynb):
 ```python
 import numpy as np
 
 dim = problem.meta_data.n_variables
 name = problem.meta_data.name
-lower_bound = problem.meta_data.lb
-upper_bound = problem.meta_data.ub
+lower_bound = problem.bounds.lb
+upper_bound = problem.bounds.ub
 
-x = np.random.uniform(lb, ub)
+# you can pass single solution to the problem
+x = np.random.uniform(lower_bound, upper_bound)
+y = problem(x)
+# or a set of solutions
+x = np.random.uniform(lower_bound, upper_bound, size=(1000, lower_bound.shape[0]))
 y = problem(x)
 ```
