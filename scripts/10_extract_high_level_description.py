@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import pandas as pd
 import xgboost as xgb
@@ -181,6 +182,9 @@ def load_real_problem_ela(path: str):
     return df
 
 
+
+if not os.path.exists("/data/hyin/GP_exp/data/description/"):
+    os.makedirs("/data/hyin/GP_exp/data/description/")
 problem_names = [
     "meta_surface",
     # "meta_surface_solver",
@@ -190,16 +194,22 @@ problem_names = [
     "photonic_10layers_photovoltaic",
 ]
 feature_descriptions = {
-    "Basins": "Basin size homogeneity, meaning the size relation (largest to smallest) of all basins of attraction should be homogeneous.",
-    "Separable": "Separable, meaning independent functions per dimension. Meaning, a problem may be partitioned into subproblems which are then of lower dimensionality and should be considerably easier to solve.",
+    # "Basins": "Basin size homogeneity, meaning the size relation (largest to smallest) of all basins of attraction should be homogeneous.",
+    # "Separable": "Separable, meaning independent functions per dimension. Meaning, a problem may be partitioned into subproblems which are then of lower dimensionality and should be considerably easier to solve.",
     "GlobalLocal": "It should have a global local minima contrast, GlobalLocal refers to the difference between global and local peaks in comparison to the average fitness level of a problem. It thus determines if very good peaks are easily recognized as such.",
     "Multimodality": "it should be multimodal, Multimodality refers to the number of local minima of a problem.",
     "Structure": "It should have a clear global structure. Global structure is what remains after deleting all non-optimal points.",
-    "Homogeneous": "The search space should be homogeneous. Which refers to a search space without phase transitions. Its overall appearance is similar in different search space areas.",
+    # "Homogeneous": "The search space should be homogeneous. Which refers to a search space without phase transitions. Its overall appearance is similar in different search space areas.",
     "NOT Homogeneous": "The search space should be not homogeneous. Which refers to a search space with phase transitions. Its overall appearance is different in different search space areas.",
     "NOT Basins": "The search space should be not have basin size homogeneity. Which refers to a search space where the size relation (largest to smallest) of all basins of attraction is not homogeneous.",
 }
 all_features = list(feature_descriptions.keys())
+
+description_prefix = """
+Here are the descriptions of several high-level landscape features:
+"""
+for feature in all_features:
+    description_prefix += f"- {feature}: {feature_descriptions[feature]}\n"
 for problem_name in problem_names:
     all_features_pandas = load_real_problem_ela(
         f"/data/hyin/GP_exp/data/ELA/ela_{problem_name}/ela_60.csv")
@@ -224,4 +234,9 @@ for problem_name in problem_names:
             feature_results[f"{feature}"] = 1 - model.predict_proba(input_df)[0][1]
         else:
             feature_results[f"{feature}"] = model.predict_proba(input_df)[0][1]
-    print(feature_results)
+    description = description_prefix + "The problem that the algorithm is going to deal with has"
+    for feature in all_features:
+        description += f" {feature_results[feature]*100:.3f}% {feature},"
+    description = description[:-1] + ". Please design an algorithm that can efficiently solve such problem."
+    with open(f"/data/hyin/GP_exp/data/description/{problem_name}.txt", "w") as f:
+        f.write(description)
