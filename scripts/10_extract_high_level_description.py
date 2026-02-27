@@ -237,6 +237,6 @@ for problem_name in problem_names:
     description = description_prefix + "The problem that the algorithm is going to deal with has"
     for feature in all_features:
         description += f" {feature_results[feature]*100:.3f}% {feature},"
-    description = description[:-1] + ". Please design an algorithm that can efficiently solve such problem."
+    description = description[:-1] + ". Please design an algorithm that can efficiently solve such problem.\n"
     with open(f"/data/hyin/GP_exp/data/description/{problem_name}.txt", "w") as f:
         f.write(description)
