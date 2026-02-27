@@ -94,13 +94,17 @@ def calculate_features(X, y, problem, blocks, lower_bound=-5.0, upper_bound=5.0,
 
 
 if __name__ == "__main__":
+    feature_id = int(sys.argv[1])
+    instance_id = int(sys.argv[2])
     blocks = 3
     feature_set_names = [
         'ela_meta', 'ela_distr', 'ela_level', 'pca', 'nbc', 'disp', 'ic',
         'ela_conv', 'ela_curvate', 'ela_local', 'cm_angle', 'cm_grad', 'cm_conv',
         'fitness_distance', 'gradient', 'hill_climbing', 'length_scale', 'fla_metrics',
     ]
-    problem = get_photonic_problem()
+    feature_set = feature_set_names[feature_id]
+    if instance_id == 0:
+        problem = get_photonic_problem()
     dim = problem.meta_data.n_variables
     lb = problem.bounds.lb
     ub = problem.bounds.ub
