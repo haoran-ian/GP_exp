@@ -1,0 +1,45 @@
+import numpy as np
+
+class HybridDE_SA:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.population_size = 10 * dim
+        self.F = 0.5  # Differential Evolution scaling factor
+        self.CR = 0.9  # Crossover probability
+        self.alpha = 0.9  # Cooling rate for Simulated Annealing
+    
+    def __call__(self, func):
+        bounds = np.array([func.bounds.lb, func.bounds.ub]).T
+        population = np.random.uniform(bounds[:, 0], bounds[:, 1], size=(self.population_size, self.dim))
+        fitness = np.array([func(ind) for ind in population])
+        eval_budget = self.population_size
+        T = 1.0  # Initial temperature for Simulated Annealing
+        
+        while eval_budget < self.budget:
+            for i in range(self.population_size):
+                # Differential Evolution mutation and crossover
+                a, b, c = population[np.random.choice(self.population_size, 3, replace=False)]
+                mutant = np.clip(a + self.F * (b - c), bounds[:, 0], bounds[:, 1])
+                cross_points = np.random.rand(self.dim) < self.CR
+                trial = np.where(cross_points, mutant, population[i])
+                
+                # Simulated Annealing acceptance criterion
+                trial_fitness = func(trial)
+                if eval_budget >= self.budget:
+                    break
+                eval_budget += 1
+                if trial_fitness < fitness[i]:
+                    population[i] = trial
+                    fitness[i] = trial_fitness
+                else:
+                    acceptance_prob = np.exp((fitness[i] - trial_fitness) / T)
+                    if np.random.rand() < acceptance_prob:
+                        population[i] = trial
+                        fitness[i] = trial_fitness
+
+            # Cooling schedule for Simulated Annealing
+            T *= self.alpha
+        
+        best_idx = np.argmin(fitness)
+        return population[best_idx], fitness[best_idx]
