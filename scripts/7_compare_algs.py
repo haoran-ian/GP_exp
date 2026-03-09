@@ -17,8 +17,9 @@ colors = [
     '#FF7F00',
     '#6A3D9A',
     '#B15928',
+    "#A6CEE3",
 ]
-linestyles = ['solid', 'solid', 'solid',
+linestyles = ['solid', 'solid', 'solid', 'solid',
               'dashed', 'dashed', 'dashed',
               'dotted', 'dotted', 'dotted']
 rcParams.update({'font.size': 16})
@@ -60,7 +61,7 @@ def unit_y_runs_from_LLaMEA_exps(y_exps):
 def box_plot(df, column: str, by: str, title: str):
     plt.figure(figsize=(8, 5))
     desired_order = ['RS', 'DE', 'LSHADE', 'LLaMEA+BBOB', 'LLaMEA+proxy',
-                     'LLaMEA+real instance']
+                     'LLaMEA+xgboost', 'LLaMEA+real instance']
     # ax = df.boxplot(column=column, by=by, grid=True, figsize=(12, 8), order=desired_order)
     ax = sns.violinplot(x=by, y=column, data=df,
                         order=desired_order,
@@ -92,6 +93,8 @@ def curve_plot(df, by: str, curve_subset, evaluations: int, title: str):
         # print(x.shape)
         # print(smoothed_mean.shape)
         # print(curve_label)
+        if smoothed_mean.shape[0] < x.shape[0]:
+            continue
         plt.plot(x, smoothed_mean, color=colors[i], linestyle=linestyles[i],
                  label=curve_label)
         # plt.fill_between(x, smoothed_mean - smoothed_std,
@@ -224,24 +227,24 @@ if __name__ == '__main__':
     nbest = 1
     LLaMEA_runs = 5
     budget_cof = 100
-    dims = [45, 45, 10, 20, 2, 10]
-    problem_names = [
-        'meta_surface',
-        'meta_surface_solver',
-        'photonic_10layers_bragg',
-        'photonic_20layers_bragg',
-        'photonic_2layers_ellipsometry',
-        'photonic_10layers_photovoltaic',
-    ]
-    for i in range(6):
-        dim = dims[i]
+    dims = {'meta_surface': 45,
+            # 'meta_surface_solver': 45,
+            'photonic_10layers_bragg': 10,
+            'photonic_20layers_bragg': 20,
+            'photonic_2layers_ellipsometry': 2,
+            'photonic_10layers_photovoltaic': 10}
+    problem_names = list(dims.keys())
+    for i in range(len(problem_names)):
         problem_name = problem_names[i]
+        dim = dims[problem_name]
         source_names = [
             f'{problem_name}_{budget_cof}xD',
             f'gp_func_{problem_name}_{budget_cof}xD',
             # f'BBOB_{problem_name}_{budget_cof}xD',
-            f'BBOB_{dim}D_{budget_cof}xD' if i not in [
-                3, 5] else f'BBOB_{problem_name}_{budget_cof}xD',
+            f'BBOB_{dim}D_{budget_cof}xD' if problem_name not in [
+                'photonic_20layers_bragg', 'photonic_10layers_photovoltaic'
+                ] else f'BBOB_{problem_name}_{budget_cof}xD',
+            f'xgboost_{problem_name}_{budget_cof}xD',
             f'RandomSearch_{budget_cof}xD',
             f'DE_{budget_cof}xD',
             f'LSHADE_{budget_cof}xD',
@@ -251,6 +254,7 @@ if __name__ == '__main__':
             'LLaMEA+real instance',
             'LLaMEA+proxy',
             'LLaMEA+BBOB',
+            'LLaMEA+xgboost',
             'RS',
             'DE',
             'LSHADE',
