@@ -19,7 +19,7 @@ if __name__ == "__main__":
     block_coef = float(sys.argv[3])
     n_coef = int(sys.argv[4])
 ################################################################################
-    file_name = f"{problem_name}-seed:{seed}-block_coef:{block_coef}-n_coef:{n_coef}.npy"
+    file_name = f"{problem_name}-seed:{seed}-block_coef:{block_coef:.1f}-n_coef:{n_coef}.npy"
     if os.path.exists(f"data/Ablation_ELA/Y/{file_name}"):
         sys.exit()
     print(f"Creating {file_name} ...")

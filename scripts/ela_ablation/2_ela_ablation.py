@@ -97,7 +97,7 @@ if __name__ == "__main__":
     ela_set_name = list(ela_sets.keys())[list(
         ela_sets.values()).index(int(sys.argv[2]))]
     seed = int(sys.argv[3])
-    block_coef = int(sys.argv[4])
+    block_coef = float(sys.argv[4])
     n_coef = int(sys.argv[5])
 ################################################################################
     blocks = 3
@@ -105,12 +105,9 @@ if __name__ == "__main__":
     dim = problem.meta_data.n_variables
     lb = problem.bounds.lb
     ub = problem.bounds.ub
-    if "cm" in ela_set_name:
-        n_sample = dim**blocks * 3 * block_coef
-    else:
-        n_sample = dim * n_coef
-    X = create_initial_sample(dim=dim, n=n_sample, lower_bound=lb,
-                              upper_bound=ub, sample_type='lhs', seed=seed)
-    y = np.array(problem(X.values))
+    file_name = f"{problem_name}-seed:{seed}-block_coef:{block_coef:.1f}-n_coef:{n_coef}.npy"
+    X = np.load(f"data/Ablation_ELA/X/{file_name}")
+    y = np.load(f"data/Ablation_ELA/Y/{file_name}")
     df = calculate_features(X, y, problem, blocks, n_coef, ela_set_name)
+    df.to_csv(f"data/Ablation_ELA/atom/{problem_name}-{ela_sets[ela_set_name]}-seed:{seed}-block_coef:{block_coef}-n_coef:{n_coef}.csv")
     print(df)

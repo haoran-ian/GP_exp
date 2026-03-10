@@ -14,7 +14,7 @@ class meta_surface:
     def __init__(self, triangle_edge_length: int = 18,
                  RT_path: str = 'problems/meta_surface/model_best_RT.pth.tar',
                  IT_path: str = 'problems/meta_surface/model_best_IT.pth.tar',
-                 device: str = 'cuda:0'):
+                 device: str = 'cuda:1'):
         self.triangle_edge_length = triangle_edge_length
         self.RT_path = RT_path
         self.IT_path = IT_path
