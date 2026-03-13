@@ -50,8 +50,11 @@ def build_atom_data_seed(problem_name, ela_name, block_coef, n_coef):
 if __name__ == "__main__":
     for pid in range(2, 4):
         problem_name = ProblemName(pid)
-        if not os.path.exists(f"results/ela_convergence/{problem_name}"):
-            os.mkdir(f"results/ela_convergence/{problem_name}")
+        if not os.path.exists(f"results/ela_convergence/{problem_name}/"):
+            os.mkdir(f"results/ela_convergence/{problem_name}/")
+        if not os.path.exists(f"results/ela_convergence/{problem_name}/aggregation/"):
+            os.mkdir(f"results/ela_convergence/{problem_name}/aggregation/")
+        plot_dfs = []
         for ela_set_id in range(7):
             ela_name = list(ela_sets.keys())[list(
                 ela_sets.values()).index(ela_set_id)]
@@ -69,9 +72,21 @@ if __name__ == "__main__":
                 group_col = "n_coef"
                 target_cols = df.columns[3:]
                 agg_df = df.groupby("n_coef")[target_cols].agg(["mean", "std"])
+                target_cols = [c for c in agg_df.columns.get_level_values(0).unique() if c != 'n_coef']
                 for col in target_cols:
-                    agg_df[(col, "cv")] = agg_df[(col, "std")] / \
-                        agg_df[(col, "mean")]
+                    std_series = agg_df[col]['std']
+                    std_min = std_series.min()
+                    std_max = std_series.max()
+                    if std_max - std_min != 0:
+                        norm_values = (std_series - std_min) / (std_max - std_min)
+                    else:
+                        norm_values = 0.0
+                    agg_df[(col, 'std_norm')] = norm_values
+                agg_df = agg_df.sort_index(axis=1)
+                norm_data = agg_df.xs('std_norm', axis=1, level=1)
+                plot_df = norm_data.stack().reset_index()
+                plot_df.columns = ['n_coef', 'feature_name', 'std_norm']
+                plot_dfs += [plot_df]
                 for feature in list(df.keys())[3:]:
                     sns.lineplot(data=agg_df, x="n_coef", y=(feature, "std"))
                     plt.xscale("log")
@@ -81,3 +96,21 @@ if __name__ == "__main__":
                     plt.savefig(
                         f"results/ela_convergence/{problem_name}/{feature}.png")
                     plt.close()
+                sns.lineplot(data=plot_df, x="n_coef", y="std_norm")
+                plt.xscale("log")
+                plt.ylabel("std")
+                plt.title(ela_name)
+                plt.tight_layout()
+                plt.savefig(
+                    f"results/ela_convergence/{problem_name}/aggregation/{ela_name}.png")
+                plt.close()
+        df = merge_dfs(plot_dfs)
+        sns.lineplot(data=df, x="n_coef", y="std_norm")
+        plt.xscale("log")
+        plt.ylabel("std")
+        plt.title(problem_name)
+        plt.tight_layout()
+        plt.savefig(
+            f"results/ela_convergence/{problem_name}/aggregation/{problem_name}.png")
+        plt.close()
+                

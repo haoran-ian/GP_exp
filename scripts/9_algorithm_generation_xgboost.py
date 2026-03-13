@@ -126,18 +126,19 @@ Your task is to write the optimization algorithm in Python code. The code should
 The func() can only be called as many times as the budget allows, not more. Each of the optimization functions has a search space between func.bounds.lb (lower bound) and func.bounds.ub (upper bound). The dimensionality can be varied.
 Give an excellent and novel heuristic algorithm to solve this task and also give it a one-line description with the main idea.
 """
+print(task_prompt)
 
-for experiment_i in range(5):
-    # A 1+1 strategy
-    es = LLaMEA(
-        evaluate_gp_func,
-        llm=llm,
-        n_parents=1,
-        n_offspring=1,
-        task_prompt=task_prompt,
-        experiment_name=experiment_name,
-        elitism=True,
-        HPO=False,
-        budget=100,
-    )
-    print(es.run())
+# for experiment_i in range(5):
+#     # A 1+1 strategy
+#     es = LLaMEA(
+#         evaluate_gp_func,
+#         llm=llm,
+#         n_parents=1,
+#         n_offspring=1,
+#         task_prompt=task_prompt,
+#         experiment_name=experiment_name,
+#         elitism=True,
+#         HPO=False,
+#         budget=100,
+#     )
+#     print(es.run())
