@@ -1,8 +1,6 @@
 
-Here are the descriptions of several high-level landscape features:
-- GlobalLocal: It should have a global local minima contrast, GlobalLocal refers to the difference between global and local peaks in comparison to the average fitness level of a problem. It thus determines if very good peaks are easily recognized as such.
-- Multimodality: it should be multimodal, Multimodality refers to the number of local minima of a problem.
-- Structure: It should have a clear global structure. Global structure is what remains after deleting all non-optimal points.
-- NOT Homogeneous: The search space should be not homogeneous. Which refers to a search space with phase transitions. Its overall appearance is different in different search space areas.
-- NOT Basins: The search space should be not have basin size homogeneity. Which refers to a search space where the size relation (largest to smallest) of all basins of attraction is not homogeneous.
-The problem that the algorithm is going to deal with has 8.828% GlobalLocal, 99.470% Multimodality, 0.189% Structure, 0.587% NOT Homogeneous, 3.168% NOT Basins. Please design an algorithm that can efficiently solve such problem.
+The problem that the algorithm is going to deal with is likely to be Multimodal, and likely have homogeneous search space.​
+
+With these terms I mean:​
+- Multimodality: refers to the number of local minima of a problem.​
+- Not Homogeneous: refers to a search space with phase transitions. Its overall appearance is different in different parts of the search space.​

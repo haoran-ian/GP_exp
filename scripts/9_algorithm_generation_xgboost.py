@@ -27,7 +27,7 @@ def find_y_bounds(problem):
 
 
 ################################################################################
-problem_name = ProblemName.PHOTONIC_10LAYERS_BRAGG
+problem_name = ProblemName.META_SURFACE
 # exp_prefix = ""
 # exp_prefix = "BBOB_"
 # exp_prefix = "gp_func_"
@@ -128,17 +128,17 @@ Give an excellent and novel heuristic algorithm to solve this task and also give
 """
 print(task_prompt)
 
-# for experiment_i in range(5):
-#     # A 1+1 strategy
-#     es = LLaMEA(
-#         evaluate_gp_func,
-#         llm=llm,
-#         n_parents=1,
-#         n_offspring=1,
-#         task_prompt=task_prompt,
-#         experiment_name=experiment_name,
-#         elitism=True,
-#         HPO=False,
-#         budget=100,
-#     )
-#     print(es.run())
+for experiment_i in range(5):
+    # A 1+1 strategy
+    es = LLaMEA(
+        evaluate_gp_func,
+        llm=llm,
+        n_parents=1,
+        n_offspring=1,
+        task_prompt=task_prompt,
+        experiment_name=experiment_name,
+        elitism=True,
+        HPO=False,
+        budget=100,
+    )
+    print(es.run())
