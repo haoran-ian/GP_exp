@@ -1,0 +1,17 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 63, 
+	"function_name": "photonic_10layers_photovoltaic", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_RFO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f63_photonic_10layers_photovoltaic/IOHprofiler_f63_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 2258, "best": {"evals": 1990, "y": 0.1774719835276819, "x": [70.88571717779533, 238.87313075576293, 211.58498164340068, 163.26876042760696, 78.90314839717608, 203.32811417445706, 205.62309725863653, 152.04062201830772, 66.90456869703893, 99.49650015418558]}},
+			{"instance": 1, "evals": 2231, "best": {"evals": 1962, "y": 0.17735954625977068, "x": [70.62680579067207, 238.57263490482524, 211.27408100731432, 163.62673357628464, 78.51791347305209, 203.02327559164743, 205.29802798972892, 151.79925562524463, 66.72530590794028, 99.24578048890358]}}
+		]}
+	]
+}

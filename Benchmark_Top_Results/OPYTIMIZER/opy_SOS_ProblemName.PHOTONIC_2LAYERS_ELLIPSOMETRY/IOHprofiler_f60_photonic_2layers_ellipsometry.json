@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 60, 
+	"function_name": "photonic_2layers_ellipsometry", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_SOS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f60_photonic_2layers_ellipsometry/IOHprofiler_f60_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 930, "best": {"evals": 819, "y": 0.1423291069107952, "x": [1.9140034232606478, 111.94072643895288]}},
+			{"instance": 1, "evals": 930, "best": {"evals": 823, "y": 0.022605477909119764, "x": [1.916275631935179, 112.02672887511214]}},
+			{"instance": 1, "evals": 930, "best": {"evals": 826, "y": 0.002803632174495639, "x": [1.918026989519597, 111.95499276597343]}},
+			{"instance": 1, "evals": 930, "best": {"evals": 855, "y": 0.00032102014681550353, "x": [1.9178478707376592, 111.9613417717959]}},
+			{"instance": 1, "evals": 930, "best": {"evals": 793, "y": 1.7933185598949877e-05, "x": [1.9178678454489546, 111.95999626448548]}}
+		]}
+	]
+}

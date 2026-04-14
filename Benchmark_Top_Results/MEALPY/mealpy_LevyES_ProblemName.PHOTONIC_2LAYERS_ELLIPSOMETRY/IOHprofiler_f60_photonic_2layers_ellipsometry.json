@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 60, 
+	"function_name": "photonic_2layers_ellipsometry", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f60_photonic_2layers_ellipsometry/IOHprofiler_f60_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 273, "best": {"evals": 237, "y": 0.4774518681360617, "x": [2.0404795769823427, 108.30633560004868]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 235, "y": 1.0933782528101743, "x": [1.921294666352532, 114.32020614591478]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 237, "y": 1.313377543743781, "x": [2.1126098166444054, 104.89928227680757]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 52, "y": 3.2710070271142704, "x": [2.316356588874183, 98.13506131948648]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 205, "y": 1.6722643052069406, "x": [1.9331240756008201, 116.06215080038892]}}
+		]}
+	]
+}

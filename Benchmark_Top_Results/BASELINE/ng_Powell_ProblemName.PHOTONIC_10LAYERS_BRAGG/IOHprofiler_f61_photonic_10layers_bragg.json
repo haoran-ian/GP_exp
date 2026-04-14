@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 61, 
+	"function_name": "photonic_10layers_bragg", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_Powell", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f61_photonic_10layers_bragg/IOHprofiler_f61_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1000, "best": {"evals": 1, "y": 0.9183673469387755, "x": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}},
+			{"instance": 1, "evals": 1000, "best": {"evals": 1, "y": 0.9183673469387755, "x": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}},
+			{"instance": 1, "evals": 1000, "best": {"evals": 1, "y": 0.9183673469387755, "x": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}},
+			{"instance": 1, "evals": 1000, "best": {"evals": 1, "y": 0.9183673469387755, "x": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}},
+			{"instance": 1, "evals": 1000, "best": {"evals": 1, "y": 0.9183673469387755, "x": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}}
+		]}
+	]
+}

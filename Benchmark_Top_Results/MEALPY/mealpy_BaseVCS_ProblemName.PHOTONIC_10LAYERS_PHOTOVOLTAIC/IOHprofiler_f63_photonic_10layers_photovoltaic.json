@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 63, 
+	"function_name": "photonic_10layers_photovoltaic", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f63_photonic_10layers_photovoltaic/IOHprofiler_f63_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1101, "best": {"evals": 810, "y": 0.15221626491390872, "x": [39.93819288075581, 234.93309111590446, 30, 55.464562265020874, 173.04604161891942, 169.63131228101918, 32.71229202690999, 146.14879020533482, 136.4702648392879, 64.81681895150483]}}
+		]}
+	]
+}

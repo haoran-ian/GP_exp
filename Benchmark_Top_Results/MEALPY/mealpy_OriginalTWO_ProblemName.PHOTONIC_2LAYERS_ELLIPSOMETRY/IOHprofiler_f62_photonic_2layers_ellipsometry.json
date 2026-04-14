@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 62, 
+	"function_name": "photonic_2layers_ellipsometry", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalTWO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f62_photonic_2layers_ellipsometry/IOHprofiler_f62_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 201, "best": {"evals": 145, "y": 2.0519519008085942, "x": [2.5305842057329713, 61.896598038132005]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 129, "y": 2.770571217908652, "x": [2.3542425363266464, 65.42906830726847]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 176, "y": 2.0535820837581813, "x": [2.3913784061954906, 63.88538817400162]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 199, "y": 0.9540293240849902, "x": [2.482637712864922, 61.34827999837927]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 163, "y": 2.3126163375789233, "x": [2.6363559511512498, 59.768257899906416]}}
+		]}
+	]
+}

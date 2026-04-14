@@ -2,6 +2,7 @@
 import os
 import sys
 import ioh
+import matplotlib
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -9,6 +10,11 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, os.getcwd())
 from matplotlib import rcParams
 # fmt: on
+
+
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
+
 
 colors = [
     '#1F78B4',
@@ -245,8 +251,8 @@ if __name__ == '__main__':
             # f'BBOB_{problem_name}_{budget_cof}xD',
             f'BBOB_{dim}D_{budget_cof}xD' if problem_name not in [
                 'photonic_20layers_bragg', 'photonic_10layers_photovoltaic'
-                ] else f'BBOB_{problem_name}_{budget_cof}xD',
-            f'xgboost_{problem_name}_{budget_cof}xD',
+            ] else f'BBOB_{problem_name}_{budget_cof}xD',
+            # f'xgboost_{problem_name}_{budget_cof}xD',
             f'RandomSearch_{budget_cof}xD',
             f'DE_{budget_cof}xD',
             f'LSHADE_{budget_cof}xD',
@@ -256,7 +262,7 @@ if __name__ == '__main__':
             'LLaMEA+real instance',
             'LLaMEA+proxy',
             'LLaMEA+BBOB',
-            'LLaMEA+xgboost',
+            # 'LLaMEA+xgboost',
             'RS',
             'DE',
             'LSHADE',

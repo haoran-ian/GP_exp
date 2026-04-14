@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 62, 
+	"function_name": "photonic_2layers_ellipsometry", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f62_photonic_2layers_ellipsometry/IOHprofiler_f62_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 201, "best": {"evals": 80, "y": 2.62306795947259, "x": [1.8736482647293995, 56.91669954551381]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 75, "y": 1.2048472601815599, "x": [2.1634622659028704, 51.25559801591159]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 153, "y": 0.7535274669144099, "x": [2.0556638122508617, 53.20169869557447]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 153, "y": 0.9282470227125665, "x": [2.058225615015164, 51.22772310994684]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 135, "y": 2.8165388343292306, "x": [1.8964382561685083, 53.452800455150324]}}
+		]}
+	]
+}

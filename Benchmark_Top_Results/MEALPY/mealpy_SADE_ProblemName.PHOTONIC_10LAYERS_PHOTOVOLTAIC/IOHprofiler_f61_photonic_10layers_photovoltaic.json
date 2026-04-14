@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 61, 
+	"function_name": "photonic_10layers_photovoltaic", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f61_photonic_10layers_photovoltaic/IOHprofiler_f61_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1001, "best": {"evals": 946, "y": 0.1447990375055288, "x": [105.32208439151592, 128.29786676110115, 43.63524973332437, 161.10166983098247, 250, 30, 199.75370939511407, 151.1214542013586, 104.53318192543406, 75.1940647121806]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 60, 
+	"function_name": "photonic_2layers_ellipsometry", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f60_photonic_2layers_ellipsometry/IOHprofiler_f60_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [-0.49249372499634037, 0.42587425819504304]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [0.7645563839700195, -1.1242911363004808]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [-2.5603382643209964, 0.9298946236731827]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [-0.05020260790147625, -0.8895569147244824]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [-0.32122453501899284, 0.3781063094313127]}}
+		]}
+	]
+}

@@ -3,13 +3,14 @@ import os
 import sys
 import cv2
 import math
+import matplotlib
 import numpy as np
 import seaborn as sns
 import PyMoosh as pm
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 sys.path.insert(0, os.getcwd())
-import problems.meta_surface_solver.Meta_Generator as Gnr
+# import problems.meta_surface_solver.Meta_Generator as Gnr
 from matplotlib import rcParams
 from matplotlib.gridspec import GridSpec
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
@@ -20,6 +21,10 @@ rcParams.update({'font.size': 14})
 
 ################################################################################
 # meta_surface
+
+
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 
 def mat_inpso(b, n):
@@ -96,8 +101,8 @@ def Bragg_solution_plot(nb_layers, x):
     ax1.imshow(img)
     ax1.set_xticks([])
     ax1.set_yticks([])
-    ax1.set_ylabel('D (nm)', fontsize=12)
-    ax1.set_title('Structure', fontsize=14, pad=15)
+    ax1.set_ylabel('D (nm)', fontsize=18)
+    ax1.set_title('Structure', fontsize=18, pad=15)
     ax1.set_aspect('auto')
     ax2 = fig.add_subplot(gs[1])
     ax2.plot(wls, R)
@@ -105,10 +110,10 @@ def Bragg_solution_plot(nb_layers, x):
     # ax2.set_xlim(0, 1)
     # ax2.set_ylim(-1.2, 1.2)
     ax2.grid(True, alpha=0.3, linestyle='--')
-    ax2.set_xlabel('wavelength (nm)', fontsize=12)
-    ax2.set_ylabel('reflectivity', fontsize=12)
+    ax2.set_xlabel('wavelength (nm)', fontsize=18)
+    ax2.set_ylabel('reflectivity', fontsize=18)
     ax2.set_title('Maximize reflectivity at 600 nm wavelength',
-                  fontsize=14, pad=15)
+                  fontsize=18, pad=15)
     # ax2.set_xticks([])
     # ax2.set_yticks([])
     plt.tight_layout()
@@ -164,17 +169,17 @@ img = cv2.imread(f"results/photovoltaic_struct.png")
 ax1.imshow(img)
 ax1.set_xticks([])
 ax1.set_yticks([])
-ax1.set_ylabel('D (nm)', fontsize=12)
-ax1.set_title('Structure', fontsize=14, pad=15)
+ax1.set_ylabel('D (nm)', fontsize=18)
+ax1.set_title('Structure', fontsize=18, pad=15)
 ax1.set_aspect('auto')
 ax2 = fig.add_subplot(gs[1])
 ax2.plot(wl, spec_A, color='C0', label='our solution')
 ax2.plot(wl, spec_A_zero, color='C1', label='no AR coating')
 ax2.grid(True, alpha=0.3, linestyle='--')
-ax2.set_xlabel('wavelength (nm)', fontsize=12)
-ax2.set_ylabel('absorption', fontsize=12)
+ax2.set_xlabel('wavelength (nm)', fontsize=18)
+ax2.set_ylabel('absorption', fontsize=18)
 ax2.set_title('Maximize absorption within desired wavelength range',
-              fontsize=14, pad=15)
+              fontsize=18, pad=15)
 ax2.legend()
 # ax2.set_xticks([])
 # ax2.set_yticks([])

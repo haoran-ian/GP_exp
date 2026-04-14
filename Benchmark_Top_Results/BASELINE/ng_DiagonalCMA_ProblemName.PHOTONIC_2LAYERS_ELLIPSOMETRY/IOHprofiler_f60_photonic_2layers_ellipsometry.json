@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 60, 
+	"function_name": "photonic_2layers_ellipsometry", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f60_photonic_2layers_ellipsometry/IOHprofiler_f60_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [-0.1477481174989021, 0.1277622774585129]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [0.22936691519100583, -0.3372873408901442]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [-0.7681014792962989, 0.27896838710195476]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [-0.015060782370442874, -0.2668670744173447]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 1, "y": 25.52623655099961, "x": [-0.09636736050569784, 0.1134318928293938]}}
+		]}
+	]
+}
