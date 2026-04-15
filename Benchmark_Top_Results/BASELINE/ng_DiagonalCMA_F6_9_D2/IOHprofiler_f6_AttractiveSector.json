@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 200, "best": {"evals": 158, "y": 0.033544234076461316, "x": [1.8105029003651487, 3.079719687076063]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 194, "y": 0.1314608858430048, "x": [1.9755299551373071, 3.0847674769306788]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 153, "y": 0.00015343286629717105, "x": [1.6794893259104007, 3.063901541413926]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 194, "y": 0.008747358068287721, "x": [1.7056952771860587, 3.08300502436191]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 183, "y": 0.0009800378395406558, "x": [1.6870316908539569, 3.06788324817155]}}
+		]}
+	]
+}

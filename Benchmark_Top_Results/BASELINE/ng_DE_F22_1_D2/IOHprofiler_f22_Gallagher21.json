@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 22, 
+	"function_name": "Gallagher21", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f22_Gallagher21/IOHprofiler_f22_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 123, "y": 0.005268988456628784, "x": [1.5650723145505019, 0.2186625620545678]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 129, "y": 0.0034951353269320434, "x": [1.7175374402869736, -0.02648947028841686]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 104, "y": 0.5690791086366573, "x": [1.920943051559404, -0.2236945953076841]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 70, "y": 0.003504227959785238, "x": [1.4292843251057996, 0.4978929216233581]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 105, "y": 0.017632961744785906, "x": [1.933374992126475, -0.4753010026066007]}}
+		]}
+	]
+}

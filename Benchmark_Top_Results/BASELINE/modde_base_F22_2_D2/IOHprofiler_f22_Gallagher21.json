@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 22, 
+	"function_name": "Gallagher21", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f22_Gallagher21/IOHprofiler_f22_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 200, "best": {"evals": 23, "y": 0.01396092211754835, "x": [-1.7867139371199734, -0.8533806000947646]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 172, "y": 0.033961855115040435, "x": [-1.9912946104670803, -0.7685251626821126]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 52, "y": 0.011651654608031872, "x": [-0.8176505206219336, -1.3902203341983013]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 59, "y": 0.5487981462879783, "x": [0.103047238206468, -1.7096526918389374]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 81, "y": 0.5664337867982088, "x": [2.0052496991648328, -2.839105044196236]}}
+		]}
+	]
+}

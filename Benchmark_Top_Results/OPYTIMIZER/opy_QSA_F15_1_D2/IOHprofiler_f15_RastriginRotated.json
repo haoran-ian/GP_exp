@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 843, "best": {"evals": 467, "y": 2.9810520237468743, "x": [-3.1025666640733984, 2.981421085827528]}},
+			{"instance": 1, "evals": 848, "best": {"evals": 170, "y": 0.04290052342242807, "x": [-3.061259521165422, 3.009250529441457]}},
+			{"instance": 1, "evals": 843, "best": {"evals": 581, "y": 0.0011150832255804304, "x": [-3.0589391929693925, 3.002736906154807]}},
+			{"instance": 1, "evals": 841, "best": {"evals": 444, "y": 6.858011110417877e-08, "x": [-3.056787121445324, 3.0015894252697644]}},
+			{"instance": 1, "evals": 838, "best": {"evals": 709, "y": 2.10962106233963e-11, "x": [-3.056799927667861, 3.0016000792312103]}}
+		]}
+	]
+}

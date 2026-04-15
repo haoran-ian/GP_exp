@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM10.dat",
+		"runs": [
+			{"instance": 6, "evals": 1000, "best": {"evals": 949, "y": 1.1774677438601686, "x": [2.104843866133587, 2.104843671056134, -2.104843665251653, -2.1048437873473382, 2.1048434252112784, 0.325628116319103, 0.5738346364050622, -0.6057698585329276, -0.8237509565667518, 0.9680872716964929]}}
+		]}
+	]
+}

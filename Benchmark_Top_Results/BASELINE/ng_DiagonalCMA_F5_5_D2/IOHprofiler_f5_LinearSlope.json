@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 200, "best": {"evals": 197, "y": 0.6179777185940409, "x": [4.682502004100527, 4.969952027730543]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 197, "y": 0.010711164987033506, "x": [4.995984639972614, 4.999330419504036]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 191, "y": 6.906073790345945, "x": [-1.6446599168182088, 4.973858612647226]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 184, "y": 0.07306415940879774, "x": [4.9798192581158425, 4.994711658247536]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 197, "y": 1.5242872422511318, "x": [3.506400637880328, 4.996931211986854]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 200, "best": {"evals": 99, "y": 1.3851235218946137e-06, "x": [-2.543464389899814, -2.2485595921083346]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 74, "y": 1.9586655613602582e-06, "x": [-2.542596243366266, -2.248014948844364]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 116, "y": 9.841458500219195e-08, "x": [-2.5490011529267136, -2.2520231972087346]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 87, "y": 3.2624604937088816e-07, "x": [-2.5489629424823574, -2.2519997067583803]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 140, "y": 9.236694648054694e-10, "x": [-2.552171678407661, -2.2540068903984944]}}
+		]}
+	]
+}

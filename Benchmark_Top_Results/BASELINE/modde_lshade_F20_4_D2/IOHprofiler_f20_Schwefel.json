@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 203, "best": {"evals": 163, "y": 1.6920358077203141, "x": [-1.0166009402829745, -1.240407604151347]}},
+			{"instance": 4, "evals": 203, "best": {"evals": 176, "y": 0.9081165758262568, "x": [-2.0538969456555867, -2.057065671991815]}},
+			{"instance": 4, "evals": 203, "best": {"evals": 198, "y": 0.7915194930540929, "x": [1.5675081140571665, -3.000661890225463]}},
+			{"instance": 4, "evals": 203, "best": {"evals": 78, "y": 0.5906723225485768, "x": [-2.220224933763987, -2.043386315868434]}},
+			{"instance": 4, "evals": 203, "best": {"evals": 91, "y": 2.22012939779419, "x": [-0.13666705728740602, -2.5918773229342182]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 22, 
+	"function_name": "Gallagher21", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f22_Gallagher21/IOHprofiler_f22_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 833, "best": {"evals": 707, "y": 6.070496402015733e-05, "x": [1.2133789158531276, 0.9981133276677454]}},
+			{"instance": 1, "evals": 846, "best": {"evals": 719, "y": 2.349012750939047e-07, "x": [1.3456882561895915, 0.7319906008302833]}},
+			{"instance": 1, "evals": 845, "best": {"evals": 722, "y": 2.0369149022225154e-11, "x": [1.3466912633510628, 0.7245853433260293]}},
+			{"instance": 1, "evals": 831, "best": {"evals": 308, "y": 4.352260778939623e-14, "x": [1.349881020820912, 0.7179658476454076]}},
+			{"instance": 1, "evals": 830, "best": {"evals": 1, "y": 4.352260778939623e-14, "x": [1.349881020820912, 0.7179658476454076]}}
+		]}
+	]
+}

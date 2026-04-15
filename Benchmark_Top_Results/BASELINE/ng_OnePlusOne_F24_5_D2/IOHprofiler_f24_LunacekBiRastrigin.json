@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 24, 
+	"function_name": "LunacekBiRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f24_LunacekBiRastrigin/IOHprofiler_f24_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 200, "best": {"evals": 195, "y": 2.875238437671473, "x": [-2.2981012967159655, 3.9106814983624756]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 200, "y": 4.975692550232075, "x": [0.9277036279216456, -0.18238262058987725]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 200, "y": 6.002085390909789, "x": [-2.2824899501883373, 0.4551430993896778]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 200, "y": 7.537387929310096, "x": [-0.08625757198942606, 1.9631279233970274]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 196, "y": 8.089825932523727, "x": [0.05801978684353751, 3.763985696704598]}}
+		]}
+	]
+}

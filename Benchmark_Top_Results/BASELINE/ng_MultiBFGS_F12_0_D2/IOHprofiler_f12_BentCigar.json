@@ -1,0 +1,17 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 200, "best": {"evals": 200, "y": 6.5137934239421655, "x": [-1.8900406336399798, -0.29817731356147253]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 117, "y": 3.28381677095556e-12, "x": [-1.7768002820189275, -2.511998457889015]}}
+		]}
+	]
+}

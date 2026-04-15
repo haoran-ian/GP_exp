@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 200, "best": {"evals": 97, "y": 0.3836094924191149, "x": [1.414617303713623, 1.3530973072771932]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 106, "y": 0.1504826388740378, "x": [1.4209845553412648, 1.2950374845313135]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 124, "y": 1.8593965003499535, "x": [0.8031238037292697, 0.9857481895621021]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 136, "y": 0.9710203575104966, "x": [2.3600342815627564, 1.8339581913588965]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 184, "y": 0.6019305554961512, "x": [2.2789246279123385, 1.8936860474372048]}}
+		]}
+	]
+}

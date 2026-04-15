@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 204, "best": {"evals": 183, "y": 8.870437866035513e-05, "x": [3.174382631579443, -2.0640545518285958]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 177, "y": 0.05050470448802428, "x": [3.761240509591305, -1.2996781006811768]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 200, "y": 0.005627322349539906, "x": [-3.941034807142011, 4.331899903298724]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 181, "y": 1.1995276214126298, "x": [1.6573770952338305, -3.5902615243593314]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 26, "y": 1.6790063704167197, "x": [-1.1710160459953984, -5]}}
+		]}
+	]
+}

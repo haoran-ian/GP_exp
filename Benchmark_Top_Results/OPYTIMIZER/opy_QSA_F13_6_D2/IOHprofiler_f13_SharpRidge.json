@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 13, 
+	"function_name": "SharpRidge", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f13_SharpRidge/IOHprofiler_f13_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 840, "best": {"evals": 721, "y": 0.15132178548602776, "x": [-0.4964261482821486, 0.6282376562472718]}},
+			{"instance": 6, "evals": 843, "best": {"evals": 741, "y": 0.05208447791990044, "x": [-0.38283212041704173, 0.6194430847590202]}},
+			{"instance": 6, "evals": 842, "best": {"evals": 713, "y": 0.0036170532284494944, "x": [-0.30359850479682854, 0.6138158092314827]}},
+			{"instance": 6, "evals": 842, "best": {"evals": 196, "y": 0.0005164980453033339, "x": [-0.3001674439832227, 0.6135521781857437]}},
+			{"instance": 6, "evals": 835, "best": {"evals": 706, "y": 9.548366541092562e-06, "x": [-0.29968173598897124, 0.6135183494254721]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 204, "best": {"evals": 64, "y": 0.1985631758256997, "x": [3.9932489489414382, 0.8369632320044822]}},
+			{"instance": 3, "evals": 204, "best": {"evals": 55, "y": 0.2279599106828215, "x": [3.844157366345139, 0.01786944195125123]}},
+			{"instance": 3, "evals": 210, "best": {"evals": 49, "y": 0, "x": [3.983882159197981, 1.1357424960759608]}},
+			{"instance": 3, "evals": 204, "best": {"evals": 46, "y": 0.0051229054240477835, "x": [3.9532817609119095, 1.0129678364909065]}},
+			{"instance": 3, "evals": 204, "best": {"evals": 161, "y": 0, "x": [4.004548915833469, 1.1615799044887787]}}
+		]}
+	]
+}

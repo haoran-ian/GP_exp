@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_GCO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 390, "best": {"evals": 114, "y": 53.77186672933094, "x": [5, -4.60400587987423]}},
+			{"instance": 2, "evals": 390, "best": {"evals": 342, "y": 0.22352643645771228, "x": [2.71029844911713, 2.1523610135446085]}},
+			{"instance": 2, "evals": 390, "best": {"evals": 12, "y": 0.22352643645771228, "x": [2.71029844911713, 2.1523610135446085]}},
+			{"instance": 2, "evals": 390, "best": {"evals": 12, "y": 0.22352643645771228, "x": [2.71029844911713, 2.1523610135446085]}},
+			{"instance": 2, "evals": 390, "best": {"evals": 12, "y": 0.22352643645771228, "x": [2.71029844911713, 2.1523610135446085]}}
+		]}
+	]
+}

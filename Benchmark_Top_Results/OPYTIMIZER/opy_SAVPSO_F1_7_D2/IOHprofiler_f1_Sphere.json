@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_SAVPSO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 210, "best": {"evals": 180, "y": 0.0038833918866716184, "x": [-0.11821326614299132, 0.2745653656062246]}},
+			{"instance": 7, "evals": 210, "best": {"evals": 161, "y": 1.6679409131962966e-05, "x": [-0.08087727250341775, 0.22776492965981127]}},
+			{"instance": 7, "evals": 210, "best": {"evals": 114, "y": 1.5479849481200493e-05, "x": [-0.08038566833473863, 0.22638048399993893]}},
+			{"instance": 7, "evals": 210, "best": {"evals": 98, "y": 1.5568149063103824e-05, "x": [-0.08034717858228207, 0.22627208994200976]}},
+			{"instance": 7, "evals": 210, "best": {"evals": 118, "y": 1.579851555948818e-05, "x": [-0.08027667622071732, 0.22607354262549423]}}
+		]}
+	]
+}

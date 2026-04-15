@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 200, "best": {"evals": 187, "y": 0.7916649124184312, "x": [-4.018438747421943, 2.079407124772038]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 165, "y": 1.8735995514114472, "x": [-5, 2.1194416293893603]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 166, "y": 1.3922349121495066, "x": [-5, 2.139043571904555]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 171, "y": 1.9676744083404005, "x": [-4.515526583820865, 2.063028935841926]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 130, "y": 1.3929257892880937, "x": [-5, 2.192768395922675]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 10, 
+	"function_name": "EllipsoidRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f10_EllipsoidRotated/IOHprofiler_f10_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 204, "best": {"evals": 185, "y": 1.1748713190817428, "x": [0.9665536631718741, -2.892254457832755]}},
+			{"instance": 5, "evals": 204, "best": {"evals": 174, "y": 0.05005668428191715, "x": [0.2463247410930383, -2.949774463487922]}},
+			{"instance": 5, "evals": 204, "best": {"evals": 162, "y": 7.2019726292363515, "x": [-2.5704661201899963, -3.173503560614187]}},
+			{"instance": 5, "evals": 204, "best": {"evals": 201, "y": 9.689922475392226, "x": [2.922289306395602, -2.739399565375509]}},
+			{"instance": 5, "evals": 204, "best": {"evals": 190, "y": 0.5909788901844543, "x": [0.8560067371755923, -2.9017399882781256]}}
+		]}
+	]
+}

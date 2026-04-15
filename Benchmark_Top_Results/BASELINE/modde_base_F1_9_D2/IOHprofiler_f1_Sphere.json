@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 200, "best": {"evals": 186, "y": 0.00012550520618362276, "x": [1.7028470377322846, 2.7646307232409795]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 180, "y": 0.04379758672089832, "x": [1.8970601320049574, 2.81597389447991]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 199, "y": 0.040251996870092906, "x": [1.8483385578495832, 2.886684076431184]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 186, "y": 0.009459465120521274, "x": [1.7378037632357701, 2.843393857615064]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 177, "y": 0.008389580162573566, "x": [1.7286226697823022, 2.669311130811379]}}
+		]}
+	]
+}

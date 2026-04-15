@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 204, "best": {"evals": 102, "y": 0.12544727406816492, "x": [-0.9220263898641567, 1.407734477265302]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 76, "y": 0.058445248867696975, "x": [-0.364793128979751, -0.6625504466539325]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 84, "y": 0.049260929065289005, "x": [-0.7040006447855665, -0.6912971515491524]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 13, "y": 0.012092846178942906, "x": [0.5214298373283783, 0.14316003739182964]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 57, "y": 0.07394397119566776, "x": [-0.6743219899679157, -0.617142710670113]}}
+		]}
+	]
+}

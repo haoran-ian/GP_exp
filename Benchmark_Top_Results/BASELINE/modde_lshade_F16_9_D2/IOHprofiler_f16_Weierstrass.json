@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 203, "best": {"evals": 106, "y": 1.3245023845788846, "x": [-2.417850874025191, -4.1287070029845925]}},
+			{"instance": 9, "evals": 203, "best": {"evals": 111, "y": 0.47639283016234457, "x": [-4.221090253661241, -4.416000509353424]}},
+			{"instance": 9, "evals": 203, "best": {"evals": 63, "y": 0.10833015312710412, "x": [1.5974332317646862, -4.22678860396784]}},
+			{"instance": 9, "evals": 203, "best": {"evals": 149, "y": 1.7032131248426328, "x": [-5, 0.5885408799088196]}},
+			{"instance": 9, "evals": 203, "best": {"evals": 140, "y": 0.22496934224658147, "x": [1.3625431650027036, -4.136402404126008]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 23, 
+	"function_name": "Katsuura", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f23_Katsuura/IOHprofiler_f23_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 200, "best": {"evals": 93, "y": 4.16097845135567, "x": [-0.3284755524159014, 0.556392216733311]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 73, "y": 4.5877389841525575, "x": [0.8464379147198374, -1.2101875063633603]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 200, "y": 1.3118644594342421, "x": [-0.9224343334055997, 0.32512100231646507]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 157, "y": 6.19320664894291, "x": [0.2372200249278633, -2.472548351738695]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 74, "y": 5.370186374385117, "x": [-0.32179679732989674, 0.3787363357550864]}}
+		]}
+	]
+}

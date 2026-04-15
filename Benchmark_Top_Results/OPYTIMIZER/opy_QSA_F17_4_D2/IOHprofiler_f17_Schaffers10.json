@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 17, 
+	"function_name": "Schaffers10", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f17_Schaffers10/IOHprofiler_f17_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 847, "best": {"evals": 734, "y": 0.058987247585631314, "x": [-3.9155281702071036, 2.051296260389589]}},
+			{"instance": 4, "evals": 834, "best": {"evals": 735, "y": 0.0002998830761945327, "x": [-3.8992962772899613, 2.0599637406968676]}},
+			{"instance": 4, "evals": 843, "best": {"evals": 793, "y": 4.6895491502395286e-05, "x": [-3.8992313908116603, 2.0599951021875773]}},
+			{"instance": 4, "evals": 834, "best": {"evals": 704, "y": 1.6391096993073853e-06, "x": [-3.899200102482636, 2.0600004695585774]}},
+			{"instance": 4, "evals": 835, "best": {"evals": 719, "y": 4.166427444000015e-07, "x": [-3.8992000715617716, 2.0600000450124867]}}
+		]}
+	]
+}

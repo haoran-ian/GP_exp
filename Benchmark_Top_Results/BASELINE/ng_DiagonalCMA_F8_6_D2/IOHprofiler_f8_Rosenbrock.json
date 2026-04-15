@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 200, "best": {"evals": 183, "y": 0.31421799616472845, "x": [-1.8772893080002395, 2.0701929314519454]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 196, "y": 0.4102451137344123, "x": [-0.6850075805808344, 4.565301275889862]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 197, "y": 0.5343641602206468, "x": [-1.9876295364076069, 1.9622584181353324]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 74, "y": 0.1351549732778799, "x": [-1.6923823192983232, 2.2787339657874037]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 140, "y": 0.3870210631222866, "x": [-1.9304254289334475, 2.0207049524729044]}}
+		]}
+	]
+}

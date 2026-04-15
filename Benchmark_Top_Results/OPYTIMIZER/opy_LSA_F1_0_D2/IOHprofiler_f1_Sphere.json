@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_LSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 402, "best": {"evals": 345, "y": 0.0003074621974023614, "x": [-0.6554624361973704, -3.2674212742687687]}},
+			{"instance": 0, "evals": 404, "best": {"evals": 284, "y": 8.245600467629148e-08, "x": [-0.6725394408181246, -3.264920685199659]}},
+			{"instance": 0, "evals": 403, "best": {"evals": 347, "y": 9.336320661521142e-11, "x": [-0.6727913195506838, -3.2648042441732157]}},
+			{"instance": 0, "evals": 402, "best": {"evals": 361, "y": 2.3185755678681904e-12, "x": [-0.6728011473748432, -3.2648010010527146]}},
+			{"instance": 0, "evals": 402, "best": {"evals": 285, "y": 6.3110772781760704e-15, "x": [-0.6728000461956706, -3.264799935369997]}}
+		]}
+	]
+}

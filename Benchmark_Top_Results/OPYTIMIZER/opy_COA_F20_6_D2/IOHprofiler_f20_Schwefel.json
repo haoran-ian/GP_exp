@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_COA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 390, "best": {"evals": 238, "y": 1.0902756348328342, "x": [1.894172228569877, 2.1760844673968105]}},
+			{"instance": 6, "evals": 390, "best": {"evals": 214, "y": 0.4468398761447975, "x": [2.001892759349276, 2.1579284354077006]}},
+			{"instance": 6, "evals": 390, "best": {"evals": 346, "y": 0.3027971046059298, "x": [2.0331698264073514, 2.0961350013927533]}},
+			{"instance": 6, "evals": 390, "best": {"evals": 19, "y": 0.3027971046059298, "x": [2.0331698264073514, 2.0961350013927533]}},
+			{"instance": 6, "evals": 390, "best": {"evals": 212, "y": 0.010081081673827158, "x": [2.0853777607960473, 2.1082472628352953]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 17, 
+	"function_name": "Schaffers10", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f17_Schaffers10/IOHprofiler_f17_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 200, "best": {"evals": 179, "y": 16.846669080046873, "x": [1.775988324188157, 0.004566708174215684]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 34, "y": 20.078246101754992, "x": [-0.4858821870212072, 2.4696082195201994]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 200, "y": 9.558830046379367, "x": [0.4500325239155425, 2.593661169315614]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 34, "y": 67.89026400101264, "x": [0.3040100753212525, -1.4607112662143216]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 52, "y": 23.787718060709743, "x": [1.7796997508499162, -0.75660471288452]}}
+		]}
+	]
+}

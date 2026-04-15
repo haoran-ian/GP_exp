@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 200, "best": {"evals": 177, "y": 12.934432432048117, "x": [-0.6541147200089219, -1.5432634861818877]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 199, "y": 0.9949590613154886, "x": [3.395708574302638, -0.8560003246664148]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 186, "y": 3.9798311909525794, "x": [2.398400628450619, -0.23415274346783682]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 191, "y": 4.974790251840478, "x": [0.4425640742720224, -1.1658743097302287]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 200, "y": 1.9899181142869526, "x": [1.401949965492589, -0.4950220226476615]}}
+		]}
+	]
+}

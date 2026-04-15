@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_EO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM10.dat",
+		"runs": [
+			{"instance": 3, "evals": 1053, "best": {"evals": 1003, "y": 0, "x": [-5, -5, -5, 5, -5, 5, -5, -5, 5, -5]}},
+			{"instance": 3, "evals": 1053, "best": {"evals": 256, "y": 0, "x": [-5, -5, -5, 5, -5, 5, -5, -5, 5, -5]}},
+			{"instance": 3, "evals": 1053, "best": {"evals": 5, "y": 0, "x": [-5, -5, -5, 5, -5, 5, -5, -5, 5, -5]}},
+			{"instance": 3, "evals": 1053, "best": {"evals": 2, "y": 0, "x": [-5, -5, -5, 5, -5, 5, -5, -5, 5, -5]}},
+			{"instance": 3, "evals": 1053, "best": {"evals": 3, "y": 0, "x": [-5, -5, -5, 5, -5, 5, -5, -5, 5, -5]}}
+		]}
+	]
+}

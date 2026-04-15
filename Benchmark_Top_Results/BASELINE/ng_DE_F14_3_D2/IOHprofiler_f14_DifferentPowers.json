@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 200, "best": {"evals": 153, "y": 0.0443594257412488, "x": [0.8584097035343388, -0.9501528257724103]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 122, "y": 0.036220063200671004, "x": [0.9118794185571195, -0.8729864353314464]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 169, "y": 0.028439019826743177, "x": [0.881946135019672, -0.37885215089688934]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 151, "y": 0.10685744592354868, "x": [0.8656149590319655, -0.15439527042294277]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 189, "y": 0.010254732293872472, "x": [0.8811549550059201, -0.8231390900621113]}}
+		]}
+	]
+}

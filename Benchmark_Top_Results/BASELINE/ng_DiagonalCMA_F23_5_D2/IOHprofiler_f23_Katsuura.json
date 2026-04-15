@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 23, 
+	"function_name": "Katsuura", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f23_Katsuura/IOHprofiler_f23_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 200, "best": {"evals": 22, "y": 1.4892229826484198, "x": [0.5520881055188123, -0.2480405083555493]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 129, "y": 0.5422172894375693, "x": [2.5564454470222815, -2.372545679570276]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 154, "y": 3.3060456586463283, "x": [-0.9699790670246607, -2.0382203466780875]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 25, "y": 1.5832644698032978, "x": [-0.1446008799299177, 0.1915590042197775]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 177, "y": 4.171454818069974, "x": [0.3914774850609317, 0.42018756634647964]}}
+		]}
+	]
+}

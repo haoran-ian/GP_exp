@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 200, "best": {"evals": 196, "y": 0.002021651449921119, "x": [1.8301428584016979, 2.8825478247462706]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 197, "y": 0.0008360579311284113, "x": [1.8609450961102794, 2.8924956410348406]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 196, "y": 0.002414489160065389, "x": [1.8258345969414358, 2.880292821622881]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 190, "y": 0.0022505561342035713, "x": [1.825870539921405, 2.881422201971144]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 196, "y": 0.003002939493006643, "x": [2.0864920985346243, 2.9649930551934514]}}
+		]}
+	]
+}

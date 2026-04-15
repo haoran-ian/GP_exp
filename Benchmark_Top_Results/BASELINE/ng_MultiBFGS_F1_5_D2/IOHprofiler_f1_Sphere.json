@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 200, "best": {"evals": 16, "y": 2.2010718264276361e-16, "x": [3.6144000144065713, 0.6352000035437102]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 34, "y": 1.8346037034752644e-17, "x": [3.614399995922595, 0.6351999986882043]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 16, "y": 1.414431327678063e-15, "x": [3.614400031678086, 0.6352000202714129]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 16, "y": 4.771778089102803e-16, "x": [3.6143999845301593, 0.6351999845772299]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 28, "y": 1.330709379003792e-16, "x": [3.6143999915735616, 0.6352000078782029]}}
+		]}
+	]
+}

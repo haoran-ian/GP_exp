@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 841, "best": {"evals": 787, "y": 0.2950768575329039, "x": [-2.2129387324755827, -2.0820601823591574]}},
+			{"instance": 4, "evals": 843, "best": {"evals": 714, "y": 0.0005105168285354011, "x": [-2.1077258942285444, -2.1030312191925637]}},
+			{"instance": 4, "evals": 840, "best": {"evals": 588, "y": 6.7826375925506e-07, "x": [-2.104681308221743, -2.104891373311095]}},
+			{"instance": 4, "evals": 839, "best": {"evals": 710, "y": 3.4553977457107976e-11, "x": [-2.1048429343336714, -2.1048436604450114]}},
+			{"instance": 4, "evals": 841, "best": {"evals": 776, "y": 5.456968210637569e-14, "x": [-2.104843721390719, -2.1048437204807064]}}
+		]}
+	]
+}

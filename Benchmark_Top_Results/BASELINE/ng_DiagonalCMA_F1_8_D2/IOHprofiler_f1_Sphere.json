@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 200, "best": {"evals": 198, "y": 8.714329607637279e-06, "x": [2.6350465646082286, 2.42911501359491]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 171, "y": 6.176573870780079e-07, "x": [2.632780238841446, 2.4279856633399177]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 198, "y": 1.1396102573434357e-07, "x": [2.632471731927137, 2.4271212529487958]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 199, "y": 1.0829515364877794e-07, "x": [2.6329342466706027, 2.426899545369347]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 195, "y": 2.7551796257901432e-06, "x": [2.6331873044319782, 2.425585944578783]}}
+		]}
+	]
+}

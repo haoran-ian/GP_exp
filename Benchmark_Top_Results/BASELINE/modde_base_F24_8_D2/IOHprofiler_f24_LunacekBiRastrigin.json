@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 24, 
+	"function_name": "LunacekBiRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f24_LunacekBiRastrigin/IOHprofiler_f24_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 200, "best": {"evals": 20, "y": 4.584995276720395, "x": [4.437480785146242, 1.818202991034834]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 143, "y": 5.958081687234432, "x": [1.8033178304569972, 3.022737760263084]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 164, "y": 4.833792248442166, "x": [-1.2212663293419306, -0.26072875470285517]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 79, "y": 2.6443731023468207, "x": [-0.5244564262431304, -1.387401920033037]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 153, "y": 6.157646613928985, "x": [5, 3.204005685326452]}}
+		]}
+	]
+}

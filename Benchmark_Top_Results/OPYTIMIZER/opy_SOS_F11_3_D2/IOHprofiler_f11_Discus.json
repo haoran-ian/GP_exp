@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_SOS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 930, "best": {"evals": 803, "y": 0.4683132705263191, "x": [0.14768863776014418, 1.758596077812497]}},
+			{"instance": 3, "evals": 930, "best": {"evals": 586, "y": 0.0030668122085831745, "x": [0.4497855496203757, 2.2614736039965955]}},
+			{"instance": 3, "evals": 930, "best": {"evals": 794, "y": 0.0003660618807730604, "x": [0.4251684083794386, 2.2206611217723253]}},
+			{"instance": 3, "evals": 930, "best": {"evals": 229, "y": 6.569887600953969e-06, "x": [0.42588098470970454, 2.221809085163881]}},
+			{"instance": 3, "evals": 930, "best": {"evals": 829, "y": 2.2541354614112374e-07, "x": [0.4271295512458738, 2.223883793831694]}}
+		]}
+	]
+}

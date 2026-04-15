@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 200, "best": {"evals": 190, "y": 16.281298363212375, "x": [3.854511267882703, -1.2262679174956284]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 160, "y": 48.27909755264552, "x": [4.905406238897966, -4.325993034717534]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 132, "y": 0.10316672871839881, "x": [2.656811813003389, 2.31021671240523]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 184, "y": 5.198379099233996, "x": [3.054636013027143, 1.1409739117767645]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 137, "y": 2.4174041934568726, "x": [3.000530966268419, 1.294329575788694]}}
+		]}
+	]
+}

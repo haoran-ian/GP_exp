@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 203, "best": {"evals": 177, "y": 0.8366607841406843, "x": [-0.6404209028909049, -1.050791065648844]}},
+			{"instance": 7, "evals": 203, "best": {"evals": 133, "y": 0.06124042717989717, "x": [0.19023613477343204, 0.25821257440459355]}},
+			{"instance": 7, "evals": 203, "best": {"evals": 184, "y": 0.16310176141054927, "x": [-0.43271194863610124, -0.8931022157809672]}},
+			{"instance": 7, "evals": 203, "best": {"evals": 195, "y": 1.0536819418229069, "x": [-0.054596797405195595, -0.19253911919236266]}},
+			{"instance": 7, "evals": 203, "best": {"evals": 190, "y": 0.14274679208283828, "x": [-0.1626447969079488, -0.46296001163372935]}}
+		]}
+	]
+}

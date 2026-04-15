@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_AEO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 570, "best": {"evals": 399, "y": 0.014330199398870348, "x": [-0.09157734424170033, 0.4657896296897104]}},
+			{"instance": 1, "evals": 570, "best": {"evals": 500, "y": 0.0051533783828680655, "x": [-0.05422465428728977, 0.6097937745887375]}},
+			{"instance": 1, "evals": 570, "best": {"evals": 536, "y": 0.0006935731986035863, "x": [-0.040124118165874585, 0.6677973298270524]}},
+			{"instance": 1, "evals": 570, "best": {"evals": 82, "y": 0.0001922754194389399, "x": [-0.037867376298212505, 0.680108030419627]}},
+			{"instance": 1, "evals": 570, "best": {"evals": 30, "y": 0.0001922754194389399, "x": [-0.037867376298212505, 0.680108030419627]}}
+		]}
+	]
+}

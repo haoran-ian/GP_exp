@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ABO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 400, "best": {"evals": 339, "y": 360.72429344453695, "x": [-1.7095544652600556, -3.8827016425487897]}},
+			{"instance": 3, "evals": 395, "best": {"evals": 162, "y": 112.00172676608712, "x": [-3.605941071252252, -2.4802317122752227]}},
+			{"instance": 3, "evals": 399, "best": {"evals": 179, "y": 17.090854740753638, "x": [-5, -1.2750747671269238]}},
+			{"instance": 3, "evals": 403, "best": {"evals": 359, "y": 1.0382808946524893, "x": [-3.0457050835513058, -2.8923265302255605]}},
+			{"instance": 3, "evals": 404, "best": {"evals": 17, "y": 1.0382808946524893, "x": [-3.0457050835513058, -2.8923265302255605]}}
+		]}
+	]
+}

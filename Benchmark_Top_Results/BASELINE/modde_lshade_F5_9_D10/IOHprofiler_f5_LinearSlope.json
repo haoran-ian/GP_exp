@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM10.dat",
+		"runs": [
+			{"instance": 9, "evals": 1021, "best": {"evals": 1015, "y": 1.841635024968225, "x": [-5, -5, 5, 5, 4.338150688352801, 5, -5, 5, -5, -5]}},
+			{"instance": 9, "evals": 1021, "best": {"evals": 1013, "y": 4.692727826832437, "x": [-1.9884937153558884, -5, 5, 4.219646086294942, 5, 5, -5, 5, -5, -5]}},
+			{"instance": 9, "evals": 983, "best": {"evals": 942, "y": 0, "x": [-5, -5, 5, 5, 5, 5, -5, 5, -5, -5]}},
+			{"instance": 9, "evals": 1021, "best": {"evals": 1004, "y": 3.326404279968089, "x": [-2.157761923920445, -4.625127691947522, 5, 5, 5, 5, -5, 5, -5, -5]}},
+			{"instance": 9, "evals": 1021, "best": {"evals": 1008, "y": 0.6458541405717924, "x": [-5, -5, 5, 5, 5, 4.8202872488697555, -5, 5, -5, -5]}}
+		]}
+	]
+}

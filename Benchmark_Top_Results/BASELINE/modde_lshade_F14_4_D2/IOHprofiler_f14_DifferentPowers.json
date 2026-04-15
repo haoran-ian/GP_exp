@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 203, "best": {"evals": 167, "y": 0.043340475674649874, "x": [3.9321655886309603, -1.1655848117422227]}},
+			{"instance": 4, "evals": 203, "best": {"evals": 184, "y": 0.0040439502351475145, "x": [3.9912778845866512, -1.20563055409084]}},
+			{"instance": 4, "evals": 203, "best": {"evals": 182, "y": 0.041375597452081296, "x": [3.9483934958520486, -1.216160650096671]}},
+			{"instance": 4, "evals": 203, "best": {"evals": 130, "y": 0.08261193830498191, "x": [3.8435141020854644, -0.993780591744768]}},
+			{"instance": 4, "evals": 203, "best": {"evals": 194, "y": 0.001446848998360594, "x": [3.9550116605614605, -1.0807570735879555]}}
+		]}
+	]
+}

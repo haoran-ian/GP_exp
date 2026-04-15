@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 200, "best": {"evals": 200, "y": 6.4683013394703306e-06, "x": [-0.27160065365609676, 1.8969379719436568]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 195, "y": 6.289972781862157e-08, "x": [-0.27199230439579025, 1.896890090676196]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 193, "y": 0.0008278045053413904, "x": [-0.2696352258419297, 1.9116830620356915]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 200, "y": 8.882729132817543e-06, "x": [-0.27191443358322287, 1.8982404618865996]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 199, "y": 0.37464221851039814, "x": [-0.2890669462724053, 2.4583572314763593]}}
+		]}
+	]
+}

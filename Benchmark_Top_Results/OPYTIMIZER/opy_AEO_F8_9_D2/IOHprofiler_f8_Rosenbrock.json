@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_AEO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 570, "best": {"evals": 437, "y": 0.3544436262933079, "x": [3.1843164652985165, 3.47363351747039]}},
+			{"instance": 9, "evals": 570, "best": {"evals": 321, "y": 0.030848941327806446, "x": [2.8029355223371786, 2.4098819193993517]}},
+			{"instance": 9, "evals": 570, "best": {"evals": 488, "y": 0.02149460981718683, "x": [2.7729347319067466, 2.3426225363810302]}},
+			{"instance": 9, "evals": 570, "best": {"evals": 8, "y": 0.02149460981718683, "x": [2.7729347319067466, 2.3426225363810302]}},
+			{"instance": 9, "evals": 570, "best": {"evals": 330, "y": 0.02138412913181727, "x": [2.7730433944331456, 2.3424107734498762]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 200, "best": {"evals": 126, "y": 0.021107800459759574, "x": [-0.8972332266901838, 0.5389781727138284]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 21, "y": 0.10400655835546324, "x": [1.1151778973706539, -0.030982698251916074]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 11, "y": 0.021301609321097814, "x": [-0.7125708368690307, 0.5171723387359424]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 43, "y": 0.013746858949536644, "x": [-0.2931929832298938, 0.0021435590258638143]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 193, "y": 0.0010513845087505302, "x": [-0.8109468553951777, 0.4654732563084344]}}
+		]}
+	]
+}

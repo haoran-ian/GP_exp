@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 13, 
+	"function_name": "SharpRidge", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f13_SharpRidge/IOHprofiler_f13_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 200, "best": {"evals": 101, "y": 0.519927491378331, "x": [-2.4968890767979666, 1.8665304479024547]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 121, "y": 8.927428471205294, "x": [-1.2495895171347526, 3.709374076339257]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 67, "y": 0.10131677176188293, "x": [-2.147356177152116, 2.3829536888702862]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 199, "y": 14.294791674560747, "x": [-0.9829213428312138, 4.103366822738704]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 101, "y": 0.30797392749315594, "x": [-2.441028442760727, 1.9490626828544355]}}
+		]}
+	]
+}

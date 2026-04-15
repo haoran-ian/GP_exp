@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 13, 
+	"function_name": "SharpRidge", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f13_SharpRidge/IOHprofiler_f13_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 200, "best": {"evals": 199, "y": 4.186210613178727, "x": [2.409462117758043, -0.31154392419125737]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 97, "y": 1.822512032523925, "x": [3.2343678092303856, -1.407978933180379]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 123, "y": 0.2390449426942587, "x": [2.9931038195027773, -1.0908758947300714]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 187, "y": 5.303187849731763, "x": [2.367564017964719, -0.2508765639805837]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 33, "y": 27.007329683349855, "x": [3.0731998957305384, -0.8535375083583924]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 136, "y": 5.8657286962120204e-12, "x": [-0.03006235981901161, 0.7064623134446621]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 160, "y": 1.0088104752247505e-11, "x": [-0.0300628270353712, 0.7064606899294174]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 175, "y": 7.814122162864597e-13, "x": [-0.030061406241466138, 0.7064656127975173]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 101, "y": 6.1376494034424376e-12, "x": [-0.03006238145338842, 0.7064621911199142]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 65, "y": 3.343960283273214e-12, "x": [-0.030061836200016113, 0.7064642781344855]}}
+		]}
+	]
+}

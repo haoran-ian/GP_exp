@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 200, "best": {"evals": 71, "y": 3.86483778958555e-05, "x": [-3.8527179015244974, 1.733291301538288]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 110, "y": 2.2603921406296985e-05, "x": [-3.8488313653517556, 1.7431967243511721]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 167, "y": 2.836334063830685e-05, "x": [-3.8483842540096758, 1.7443385631983315]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 199, "y": 1.7948641791258182e-08, "x": [-3.850446757314602, 1.7390808771460193]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 155, "y": 8.533442143041135e-05, "x": [-3.850214040822869, 1.739649829139297]}}
+		]}
+	]
+}

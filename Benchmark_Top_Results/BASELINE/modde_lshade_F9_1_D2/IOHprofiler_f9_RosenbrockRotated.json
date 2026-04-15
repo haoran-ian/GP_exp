@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 203, "best": {"evals": 203, "y": 0.01916622204737119, "x": [-0.05144915052302995, 0.6534389470906097]}},
+			{"instance": 1, "evals": 203, "best": {"evals": 203, "y": 0.0239879596354705, "x": [0.08188004002479643, 1.0572218582281456]}},
+			{"instance": 1, "evals": 203, "best": {"evals": 132, "y": 0.24581322104497352, "x": [-0.1732353116055219, -0.17786537354031506]}},
+			{"instance": 1, "evals": 203, "best": {"evals": 1, "y": 0.34335703196904177, "x": [0.5079790257457546, 2.081478226181048]}},
+			{"instance": 1, "evals": 203, "best": {"evals": 19, "y": 1.350201673759941, "x": [0.24404080068473366, 1.3761024412599365]}}
+		]}
+	]
+}

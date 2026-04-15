@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 210, "best": {"evals": 63, "y": 23.31255797027914, "x": [0.8912090780561263, -3.7333377359298234]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 143, "y": 38.687166667130846, "x": [4.895580961456947, -4.995289483236186]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 162, "y": 4.432313139424052, "x": [-2.101305917513599, -2.7843413874959992]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 175, "y": 2.8196456935905334, "x": [-1.1802507903729604, -3.0756709279993824]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 79, "y": 63.46986110619817, "x": [3.932924440841366, -4.697700410163464]}}
+		]}
+	]
+}

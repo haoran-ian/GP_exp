@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 204, "best": {"evals": 198, "y": 1.0209513173620581, "x": [-2.678052158510024, 3.118228077614261]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 108, "y": 6.866067141400428, "x": [-1.5062277549641756, 1.6967006461683587]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 195, "y": 0.004328139869947907, "x": [-3.0550377535384787, 3.002263020194836]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 144, "y": 0.9957842865695294, "x": [-3.4328576633469243, 2.8468730770165895]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 105, "y": 2.4207986086553, "x": [-2.297168732126714, 2.3859129387302804]}}
+		]}
+	]
+}

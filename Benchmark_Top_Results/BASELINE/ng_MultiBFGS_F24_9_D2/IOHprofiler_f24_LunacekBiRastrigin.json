@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 24, 
+	"function_name": "LunacekBiRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f24_LunacekBiRastrigin/IOHprofiler_f24_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 200, "best": {"evals": 37, "y": 12.73228052554786, "x": [-0.39359857147615457, 0.38064517679784254]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 122, "y": 8.781104982069147, "x": [-0.8533916971357381, 0.17748508568239657]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 96, "y": 1.5301046985502778, "x": [-0.860273825059211, -1.728691490095036]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 84, "y": 4.596115369865821, "x": [-0.27293458614552213, -1.68425697394802]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 59, "y": 0.38117143677146004, "x": [-1.1836691374290929, -0.9485466309489564]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 204, "best": {"evals": 196, "y": 1.6386098813799288, "x": [3.0832185846004068, -1.909821224608451]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 203, "y": 1.0018621133306305, "x": [3.1200792437429334, -1.9306652133317517]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 203, "y": 2.588447118808921, "x": [4.118448101985386, -1.963890695600845]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 203, "y": 2.2191843235913917, "x": [2.170280688198699, -2.2792516374281884]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 54, "y": 2.066170268263332, "x": [3.189587260510565, -2.615351384725026]}}
+		]}
+	]
+}

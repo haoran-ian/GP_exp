@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 200, "best": {"evals": 196, "y": 2.3475749795032232, "x": [-2.511374916131124, 2.05919612625739]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 200, "y": 25.765779246068902, "x": [2.9762601053034157, 0.9894197508836462]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 199, "y": 6.113158325657099, "x": [-3.4516715191176015, 2.0591934492130703]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 190, "y": 8.20882400628768, "x": [1.5193604516721932, 1.7092592684687866]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 199, "y": 67.65390926297468, "x": [4.873073481743782, -0.20623613315958464]}}
+		]}
+	]
+}

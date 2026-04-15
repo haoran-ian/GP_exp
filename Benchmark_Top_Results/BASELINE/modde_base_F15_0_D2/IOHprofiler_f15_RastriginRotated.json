@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 200, "best": {"evals": 183, "y": 4.457425163307227, "x": [1.0743844938296063, -1.2719069887117338]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 170, "y": 9.733374042893972, "x": [0.810808576450798, -0.3129555829190984]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 148, "y": 1.698698906170958, "x": [1.2875281595672408, -2.109431002058201]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 192, "y": 11.27945756930634, "x": [0.8271908864388529, -0.35796040222719183]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 144, "y": 15.695877617286675, "x": [1.2376649289771837, -2.839105044196236]}}
+		]}
+	]
+}

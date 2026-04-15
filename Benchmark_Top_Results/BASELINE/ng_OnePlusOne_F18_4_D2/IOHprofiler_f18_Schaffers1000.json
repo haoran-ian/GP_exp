@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 200, "best": {"evals": 200, "y": 0.7425809058892987, "x": [-4.498905756018905, 2.1314245011888873]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 185, "y": 2.4226248011668505, "x": [-1.4674340750231725, 1.9277907441337752]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 194, "y": 0.7425809041958754, "x": [-3.252180695245652, 2.0225310852265412]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 193, "y": 5.043458855385776, "x": [1.0472302578113846, 1.6341885567566314]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 180, "y": 7.7932159420863005, "x": [2.5838153304319165, 1.5393925298292594]}}
+		]}
+	]
+}

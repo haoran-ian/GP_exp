@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 22, 
+	"function_name": "Gallagher21", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f22_Gallagher21/IOHprofiler_f22_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 204, "best": {"evals": 38, "y": 1.1190748997603983, "x": [-0.5635298631568602, -2.8240972871397254]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 198, "y": 1.9550868776833172, "x": [1.2537113366187582, -3.899894116637663]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 51, "y": 2.025489039608904, "x": [3.0525409029121304, 3.794236308208687]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 176, "y": 0.6918768812284154, "x": [-0.8236659767585072, -2.798854128567823]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 20, "y": 0.9608152302874562, "x": [-0.8741615635000684, -2.6194509185721335]}}
+		]}
+	]
+}

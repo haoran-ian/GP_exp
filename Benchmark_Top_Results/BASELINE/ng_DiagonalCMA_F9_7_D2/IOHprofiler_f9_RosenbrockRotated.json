@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 200, "best": {"evals": 162, "y": 0.00031512758676688834, "x": [-0.644137196275461, 0.18772215796769873]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 199, "y": 0.026734877158545448, "x": [-0.3460819380003356, 0.19483984588972092]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 193, "y": 4.824264946051827e-07, "x": [-0.6821688726241641, 0.18545238214451137]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 195, "y": 0.009562391623353662, "x": [-0.48739540792636615, 0.1911900872144496]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 187, "y": 0.00015860784920844215, "x": [-0.6681262007815938, 0.18577971686247258]}}
+		]}
+	]
+}

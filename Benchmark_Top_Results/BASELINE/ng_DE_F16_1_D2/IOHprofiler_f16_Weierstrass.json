@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 109, "y": 1.4337643506379674, "x": [1.0339513918741332, 4.2667849182605275]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 182, "y": 0.6082982651144158, "x": [1.745079684588621, -1.1678880698995742]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 89, "y": 0.7771837893594603, "x": [1.8333217325899653, 0.9310157531491008]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 85, "y": 1.93619995859767, "x": [1.4839281362796566, 0.8194113371849054]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 93, "y": 1.7617120582917543, "x": [2.1980562766896345, -0.16191860336517383]}}
+		]}
+	]
+}

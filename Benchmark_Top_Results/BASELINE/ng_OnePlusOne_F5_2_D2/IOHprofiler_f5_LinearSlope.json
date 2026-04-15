@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 200, "best": {"evals": 199, "y": 0.15329420565494534, "x": [4.846708827560412, -4.999999696678464]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 199, "y": 0.008534249165004226, "x": [4.991467111178357, -4.999999863965664]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 199, "y": 0.9163205763376867, "x": [4.083680763348521, -4.999999866031379]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 197, "y": 6.070135306546598, "x": [-1.0701299110906697, -4.999999460454407]}},
+			{"instance": 2, "evals": 200, "best": {"evals": 193, "y": 8.3190095076624e-05, "x": [4.999955641723431, -4.999996116818149]}}
+		]}
+	]
+}

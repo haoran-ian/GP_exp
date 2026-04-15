@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 10, 
+	"function_name": "EllipsoidRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f10_EllipsoidRotated/IOHprofiler_f10_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 203, "best": {"evals": 120, "y": 25.381100102329256, "x": [2.432987932495042, 0.5897448770579317]}},
+			{"instance": 9, "evals": 203, "best": {"evals": 193, "y": 148.12287035880402, "x": [-0.09952568787491067, -2.1332677318357742]}},
+			{"instance": 9, "evals": 203, "best": {"evals": 195, "y": 2254.8035130390094, "x": [-1.187281444290507, -3.342847904405218]}},
+			{"instance": 9, "evals": 203, "best": {"evals": 197, "y": 479.9301160175659, "x": [0.18561028770847438, -1.7794438402816657]}},
+			{"instance": 9, "evals": 203, "best": {"evals": 163, "y": 182.90372033988166, "x": [1.2146804678910568, -0.6929579652246162]}}
+		]}
+	]
+}

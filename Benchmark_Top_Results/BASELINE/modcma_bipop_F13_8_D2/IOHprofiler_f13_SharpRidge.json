@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 13, 
+	"function_name": "SharpRidge", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f13_SharpRidge/IOHprofiler_f13_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 204, "best": {"evals": 185, "y": 0.04405469810197153, "x": [-2.2587898135731823, 2.2179018127398304]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 179, "y": 0.15885308756006972, "x": [-2.147283594862185, 2.382512718319555]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 203, "y": 0.4856918547922408, "x": [-2.174132776893642, 2.347376321571991]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 200, "y": 0.027646072204627385, "x": [-2.228021778514565, 2.2635700637400817]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 204, "y": 1.1952542883881097, "x": [-2.5082617836877956, 1.8558302461763345]}}
+		]}
+	]
+}

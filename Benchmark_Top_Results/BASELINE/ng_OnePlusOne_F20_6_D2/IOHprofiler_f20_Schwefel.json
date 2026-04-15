@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 200, "best": {"evals": 197, "y": 0.5921948484584926, "x": [2.1051974905652733, 0.960819542054424]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 196, "y": 1.480533570241156, "x": [-0.6241473924956012, 2.787093900771293]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 200, "y": 0.5921916731711826, "x": [-1.5126227737121292, 3.009210190091014]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 193, "y": 1.6778900204347518, "x": [1.0190736009737429, 1.2323412774249194]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 199, "y": 1.4805336002403953, "x": [-0.6241425330710664, 2.7870792180568014]}}
+		]}
+	]
+}

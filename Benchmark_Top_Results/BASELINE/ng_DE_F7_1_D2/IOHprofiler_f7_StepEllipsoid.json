@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 121, "y": 0.02068633887359081, "x": [-0.3185320912653584, 0.8117654952931799]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 181, "y": 0.15627489028755503, "x": [-0.06189589203774337, 0.45324444362937344]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 60, "y": 0.02403662360437422, "x": [-0.08465048250168916, 0.5360215781322433]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 180, "y": 0.0250019339797313, "x": [0.005400966327124265, 0.5107609592435558]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 185, "y": 0.03655600902380123, "x": [-0.25504235266175346, 0.7248052250133621]}}
+		]}
+	]
+}

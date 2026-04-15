@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 193, "y": 1.2584353810517025e-06, "x": [2.3408073156214506, 2.3000025574990106]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 199, "y": 1.989919290224711, "x": [2.434778050213634, 1.9901464149195016]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 199, "y": 12.934432443303386, "x": [-0.7117215782198838, 2.8801055426110964]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 182, "y": 0.9949590592483549, "x": [1.344347143459584, 2.300000032813936]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 199, "y": 4.974790268944141, "x": [1.3443430988776661, 2.880104490761379]}}
+		]}
+	]
+}

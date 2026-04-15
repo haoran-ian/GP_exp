@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_WEO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 390, "best": {"evals": 333, "y": 12.4593657854464, "x": [4.307940434924534, -2.513926760837096]}},
+			{"instance": 1, "evals": 390, "best": {"evals": 272, "y": 11.110240047039504, "x": [4.307940434924534, -1.9419191289481363]}},
+			{"instance": 1, "evals": 390, "best": {"evals": 276, "y": 1.6798232745796695, "x": [3.3586409083743565, -0.01056678484925272]}},
+			{"instance": 1, "evals": 390, "best": {"evals": 346, "y": 1.4569750059855422, "x": [3.199963110125595, 1.1431249246180561]}},
+			{"instance": 1, "evals": 390, "best": {"evals": 331, "y": 0.40823659596508305, "x": [3.053389057188805, 0.6521012996620776]}}
+		]}
+	]
+}

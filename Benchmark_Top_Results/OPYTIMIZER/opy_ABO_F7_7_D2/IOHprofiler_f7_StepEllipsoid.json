@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ABO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 400, "best": {"evals": 33, "y": 1.6397153757993548, "x": [-1.221272756264339, 2.220412327758419]}},
+			{"instance": 7, "evals": 401, "best": {"evals": 167, "y": 0.5299521313443732, "x": [-2.03927544428237, 2.5358760128270506]}},
+			{"instance": 7, "evals": 403, "best": {"evals": 161, "y": 0.06468479121478903, "x": [-2.3978237720348288, 2.729562137098833]}},
+			{"instance": 7, "evals": 405, "best": {"evals": 1, "y": 0.06468479121478903, "x": [-2.3978237720348288, 2.729562137098833]}},
+			{"instance": 7, "evals": 401, "best": {"evals": 278, "y": 0.016171197803697256, "x": [-2.4172332902130487, 2.729562137098833]}}
+		]}
+	]
+}

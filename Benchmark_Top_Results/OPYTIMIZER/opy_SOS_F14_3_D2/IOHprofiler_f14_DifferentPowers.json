@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_SOS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 930, "best": {"evals": 861, "y": 0.0003245739681105019, "x": [0.8988617664346978, -0.5401048059769133]}},
+			{"instance": 3, "evals": 930, "best": {"evals": 567, "y": 4.763918108020086e-05, "x": [0.8967746812251184, -0.5802060574088993]}},
+			{"instance": 3, "evals": 930, "best": {"evals": 842, "y": 3.070598867573008e-07, "x": [0.895005572821379, -0.6115214983889602]}},
+			{"instance": 3, "evals": 930, "best": {"evals": 14, "y": 3.070598867573008e-07, "x": [0.895005572821379, -0.6115214983889602]}},
+			{"instance": 3, "evals": 930, "best": {"evals": 633, "y": 1.3935221815442256e-07, "x": [0.8953587578874264, -0.605122535564817]}}
+		]}
+	]
+}

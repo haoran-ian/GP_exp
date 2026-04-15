@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 839, "best": {"evals": 309, "y": 16.936249658111816, "x": [0.8924257839445905, -3.1940614394781424]}},
+			{"instance": 7, "evals": 848, "best": {"evals": 731, "y": 2.7093965288049398, "x": [0.8611250622437756, -3.2229073930977092]}},
+			{"instance": 7, "evals": 847, "best": {"evals": 574, "y": 1.0028435299655003, "x": [0.8839495221744058, -3.1991504937018336]}},
+			{"instance": 7, "evals": 846, "best": {"evals": 577, "y": 0.05456262579581866, "x": [0.5203847276121251, -3.634659904876989]}},
+			{"instance": 7, "evals": 839, "best": {"evals": 1, "y": 0.05456262579581866, "x": [0.5203847276121251, -3.634659904876989]}}
+		]}
+	]
+}

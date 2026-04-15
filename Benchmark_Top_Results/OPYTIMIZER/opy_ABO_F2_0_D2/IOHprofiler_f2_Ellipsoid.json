@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 2, 
+	"function_name": "Ellipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ABO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f2_Ellipsoid/IOHprofiler_f2_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 401, "best": {"evals": 238, "y": 191.3658038395803, "x": [3.509602553317493, -0.79450722942858]}},
+			{"instance": 0, "evals": 397, "best": {"evals": 1, "y": 191.3658038395803, "x": [3.509602553317493, -0.79450722942858]}},
+			{"instance": 0, "evals": 402, "best": {"evals": 227, "y": 0.048432530623595045, "x": [-1.4737362442251603, -0.7815486203483164]}},
+			{"instance": 0, "evals": 402, "best": {"evals": 1, "y": 0.048432530623595045, "x": [-1.4737362442251603, -0.7815486203483164]}},
+			{"instance": 0, "evals": 399, "best": {"evals": 351, "y": 0.014299441808451906, "x": [-1.2136355319733498, -0.781499391978152]}}
+		]}
+	]
+}

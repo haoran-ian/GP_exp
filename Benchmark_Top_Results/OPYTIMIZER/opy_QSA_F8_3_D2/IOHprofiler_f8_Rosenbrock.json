@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 838, "best": {"evals": 702, "y": 0.05710315453797456, "x": [-1.0132498302084147, -1.5323701072931664]}},
+			{"instance": 3, "evals": 844, "best": {"evals": 716, "y": 0.030570324197680437, "x": [-0.6388252282237726, -0.7927455401100506]}},
+			{"instance": 3, "evals": 847, "best": {"evals": 715, "y": 0.0109750161289368, "x": [-0.700639132526064, -0.9283936813008332]}},
+			{"instance": 3, "evals": 849, "best": {"evals": 728, "y": 4.297030356715198e-05, "x": [-0.8116891660072034, -1.1606434311392049]}},
+			{"instance": 3, "evals": 839, "best": {"evals": 708, "y": 9.017508570193857e-06, "x": [-0.8075023459295188, -1.1525921788157862]}}
+		]}
+	]
+}

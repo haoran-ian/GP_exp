@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_LSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 402, "best": {"evals": 156, "y": 0.7671337320164127, "x": [2.338556087500077, -0.8644906517873727]}},
+			{"instance": 2, "evals": 403, "best": {"evals": 226, "y": 0.9969414429373322, "x": [2.3972168044715843, -0.5494644390859162]}},
+			{"instance": 2, "evals": 402, "best": {"evals": 236, "y": 0.0412695865239691, "x": [2.38882724621852, -0.8523945679700446]}},
+			{"instance": 2, "evals": 402, "best": {"evals": 346, "y": 5.810451128545426e-05, "x": [2.398451416952381, -0.8560386911564682]}},
+			{"instance": 2, "evals": 403, "best": {"evals": 346, "y": 9.894004641265015e-06, "x": [2.3981674906145525, -0.8560204411547855]}}
+		]}
+	]
+}

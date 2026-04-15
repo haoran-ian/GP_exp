@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 24, 
+	"function_name": "LunacekBiRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f24_LunacekBiRastrigin/IOHprofiler_f24_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 838, "best": {"evals": 591, "y": 1.5089888688302526, "x": [-1.2643081639384173, 1.2227264694642286]}},
+			{"instance": 0, "evals": 852, "best": {"evals": 1, "y": 1.5089888688302526, "x": [-1.2643081639384173, 1.2227264694642286]}},
+			{"instance": 0, "evals": 846, "best": {"evals": 713, "y": 0.96373316162894, "x": [-0.9433277273794749, 1.4202829997263609]}},
+			{"instance": 0, "evals": 848, "best": {"evals": 34, "y": 0.9328212594516475, "x": [-1.1385186493283899, 0.8519450453998585]}},
+			{"instance": 0, "evals": 837, "best": {"evals": 176, "y": 0.6504070029235622, "x": [-0.9602486919615694, 1.1229781308530835]}}
+		]}
+	]
+}

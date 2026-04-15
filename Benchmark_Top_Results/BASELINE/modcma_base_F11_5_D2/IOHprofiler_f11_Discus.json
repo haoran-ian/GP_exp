@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 204, "best": {"evals": 127, "y": 25.19100497773528, "x": [-0.7296480281075628, -4.376421570563515]}},
+			{"instance": 5, "evals": 204, "best": {"evals": 195, "y": 0.19583926397230672, "x": [3.7348976806200245, -1.1902440969116275]}},
+			{"instance": 5, "evals": 204, "best": {"evals": 144, "y": 4.0035342236414335, "x": [2.0142766673129278, -2.4198017525324076]}},
+			{"instance": 5, "evals": 204, "best": {"evals": 106, "y": 1.2336564739376046, "x": [4.118316253791627, -0.9158777922562574]}},
+			{"instance": 5, "evals": 204, "best": {"evals": 189, "y": 5.445669790297891, "x": [1.4954921759914848, -2.789518719097479]}}
+		]}
+	]
+}

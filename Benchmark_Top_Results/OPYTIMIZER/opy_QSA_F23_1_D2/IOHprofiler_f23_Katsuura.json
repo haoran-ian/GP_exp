@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 23, 
+	"function_name": "Katsuura", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f23_Katsuura/IOHprofiler_f23_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 841, "best": {"evals": 739, "y": 0.6461743100499517, "x": [6.471623404871489, 0.22747644304042014]}},
+			{"instance": 1, "evals": 847, "best": {"evals": 662, "y": 1.8675071218036432, "x": [4.987257694626674, -2.3780403560352426]}},
+			{"instance": 1, "evals": 846, "best": {"evals": 198, "y": 0.3886868118028447, "x": [1.0814967354524974, -0.4138625999374342]}},
+			{"instance": 1, "evals": 843, "best": {"evals": 1, "y": 0.3886868118028447, "x": [1.0814967354524974, -0.4138625999374342]}},
+			{"instance": 1, "evals": 836, "best": {"evals": 1, "y": 0.3886868118028447, "x": [1.0814967354524974, -0.4138625999374342]}}
+		]}
+	]
+}

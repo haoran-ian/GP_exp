@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 2, 
+	"function_name": "Ellipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_Powell", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f2_Ellipsoid/IOHprofiler_f2_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 200, "best": {"evals": 120, "y": 3.0077937154382994e-15, "x": [-2.1984000552153273, 1.6359999999941914]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 120, "y": 3.0077937154382994e-15, "x": [-2.1984000552153273, 1.6359999999941914]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 120, "y": 3.0077937154382994e-15, "x": [-2.1984000552153273, 1.6359999999941914]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 120, "y": 3.0077937154382994e-15, "x": [-2.1984000552153273, 1.6359999999941914]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 120, "y": 3.0077937154382994e-15, "x": [-2.1984000552153273, 1.6359999999941914]}}
+		]}
+	]
+}

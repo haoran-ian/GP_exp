@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 204, "best": {"evals": 90, "y": 0.7774086328799265, "x": [-3.495773365972176, 2.018195685773399]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 41, "y": 3.1299584681369175, "x": [-2.1782623765400237, 1.9713808128101569]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 178, "y": 1.0255930525795804, "x": [-2.8724214995073027, 2.0194255768950105]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 194, "y": 0.15153250246945746, "x": [-3.8952704200814563, 2.0637206944080595]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 187, "y": 0.39486280345511116, "x": [-3.8603650680383055, 2.0735520157305127]}}
+		]}
+	]
+}

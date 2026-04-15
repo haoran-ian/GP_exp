@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 200, "best": {"evals": 200, "y": 0.07202885597181626, "x": [-0.11723567168034456, -0.20288369685191532]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 194, "y": 0.02958178919012474, "x": [-0.2948497263873379, -0.23882779210677907]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 197, "y": 0.014866969902311145, "x": [-0.3908965546659511, -0.25287798930397476]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 198, "y": 0.16752562295154563, "x": [0.09548420401036208, -0.13975760902995227]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 200, "y": 0.002399008038306462, "x": [-0.7595093933812356, -0.29010298514557376]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 204, "best": {"evals": 181, "y": 0.008961974975668802, "x": [2.810107751815601, 1.046724671734025]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 171, "y": 0.004678169629276875, "x": [2.7962990103069614, 1.1210655858309901]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 200, "y": 0.0048047711550198175, "x": [2.805241120739863, 1.0741861945536182]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 189, "y": 0.012167292937669072, "x": [2.806253621280933, 1.1255893370980972]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 202, "y": 0.0006676194772319306, "x": [2.7890755015563857, 1.1061269542622376]}}
+		]}
+	]
+}

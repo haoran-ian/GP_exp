@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_RRA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 674, "best": {"evals": 629, "y": 2.951791241979988e-05, "x": [-2.178292855595258, -0.9830684485476414]}},
+			{"instance": 3, "evals": 732, "best": {"evals": 701, "y": 4.4400444723430037e-07, "x": [-2.1783945876703936, -0.9831856253194501]}},
+			{"instance": 3, "evals": 732, "best": {"evals": 1, "y": 4.4400444723430037e-07, "x": [-2.1783945876703936, -0.9831856253194501]}},
+			{"instance": 3, "evals": 732, "best": {"evals": 1, "y": 4.4400444723430037e-07, "x": [-2.1783945876703936, -0.9831856253194501]}},
+			{"instance": 3, "evals": 732, "best": {"evals": 1, "y": 4.4400444723430037e-07, "x": [-2.1783945876703936, -0.9831856253194501]}}
+		]}
+	]
+}

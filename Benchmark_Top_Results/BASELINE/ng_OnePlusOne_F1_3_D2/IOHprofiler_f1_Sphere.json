@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 200, "best": {"evals": 192, "y": 3.7314713870606037e-10, "x": [-3.798391617901938, 0.20321740366544097]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 195, "y": 4.530928117005671e-09, "x": [-3.7983446827926257, 0.20323835276633181]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 186, "y": 8.215530433814307e-12, "x": [-3.7983978806506205, 0.20319807026202766]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 192, "y": 2.1136723863380218e-10, "x": [-3.798414427867295, 0.2031982100603504]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 190, "y": 1.3025202379100376e-09, "x": [-3.798393022964515, 0.20323540962035577]}}
+		]}
+	]
+}

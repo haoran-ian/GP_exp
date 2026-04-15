@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 200, "best": {"evals": 199, "y": 6.005954126491019e-07, "x": [2.17865025636801, -2.481346304562533]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 200, "y": 0.001092075672406351, "x": [2.1812172018889293, -2.469652337209279]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 200, "y": 0.0014061122812753463, "x": [2.173453423213755, -2.474819759507305]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 199, "y": 1.7033735619477515e-06, "x": [2.178829364844937, -2.4811781166353915]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 199, "y": 2.9729762966889363e-05, "x": [2.1805852460712503, -2.479451916466692]}}
+		]}
+	]
+}

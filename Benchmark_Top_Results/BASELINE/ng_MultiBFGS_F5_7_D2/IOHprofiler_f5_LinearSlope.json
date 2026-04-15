@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 200, "best": {"evals": 190, "y": 6.965308507744794e-08, "x": [-4.999999994053473, -4.999999993629344]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 57, "y": 5.376985517191236, "x": [0.37698549589700914, -4.999999997870577]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 64, "y": 1.8466722878905069, "x": [-3.15332772654397, -4.999999998556552]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 187, "y": 7.104936994295485e-08, "x": [-4.999999998062777, -4.999999993088785]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 188, "y": 4.070732018135459e-08, "x": [-4.999999998550678, -4.9999999960742]}}
+		]}
+	]
+}

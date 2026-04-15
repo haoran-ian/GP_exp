@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 836, "best": {"evals": 442, "y": 0.5287563069713939, "x": [-2.914763389819692, 0.5328516350715161]}},
+			{"instance": 6, "evals": 846, "best": {"evals": 714, "y": 0.24712470508820836, "x": [-2.8741908814207062, 0.8348738255732082]}},
+			{"instance": 6, "evals": 846, "best": {"evals": 715, "y": 0.00014964301994481108, "x": [-2.811606475100158, 1.3037195072974705]}},
+			{"instance": 6, "evals": 844, "best": {"evals": 1, "y": 0.00014964301994481108, "x": [-2.811606475100158, 1.3037195072974705]}},
+			{"instance": 6, "evals": 838, "best": {"evals": 710, "y": 5.7050806327474066e-05, "x": [-2.811486378114078, 1.3046755996813646]}}
+		]}
+	]
+}

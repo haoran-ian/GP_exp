@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 200, "best": {"evals": 178, "y": 0.002922648598340729, "x": [3.913231448676611, -0.933344635156584]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 187, "y": 5.091418269587827e-05, "x": [3.9421763912315466, -1.039939314756045]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 189, "y": 0.0012372406694550436, "x": [3.9786809895097615, -1.1689818334311814]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 159, "y": 0.0002904690114662771, "x": [3.9389861809748044, -1.0296973245675696]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 167, "y": 0.003100782458675183, "x": [3.9814418514368315, -1.1900350407479257]}}
+		]}
+	]
+}

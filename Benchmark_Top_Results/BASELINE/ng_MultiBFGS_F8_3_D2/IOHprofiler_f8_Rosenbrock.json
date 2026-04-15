@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 200, "best": {"evals": 80, "y": 1.667189270089043e-11, "x": [-0.80520408204241, -1.1478081546753605]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 94, "y": 1.6593150215707798e-11, "x": [-0.8052040727200945, -1.14780815323465]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 156, "y": 1.4009392017607858e-11, "x": [-0.8052037427617641, -1.1478074888657]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 106, "y": 4.787598447151565e-12, "x": [-0.8052021878996539, -1.1478043731609853]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 77, "y": 1.902200927003161e-11, "x": [-0.8052043564772972, -1.1478087336997262]}}
+		]}
+	]
+}

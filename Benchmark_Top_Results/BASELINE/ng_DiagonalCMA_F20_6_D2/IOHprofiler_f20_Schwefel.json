@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 200, "best": {"evals": 109, "y": 1.2453042554472165, "x": [-1.6296387454490848, 3.0740841829687944]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 104, "y": 1.2581926412330848, "x": [0.9364000905212588, 2.4016569744427723]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 198, "y": 1.1844006020498148, "x": [-1.5120456689716861, 1.8653081560850926]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 123, "y": 1.7769012869131755, "x": [-0.6683441088402313, 2.829556726253398]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 167, "y": 0.5840512257571276, "x": [2.111044440700114, 2.0536795947289215]}}
+		]}
+	]
+}

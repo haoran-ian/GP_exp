@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 2, 
+	"function_name": "Ellipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_RRA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f2_Ellipsoid/IOHprofiler_f2_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 732, "best": {"evals": 689, "y": 0.015231810216016557, "x": [-3.454367013849024, -2.025464830812112]}},
+			{"instance": 7, "evals": 732, "best": {"evals": 701, "y": 0.00033510005815595814, "x": [-3.4543859231527416, -2.0255820075839206]}},
+			{"instance": 7, "evals": 732, "best": {"evals": 1, "y": 0.00033510005815595814, "x": [-3.4543859231527416, -2.0255820075839206]}},
+			{"instance": 7, "evals": 732, "best": {"evals": 1, "y": 0.00033510005815595814, "x": [-3.4543859231527416, -2.0255820075839206]}},
+			{"instance": 7, "evals": 732, "best": {"evals": 1, "y": 0.00033510005815595814, "x": [-3.4543859231527416, -2.0255820075839206]}}
+		]}
+	]
+}

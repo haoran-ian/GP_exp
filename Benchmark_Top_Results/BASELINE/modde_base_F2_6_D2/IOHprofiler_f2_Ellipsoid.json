@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 2, 
+	"function_name": "Ellipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f2_Ellipsoid/IOHprofiler_f2_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 200, "best": {"evals": 128, "y": 29.896423969900898, "x": [-2.429033537145493, 1.6308607532400128]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 129, "y": 16.559282068616, "x": [-5, 1.6330036660745986]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 152, "y": 0.14349271927853685, "x": [-2.4613249662847827, 1.6357140013254146]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 170, "y": 4.001104031453005, "x": [-2.2843583051790413, 1.633916106267925]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 89, "y": 36.530928881018795, "x": [-1.952019509296564, 1.6299406185255316]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 200, "best": {"evals": 138, "y": 3.979831190554104, "x": [-2.645600008888849, -3.7168635538576758]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 37, "y": 57.70659402292755, "x": [0.3985174581492924, -1.1088119958805343]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 125, "y": 8.95460124148736, "x": [-2.645600003851175, -2.0551170423836966]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 136, "y": 39.797823123351236, "x": [-0.6446883881981971, -1.2479264303414872]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 95, "y": 16.914202849554865, "x": [1.3426724019175766, -2.668622004743642]}}
+		]}
+	]
+}

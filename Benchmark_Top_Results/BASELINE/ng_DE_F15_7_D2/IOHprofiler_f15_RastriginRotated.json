@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 200, "best": {"evals": 134, "y": 1.4994796938656754, "x": [3.010651077052695, 3.8039145676537007]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 140, "y": 4.385400702208496, "x": [1.3462514779968044, 3.4306428158654314]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 117, "y": 3.6906580716992083, "x": [2.265534641711503, 3.6659932837864364]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 152, "y": 3.2725788099201183, "x": [1.677533433798502, 3.0921350884245395]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 164, "y": 3.474107622296093, "x": [0.8447314752225896, 2.9383527252881483]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 24, 
+	"function_name": "LunacekBiRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f24_LunacekBiRastrigin/IOHprofiler_f24_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 204, "best": {"evals": 117, "y": 3.7322749194549245, "x": [-2.41769522317133, 4.234212520966807]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 93, "y": 6.35758946667827, "x": [0.3064366497190069, -1.8596071811314645]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 15, "y": 3.5162880015067963, "x": [1.8420274783345276, -0.7443292458479357]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 104, "y": 1.0457372524758894, "x": [0.8296798609105929, -1.0059480696360317]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 133, "y": 7.3341401560308555, "x": [-3.2895663421329755, 0.11784376764794789]}}
+		]}
+	]
+}

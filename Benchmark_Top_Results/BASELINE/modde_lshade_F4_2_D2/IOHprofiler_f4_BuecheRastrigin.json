@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 203, "best": {"evals": 182, "y": 2.2725542936957632, "x": [1.3457322901485036, -0.8533806000947646]}},
+			{"instance": 2, "evals": 203, "best": {"evals": 153, "y": 4.789141153080298, "x": [2.328118139620983, -1.5425788932124136]}},
+			{"instance": 2, "evals": 203, "best": {"evals": 146, "y": 3.7135978501088256, "x": [2.333676747973975, -0.8932890749084277]}},
+			{"instance": 2, "evals": 203, "best": {"evals": 198, "y": 0.8330616167371923, "x": [2.333086679800078, -0.8640505726318223]}},
+			{"instance": 2, "evals": 203, "best": {"evals": 186, "y": 0.114371331977864, "x": [2.3875019175712957, -0.8633098040292424]}}
+		]}
+	]
+}

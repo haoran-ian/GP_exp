@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ABO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 401, "best": {"evals": 279, "y": 0.08576972962002409, "x": [1.9757759540874982, 3.0200037704395015]}},
+			{"instance": 5, "evals": 397, "best": {"evals": 278, "y": 0.049111310162577554, "x": [2.2951699495521596, 3.0411564753857223]}},
+			{"instance": 5, "evals": 396, "best": {"evals": 335, "y": 0.043740987018511424, "x": [2.2762059075391323, 3.0411564753857223]}},
+			{"instance": 5, "evals": 402, "best": {"evals": 1, "y": 0.043740987018511424, "x": [2.2762059075391323, 3.0411564753857223]}},
+			{"instance": 5, "evals": 399, "best": {"evals": 218, "y": 0.011615857880285503, "x": [2.0933042302173837, 2.9562100045007225]}}
+		]}
+	]
+}

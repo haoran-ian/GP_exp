@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 204, "best": {"evals": 164, "y": 1.8502670071003144, "x": [4.024593638356552, 0.759111632964373]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 154, "y": 2.968837667762683, "x": [3.4304332235726704, 3.1711429374915707]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 185, "y": 0.11418582856093105, "x": [3.663804543087163, 2.5119701063045152]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 160, "y": 0.14102785234683704, "x": [3.6301422908391885, 2.634868282681457]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 28, "y": 1.3914726143247533, "x": [3.8651100516622434, 1.6815064610491226]}}
+		]}
+	]
+}

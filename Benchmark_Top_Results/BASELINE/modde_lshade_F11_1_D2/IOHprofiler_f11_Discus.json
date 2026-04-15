@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 203, "best": {"evals": 126, "y": 122.33136972841172, "x": [-5, -1.855101421904521]}},
+			{"instance": 1, "evals": 203, "best": {"evals": 169, "y": 114.66307664418171, "x": [-2.7171407104922984, -2.5992536516434797]}},
+			{"instance": 1, "evals": 203, "best": {"evals": 137, "y": 38.716982511030125, "x": [-3.5860194581255214, -2.306767456032329]}},
+			{"instance": 1, "evals": 203, "best": {"evals": 94, "y": 122.23503736889202, "x": [-1.7984106608420198, -2.8668216191287375]}},
+			{"instance": 1, "evals": 203, "best": {"evals": 62, "y": 123.81190491194143, "x": [0.5474086294255853, -3.6087573758181137]}}
+		]}
+	]
+}

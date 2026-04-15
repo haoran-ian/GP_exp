@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 203, "best": {"evals": 137, "y": 2.2468637676141516, "x": [-3.1988106605795226, -0.6289917238707989]}},
+			{"instance": 3, "evals": 203, "best": {"evals": 194, "y": 1.5419934128312764, "x": [-2.0925539884402786, -0.9913268948821656]}},
+			{"instance": 3, "evals": 203, "best": {"evals": 103, "y": 2.4020660574838626, "x": [-1.1868919654345227, -0.6467760738172315]}},
+			{"instance": 3, "evals": 203, "best": {"evals": 199, "y": 1.279953857704448, "x": [-2.1405618545100555, -0.6132144074963959]}},
+			{"instance": 3, "evals": 203, "best": {"evals": 177, "y": 5.366779495789941, "x": [-3.1391180263323495, -0.9351971153083722]}}
+		]}
+	]
+}

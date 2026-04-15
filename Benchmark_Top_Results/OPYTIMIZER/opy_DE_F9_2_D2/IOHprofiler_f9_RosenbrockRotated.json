@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_DE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 390, "best": {"evals": 353, "y": 0.4116781110054143, "x": [1.4592573233992723, -0.42665515609774785]}},
+			{"instance": 2, "evals": 390, "best": {"evals": 300, "y": 0.09088606813713182, "x": [0.17685580329163297, 0.13473484090450544]}},
+			{"instance": 2, "evals": 390, "best": {"evals": 354, "y": 0.013144823031051798, "x": [0.7288713698076063, -0.08025972747408916]}},
+			{"instance": 2, "evals": 390, "best": {"evals": 24, "y": 0.013144823031051798, "x": [0.7288713698076063, -0.08025972747408916]}},
+			{"instance": 2, "evals": 390, "best": {"evals": 157, "y": 0.0015057462260773442, "x": [0.7741747154632448, -0.09597226852635682]}}
+		]}
+	]
+}

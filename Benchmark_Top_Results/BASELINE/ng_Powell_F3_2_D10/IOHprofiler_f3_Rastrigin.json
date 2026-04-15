@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_Powell", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM10.dat",
+		"runs": [
+			{"instance": 2, "evals": 1000, "best": {"evals": 238, "y": 64.93213872277431, "x": [-1.5700905123483717, 0.07477190743253238, -0.41631780005151436, 2.58286159909132, -1.3694528276930158, -0.01058489191619493, 0.13402998298517113, 1.0175653563419182, 0.5906612504150627, -2.243446833857012]}}
+		]}
+	]
+}

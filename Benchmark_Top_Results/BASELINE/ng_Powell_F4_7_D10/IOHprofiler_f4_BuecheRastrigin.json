@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_Powell", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM10.dat",
+		"runs": [
+			{"instance": 7, "evals": 1000, "best": {"evals": 930, "y": 19.899080020834706, "x": [0.20159999692801675, -1.304319000943961, 0.024799994760264465, -0.2592000000075546, 0.11478261302084927, -2.3797118789970915, 1.0490827920097052, -0.9560000009174823, 1.3397680067673765, -2.4880000009132663]}}
+		]}
+	]
+}

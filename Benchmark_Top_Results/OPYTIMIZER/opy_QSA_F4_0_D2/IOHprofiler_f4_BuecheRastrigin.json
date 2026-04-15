@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 843, "best": {"evals": 574, "y": 2.1784720135922155, "x": [2.136747146054931, 0.4750166534795074]}},
+			{"instance": 0, "evals": 844, "best": {"evals": 316, "y": 0.0018537836112864727, "x": [3.180272556004743, 0.4653188569313916]}},
+			{"instance": 0, "evals": 851, "best": {"evals": 776, "y": 5.225028757380416e-05, "x": [3.1831684219874257, 0.4654362520751615]}},
+			{"instance": 0, "evals": 845, "best": {"evals": 723, "y": 1.2101824312148908e-07, "x": [3.1831774614441004, 0.46560390744385594]}},
+			{"instance": 0, "evals": 833, "best": {"evals": 703, "y": 2.204245050770302e-10, "x": [3.1831990004695845, 0.4655999086590672]}}
+		]}
+	]
+}

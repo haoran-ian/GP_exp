@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 203, "best": {"evals": 39, "y": 0.0654377998934681, "x": [-1.8457164907581616, -1.6561660341068718]}},
+			{"instance": 3, "evals": 203, "best": {"evals": 179, "y": 0.004451299515055851, "x": [-0.1754122601992214, 0.3893353428427662]}},
+			{"instance": 3, "evals": 203, "best": {"evals": 197, "y": 0.02116211830891679, "x": [0.18169600857013213, -0.5337119113467972]}},
+			{"instance": 3, "evals": 203, "best": {"evals": 72, "y": 0.13543742590479013, "x": [-0.1369225206713489, -0.14331527816115575]}},
+			{"instance": 3, "evals": 203, "best": {"evals": 90, "y": 0.0954776498920964, "x": [-0.18558575143476475, -0.3404585276234968]}}
+		]}
+	]
+}

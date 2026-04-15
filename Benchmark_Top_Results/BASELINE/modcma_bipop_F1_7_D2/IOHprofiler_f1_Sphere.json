@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 204, "best": {"evals": 198, "y": 4.510392477844766e-08, "x": [-0.0767127478144303, 0.2278063741213271]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 203, "y": 2.0361887080965468e-07, "x": [-0.07677624021942518, 0.22754938448358172]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 202, "y": 2.2483812032648266e-07, "x": [-0.07652951012654446, 0.22761054737299038]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 194, "y": 1.1932509236748456e-06, "x": [-0.07630649897091951, 0.2289745294546451]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 121, "y": 9.08877179528257e-07, "x": [-0.07736840933905417, 0.22876536788723062]}}
+		]}
+	]
+}

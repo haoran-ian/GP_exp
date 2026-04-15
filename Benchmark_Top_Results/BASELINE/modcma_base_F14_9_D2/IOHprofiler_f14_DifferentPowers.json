@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 204, "best": {"evals": 193, "y": 0.0020816760099293635, "x": [0.6156409691111455, -2.6401633480121305]}},
+			{"instance": 9, "evals": 204, "best": {"evals": 179, "y": 0.0003226534665890619, "x": [0.691810693896148, -2.789545889918751]}},
+			{"instance": 9, "evals": 204, "best": {"evals": 189, "y": 0.0011734324837104945, "x": [0.6147927832558316, -2.6441747488116683]}},
+			{"instance": 9, "evals": 204, "best": {"evals": 198, "y": 5.7608583377818636e-05, "x": [0.6773877779949851, -2.7620390608912837]}},
+			{"instance": 9, "evals": 204, "best": {"evals": 156, "y": 0.00024749540140722595, "x": [0.6312124412689357, -2.6740036074297606]}}
+		]}
+	]
+}

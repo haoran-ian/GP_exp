@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 204, "best": {"evals": 90, "y": 0.03655600902380123, "x": [-0.2696403155707066, 0.7624509634366887]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 148, "y": 0, "x": [-0.20890263904599327, 0.691934753797319]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 46, "y": 0, "x": [-0.2338068952871484, 0.7696987037732393]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 178, "y": 0, "x": [-0.2262610994697017, 0.7117533539195926]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 121, "y": 0, "x": [-0.25553060803773786, 0.7772166176658892]}}
+		]}
+	]
+}

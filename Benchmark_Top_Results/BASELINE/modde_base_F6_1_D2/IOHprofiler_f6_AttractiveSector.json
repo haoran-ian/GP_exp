@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 30, "y": 0.29011111076420953, "x": [2.963912114080534, 0.6492032669183452]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 141, "y": 1.5933437441888687, "x": [3.3768234035730877, 0.33165284973017073]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 19, "y": 0.1624794364085871, "x": [2.936374544415771, 0.8000417887780662]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 67, "y": 0.021479456219787692, "x": [2.826947068581224, 1.0912013557709148]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 166, "y": 1.342578224972577, "x": [3.1961661132062993, 0.9896255253467388]}}
+		]}
+	]
+}

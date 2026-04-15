@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_Powell", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 200, "best": {"evals": 199, "y": 1.5193911369860258, "x": [3.0393661562806833, 0.21283548211369174]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 199, "y": 1.5193911369860258, "x": [3.0393661562806833, 0.21283548211369174]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 199, "y": 1.5193911369860258, "x": [3.0393661562806833, 0.21283548211369174]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 199, "y": 1.5193911369860258, "x": [3.0393661562806833, 0.21283548211369174]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 199, "y": 1.5193911369860258, "x": [3.0393661562806833, 0.21283548211369174]}}
+		]}
+	]
+}

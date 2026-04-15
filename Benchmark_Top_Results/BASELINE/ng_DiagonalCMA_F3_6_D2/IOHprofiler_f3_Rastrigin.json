@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 200, "best": {"evals": 178, "y": 2.070750210461684, "x": [-3.649361660856734, -2.6581747118595147]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 69, "y": 7.2720717389640255, "x": [-0.5663568881369614, -3.03871271468611]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 177, "y": 0.9962408661338668, "x": [-2.646758332594457, -2.66725415937876]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 187, "y": 0.998432968533612, "x": [-2.6459518972098195, -2.666110414390148]}},
+			{"instance": 6, "evals": 200, "best": {"evals": 198, "y": 7.959773564649577, "x": [-0.6447036480071966, -2.408046410104923]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 204, "best": {"evals": 55, "y": 0.08483297604696283, "x": [-0.1948949789891019, 1.4326554206962678]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 146, "y": 2.4213017441709894e-05, "x": [-0.13851163232637093, 0.653752950561281]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 45, "y": 0.05420939672344893, "x": [-0.3613263836588786, -0.3249007858007685]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 180, "y": 0.01742602629932044, "x": [-0.17791946233609562, 0.2549397032638377]}},
+			{"instance": 1, "evals": 204, "best": {"evals": 121, "y": 6.076430748080952e-05, "x": [-0.12972144625307225, 0.7166804552184154]}}
+		]}
+	]
+}

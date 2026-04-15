@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 200, "best": {"evals": 200, "y": 1.2187467567917545, "x": [-0.23145983719090438, 1.7753081356506217]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 185, "y": 0.041934992259499614, "x": [0.7691236654288293, 1.7750202334156284]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 195, "y": 4.836389005106161, "x": [-1.3317771563628995, 1.775170192771006]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 197, "y": 2.02603194570747, "x": [-0.35762406139658964, 1.7759251468570787]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 192, "y": 0.2892629817523915, "x": [0.4273684447096845, 1.7755095338183837]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM10.dat",
+		"runs": [
+			{"instance": 5, "evals": 1000, "best": {"evals": 951, "y": 6.941651727889354, "x": [-1.9416517278893541, 5, 5, -5, -5, 5, 5, -5, 5, 5]}},
+			{"instance": 5, "evals": 1000, "best": {"evals": 574, "y": 0, "x": [5, 5, 5, -5, -5, 5, 5, -5, 5, 5]}},
+			{"instance": 5, "evals": 1000, "best": {"evals": 1000, "y": 2.3236652759735406, "x": [2.6787513516675863, 5, 4.999741909067298, -5, -4.999345319520355, 5, 4.999964577066289, -5, 5, 5]}},
+			{"instance": 5, "evals": 1000, "best": {"evals": 744, "y": 0, "x": [5, 5, 5, -5, -5, 5, 5, -5, 5, 5]}},
+			{"instance": 5, "evals": 1000, "best": {"evals": 442, "y": 0, "x": [5, 5, 5, -5, -5, 5, 5, -5, 5, 5]}}
+		]}
+	]
+}

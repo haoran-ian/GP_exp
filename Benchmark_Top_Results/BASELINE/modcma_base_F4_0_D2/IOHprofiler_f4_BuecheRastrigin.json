@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 204, "best": {"evals": 59, "y": 4.860217963274093, "x": [2.1338402723089653, 0.5055872814117195]}},
+			{"instance": 0, "evals": 204, "best": {"evals": 59, "y": 8.096062474099696, "x": [1.190532005391458, -0.22244978211209177]}},
+			{"instance": 0, "evals": 204, "best": {"evals": 190, "y": 4.461255689653007, "x": [1.277344196657582, 0.4765473040233903]}},
+			{"instance": 0, "evals": 204, "best": {"evals": 183, "y": 4.9802758230554005, "x": [1.2260809598658775, 0.7728442853655112]}},
+			{"instance": 0, "evals": 204, "best": {"evals": 204, "y": 5.068828302874895, "x": [1.1998067666091368, 0.15308433106123506]}}
+		]}
+	]
+}

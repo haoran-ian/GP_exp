@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 200, "best": {"evals": 184, "y": 120.61329353377292, "x": [-0.25771828624423954, -1.9347169997851803]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 177, "y": 2.3216697102499704, "x": [-2.9460422324682307, 2.095674048065138]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 191, "y": 124.99061758655249, "x": [1.7954179744308862, -4.995904899937123]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 103, "y": 18.33775231359294, "x": [-4.394777456085343, 4.250280220367881]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 184, "y": 6.710716133693276, "x": [-4.298558658923507, 4.1098367714967265]}}
+		]}
+	]
+}

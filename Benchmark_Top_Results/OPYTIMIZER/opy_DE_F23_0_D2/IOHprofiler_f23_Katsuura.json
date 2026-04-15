@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 23, 
+	"function_name": "Katsuura", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_DE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f23_Katsuura/IOHprofiler_f23_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 390, "best": {"evals": 350, "y": 2.848683812141548, "x": [-1.7719073915058812, -2.7295688752438947]}},
+			{"instance": 0, "evals": 390, "best": {"evals": 169, "y": 1.9706881832680645, "x": [-1.472862289511694, -5]}},
+			{"instance": 0, "evals": 390, "best": {"evals": 19, "y": 1.9706881832680645, "x": [-1.472862289511694, -5]}},
+			{"instance": 0, "evals": 390, "best": {"evals": 222, "y": 1.0322417170243932, "x": [5, 1.8490011976372434]}},
+			{"instance": 0, "evals": 390, "best": {"evals": 12, "y": 1.0322417170243932, "x": [5, 1.8490011976372434]}}
+		]}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_Powell", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1000, "best": {"evals": 972, "y": 21.54007706020068, "x": [0.9530074989238192, 1.0557281272128092, -0.059305145844539, 4.59674781606025, -0.08441845510576507, 3.1536743171761525, -0.7193381865921648, -2.326048851537373, 1.3786708866114468, 1.7765944510042046e-11]}}
+		]}
+	]
+}

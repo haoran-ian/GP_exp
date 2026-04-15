@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 200, "best": {"evals": 192, "y": 1.0347860669066518, "x": [-0.7914110393117362, -2.2374617775155135]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 160, "y": 1.5921834715234646, "x": [0.2069340187397728, -2.538718490089722]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 193, "y": 24.873826004080318, "x": [0.20107137429817776, -0.5248312261774581]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 186, "y": 0.9960272738542014, "x": [0.1994447760881035, -1.9276535389143226]}},
+			{"instance": 7, "evals": 200, "best": {"evals": 197, "y": 0.9957629698693508, "x": [0.19998704543616844, -1.927603731660968]}}
+		]}
+	]
+}

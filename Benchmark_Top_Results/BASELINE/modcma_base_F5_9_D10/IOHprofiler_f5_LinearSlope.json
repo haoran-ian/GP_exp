@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM10.dat",
+		"runs": [
+			{"instance": 9, "evals": 1000, "best": {"evals": 995, "y": 0.049213530699002916, "x": [-5, -5, 4.9704972634433595, 5, 5, 5, -5, 5, -5, -5]}},
+			{"instance": 9, "evals": 1000, "best": {"evals": 998, "y": 4.833688307230467, "x": [-5, -5, 2.1037236577622824, 5, 5, 5, -5, 4.999598290553483, -5, -5]}},
+			{"instance": 9, "evals": 1000, "best": {"evals": 993, "y": 2.9731856886407066, "x": [-2.0268143113592934, -5, 5, 5, 5, 5, -5, 5, -5, -5]}},
+			{"instance": 9, "evals": 1000, "best": {"evals": 998, "y": 1.2589920247320734, "x": [-5, -4.990087200237241, 4.29397025076852, 4.996156268669688, 4.984780658949644, 5, -4.996158479448785, 5, -5, -5]}},
+			{"instance": 9, "evals": 1000, "best": {"evals": 996, "y": 1.1304199779191952, "x": [-5, -4.149115027530872, 5, 5, 4.990214800657141, 4.998822454717344, -5, 5, -5, -5]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 203, "best": {"evals": 127, "y": 0.4752987849916175, "x": [2.687856015393171, -4.7964520157481925]}},
+			{"instance": 8, "evals": 203, "best": {"evals": 75, "y": 0.9423656256614875, "x": [2.762514778039751, -1.8448436899393705]}},
+			{"instance": 8, "evals": 203, "best": {"evals": 187, "y": 0.028784402494138345, "x": [2.747935370950321, -3.7473669575364346]}},
+			{"instance": 8, "evals": 203, "best": {"evals": 193, "y": 0.8594373585795868, "x": [2.864644733538089, -2.718819870841586]}},
+			{"instance": 8, "evals": 203, "best": {"evals": 175, "y": 0.23559140641537188, "x": [2.660087522638946, -5]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_RRA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 732, "best": {"evals": 419, "y": 0.09614649441749688, "x": [0.029089091744189777, 0.42613156889389536]}},
+			{"instance": 1, "evals": 732, "best": {"evals": 1, "y": 0.09614649441749688, "x": [0.029089091744189777, 0.42613156889389536]}},
+			{"instance": 1, "evals": 732, "best": {"evals": 64, "y": 0.06903348289722307, "x": [0.029089091744189777, 0.4900807769473602]}},
+			{"instance": 1, "evals": 732, "best": {"evals": 83, "y": 0.0250019339797313, "x": [-0.004919290285038985, 0.4900807769473602]}},
+			{"instance": 1, "evals": 732, "best": {"evals": 1, "y": 0.0250019339797313, "x": [-0.004919290285038985, 0.4900807769473602]}}
+		]}
+	]
+}

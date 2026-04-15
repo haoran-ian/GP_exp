@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_WEO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 390, "best": {"evals": 167, "y": 0.8651020525511139, "x": [1.0382274356763135, 0.9252393609814469]}},
+			{"instance": 1, "evals": 390, "best": {"evals": 272, "y": 0.06707349656633887, "x": [0.53526030483191, 2.7962661405835485]}},
+			{"instance": 1, "evals": 390, "best": {"evals": 354, "y": 0.06581199190517317, "x": [0.5139643924652479, 2.794465634448751]}},
+			{"instance": 1, "evals": 390, "best": {"evals": 24, "y": 0.06581199190517317, "x": [0.5139643924652479, 2.794465634448751]}},
+			{"instance": 1, "evals": 390, "best": {"evals": 1, "y": 0.06581199190517317, "x": [0.5139643924652479, 2.794465634448751]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 204, "best": {"evals": 148, "y": 0.010683419186623574, "x": [-2.954236392889577, -2.5876956395498008]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 202, "y": 0.07241218151180204, "x": [-3.1554078085930484, -2.9288107516868966]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 77, "y": 0.4623313286260993, "x": [-2.231265001567784, -0.6964114276618132]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 199, "y": 0.053763198414316815, "x": [-3.1306816700815707, -2.878210637848142]}},
+			{"instance": 8, "evals": 204, "best": {"evals": 143, "y": 0.5525961985474667, "x": [-3.6417483530718906, -3.402038697511545]}}
+		]}
+	]
+}

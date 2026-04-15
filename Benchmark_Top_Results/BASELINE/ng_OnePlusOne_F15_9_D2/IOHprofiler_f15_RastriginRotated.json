@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 200, "best": {"evals": 200, "y": 4.9747907004701455, "x": [-0.012667075350275754, 0.04319973078529871]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 196, "y": 4.974790247650192, "x": [-0.012695234276946068, 0.04321679946816446]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 199, "y": 4.974790247648813, "x": [-0.012695120006126681, 0.04321667254598366]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 193, "y": 4.974790248996509, "x": [-0.01269366980064816, 0.043215966960325786]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 199, "y": 4.974790252238973, "x": [-0.01269531312496641, 0.04321312897543796]}}
+		]}
+	]
+}

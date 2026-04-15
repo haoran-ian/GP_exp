@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 204, "best": {"evals": 163, "y": 8.907532355623193, "x": [4.777999857299908, 5]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 194, "y": 5.034136268785347, "x": [2.605793824611199, 4.658925693500665]}},
+			{"instance": 7, "evals": 208, "best": {"evals": 112, "y": 8.9936283932762, "x": [4.754686785294734, 5]}},
+			{"instance": 7, "evals": 210, "best": {"evals": 46, "y": 5.701225393157635, "x": [4.002356930285151, 4.854464314885502]}},
+			{"instance": 7, "evals": 204, "best": {"evals": 173, "y": 1.3579340811803815, "x": [1.508953781270564, 3.5517485499751693]}}
+		]}
+	]
+}

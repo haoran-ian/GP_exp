@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 204, "best": {"evals": 188, "y": 0.5922264150950645, "x": [-1.5119463573093246, 3.009343713077804]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 28, "y": 1.5605351487579777, "x": [2.125221345099152, 1.2534584064647287]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 45, "y": 1.6153503763973789, "x": [-0.5497607848887702, 2.7674058676417808]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 196, "y": 1.4836813974113443, "x": [-0.6149703127408065, 2.7867695462180766]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 32, "y": 1.790919334940748, "x": [-1.532342818689385, 1.9210591727391484]}}
+		]}
+	]
+}

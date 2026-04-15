@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 200, "best": {"evals": 167, "y": 0.007629821234768488, "x": [3.669015007560674, 1.0157862902697055]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 17, "y": 0.7629821234768488, "x": [4.578895301505019, 0.33165284973017073]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 36, "y": 0.7629821234768488, "x": [4.8267582860021285, -0.24922150052211656]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 119, "y": 0.11719189415659065, "x": [4.161672072357938, 0.5194942216173626]}},
+			{"instance": 4, "evals": 200, "best": {"evals": 1, "y": 0.7629821234768488, "x": [4.670298390136766, 0.4723224917572235]}}
+		]}
+	]
+}

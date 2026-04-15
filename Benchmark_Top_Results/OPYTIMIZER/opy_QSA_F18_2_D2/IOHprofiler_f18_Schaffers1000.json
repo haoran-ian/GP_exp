@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 848, "best": {"evals": 728, "y": 0.06160233870659272, "x": [-0.23365877365493673, 1.781618592319228]}},
+			{"instance": 2, "evals": 845, "best": {"evals": 641, "y": 0.017815822892299004, "x": [-0.20816639522436847, 1.781618592319228]}},
+			{"instance": 2, "evals": 850, "best": {"evals": 447, "y": 0.003041374554628751, "x": [-0.19363013958419947, 1.7809690496909458]}},
+			{"instance": 2, "evals": 845, "best": {"evals": 575, "y": 0.0009835477397393006, "x": [-0.19067647545478764, 1.7807866968585482]}},
+			{"instance": 2, "evals": 837, "best": {"evals": 722, "y": 3.0263303239005183e-05, "x": [-0.19122104361976555, 1.7808007618348924]}}
+		]}
+	]
+}

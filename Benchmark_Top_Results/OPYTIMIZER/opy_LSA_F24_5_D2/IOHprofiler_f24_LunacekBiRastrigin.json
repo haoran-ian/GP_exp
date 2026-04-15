@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 24, 
+	"function_name": "LunacekBiRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_LSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f24_LunacekBiRastrigin/IOHprofiler_f24_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 402, "best": {"evals": 351, "y": 1.6930518758141067, "x": [1.1529770326248578, -0.7671172753082509]}},
+			{"instance": 5, "evals": 403, "best": {"evals": 97, "y": 1.1612308357065246, "x": [1.2750688287245624, -0.7207316088830178]}},
+			{"instance": 5, "evals": 404, "best": {"evals": 370, "y": 0.47802687787041453, "x": [1.2850284850977733, -1.578231958677903]}},
+			{"instance": 5, "evals": 402, "best": {"evals": 26, "y": 0.47802687787041453, "x": [1.2850284850977733, -1.578231958677903]}},
+			{"instance": 5, "evals": 402, "best": {"evals": 344, "y": 0.4620904320499502, "x": [1.2834727889639816, -1.579612166020824]}}
+		]}
+	]
+}

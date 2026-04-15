@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 204, "best": {"evals": 89, "y": 1.8248158561548096, "x": [3.238761498404032, 0.14842472831074127]}},
+			{"instance": 0, "evals": 204, "best": {"evals": 90, "y": 3.760646743334399, "x": [2.1506305478710814, 0.17805717337709662]}},
+			{"instance": 0, "evals": 204, "best": {"evals": 199, "y": 1.0204706693498728, "x": [2.1787846019757056, 0.4653844459177545]}},
+			{"instance": 0, "evals": 204, "best": {"evals": 107, "y": 2.292699416291101, "x": [2.1982547111528192, 0.8064739042187963]}},
+			{"instance": 0, "evals": 204, "best": {"evals": 198, "y": 1.9931157025785018, "x": [2.186677317698637, 0.8241761839347946]}}
+		]}
+	]
+}

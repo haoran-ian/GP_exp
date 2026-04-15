@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 10, 
+	"function_name": "EllipsoidRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f10_EllipsoidRotated/IOHprofiler_f10_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 200, "best": {"evals": 50, "y": 9.614168128118562e-06, "x": [-1.1014211593641554, -3.185571164255056]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 39, "y": 1.133008752623787e-05, "x": [-1.101513455297394, -3.18567236672631]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 66, "y": 8.715401621192341e-07, "x": [-1.0996684053894625, -3.1837012383657464]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 198, "y": 2.416275004419646e-05, "x": [-1.1019970099323935, -3.1861907296730174]}},
+			{"instance": 9, "evals": 200, "best": {"evals": 200, "y": 492603.6019688732, "x": [-3.7494152981886852, -4.9999999956244725]}}
+		]}
+	]
+}

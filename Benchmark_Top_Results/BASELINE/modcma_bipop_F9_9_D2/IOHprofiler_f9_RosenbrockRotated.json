@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_bipop", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 204, "best": {"evals": 196, "y": 0.757571125370539, "x": [0.5837960114984307, 0.16773043043336078]}},
+			{"instance": 9, "evals": 204, "best": {"evals": 200, "y": 0.18908927555191601, "x": [0.04931131103786848, -0.1745454541876079]}},
+			{"instance": 9, "evals": 204, "best": {"evals": 201, "y": 0.18346235964089208, "x": [0.12325463869197945, -0.13015983711851753]}},
+			{"instance": 9, "evals": 204, "best": {"evals": 20, "y": 9.027107747583638e-05, "x": [-0.6328208405032305, -0.28055754667117827]}},
+			{"instance": 9, "evals": 204, "best": {"evals": 164, "y": 0.0026847233474909314, "x": [-0.7435738212516356, -0.29050845460323166]}}
+		]}
+	]
+}

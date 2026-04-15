@@ -1,0 +1,17 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 17, 
+	"function_name": "Schaffers10", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_Powell", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f17_Schaffers10/IOHprofiler_f17_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 200, "best": {"evals": 21, "y": 0.2431358050443096, "x": [-1.6297463417828308, 0]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 21, "y": 0.2431358050443096, "x": [-1.6297463417828308, 0]}}
+		]}
+	]
+}

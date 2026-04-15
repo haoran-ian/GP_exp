@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_Powell", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 200, "best": {"evals": 52, "y": 1.4636964091148994e-21, "x": [-3.7983999999617417, 0.20319999999999755]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 52, "y": 1.4636964091148994e-21, "x": [-3.7983999999617417, 0.20319999999999755]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 52, "y": 1.4636964091148994e-21, "x": [-3.7983999999617417, 0.20319999999999755]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 52, "y": 1.4636964091148994e-21, "x": [-3.7983999999617417, 0.20319999999999755]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 52, "y": 1.4636964091148994e-21, "x": [-3.7983999999617417, 0.20319999999999755]}}
+		]}
+	]
+}

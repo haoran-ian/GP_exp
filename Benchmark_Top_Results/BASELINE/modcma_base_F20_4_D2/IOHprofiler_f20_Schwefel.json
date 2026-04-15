@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 204, "best": {"evals": 168, "y": 1.2001476741530166, "x": [1.5256792454421253, -1.8752641067169586]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 194, "y": 1.9466886271041102, "x": [-0.2473622150197013, -2.5782183700290013]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 74, "y": 0.38949872954960824, "x": [-2.1739848583018344, -2.120448941070984]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 184, "y": 0.01609365025990314, "x": [-2.0823263192995607, -2.106836834506082]}},
+			{"instance": 4, "evals": 204, "best": {"evals": 190, "y": 1.0865161397179577, "x": [-1.021797011007244, -2.377183076567986]}}
+		]}
+	]
+}

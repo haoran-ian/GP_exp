@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 26, "y": 0, "x": [-0.23204384201165465, 0.7734178463943931]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 56, "y": 0, "x": [-0.22435767150432778, 0.7173434538423852]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 59, "y": 0.006009155901093555, "x": [-0.17049367070844826, 0.6928916363358353]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 35, "y": 0.016834980525567485, "x": [-0.06009228601710933, 0.6019695813390331]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 54, "y": 0.15022889752733884, "x": [-0.5302245923627681, 1.1245528024196816]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 200, "best": {"evals": 86, "y": 0.3688641985964131, "x": [-0.8448845183112743, -1.1649897749964215]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 164, "y": 2.759611541373051, "x": [-2.2079855664283077, -1.8965804072314185]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 72, "y": 1.6687481874102517, "x": [-0.9495948749227159, -1.5441103613912848]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 182, "y": 0.9224250490646037, "x": [-1.1537750775301037, -1.8129397302163037]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 143, "y": 0.6558590576832047, "x": [-0.21734052583236974, 0.3177949004107834]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 10, 
+	"function_name": "EllipsoidRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_SAVPSO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f10_EllipsoidRotated/IOHprofiler_f10_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 210, "best": {"evals": 207, "y": 94.63451569004803, "x": [-3.6812455787241167, -0.6456549819983343]}},
+			{"instance": 4, "evals": 210, "best": {"evals": 27, "y": 94.63451569004803, "x": [-3.6812455787241167, -0.6456549819983343]}},
+			{"instance": 4, "evals": 210, "best": {"evals": 202, "y": 25.012668352169694, "x": [-3.6796549447248537, -0.6650113720551196]}},
+			{"instance": 4, "evals": 210, "best": {"evals": 98, "y": 11.262007961620185, "x": [-3.6778930758384965, -0.6646929555559918]}},
+			{"instance": 4, "evals": 210, "best": {"evals": 118, "y": 0.3474222664869978, "x": [-3.6729063493512486, -0.6637917216432571]}}
+		]}
+	]
+}

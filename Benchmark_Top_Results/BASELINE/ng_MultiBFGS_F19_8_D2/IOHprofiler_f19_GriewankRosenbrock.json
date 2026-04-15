@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_MultiBFGS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 200, "best": {"evals": 34, "y": 0.06283154057179452, "x": [-1.1552280477366748, -0.3526830117319108]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 200, "y": 0.17008770898904935, "x": [-0.38949130159348844, -0.4628096607445885]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 197, "y": 0.5183624753507274, "x": [-1.762694219206678, -0.4493126343719274]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 45, "y": 0.36128284288641055, "x": [-0.006508179744941351, -0.9273314666973792]}},
+			{"instance": 8, "evals": 200, "best": {"evals": 33, "y": 0.03141561403976745, "x": [-0.7218810658004947, -0.5459955298588998]}}
+		]}
+	]
+}

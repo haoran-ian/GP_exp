@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_DiagonalCMA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 200, "best": {"evals": 176, "y": 80.42885049305715, "x": [1.9150361865278902, 0.6067771230912002]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 155, "y": 3.1509839796457064, "x": [4.169524365885987, -0.212822675611545]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 135, "y": 1.6654278803033802, "x": [3.9357435623586428, 1.2424417103924652]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 60, "y": 249.6465105416998, "x": [0.3879731356143999, 0.1435241077574379]}},
+			{"instance": 1, "evals": 200, "best": {"evals": 23, "y": 161.71484357412862, "x": [0.9712691724457769, -0.35640153943680436]}}
+		]}
+	]
+}

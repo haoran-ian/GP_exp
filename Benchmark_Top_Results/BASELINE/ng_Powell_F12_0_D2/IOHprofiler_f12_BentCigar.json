@@ -1,0 +1,17 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_Powell", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 200, "best": {"evals": 197, "y": 8.12854566465244, "x": [-1.8386686587450358, -0.07291968862082933]}},
+			{"instance": 0, "evals": 200, "best": {"evals": 197, "y": 8.12854566465244, "x": [-1.8386686587450358, -0.07291968862082933]}}
+		]}
+	]
+}

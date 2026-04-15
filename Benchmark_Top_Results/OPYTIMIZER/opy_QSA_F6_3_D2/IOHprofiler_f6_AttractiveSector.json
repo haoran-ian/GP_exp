@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_QSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 846, "best": {"evals": 713, "y": 0.14898565861826016, "x": [-0.020464437354273668, -3.0581287247461377]}},
+			{"instance": 3, "evals": 839, "best": {"evals": 724, "y": 0.002783039148767017, "x": [-0.16755585797212924, -3.298368247556912]}},
+			{"instance": 3, "evals": 846, "best": {"evals": 725, "y": 4.3961102855865645e-05, "x": [-0.1845786942466573, -3.3276027486844106]}},
+			{"instance": 3, "evals": 839, "best": {"evals": 580, "y": 2.826383100179269e-07, "x": [-0.1862914777965959, -3.3302890161457874]}},
+			{"instance": 3, "evals": 837, "best": {"evals": 711, "y": 5.729393522374599e-08, "x": [-0.1863528706863539, -3.3303516906671975]}}
+		]}
+	]
+}

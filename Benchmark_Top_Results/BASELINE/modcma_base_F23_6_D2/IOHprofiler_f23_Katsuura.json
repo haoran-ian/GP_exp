@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 23, 
+	"function_name": "Katsuura", 
+	"maximization": false, 
+	"algorithm": {"name": "modcma_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f23_Katsuura/IOHprofiler_f23_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 204, "best": {"evals": 168, "y": 3.525460469324262, "x": [4.273747963142047, -0.2647402034648003]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 39, "y": 2.9113139545166025, "x": [1.796691151622311, 0.5830285376327371]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 36, "y": 3.6764211913863365, "x": [-4.303271624930699, 4.532437069084498]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 95, "y": 3.071512144963533, "x": [-0.7950551619562769, -2.558400722358843]}},
+			{"instance": 6, "evals": 204, "best": {"evals": 49, "y": 1.0765653084386928, "x": [-4.560620106437306, -3.262802131904568]}}
+		]}
+	]
+}

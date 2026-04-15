@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 13, 
+	"function_name": "SharpRidge", 
+	"maximization": false, 
+	"algorithm": {"name": "ng_OnePlusOne", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f13_SharpRidge/IOHprofiler_f13_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 200, "best": {"evals": 192, "y": 24.652486423521765, "x": [-0.47371673255584984, -2.8458094088079338]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 199, "y": 42.09658856550469, "x": [0.4906797998257519, -2.5040264756872856]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 199, "y": 56.83564938671001, "x": [1.156016211844493, -2.2682320747138043]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 191, "y": 11.183723298769467, "x": [-1.5000665699741818, -3.20954688893005]}},
+			{"instance": 3, "evals": 200, "best": {"evals": 175, "y": 3.556011145253634, "x": [-4.811639136144835, -4.383167051416035]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 13, 
+	"function_name": "SharpRidge", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_base", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f13_SharpRidge/IOHprofiler_f13_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 200, "best": {"evals": 143, "y": 11.291313733243204, "x": [0.48813503927324753, 2.665471444258298]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 164, "y": 13.73797652437626, "x": [-0.6034102777622268, 2.2824270776423226]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 170, "y": 8.4995136174745, "x": [1.9606604124228362, 3.0755680482877814]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 171, "y": 4.39781965328537, "x": [2.4392783601374592, 3.2458838140280513]}},
+			{"instance": 5, "evals": 200, "best": {"evals": 144, "y": 11.210930480730198, "x": [-0.3123506829220277, 2.3759284589471577]}}
+		]}
+	]
+}
