@@ -252,7 +252,7 @@ if __name__ == '__main__':
             f'BBOB_{dim}D_{budget_cof}xD' if problem_name not in [
                 'photonic_20layers_bragg', 'photonic_10layers_photovoltaic'
             ] else f'BBOB_{problem_name}_{budget_cof}xD',
-            # f'xgboost_{problem_name}_{budget_cof}xD',
+            f'xgboost_{problem_name}_{budget_cof}xD',
             f'RandomSearch_{budget_cof}xD',
             f'DE_{budget_cof}xD',
             f'LSHADE_{budget_cof}xD',
@@ -262,7 +262,7 @@ if __name__ == '__main__':
             'LLaMEA+real instance',
             'LLaMEA+proxy',
             'LLaMEA+BBOB',
-            # 'LLaMEA+xgboost',
+            'LLaMEA+xgboost',
             'RS',
             'DE',
             'LSHADE',

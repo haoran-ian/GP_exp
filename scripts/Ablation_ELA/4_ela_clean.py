@@ -49,14 +49,15 @@ def parse_filename(filename):
             metadata['ela_set'] = parts[3]
             metadata['problem_name'] = f"BBOB_F{metadata['fid']}"
         else:
-            metadata['problem_name'] = parts[0]
+            problem_name = parts[0].split(".")[1]
+            metadata['problem_name'] = problem_name
             metadata['ela_set'] = int(parts[1])
             metadata['fid'] = -1
             metadata['iid'] = -1
             p_enum = ProblemName(problem_name_value[problem_name])
             prob_inst = get_example_problem(p_enum)
             dim = prob_inst.meta_data.n_variables
-            metadata['dim'] = 0
+            metadata['dim'] = dim
         for p in parts:
             if "seed:" in p:
                 metadata['seed'] = int(p.split(":")[1])
@@ -72,7 +73,11 @@ def run_ela_pipeline():
     all_files = glob.glob(os.path.join(ATOM_DIR, "*.csv"))
     aggregated_data = {}
     print(f"🔍 Scanning {len(all_files)} files...")
+    counter = 0
     for f in all_files:
+        counter += 1
+        if counter % 1000 == 0:
+            print(counter)
         meta = parse_filename(f)
         if not meta:
             continue

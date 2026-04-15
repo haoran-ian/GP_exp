@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, r2_score, mean_absolute_error
 from sklearn.preprocessing import LabelEncoder
 
 ELA_PATH = "data/Ablation_ELA/Processed_ELA_Pipeline/pipeline_aligned_ela.csv"
-PERF_PATH = "results/algorithm_auc_performance.csv"
+PERF_PATH = "data/Ablation_ELA/algorithm_auc_performance.csv"
 MODEL_SAVE_PATH = "models/sota_as_models.joblib"
 
 
@@ -36,8 +36,10 @@ def train_algorithm_selection_models():
 
     meta_cols = ['problem_name', 'fid', 'iid', 'dim', 'seed']
     feature_cols = [c for c in bbob_ela.columns if c not in meta_cols]
-    X_clf = train_df_clf[feature_cols].fillna(
-        train_df_clf[feature_cols].median())
+    # X_clf = train_df_clf[feature_cols].fillna(
+    #     train_df_clf[feature_cols].median())
+    X_clf = train_df_clf[feature_cols].replace([np.inf, -np.inf], np.nan)
+    X_clf = X_clf.fillna(X_clf.median()).fillna(0)
     y_clf = train_df_clf['target_best_alg']
     le = LabelEncoder()
     y_clf_encoded = le.fit_transform(y_clf)
@@ -52,19 +54,41 @@ def train_algorithm_selection_models():
     print(f"✅ 分类模型 LOFO 准确率: {accuracy_score(y_clf_encoded, y_pred_clf):.4f}")
     clf.fit(X_clf, y_clf_encoded)
     print("\n📈 正在训练回归模型 (性能预测器)...")
+
+    # 1. 准备原始特征和 One-hot 算法名
     X_reg_raw = train_df_reg[feature_cols + ['algname']]
-    X_reg = pd.get_dummies(X_reg_raw, columns=['algname'])
-    X_reg = X_reg.fillna(X_reg.median())
-    y_reg = train_df_reg['auc_mean']
+    X_reg_encoded = pd.get_dummies(X_reg_raw, columns=['algname'])
 
-    reg = RandomForestRegressor(
-        n_estimators=200, max_features='sqrt', n_jobs=-1, random_state=42)
-    groups_reg = train_df_reg['fid']
+    # 2. 【核心修复】深度清洗矩阵 X
+    # 先将 inf 替换为 NaN，然后填充中位数，最后对于全空列补 0
+    X_reg = X_reg_encoded.replace([np.inf, -np.inf], np.nan)
 
-    y_pred_reg = cross_val_predict(
-        reg, X_reg, y_reg, groups=groups_reg, cv=logo)
-    print(f"✅ 回归模型 LOFO R2 分数: {r2_score(y_reg, y_pred_reg):.4f}")
-    print(f"✅ 回归模型 LOFO MAE: {mean_absolute_error(y_reg, y_pred_reg):.4f}")
+    # 建议分两步填充：先用列中位数填充，如果整列都是 NaN 则填充为 0
+    X_reg = X_reg.fillna(X_reg.median()).fillna(0)
+
+    # 3. 检查并清理目标变量 y (防止 y 也有 inf 或 nan)
+    y_reg = train_df_reg['auc_mean'].replace([np.inf, -np.inf], np.nan)
+    # 如果 y 有缺失，删除这些行（因为不能训练没有标签的数据）
+    valid_idx = y_reg.notna()
+    X_reg = X_reg[valid_idx]
+    y_reg = y_reg[valid_idx]
+    groups_reg = train_df_reg['fid'][valid_idx]
+
+    # 4. 执行预测
+    reg = RandomForestRegressor(n_estimators=200, max_features='sqrt', n_jobs=-1, random_state=42)
+
+    try:
+        y_pred_reg = cross_val_predict(reg, X_reg, y_reg, groups=groups_reg, cv=logo)
+        print(f"✅ 回归模型 LOFO R2 分数: {r2_score(y_reg, y_pred_reg):.4f}")
+        print(f"✅ 回归模型 LOFO MAE: {mean_absolute_error(y_reg, y_pred_reg):.4f}")
+    except ValueError as e:
+        print(f"❌ 依然报错: {e}")
+        # 打印出含有非有限值的列名，方便排查
+        is_finite = np.all(np.isfinite(X_reg), axis=0)
+        bad_cols = X_reg.columns[~is_finite].tolist()
+        print(f"🕵️ 发现问题列: {bad_cols}")
+
+    # 5. 全量训练
     reg.fit(X_reg, y_reg)
 
     os.makedirs(os.path.dirname(MODEL_SAVE_PATH), exist_ok=True)

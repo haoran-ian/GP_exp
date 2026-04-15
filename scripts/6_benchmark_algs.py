@@ -5,7 +5,7 @@ import ioh
 import numpy as np
 sys.path.insert(0, os.getcwd())
 # from problems.fluid_dynamics.problem import get_pipes_topology_problem
-from problems.meta_surface.problem import get_meta_surface_problem
+# from problems.meta_surface.problem import get_meta_surface_problem
 from problems.photovotaic_problems.problem import PROBLEM_TYPE, get_photonic_problem
 from utils.extract_top_algs import extract_top_algs
 from modcma.modularcmaes import ModularCMAES
@@ -128,13 +128,14 @@ def extract_exp_paths_from_name(exp_name: str, problem_name: str,
 
 if __name__ == '__main__':
     budget_cof = 100
-    problem_name = 'meta_surface'
+    # problem_name = 'meta_surface'
     # problem_name = 'photonic_2layers_ellipsometry'
     # problem_name = 'photonic_10layers_bragg'
     # problem_name = 'photonic_20layers_bragg'
-    # problem_name = 'photonic_10layers_photovoltaic'
+    problem_name = 'photonic_10layers_photovoltaic'
     if problem_name == "meta_surface":
-        problem = get_meta_surface_problem()
+        pass
+        # problem = get_meta_surface_problem()
     elif problem_name == "photonic_2layers_ellipsometry":
         problem = get_photonic_problem(problem_type=PROBLEM_TYPE.ELLIPSOMETRY)
     elif problem_name == "photonic_10layers_bragg":
