@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 201, "best": {"evals": 76, "y": 0.08636781749045727, "x": [-0.397806215196611, -3.3684640526410417]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 171, "y": 0.1044877823064128, "x": [-0.35341279011048976, -3.2150044935219384]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 76, "y": 0.0213777584890772, "x": [-0.6820889322249886, -3.410715983453482]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 12, "y": 0.03371082029089264, "x": [-0.5954628232926051, -3.4313226152503673]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 192, "y": 0.04052820129888045, "x": [-0.5050714521015782, -3.376134341147587]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 2, 
+	"function_name": "Ellipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f2_Ellipsoid/IOHprofiler_f2_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 201, "best": {"evals": 58, "y": 111.17716495739789, "x": [3.477536735227804, -0.7723269156032941]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 16, "y": 53.908290785837295, "x": [-4.016531661669499, -0.7889237499494781]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 178, "y": 93.54635518274254, "x": [-2.885371031805589, -0.7916659545717595]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 80, "y": 31.043285377017348, "x": [-3.7505285028703543, -0.7861994297008097]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 63, "y": 117.23732577635964, "x": [4.156908443358481, -0.7915757622573761]}}
+		]}
+	]
+}

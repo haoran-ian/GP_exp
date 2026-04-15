@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 24, 
+	"function_name": "LunacekBiRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f24_LunacekBiRastrigin/IOHprofiler_f24_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 273, "best": {"evals": 237, "y": 2.9822163808630022, "x": [2.522167705939487, -4.049690669947668]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 152, "y": 2.3230351419198105, "x": [2.9570311566749963, -2.8022950265950266]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 205, "y": 4.014731630923207, "x": [3.2699016404712635, -1.903183844930459]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 239, "y": 5.804245717427831, "x": [3.2073857113112436, -4.256076716605423]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 11, "y": 2.277300435397661, "x": [-0.9850455640972715, 1.4980510901934228]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 201, "best": {"evals": 194, "y": 0.00966752962981362, "x": [0.9127031287469953, -0.4510165236563498]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 75, "y": 0.1181327526869974, "x": [0.8020252319570704, -0.26612639937470484]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 173, "y": 0.03834567774654117, "x": [0.938131853537024, -0.30649237865674356]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 162, "y": 0.028232792190029065, "x": [0.921561811884627, -0.6427177942501305]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 201, "y": 0.051114557235062155, "x": [0.935144873249052, -0.8029555789853302]}}
+		]}
+	]
+}

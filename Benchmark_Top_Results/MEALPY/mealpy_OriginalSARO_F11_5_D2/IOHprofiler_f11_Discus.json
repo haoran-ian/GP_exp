@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 201, "best": {"evals": 160, "y": 20.85472965144508, "x": [2.8226446533951024, -1.8467666145768038]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 163, "y": 138.96926591097596, "x": [2.9423209991398753, -1.770915070101251]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 103, "y": 140.03460493059, "x": [4.831534453572127, -0.42234763587066393]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 44, "y": 189.06364100585958, "x": [2.071806008078977, -2.361133290474866]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 31, "y": 180.49257289342566, "x": [4.04667588743367, -0.9517478268909398]}}
+		]}
+	]
+}

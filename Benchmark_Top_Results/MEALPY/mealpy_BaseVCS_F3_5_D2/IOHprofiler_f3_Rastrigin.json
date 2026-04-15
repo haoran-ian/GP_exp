@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 201, "best": {"evals": 18, "y": 3.097780019325824, "x": [-4.812101995636448, 1.176354970758771]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 170, "y": 4.674199582814516, "x": [-4.707138051831174, 1.1980555065270784]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 184, "y": 6.220467887589935, "x": [-4.7312811946549465, 2.1401964353182663]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 69, "y": 8.416502116869339, "x": [-1.6952141542063925, 1.8837753201730048]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 39, "y": 3.5321854417467007, "x": [-3.7081321632956232, 1.1456284635033196]}}
+		]}
+	]
+}

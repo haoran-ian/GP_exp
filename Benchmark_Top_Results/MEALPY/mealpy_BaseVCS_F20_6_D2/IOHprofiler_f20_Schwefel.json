@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 201, "best": {"evals": 183, "y": 1.808996525004055, "x": [2.2502125406306677, 1.7538652659563663]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 200, "y": 1.705671866497106, "x": [2.3346729614978012, 2.0917099517117004]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 83, "y": 1.4774616393334663, "x": [-1.315770045857452, 2.970813206410517]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 195, "y": 2.560022044832806, "x": [0.9290724020976022, 0.9451145898714894]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 54, "y": 1.3286756132912279, "x": [-1.5015858901103756, 1.8388050751055136]}}
+		]}
+	]
+}

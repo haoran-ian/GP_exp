@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 273, "best": {"evals": 210, "y": 0.26336777337928624, "x": [2.0543796406820998, 3.123309459195151]}},
+			{"instance": 9, "evals": 273, "best": {"evals": 160, "y": 0.1802182695678814, "x": [1.954744141627584, 3.0923692295686105]}},
+			{"instance": 9, "evals": 273, "best": {"evals": 233, "y": 0.01682330191108137, "x": [1.7510417690744757, 2.873018217601323]}},
+			{"instance": 9, "evals": 273, "best": {"evals": 237, "y": 0.000772620406304591, "x": [1.68073021338131, 2.7325200007862795]}},
+			{"instance": 9, "evals": 273, "best": {"evals": 219, "y": 0.34371240020599325, "x": [2.2239947515014933, 3.0116724043542926]}}
+		]}
+	]
+}

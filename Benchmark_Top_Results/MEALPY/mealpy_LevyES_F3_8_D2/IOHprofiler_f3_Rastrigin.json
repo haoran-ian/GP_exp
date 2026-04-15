@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 273, "best": {"evals": 218, "y": 4.479685344480091, "x": [0.44936940050484364, -0.8083647930542877]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 223, "y": 7.356343573545535, "x": [-1.7487122502342616, -1.1423773358885603]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 233, "y": 4.923570794077482, "x": [-0.5412414575687376, -0.50975030971776]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 52, "y": 1.9251151286497348, "x": [-2.520306420164924, -0.8237766875780024]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 238, "y": 6.156754098955883, "x": [-1.6727368365318758, -0.1777287241369344]}}
+		]}
+	]
+}

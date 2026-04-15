@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 273, "best": {"evals": 237, "y": 3.461737190706798, "x": [3.1403457016836946, -1.036725767545149]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 145, "y": 1.368955959483655, "x": [2.8822684977688016, -1.5974304433310857]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 207, "y": 5.024322266420147, "x": [1.841524011942306, -1.7312837039763984]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 127, "y": 0.024218212201191146, "x": [2.258991409031997, -2.385773137389833]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 212, "y": 0.4022715155851276, "x": [2.2882584929142844, -2.1358288785646824]}}
+		]}
+	]
+}

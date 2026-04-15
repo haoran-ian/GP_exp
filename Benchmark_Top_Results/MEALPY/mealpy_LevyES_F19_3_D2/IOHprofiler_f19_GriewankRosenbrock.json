@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 273, "best": {"evals": 90, "y": 0.1577915532634222, "x": [1.1830595661698549, -0.7115754686770408]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 176, "y": 0.031732668957001664, "x": [-4.998557610557645, -1.97050573068124]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 163, "y": 0.004180657046946479, "x": [-0.28793211599893587, 0.4955880998680677]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 215, "y": 0.05655471327914441, "x": [-2.6740085116134953, -1.8515608578709966]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 156, "y": 0.028459736278133363, "x": [-0.6838354179297923, 0.8825130246620815]}}
+		]}
+	]
+}

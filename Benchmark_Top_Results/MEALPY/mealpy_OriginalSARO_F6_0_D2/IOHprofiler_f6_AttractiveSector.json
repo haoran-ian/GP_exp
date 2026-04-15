@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 201, "best": {"evals": 33, "y": 2.525412949692528, "x": [-3.034176383199465, -1.3127482933903591]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 109, "y": 1.5108545127664499, "x": [-2.567468107272144, -1.1895208368461874]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 102, "y": 1.3870409849547116, "x": [-2.540588768791689, -1.1311011467923757]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 87, "y": 0.4082132845133513, "x": [-2.207054031531437, -0.6918497798154002]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 51, "y": 0.7461184798400172, "x": [-2.3907784270550447, -0.8752778833724317]}}
+		]}
+	]
+}

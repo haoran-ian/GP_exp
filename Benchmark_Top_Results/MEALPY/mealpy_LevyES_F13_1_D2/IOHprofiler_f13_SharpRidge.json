@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 13, 
+	"function_name": "SharpRidge", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f13_SharpRidge/IOHprofiler_f13_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 273, "best": {"evals": 89, "y": 1.5091449799908407, "x": [1.1794014380867508, -0.7119342346662234]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 229, "y": 7.110272879251771, "x": [1.4179784663572643, 0.031406217583279106]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 231, "y": 2.1175804054855547, "x": [0.9822446486398688, -1.329157527921165]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 128, "y": 1.9939647241534073, "x": [0.5752483785431449, -2.6696433753346644]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 201, "y": 1.9515970250691435, "x": [1.024342352501303, -1.2370041841744637]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalTWO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 201, "best": {"evals": 52, "y": 12.113309073319362, "x": [3.2842668308214984, 0.4488318299689684]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 117, "y": 892.5828237574507, "x": [3.6292276378434365, -0.6513241141527752]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 45, "y": 455.09500495980734, "x": [4.729106898748249, -3.872237847619285]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 158, "y": 1074.2436592361375, "x": [4.1764772780682105, -2.2870131722929985]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 115, "y": 1665.5259241558351, "x": [4.522198854244447, -3.079540989929874]}}
+		]}
+	]
+}

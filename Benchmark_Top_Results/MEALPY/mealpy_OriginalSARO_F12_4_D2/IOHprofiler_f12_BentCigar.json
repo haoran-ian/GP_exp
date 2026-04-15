@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 201, "best": {"evals": 17, "y": 12.356868191087973, "x": [-0.4384966778345145, 0.6843394886864846]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 103, "y": 0.18733993374008118, "x": [-0.9553550106032, 0.7838961438713179]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 77, "y": 62.96421782198076, "x": [-1.428650663004393, 0.8978199147176378]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 113, "y": 2174.889537351016, "x": [1.3047621400330214, 0.3473487035132097]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 152, "y": 328.59563572145635, "x": [1.2750109846514597, 0.2877084902599647]}}
+		]}
+	]
+}

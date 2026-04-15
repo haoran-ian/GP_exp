@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 201, "best": {"evals": 45, "y": 1.985221060216831, "x": [0.7594649555617927, 4.292961975762141]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 186, "y": 1.0653156271078232, "x": [-0.16686234046074222, 3.9157501713271445]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 118, "y": 10.047878349371288, "x": [0.8382533674334669, 3.3100841529687477]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 143, "y": 1.712018266217589, "x": [0.8692756828223485, 4.311603231808598]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 120, "y": 4.05088972564858, "x": [0.9665367599552107, 4.287378606452931]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ASO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 210, "best": {"evals": 19, "y": 27.270197396883322, "x": [-1.0421915633420231, -0.07459148279683081]}},
+			{"instance": 8, "evals": 210, "best": {"evals": 17, "y": 200.76081695805016, "x": [1.141257740674348, -5]}},
+			{"instance": 8, "evals": 210, "best": {"evals": 22, "y": 214.45172881611632, "x": [-5, -5]}},
+			{"instance": 8, "evals": 210, "best": {"evals": 22, "y": 214.45172881611632, "x": [-5, -5]}},
+			{"instance": 8, "evals": 210, "best": {"evals": 22, "y": 214.45172881611632, "x": [-5, -5]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 201, "best": {"evals": 163, "y": 0.2806838500135478, "x": [-0.17008175260806785, -0.2261856057879228]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 154, "y": 0.08663996153599349, "x": [-0.1213387998623231, 0.27559137755127455]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 131, "y": 0.39059116341221733, "x": [-0.13417254570369008, 0.019865878999930593]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 165, "y": 0.07169221761688625, "x": [-0.13636935852314214, 0.21789832484052737]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 193, "y": 0.07980403633109796, "x": [-0.11663304706981338, 0.3025963187309142]}}
+		]}
+	]
+}

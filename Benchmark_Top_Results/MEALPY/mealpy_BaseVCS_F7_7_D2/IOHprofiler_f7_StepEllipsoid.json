@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 201, "best": {"evals": 171, "y": 0.016171197803697256, "x": [-2.4449338644766003, 2.812537674340882]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 55, "y": 0.12141489988944283, "x": [-1.9694589120772679, 2.8062574869752632]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 194, "y": 0.1716326907508859, "x": [-3.0686743528052314, 2.942820219405645]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 13, "y": 3.0353724972360725, "x": [0.4464901803184471, 2.80314764511367]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 40, "y": 0.6865307630035437, "x": [-1.3634965295516208, 2.677580343307458]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_MVPA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 390, "best": {"evals": 356, "y": 0.00010400881178162487, "x": [-0.07913629998909044, 0.23792726116018895]}},
+			{"instance": 7, "evals": 390, "best": {"evals": 346, "y": 4.967054816065674e-09, "x": [-0.07687046088079942, 0.22799847714313434]}},
+			{"instance": 7, "evals": 390, "best": {"evals": 350, "y": 2.457315878319915e-13, "x": [-0.07680035988808072, 0.22799965910095726]}},
+			{"instance": 7, "evals": 390, "best": {"evals": 48, "y": 4.91232474795533e-14, "x": [-0.07680006258608622, 0.22800021261756556]}},
+			{"instance": 7, "evals": 390, "best": {"evals": 2, "y": 3.0869229958073455e-14, "x": [-0.0768000596760522, 0.22800016525131972]}}
+		]}
+	]
+}

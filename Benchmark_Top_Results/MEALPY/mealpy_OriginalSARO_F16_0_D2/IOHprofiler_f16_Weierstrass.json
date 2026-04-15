@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 201, "best": {"evals": 40, "y": 0.1601655403331009, "x": [-2.0385980247785507, -3.8127228104575597]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 119, "y": 2.6677711336248593, "x": [-3.6213824894161553, 4.494892587070712]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 162, "y": 0.4851863024855223, "x": [-2.0010004148447003, -4.043287254782921]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 183, "y": 0.9573688996923684, "x": [-3.6260974725218036, 4.643236374240377]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 32, "y": 0.9351218496116819, "x": [-1.6882549690887725, 0.721387702727486]}}
+		]}
+	]
+}

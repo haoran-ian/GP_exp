@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 201, "best": {"evals": 167, "y": 1.4281711228348781, "x": [0.900481407955203, -2.399052473804237]}},
+			{"instance": 8, "evals": 201, "best": {"evals": 132, "y": 1.0692543299665158, "x": [1.9440015772774508, -2.188231694452191]}},
+			{"instance": 8, "evals": 201, "best": {"evals": 142, "y": 2.293861831110301, "x": [2.030475767740856, -1.3216326241529464]}},
+			{"instance": 8, "evals": 201, "best": {"evals": 139, "y": 1.4517117279609288, "x": [-1.6618516379475339, -3.0102397370292167]}},
+			{"instance": 8, "evals": 201, "best": {"evals": 53, "y": 1.340304831098602, "x": [1.9772882459727086, -2.199956907702511]}}
+		]}
+	]
+}

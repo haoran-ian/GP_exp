@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 273, "best": {"evals": 201, "y": 3.4699109009878666, "x": [1.1194368653083684, -1.0050371249997672]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 237, "y": 5.192366014392384, "x": [2.2671459755011316, -1.3197185461480427]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 214, "y": 8.45746841708306, "x": [0.15362827522347366, -1.6666110018755924]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 248, "y": 6.069092282026421, "x": [2.268560381717136, -1.2551367961554096]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 239, "y": 3.6342039386178904, "x": [1.1905382521781376, -0.6428517416349827]}}
+		]}
+	]
+}

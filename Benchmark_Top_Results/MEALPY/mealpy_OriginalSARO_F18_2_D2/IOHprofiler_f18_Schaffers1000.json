@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 201, "best": {"evals": 104, "y": 2.338726007411935, "x": [-1.3812172448540094, 1.8622063999703562]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 6, "y": 3.3512428752266508, "x": [-0.8080548559670522, 1.8521950039675952]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 20, "y": 4.6805750922649265, "x": [-3.3770140149768615, 2.0075234660715626]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 142, "y": 4.312531330912744, "x": [2.4254711302704406, 2.2763968074044314]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 152, "y": 0.7262858663683809, "x": [0.21318422014008656, 1.7331174812387349]}}
+		]}
+	]
+}

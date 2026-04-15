@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM10.dat",
+		"runs": [
+			{"instance": 1, "evals": 1101, "best": {"evals": 1081, "y": 4.0970935717225485, "x": [4.895419517711589, 4.562543128003991, 4.930921659037592, 4.669141137969938, -4.332704044508184, 5, 4.972089627690647, 4.897723204966418, 5, -5]}},
+			{"instance": 1, "evals": 1101, "best": {"evals": 202, "y": 0, "x": [5, 5, 5, 5, -5, 5, 5, 5, 5, -5]}},
+			{"instance": 1, "evals": 1101, "best": {"evals": 956, "y": 13.044144815107677, "x": [5, 5, -2.8197593755365267, 5, -5, 5, 5, 5, 5, -5]}},
+			{"instance": 1, "evals": 1101, "best": {"evals": 701, "y": 0, "x": [5, 5, 5, 5, -5, 5, 5, 5, 5, -5]}},
+			{"instance": 1, "evals": 1101, "best": {"evals": 760, "y": 0, "x": [5, 5, 5, 5, -5, 5, 5, 5, 5, -5]}}
+		]}
+	]
+}

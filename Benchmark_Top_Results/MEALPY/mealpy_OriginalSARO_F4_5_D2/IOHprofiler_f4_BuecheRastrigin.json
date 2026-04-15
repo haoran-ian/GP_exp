@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 201, "best": {"evals": 69, "y": 14.555689212950545, "x": [0.7432524884957878, 1.5320081985713365]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 45, "y": 12.428738619790014, "x": [1.6344149781844806, 1.2169572020912174]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 19, "y": 13.223488368275563, "x": [2.936374544415771, 0.8000417887780662]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 36, "y": 6.119612666233337, "x": [1.914775109473302, 1.5047685821373955]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 79, "y": 12.774277000726427, "x": [2.867323144350845, 1.8822127320412605]}}
+		]}
+	]
+}

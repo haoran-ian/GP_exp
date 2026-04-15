@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 201, "best": {"evals": 178, "y": 0.41949215930257333, "x": [3.2099035951490675, -3.113871472748841]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 156, "y": 1.872572669881478, "x": [1.0614444395862723, 2.2497936170719437]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 24, "y": 0.8941149137618636, "x": [-0.63252736973201, 2.7655918499710026]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 191, "y": 0.22085180767809115, "x": [1.1223968859105997, 2.4502725783469677]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 126, "y": 1.286949917175734, "x": [-0.13410235166654152, 2.9922523030838977]}}
+		]}
+	]
+}

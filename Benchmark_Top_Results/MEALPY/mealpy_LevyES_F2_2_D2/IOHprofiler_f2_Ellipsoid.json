@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 2, 
+	"function_name": "Ellipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f2_Ellipsoid/IOHprofiler_f2_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 273, "best": {"evals": 238, "y": 26.538937397698042, "x": [-2.614289328746311, 2.6179335918264623]}},
+			{"instance": 2, "evals": 273, "best": {"evals": 234, "y": 1800.8153683228472, "x": [3.3125564318152287, 2.5821330055278864]}},
+			{"instance": 2, "evals": 273, "best": {"evals": 227, "y": 13.074411302378738, "x": [-2.697989799901463, 2.620352601895606]}},
+			{"instance": 2, "evals": 273, "best": {"evals": 129, "y": 7143.4399568892895, "x": [1.4363808784262, 2.7066120679186474]}},
+			{"instance": 2, "evals": 273, "best": {"evals": 226, "y": 312.08528952585425, "x": [4.781786108117525, 2.6395998661669866]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 201, "best": {"evals": 178, "y": 0.13851400788720125, "x": [-2.911232439051653, 1.0178283902707004]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 22, "y": 0.4485151990245906, "x": [-2.195560079355948, 2.8927932845148856]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 54, "y": 0.2418916640799294, "x": [-2.5359302108833637, 1.93664926813072]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 169, "y": 0.3585626441270827, "x": [-2.5541626565483257, 1.7989689917758944]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 18, "y": 1.1371621710732565, "x": [-3.4177659281520056, 0.45202651703212826]}}
+		]}
+	]
+}

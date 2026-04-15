@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 22, 
+	"function_name": "Gallagher21", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f22_Gallagher21/IOHprofiler_f22_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 201, "best": {"evals": 19, "y": 0.0006608220682257439, "x": [1.1209572272242143, 1.1693399687475692]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 34, "y": 0.0012193469614848406, "x": [1.6379464521978884, 0.14889112058308562]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 106, "y": 0.13669075027237468, "x": [1.2113383276929488, 0.8409749147796162]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 128, "y": 0.03576045182720259, "x": [0.7156998906954333, 2.0466744796475376]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 153, "y": 0.06670837652193833, "x": [1.5733700734505174, 0.1388493877034831]}}
+		]}
+	]
+}

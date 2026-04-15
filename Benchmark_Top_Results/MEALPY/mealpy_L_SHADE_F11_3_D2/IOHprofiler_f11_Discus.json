@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 201, "best": {"evals": 65, "y": 160.74380868052353, "x": [0.07453242268423105, 1.6135722216917643]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 130, "y": 427.3964706692762, "x": [0.6615748730918489, 2.6538255234890515]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 153, "y": 4440.374628354996, "x": [-1.361870020352426, -0.8906777022581209]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 192, "y": 70.62310188081585, "x": [-1.3039823460632316, -0.6369643661820454]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 190, "y": 201.85166932132873, "x": [-0.33167815785242083, 0.9356656557804426]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 10, 
+	"function_name": "EllipsoidRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f10_EllipsoidRotated/IOHprofiler_f10_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 201, "best": {"evals": 53, "y": 576.0902912919338, "x": [0.2709247667301649, -2.1875439858526686]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 57, "y": 47.80410567013752, "x": [5, -1.4555567975475423]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 71, "y": 558.3449559088721, "x": [4.476219432799583, -1.5199754502574037]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 165, "y": 808.0347681600965, "x": [-3.6210731274328882, -2.802347211830326]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 73, "y": 45.207168991405965, "x": [5, -1.465451059770636]}}
+		]}
+	]
+}

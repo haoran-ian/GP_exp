@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 201, "best": {"evals": 190, "y": 8.782237617537337, "x": [-1.0094007122078175, -3.0536916913046435]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 156, "y": 12.419318507866802, "x": [-1.4925610219083607, -0.2000241312071085]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 166, "y": 4.359737466680382, "x": [-0.20754007342107067, -1.4683328934887185]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 107, "y": 3.3894363349020122, "x": [0.08929374089272263, -2.9166554950341985]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 163, "y": 5.3214765435027465, "x": [-0.5598379642252551, -1.574045104870486]}}
+		]}
+	]
+}

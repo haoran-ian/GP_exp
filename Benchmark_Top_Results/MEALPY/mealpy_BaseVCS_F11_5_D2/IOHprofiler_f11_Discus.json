@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 201, "best": {"evals": 81, "y": 38.59389096835135, "x": [4.947854696944701, -0.3170232903935752]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 171, "y": 124.99563112680866, "x": [-1.6181590094163227, -5]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 163, "y": 903.6611433538941, "x": [-1.6510866153683423, -5]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 44, "y": 189.06364100585958, "x": [2.071806008078977, -2.361133290474866]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 173, "y": 76.56842775304774, "x": [3.137897300938392, -1.6282216323657392]}}
+		]}
+	]
+}

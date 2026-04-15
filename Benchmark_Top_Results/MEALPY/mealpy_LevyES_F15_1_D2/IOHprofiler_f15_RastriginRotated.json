@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 273, "best": {"evals": 237, "y": 3.349859449970543, "x": [-3.4301078191549115, 3.7781664999448763]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 237, "y": 5.427376849635382, "x": [-3.082475235071661, 2.076224695362584]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 237, "y": 2.3062687078267947, "x": [-3.4190496364893788, 2.8113785236546405]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 237, "y": 6.921549135231611, "x": [-4.998820225772001, 4.042411591497228]}},
+			{"instance": 1, "evals": 273, "best": {"evals": 220, "y": 0.43894787954167513, "x": [-3.0940216087804084, 3.0255841903814296]}}
+		]}
+	]
+}

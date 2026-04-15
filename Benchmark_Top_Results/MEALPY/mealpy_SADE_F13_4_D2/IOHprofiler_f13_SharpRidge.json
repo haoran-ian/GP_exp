@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 13, 
+	"function_name": "SharpRidge", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f13_SharpRidge/IOHprofiler_f13_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 201, "best": {"evals": 167, "y": 2.551038337506835, "x": [1.8271371076596346, 0.6843394886864846]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 120, "y": 11.022591210655634, "x": [0.3498108753580329, 1.342516563270309]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 172, "y": 30.03214475866029, "x": [2.6753169885395307, 0.1601916202781043]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 96, "y": 3.100780037521531, "x": [1.6923151324953627, 0.7146767319988541]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 25, "y": 7.702561153851749, "x": [0.5474086294255853, 1.2493084406409771]}}
+		]}
+	]
+}

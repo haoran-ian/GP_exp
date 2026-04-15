@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 273, "best": {"evals": 239, "y": 2166.9493654843977, "x": [-2.1093454725720093, -3.168442563192877]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 200, "y": 69.05251217557164, "x": [4.220124212908873, 4.62517169110267]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 133, "y": 73.23768270893524, "x": [-2.2330641390427877, -3.246573731899832]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 237, "y": 705.2431438419001, "x": [2.6457534058428602, 2.5813405819824173]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 201, "y": 53.4253039120763, "x": [0.15378136557669997, -0.38322619169906935]}}
+		]}
+	]
+}

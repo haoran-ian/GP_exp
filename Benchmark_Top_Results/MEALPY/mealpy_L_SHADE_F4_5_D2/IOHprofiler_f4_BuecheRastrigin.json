@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 201, "best": {"evals": 196, "y": 10.00655786459814, "x": [0.7264053572315963, 1.1712334932299076]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 118, "y": 5.372092028719075, "x": [1.903861665073121, 1.4667173694627722]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 182, "y": 7.520428906453205, "x": [2.6785681324183934, 1.8337077711610013]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 136, "y": 4.001479864126272, "x": [2.6972017309111407, 1.5047685821373955]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 126, "y": 9.15100381018457, "x": [3.606117214733347, 2.0682984262903723]}}
+		]}
+	]
+}

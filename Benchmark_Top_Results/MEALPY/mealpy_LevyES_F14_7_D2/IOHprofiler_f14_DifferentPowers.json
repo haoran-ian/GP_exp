@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 273, "best": {"evals": 227, "y": 0.09393209404137065, "x": [0.43684013615251926, 0.5938324250221385]}},
+			{"instance": 7, "evals": 273, "best": {"evals": 200, "y": 0.25137548023312617, "x": [-0.045887472476990356, 0.9973819781637919]}},
+			{"instance": 7, "evals": 273, "best": {"evals": 210, "y": 0.070665672888609, "x": [0.1435445078139732, 0.9978120905056347]}},
+			{"instance": 7, "evals": 273, "best": {"evals": 212, "y": 0.20164603595332345, "x": [0.5410593126005925, 0.6369971010470459]}},
+			{"instance": 7, "evals": 273, "best": {"evals": 213, "y": 0.2624125244797445, "x": [0.45142517796908466, 1.128370015379917]}}
+		]}
+	]
+}

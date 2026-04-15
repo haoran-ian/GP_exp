@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 22, 
+	"function_name": "Gallagher21", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f22_Gallagher21/IOHprofiler_f22_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 273, "best": {"evals": 206, "y": 0.013981369483902675, "x": [1.8648702785929023, 1.3313353936925374]}},
+			{"instance": 5, "evals": 273, "best": {"evals": 237, "y": 0.6681746648721164, "x": [0.7537439418168521, 1.7579860536530492]}},
+			{"instance": 5, "evals": 273, "best": {"evals": 200, "y": 0.46004240629120907, "x": [4.651431407691679, 0.15403807188850932]}},
+			{"instance": 5, "evals": 273, "best": {"evals": 203, "y": 0.004367409835700525, "x": [1.8378048668810725, 1.352392520299636]}},
+			{"instance": 5, "evals": 273, "best": {"evals": 217, "y": 1.1036752811300703, "x": [4.015528024820181, -2.156338909391077]}}
+		]}
+	]
+}

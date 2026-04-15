@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 273, "best": {"evals": 211, "y": 1.2691125215620302, "x": [0.40675471506588606, 0.09235794302932065]}},
+			{"instance": 9, "evals": 273, "best": {"evals": 237, "y": 3.1928154391254093, "x": [-1.427332868626358, -0.3685429368696264]}},
+			{"instance": 9, "evals": 273, "best": {"evals": 225, "y": 0.3930707414564003, "x": [-0.11857976582162569, -0.1702771745667485]}},
+			{"instance": 9, "evals": 273, "best": {"evals": 237, "y": 1.792034537303187, "x": [-0.30991311620693446, -0.3071989261327542]}},
+			{"instance": 9, "evals": 273, "best": {"evals": 237, "y": 1.834254251570286, "x": [-4.8369317966370025, 0.05095044373116291]}}
+		]}
+	]
+}

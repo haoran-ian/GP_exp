@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 273, "best": {"evals": 238, "y": 1.7957704997151107, "x": [-0.33755636637164466, -2.554741563467277]}},
+			{"instance": 4, "evals": 273, "best": {"evals": 237, "y": 0.8123547435235822, "x": [1.4198274563787596, -2.992144693731055]}},
+			{"instance": 4, "evals": 273, "best": {"evals": 163, "y": 1.5369019764902294, "x": [1.6822397694648523, -3.019108992854316]}},
+			{"instance": 4, "evals": 273, "best": {"evals": 127, "y": 0.014572332885111337, "x": [-2.120458816536367, -2.106712104660641]}},
+			{"instance": 4, "evals": 273, "best": {"evals": 214, "y": 0.814975044621441, "x": [1.6070691628669755, -3.03357504205057]}}
+		]}
+	]
+}

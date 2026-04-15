@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 201, "best": {"evals": 19, "y": 2.283013969637129, "x": [1.1209572272242143, 1.1693399687475692]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 177, "y": 1.8754283400789142, "x": [2.0862063934920183, 1.2063254441256357]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 24, "y": 1.6204575077967223, "x": [-0.63252736973201, 2.7655918499710026]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 155, "y": 1.2230006520572283, "x": [0.950903140310437, 2.4027587432056627]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 180, "y": 2.2114165340027068, "x": [1.0593874490946082, 1.177285471115577]}}
+		]}
+	]
+}

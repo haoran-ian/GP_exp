@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 201, "best": {"evals": 199, "y": 0.02205966034958351, "x": [1.746895770176891, -0.9092871821243625]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 173, "y": 0.18009876189943874, "x": [-1.0540197790786425, 0.2591802605410446]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 190, "y": 0.0719434586465475, "x": [1.0776854503878863, -0.7432890221270582]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 111, "y": 0.2683662199304919, "x": [0.6013180145144889, 1.9313791831299634]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 127, "y": 0.07130893386949921, "x": [0.35652667089047624, -0.4424090203118243]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 273, "best": {"evals": 204, "y": 7.0128647019725046, "x": [-5, 0.8440638657008444]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 237, "y": 3.487228150954885, "x": [-3.200294246495367, -0.14630493695093033]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 200, "y": 0.6892702230462713, "x": [-3.4832438328533013, 0.05057604958882303]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 237, "y": 3.6967887034938864, "x": [-2.219110355744327, -0.8584341905889958]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 218, "y": 1.52389368805777, "x": [-3.925990230221899, 0.28764379957442193]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 201, "best": {"evals": 30, "y": 5.16471772249798, "x": [-0.33689227143693756, -2.5557440799839726]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 168, "y": 11.220504548501681, "x": [0.8289344270704884, -2.1467099656768696]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 178, "y": 9.490780335374486, "x": [0.7408678541960418, -2.1570117016402848]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 159, "y": 5.008012789634098, "x": [-0.32721984506689195, -2.5612489900759354]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 90, "y": 12.304975351522938, "x": [-2.4319507911844287, -1.8779496771994806]}}
+		]}
+	]
+}

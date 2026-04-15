@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 201, "best": {"evals": 18, "y": 4.356023817599648, "x": [-4.812101995636448, 1.176354970758771]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 178, "y": 0.2912492112914125, "x": [-3.1821995862598595, 0.5777662824464082]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 62, "y": 0.16444511210826637, "x": [-2.4964651421529034, 1.9836060204279953]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 63, "y": 0.09068468053417578, "x": [-2.916298119195873, 1.0743749400683955]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 18, "y": 1.1371621710732565, "x": [-3.4177659281520056, 0.45202651703212826]}}
+		]}
+	]
+}

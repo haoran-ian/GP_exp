@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 201, "best": {"evals": 166, "y": 0.05431318455327267, "x": [0.483868083191215, -2.393549992725316]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 76, "y": 0.0826073000696032, "x": [0.8861176870443654, -3.086935618349809]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 161, "y": 0.2311635431127346, "x": [0.40245303466574456, -2.735315833482124]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 72, "y": 0.07589835428539388, "x": [0.5531058667235049, -2.6883079831549836]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 71, "y": 0.22779385347288544, "x": [0.8708850059833504, -2.6404681366226574]}}
+		]}
+	]
+}

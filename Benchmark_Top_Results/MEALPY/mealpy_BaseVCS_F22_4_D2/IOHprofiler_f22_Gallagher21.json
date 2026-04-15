@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 22, 
+	"function_name": "Gallagher21", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f22_Gallagher21/IOHprofiler_f22_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 201, "best": {"evals": 159, "y": 0.9242451645038564, "x": [-4.513720717824078, -4.403553992293222]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 201, "y": 2.6966688571525863e-05, "x": [-3.725302513548861, 0.6868531487286347]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 192, "y": 1.9696533852417586, "x": [4.082457681630986, 0.4539274113576363]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 70, "y": 0.015568448835933125, "x": [-5, 0.2829757803819964]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 53, "y": 0.015805257081393777, "x": [-5, 0.28872818933797667]}}
+		]}
+	]
+}

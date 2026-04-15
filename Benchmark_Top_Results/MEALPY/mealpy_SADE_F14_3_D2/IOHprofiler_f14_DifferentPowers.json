@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 201, "best": {"evals": 26, "y": 0.1926099529224637, "x": [0.7019677041787968, -0.6139848653767963]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 59, "y": 0.3503213361358386, "x": [0.6858969427618485, 0.03528812990625807]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 23, "y": 0.21701542531500329, "x": [0.6714412762770925, -0.7245403670388999]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 178, "y": 0.009029299637245743, "x": [0.8968576283108066, -0.4390654104337435]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 50, "y": 0.2949929812070634, "x": [1.189299266440936, -0.6323370806048683]}}
+		]}
+	]
+}

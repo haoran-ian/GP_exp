@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 201, "best": {"evals": 173, "y": 2.2066865685596113, "x": [2.4495229500026348, -1.628839327239892]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 176, "y": 0.6429081910507426, "x": [2.693687168603949, -1.9344945138293093]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 123, "y": 0.7592861762202562, "x": [2.433528899029443, -1.9150259797587499]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 136, "y": 0.8230191856889169, "x": [2.131622540686149, -2.1187495211658334]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 158, "y": 1.4884390173904576, "x": [2.6141118970776747, -1.6235482613456915]}}
+		]}
+	]
+}

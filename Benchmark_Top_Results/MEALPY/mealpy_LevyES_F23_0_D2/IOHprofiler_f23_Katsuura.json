@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 23, 
+	"function_name": "Katsuura", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f23_Katsuura/IOHprofiler_f23_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 273, "best": {"evals": 237, "y": 4.013377942928403, "x": [1.182173576720151, -0.6986722384801057]}},
+			{"instance": 0, "evals": 273, "best": {"evals": 241, "y": 3.6137200914977194, "x": [-3.9903650448623003, 0.2162695346022878]}},
+			{"instance": 0, "evals": 273, "best": {"evals": 163, "y": 1.3578827675027705, "x": [0.26006598400604686, -0.08625049036860219]}},
+			{"instance": 0, "evals": 273, "best": {"evals": 66, "y": 2.478353391373256, "x": [3.5543533563559397, -4.201024675651461]}},
+			{"instance": 0, "evals": 273, "best": {"evals": 163, "y": 2.5608665687091614, "x": [-3.2581517378720526, 0.48249813500658356]}}
+		]}
+	]
+}

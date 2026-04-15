@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 273, "best": {"evals": 206, "y": 1.2250569616241056, "x": [3.7749430383758944, 5]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 200, "y": 0, "x": [5, 5]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 205, "y": 0, "x": [5, 5]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 237, "y": 0.8977810439244962, "x": [4.102218956075504, 5]}},
+			{"instance": 6, "evals": 273, "best": {"evals": 129, "y": 0, "x": [5, 5]}}
+		]}
+	]
+}

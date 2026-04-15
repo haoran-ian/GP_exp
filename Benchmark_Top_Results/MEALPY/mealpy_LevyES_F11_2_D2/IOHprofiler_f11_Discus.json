@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 273, "best": {"evals": 132, "y": 191.69587155647457, "x": [2.073330716900827, 4.075781991279395]}},
+			{"instance": 2, "evals": 273, "best": {"evals": 237, "y": 24.297394696240122, "x": [4.118164357760664, -2.0078855122789387]}},
+			{"instance": 2, "evals": 273, "best": {"evals": 204, "y": 103.29948277643851, "x": [3.8895628586162347, -1.2983957966644526]}},
+			{"instance": 2, "evals": 273, "best": {"evals": 231, "y": 1722.8453970106116, "x": [4.195512635390228, -2.1127322810596367]}},
+			{"instance": 2, "evals": 273, "best": {"evals": 163, "y": 650.8345737151637, "x": [2.2610030029873975, 3.558979403572244]}}
+		]}
+	]
+}

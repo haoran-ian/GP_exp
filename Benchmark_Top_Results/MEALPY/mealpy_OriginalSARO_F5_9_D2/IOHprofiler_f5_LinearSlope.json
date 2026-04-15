@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 201, "best": {"evals": 187, "y": 1.6720823967542398, "x": [-4.697323472935624, -4.863059413031014]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 102, "y": 1.565313953719027, "x": [-4.74523539016694, -4.8689450656114035]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 154, "y": 2.091885912419777, "x": [-3.2335475049439917, -4.9674566582636235]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 153, "y": 1.6004390196651155, "x": [-4.892135270312844, -4.850742571002204]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 153, "y": 3.1921529065191634, "x": [-3.641187406148538, -4.81666596873323]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 201, "best": {"evals": 182, "y": 0.15378256038983124, "x": [-0.8428348777480306, -3.618170486513862]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 97, "y": 0.02973774865765937, "x": [-0.5008786652005952, -3.2513536882956586]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 181, "y": 0.05009327723968365, "x": [-0.8549057464972705, -3.134681691017922]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 175, "y": 0.021236967615536236, "x": [-0.5318700912161762, -3.301890813225371]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 163, "y": 0.018247964111703138, "x": [-0.7225254978876698, -3.390399916287896]}}
+		]}
+	]
+}

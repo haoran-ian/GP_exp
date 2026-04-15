@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 273, "best": {"evals": 237, "y": 0.4363028681783371, "x": [-2.576969861970828, -3.458073778791779]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 237, "y": 2.369939293331528, "x": [-2.1326655597220476, -4.159057642682873]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 209, "y": 0.7255231918290844, "x": [-0.7266271894284323, -4.356809165288477]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 163, "y": 0.36531957270825227, "x": [-0.7384577841727376, -4.2771671886574465]}},
+			{"instance": 3, "evals": 273, "best": {"evals": 223, "y": 0.539654121757383, "x": [-4.362991114889445, 3.47641783739243]}}
+		]}
+	]
+}

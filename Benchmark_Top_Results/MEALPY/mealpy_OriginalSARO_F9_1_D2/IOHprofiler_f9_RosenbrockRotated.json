@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 201, "best": {"evals": 15, "y": 1.6734310639796028, "x": [0.21848321750071698, -0.8533806000947646]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 109, "y": 1.254618553066072, "x": [0.1265964512343678, -0.7545619360432076]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 61, "y": 0.5320704226203434, "x": [0.4790778009037666, 1.9952061979054818]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 1, "y": 0.34335703196904177, "x": [0.5079790257457546, 2.081478226181048]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 153, "y": 0.7463411023546609, "x": [0.14910977237220924, 1.3283035694432546]}}
+		]}
+	]
+}

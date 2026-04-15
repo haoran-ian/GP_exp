@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 10, 
+	"function_name": "EllipsoidRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_LevyES", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f10_EllipsoidRotated/IOHprofiler_f10_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 273, "best": {"evals": 238, "y": 1601.7464744534798, "x": [-1.0177006208721238, -2.9009387496081986]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 237, "y": 48.67649355100689, "x": [4.998756226586136, -4.031584175380526]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 9, "y": 215.2095248286953, "x": [-0.32212515417699805, -2.9825677373503465]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 131, "y": 43.29931460180951, "x": [-1.9076864471728185, -2.696627507645622]}},
+			{"instance": 8, "evals": 273, "best": {"evals": 250, "y": 16.214565849077438, "x": [1.6694213246031104, -3.386037099013317]}}
+		]}
+	]
+}

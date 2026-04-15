@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 201, "best": {"evals": 80, "y": 0.260896489386755, "x": [0.03428031302087539, -2.9328788529910232]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 54, "y": 0.2932587373747474, "x": [0.034971748792327964, -3.177012199669129]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 68, "y": 1.3851894761488197, "x": [0.26876225778122564, -3.225676396599617]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 175, "y": 0.9205042887315102, "x": [0.29247145689689447, -2.646265930028327]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 28, "y": 0.15087578605400112, "x": [-0.022058853826942837, -3.175545954287932]}}
+		]}
+	]
+}
