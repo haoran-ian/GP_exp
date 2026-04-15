@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 201, "best": {"evals": 59, "y": 0.07018058074574152, "x": [3.811031971111616, 0.8127287263585874]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 63, "y": 0.061153743286416345, "x": [3.60027948682888, 0.38831064341652866]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 102, "y": 0.08605753104384635, "x": [3.328925664711912, 0.7027420975071905]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 103, "y": 0.008763123111290301, "x": [3.707778615604466, 0.6286002076484429]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 129, "y": 0.08373962102132775, "x": [3.7862195058353914, 0.868046899132906]}}
+		]}
+	]
+}

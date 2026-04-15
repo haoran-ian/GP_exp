@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 2, 
+	"function_name": "Ellipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_RPSO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f2_Ellipsoid/IOHprofiler_f2_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 210, "best": {"evals": 209, "y": 17.334944871880136, "x": [-3.7519336276135884, -3.9202736168115146]}},
+			{"instance": 5, "evals": 210, "best": {"evals": 29, "y": 17.334944871880136, "x": [-3.7519336276135884, -3.9202736168115146]}},
+			{"instance": 5, "evals": 210, "best": {"evals": 44, "y": 88.05035336519714, "x": [-3.8168368153741037, -3.911835358305699]}},
+			{"instance": 5, "evals": 210, "best": {"evals": 182, "y": 57.94463848109413, "x": [-5, -3.9141274205797494]}},
+			{"instance": 5, "evals": 210, "best": {"evals": 2, "y": 57.94463848109413, "x": [-5, -3.9141274205797494]}}
+		]}
+	]
+}

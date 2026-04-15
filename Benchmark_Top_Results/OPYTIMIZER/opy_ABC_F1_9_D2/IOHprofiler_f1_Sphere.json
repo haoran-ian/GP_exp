@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ABC", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 590, "best": {"evals": 544, "y": 0.0008067498258625807, "x": [1.669243535986143, 2.7620841206348823]}},
+			{"instance": 9, "evals": 576, "best": {"evals": 411, "y": 0.00010128789128717314, "x": [1.7028399329478296, 2.747149714211726]}},
+			{"instance": 9, "evals": 584, "best": {"evals": 506, "y": 2.0885299170012945e-07, "x": [1.696445720435605, 2.754911315081876]}},
+			{"instance": 9, "evals": 586, "best": {"evals": 542, "y": 2.8506547362905486e-08, "x": [1.6967426219658468, 2.7550412098600052]}},
+			{"instance": 9, "evals": 581, "best": {"evals": 543, "y": 1.0111056310335527e-09, "x": [1.6967688539326702, 2.755206405319738]}}
+		]}
+	]
+}

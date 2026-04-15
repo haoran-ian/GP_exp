@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 201, "best": {"evals": 90, "y": 252.16341644252583, "x": [-5, -3.8127228104575597]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 102, "y": 78.10365522287432, "x": [-5, -3.8342472438127233]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 169, "y": 90.26797119193223, "x": [-5, -3.8437631040110642]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 108, "y": 377.6015495693308, "x": [-2.335616293803229, 0.32836542594402085]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 45, "y": 922.928557398742, "x": [0.10243629294940071, 4.267206932402512]}}
+		]}
+	]
+}

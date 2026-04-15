@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 201, "best": {"evals": 143, "y": 0.21492196832220067, "x": [3.438170933523088, 1.0946158330011775]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 159, "y": 0.06245688546076866, "x": [3.9017625993675784, 0.6796509410409919]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 88, "y": 0.11719189415659065, "x": [3.320168996345009, 1.1699892130345642]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 95, "y": 0.7629821234768488, "x": [2.888375237442993, 1.5719817349151914]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 126, "y": 0.17983933723888462, "x": [3.9550116605614605, 0.6570364207854714]}}
+		]}
+	]
+}

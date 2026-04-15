@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM10.dat",
+		"runs": [
+			{"instance": 5, "evals": 1001, "best": {"evals": 922, "y": 0.19306423571660147, "x": [4.8069357642833985, 5, 5, -5, -5, 5, 5, -5, 5, 5]}},
+			{"instance": 5, "evals": 1001, "best": {"evals": 912, "y": 0, "x": [5, 5, 5, -5, -5, 5, 5, -5, 5, 5]}},
+			{"instance": 5, "evals": 1001, "best": {"evals": 709, "y": 0.023227719966342875, "x": [5, 5, 5, -5, -5, 5, 4.994995739433417, -5, 5, 5]}},
+			{"instance": 5, "evals": 1001, "best": {"evals": 946, "y": 0.35101273396652033, "x": [5, 5, 5, -5, -5, 5, 5, -5, 4.954664962102958, 5]}},
+			{"instance": 5, "evals": 1001, "best": {"evals": 829, "y": 0.05105775235800358, "x": [5, 5, 4.969391681604692, -5, -5, 5, 5, -5, 5, 5]}}
+		]}
+	]
+}

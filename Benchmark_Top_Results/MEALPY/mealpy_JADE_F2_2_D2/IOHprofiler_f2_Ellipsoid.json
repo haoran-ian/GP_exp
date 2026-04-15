@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 2, 
+	"function_name": "Ellipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f2_Ellipsoid/IOHprofiler_f2_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 201, "best": {"evals": 174, "y": 206.99180652435538, "x": [5, 2.6351486366289874]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 146, "y": 3735.010570949301, "x": [-5, 2.6850723477965537]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 135, "y": 3513.0483341220447, "x": [2.8704501311819346, 2.558710151444828]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 144, "y": 323.03796374116035, "x": [-1.1271424365957978, 2.603958563606506]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 195, "y": 104.42028925577122, "x": [0.7745995620942199, 2.610948281980938]}}
+		]}
+	]
+}

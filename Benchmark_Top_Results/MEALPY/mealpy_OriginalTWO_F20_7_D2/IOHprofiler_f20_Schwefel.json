@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalTWO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 201, "best": {"evals": 128, "y": 1.6730819036024014, "x": [1.5111531251975647, 1.820087786454612]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 98, "y": 0.8104940603069384, "x": [-1.9802809038593607, 2.178012057043716]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 77, "y": 1.8256476833217294, "x": [0.5382970130124176, 2.7915943507393166]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 201, "y": 2.541898532667958, "x": [-2.0228560754063967, 1.3682087000425982]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 21, "y": 1.7057032722892498, "x": [-1.0309999709826734, 1.239161135482231]}}
+		]}
+	]
+}

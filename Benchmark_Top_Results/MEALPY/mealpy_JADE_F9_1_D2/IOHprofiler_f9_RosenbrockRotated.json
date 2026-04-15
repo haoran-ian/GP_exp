@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 9, 
+	"function_name": "RosenbrockRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f9_RosenbrockRotated/IOHprofiler_f9_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 201, "best": {"evals": 145, "y": 0.18720908612668563, "x": [-0.04869307165559711, 0.7111724237002899]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 102, "y": 1.2326656825926658, "x": [0.5545214941412013, 2.264313428838233]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 198, "y": 0.9458790069069885, "x": [-0.10248573403462224, -0.2797048618883843]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 1, "y": 0.34335703196904177, "x": [0.5079790257457546, 2.081478226181048]}},
+			{"instance": 1, "evals": 201, "best": {"evals": 111, "y": 1.1103715892401183, "x": [1.3702540122525937, 3.785460998027153]}}
+		]}
+	]
+}

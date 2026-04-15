@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 201, "best": {"evals": 17, "y": 12.356868191087973, "x": [-0.4384966778345145, 0.6843394886864846]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 125, "y": 178.38886229955722, "x": [3.3948719247646766, -0.17027291404489892]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 6, "y": 787.2244364856995, "x": [1.2113383276929488, 0.2914209427703902]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 143, "y": 160.56097004240235, "x": [0.8580087116849123, 0.41019673359771147]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 82, "y": 61.9058839925629, "x": [-1.0468855448461283, 0.8102633905023817]}}
+		]}
+	]
+}

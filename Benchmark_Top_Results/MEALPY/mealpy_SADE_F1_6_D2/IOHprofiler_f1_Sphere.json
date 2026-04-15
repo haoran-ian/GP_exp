@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 201, "best": {"evals": 148, "y": 0.06941014954149355, "x": [-1.3981935873400833, -3.1680863799288317]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 160, "y": 0.11066935989373607, "x": [-1.7335509822790387, -3.0189851091512123]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 160, "y": 0.17960517150795705, "x": [-1.0360615296992786, -2.727888208104757]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 70, "y": 0.0014202857425670236, "x": [-1.384352369374219, -2.9151841517273915]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 48, "y": 0.04750312222627081, "x": [-1.4971478914448433, -3.1097424054384515]}}
+		]}
+	]
+}

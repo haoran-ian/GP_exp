@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 201, "best": {"evals": 187, "y": 0.343141054393952, "x": [0.035316112061501065, -4.702833240665338]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 186, "y": 1.5414149351801094, "x": [-1.1696200595275028, -5]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 39, "y": 1.0231322584132472, "x": [-1.2078943305836254, -4.869826633054494]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 65, "y": 1.752895256682414, "x": [-3.9004086569821466, 4.363836498604304]}},
+			{"instance": 7, "evals": 201, "best": {"evals": 124, "y": 1.6656268682739497, "x": [1.4829264926374273, -3.288612172097962]}}
+		]}
+	]
+}

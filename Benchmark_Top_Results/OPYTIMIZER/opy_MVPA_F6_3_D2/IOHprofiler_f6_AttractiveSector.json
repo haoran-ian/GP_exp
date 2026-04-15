@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_MVPA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 390, "best": {"evals": 359, "y": 0.12580827868255176, "x": [-0.09330332713864209, -3.359595184347604]}},
+			{"instance": 3, "evals": 390, "best": {"evals": 354, "y": 0.04545033559543797, "x": [-0.13896958973287393, -3.369799146930051]}},
+			{"instance": 3, "evals": 390, "best": {"evals": 339, "y": 4.710963160963175e-05, "x": [-0.1848416829977828, -3.329687471359713]}},
+			{"instance": 3, "evals": 390, "best": {"evals": 345, "y": 5.022126993805539e-06, "x": [-0.18620597010715512, -3.3308195141952903]}},
+			{"instance": 3, "evals": 390, "best": {"evals": 346, "y": 4.718695101675014e-06, "x": [-0.18621474933050927, -3.3308096814035015]}}
+		]}
+	]
+}

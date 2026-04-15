@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 201, "best": {"evals": 198, "y": 0.3004994286515218, "x": [-2.4929089389739376, 2.055159241950297]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 124, "y": 0.42278572514951, "x": [-3.444887615945174, 0.36509682582011516]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 159, "y": 0.04871256793423925, "x": [-2.8838274029924915, 1.0848330329771634]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 185, "y": 2.9867992807938766, "x": [-3.782903182531286, 0.32622973785816833]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 18, "y": 1.1371621710732565, "x": [-3.4177659281520056, 0.45202651703212826]}}
+		]}
+	]
+}

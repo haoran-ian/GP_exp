@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 201, "best": {"evals": 79, "y": 356.82887296052917, "x": [-1.199848337373419, -0.517647911270231]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 103, "y": 1438.5262276237563, "x": [-3.3176710080376033, -4.0766140523120225]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 144, "y": 180.6678497410519, "x": [-0.5889195910317211, 0.509779053244193]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 48, "y": 388.64862005945844, "x": [1.6032590639961253, 4.139752670059378]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 158, "y": 136.86528784870146, "x": [-0.6161906533223125, 0.5125749657594905]}}
+		]}
+	]
+}

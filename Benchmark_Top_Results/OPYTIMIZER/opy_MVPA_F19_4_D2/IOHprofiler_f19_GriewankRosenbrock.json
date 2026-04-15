@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_MVPA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 390, "best": {"evals": 348, "y": 0.004482717204613351, "x": [0.1862662458666642, -0.32731891317809103]}},
+			{"instance": 4, "evals": 390, "best": {"evals": 338, "y": 0.00026905160723700305, "x": [0.6764499205768308, -0.5820921852288913]}},
+			{"instance": 4, "evals": 390, "best": {"evals": 353, "y": 1.5910062600710262e-08, "x": [0.5060648593473908, -0.5013374036137257]}},
+			{"instance": 4, "evals": 390, "best": {"evals": 353, "y": 1.602096233455086e-11, "x": [0.5011820170757666, -0.49893532439764454]}},
+			{"instance": 4, "evals": 390, "best": {"evals": 353, "y": 1.758593271006248e-13, "x": [0.5011163741858814, -0.4989062288179909]}}
+		]}
+	]
+}

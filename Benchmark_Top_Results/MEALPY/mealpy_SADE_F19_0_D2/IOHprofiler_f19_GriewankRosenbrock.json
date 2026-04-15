@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 201, "best": {"evals": 178, "y": 0.1708346557145628, "x": [-1.2471714644415544, -0.30312959803698003]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 59, "y": 0.0019202855547248987, "x": [0.6858969427618485, 0.03528812990625807]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 199, "y": 0.10942076578989557, "x": [-0.07110322518173473, -2.7551365747694176]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 94, "y": 0.2205587839473626, "x": [0.17524261222093052, -0.5297055910961097]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 196, "y": 0.08437711311501062, "x": [0.4568590546842101, 0.11587997618340468]}}
+		]}
+	]
+}

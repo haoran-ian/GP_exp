@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 201, "best": {"evals": 186, "y": 4.952498964799877, "x": [2.2017889756879234, -1.966758813090217]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 170, "y": 7.784815148272482, "x": [4.080488061960802, -2.0038563165013854]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 188, "y": 3.0803601634247006, "x": [4.119896443602268, -2.584280015041615]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 157, "y": 6.693384514862144, "x": [1.2621975989179757, -2.324879281798365]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 96, "y": 6.050628132142794, "x": [4.117516990987012, -2.232550533710304]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 8, 
+	"function_name": "Rosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f8_Rosenbrock/IOHprofiler_f8_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 201, "best": {"evals": 104, "y": 1.0095901751307723, "x": [1.810332240661778, 1.120544154381177]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 118, "y": 1.1771871824152762, "x": [2.1305175457280847, 1.1852754629154958]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 47, "y": 0.12640880062844406, "x": [2.383997586209004, 1.5751238765904398]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 8, "y": 2.6589163403610137, "x": [1.7625490198013125, 0.9086281741635087]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 157, "y": 0.6026285050444669, "x": [2.014477275607279, 1.1307891028751687]}}
+		]}
+	]
+}

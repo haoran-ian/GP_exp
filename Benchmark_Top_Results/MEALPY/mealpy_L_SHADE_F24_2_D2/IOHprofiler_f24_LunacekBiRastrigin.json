@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 24, 
+	"function_name": "LunacekBiRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f24_LunacekBiRastrigin/IOHprofiler_f24_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 201, "best": {"evals": 76, "y": 4.008650792596631, "x": [0.7019677041787968, -1.9244910036861287]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 157, "y": 4.03407230806366, "x": [-2.5768791527871184, 1.321213274469382]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 122, "y": 1.1859404073103175, "x": [1.1175214698505969, -1.3600589169927384]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 49, "y": 1.448452530808832, "x": [1.3366556378757473, -1.3405941514739061]}},
+			{"instance": 2, "evals": 201, "best": {"evals": 68, "y": 3.5930407424006243, "x": [-4.157315980503277, 2.169917108772592]}}
+		]}
+	]
+}

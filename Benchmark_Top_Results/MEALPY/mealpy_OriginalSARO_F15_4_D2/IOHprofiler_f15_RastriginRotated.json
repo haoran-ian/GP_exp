@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 201, "best": {"evals": 103, "y": 3.195231944220832, "x": [-3.1020478376327576, -2.0171767404396923]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 159, "y": 3.3855032127040494, "x": [-3.821635897148498, -1.4303968422527666]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 62, "y": 7.7956750271078015, "x": [-2.541888360958693, -3.133728544135198]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 4, "y": 7.5165183103683635, "x": [-3.7441468953616375, -2.9275712186181324]}},
+			{"instance": 4, "evals": 201, "best": {"evals": 115, "y": 4.318061673934636, "x": [-4.441540418159832, -1.754098599315697]}}
+		]}
+	]
+}

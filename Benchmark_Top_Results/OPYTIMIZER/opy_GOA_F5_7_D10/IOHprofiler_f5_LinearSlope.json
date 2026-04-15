@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_GOA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 10,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM10.dat",
+		"runs": [
+			{"instance": 7, "evals": 2010, "best": {"evals": 1971, "y": 30.73910118804428, "x": [0.6172857385273383, -1.3277479040188231, 4.999488324779231, 4.700141581170858, 1.435085430820924, -4.846653042295045, -4.753546960864938, 5, -4.999468949750339, -4.987311268535094]}},
+			{"instance": 7, "evals": 2010, "best": {"evals": 1960, "y": 0.04432149906086558, "x": [-4.957432883598168, -5, 5, 5, -5, -5, -5, 4.9997073513344015, -5, -5]}},
+			{"instance": 7, "evals": 2010, "best": {"evals": 40, "y": 0, "x": [-5, -5, 5, 5, -5, -5, -5, 5, -5, -5]}},
+			{"instance": 7, "evals": 2010, "best": {"evals": 13, "y": 0, "x": [-5, -5, 5, 5, -5, -5, -5, 5, -5, -5]}},
+			{"instance": 7, "evals": 2010, "best": {"evals": 2, "y": 0, "x": [-5, -5, 5, 5, -5, -5, -5, 5, -5, -5]}}
+		]}
+	]
+}

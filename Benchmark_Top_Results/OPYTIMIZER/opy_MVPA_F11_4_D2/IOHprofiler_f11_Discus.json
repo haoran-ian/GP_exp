@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 11, 
+	"function_name": "Discus", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_MVPA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f11_Discus/IOHprofiler_f11_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 390, "best": {"evals": 356, "y": 11.477219212405293, "x": [-2.122308385002207, 0.6996614211460181]}},
+			{"instance": 4, "evals": 390, "best": {"evals": 297, "y": 3.1409773063441128e-06, "x": [-0.29776281763364837, 3.5768823890572237]}},
+			{"instance": 4, "evals": 390, "best": {"evals": 342, "y": 3.8667040805178314e-08, "x": [-0.2967411486986654, 3.5784925142852213]}},
+			{"instance": 4, "evals": 390, "best": {"evals": 354, "y": 2.474721603740163e-11, "x": [-0.2968011656652754, 3.578398170712097]}},
+			{"instance": 4, "evals": 390, "best": {"evals": 293, "y": 2.6820315410988605e-14, "x": [-0.2968000418878494, 3.578399934233802]}}
+		]}
+	]
+}

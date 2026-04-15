@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_L_SHADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 201, "best": {"evals": 183, "y": 0.07698583566078172, "x": [3.6368381095549918, 0.9117544555786076]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 113, "y": 0.028625500577821213, "x": [3.7638915229603835, 0.7144324752914253]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 59, "y": 0.09776007333575285, "x": [3.3884434577773734, 0.8513104216888843]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 129, "y": 0.10229931898580691, "x": [3.347602109981386, 0.4587964714995121]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 126, "y": 0.12500575965916333, "x": [3.9550116605614605, 0.5403872564012221]}}
+		]}
+	]
+}

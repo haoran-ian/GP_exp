@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 1, 
+	"function_name": "Sphere", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_BSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f1_Sphere/IOHprofiler_f1_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 390, "best": {"evals": 347, "y": 1.990556047474927, "x": [0.7352991783833929, -3.3531897692662502]}},
+			{"instance": 0, "evals": 390, "best": {"evals": 17, "y": 1.990556047474927, "x": [0.7352991783833929, -3.3531897692662502]}},
+			{"instance": 0, "evals": 390, "best": {"evals": 17, "y": 1.990556047474927, "x": [0.7352991783833929, -3.3531897692662502]}},
+			{"instance": 0, "evals": 390, "best": {"evals": 151, "y": 1.102071183680917, "x": [-0.2229077892736262, -4.213308398702222]}},
+			{"instance": 0, "evals": 390, "best": {"evals": 1, "y": 1.102071183680917, "x": [-0.2229077892736262, -4.213308398702222]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 15, 
+	"function_name": "RastriginRotated", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_LSA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f15_RastriginRotated/IOHprofiler_f15_DIM2.dat",
+		"runs": [
+			{"instance": 2, "evals": 402, "best": {"evals": 361, "y": 1.0295503511791826, "x": [-1.827459273673165, -2.1699513856227743]}},
+			{"instance": 2, "evals": 402, "best": {"evals": 344, "y": 1.0135185059108, "x": [-1.8236467918044525, -2.173173055622518]}},
+			{"instance": 2, "evals": 402, "best": {"evals": 350, "y": 0.9954616790292593, "x": [-1.8194635063078357, -2.1736636030859895]}},
+			{"instance": 2, "evals": 402, "best": {"evals": 351, "y": 0.9950286688515035, "x": [-1.8183428852454415, -2.1741290373029063]}},
+			{"instance": 2, "evals": 402, "best": {"evals": 348, "y": 0.994959729488141, "x": [-1.818171036432904, -2.174553167808253]}}
+		]}
+	]
+}

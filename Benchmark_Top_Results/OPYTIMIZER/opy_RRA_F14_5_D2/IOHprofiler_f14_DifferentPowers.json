@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_RRA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 732, "best": {"evals": 699, "y": 0.002587278751193546, "x": [1.8205905864343275, 2.8790222354250257]}},
+			{"instance": 5, "evals": 732, "best": {"evals": 699, "y": 0.002203945597523516, "x": [1.8277716467605745, 2.8813074648869597]}},
+			{"instance": 5, "evals": 732, "best": {"evals": 697, "y": 0.0017646555660347529, "x": [1.836247612831431, 2.8842150309950716]}},
+			{"instance": 5, "evals": 732, "best": {"evals": 693, "y": 0.0016781802227112154, "x": [1.8377218234260293, 2.884823434722854]}},
+			{"instance": 5, "evals": 732, "best": {"evals": 701, "y": 0.0014057274343621483, "x": [1.8442635017649942, 2.8874087348995694]}}
+		]}
+	]
+}

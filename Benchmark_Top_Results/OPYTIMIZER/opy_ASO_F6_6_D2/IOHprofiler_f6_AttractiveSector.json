@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ASO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 210, "best": {"evals": 7, "y": 4.1544458190922455, "x": [3.1106331122698307, -0.9279220157663524]}},
+			{"instance": 6, "evals": 210, "best": {"evals": 18, "y": 100.20147724709713, "x": [5, 5]}},
+			{"instance": 6, "evals": 210, "best": {"evals": 16, "y": 100.20147724709713, "x": [5, 5]}},
+			{"instance": 6, "evals": 210, "best": {"evals": 16, "y": 100.20147724709713, "x": [5, 5]}},
+			{"instance": 6, "evals": 210, "best": {"evals": 16, "y": 100.20147724709713, "x": [5, 5]}}
+		]}
+	]
+}

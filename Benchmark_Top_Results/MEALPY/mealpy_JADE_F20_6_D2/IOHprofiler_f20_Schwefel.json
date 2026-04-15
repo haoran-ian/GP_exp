@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 20, 
+	"function_name": "Schwefel", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f20_Schwefel/IOHprofiler_f20_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 201, "best": {"evals": 192, "y": 1.9490609637363838, "x": [-1.422745089817454, 2.6262660276906242]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 102, "y": 1.3329352939716284, "x": [2.3447133205892854, 2.0381920491631855]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 128, "y": 1.098514032535063, "x": [2.0784762472658893, 0.9226711507512366]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 132, "y": 1.5165511770499358, "x": [-1.601513360431821, 1.9108060931070319]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 163, "y": 1.844465587165799, "x": [-1.6030258127737316, 1.9318312267450577]}}
+		]}
+	]
+}

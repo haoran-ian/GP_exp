@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 9, "evals": 201, "best": {"evals": 110, "y": 0.09464874913830058, "x": [0.6063407864607901, -2.429333853322353]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 77, "y": 0.09259429913684215, "x": [0.6810046191994212, -2.967067653390095]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 150, "y": 0.13611035216853487, "x": [0.7507353454294781, -2.608695177211243]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 103, "y": 0.09041279255678947, "x": [0.633110965923233, -2.484373881567518]}},
+			{"instance": 9, "evals": 201, "best": {"evals": 161, "y": 0.31606807594416053, "x": [0.4779883209863386, -3.0621636433673727]}}
+		]}
+	]
+}

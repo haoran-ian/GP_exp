@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 7, 
+	"function_name": "StepEllipsoid", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_OriginalSARO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f7_StepEllipsoid/IOHprofiler_f7_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 201, "best": {"evals": 105, "y": 0.47882161138023793, "x": [-4.408627870655334, 1.3992102132752384]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 193, "y": 0.35263647933660325, "x": [-2.137518951358933, -1.7129059130053632]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 48, "y": 0.057897860529459645, "x": [-2.8536425360004634, -0.8324655980466291]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 41, "y": 0.6433095614384405, "x": [-3.7070613539114583, 0.5327773180765352]}},
+			{"instance": 0, "evals": 201, "best": {"evals": 157, "y": 1.1477623110245374, "x": [-4.095175819874488, 0.9986695990666319]}}
+		]}
+	]
+}

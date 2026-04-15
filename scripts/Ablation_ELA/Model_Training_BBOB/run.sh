@@ -53,11 +53,11 @@ MAX_CONCURRENT=10
 
 count=0
 cell_list=(10 11 12)
-for fid in {1..24}; do
+for seed in {0..9}; do
     for iid in {0..9}; do
         for dim in 2 10; do
-            for ela_set_id in {0..6}; do
-                for seed in {0..9}; do
+            for fid in {1..24}; do
+                for ela_set_id in {0..6}; do
                     if [[ " ${cell_list[@]} " =~ " ${ela_set_id} " ]]; then
                         for block_coef in 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 5.0; do
                             outfile="data/Ablation_ELA/atom/ProblemName.${ProblemName[$problem]}-$ela_set_id-seed:$seed-block_coef:$block_coef-n_coef:0.csv"

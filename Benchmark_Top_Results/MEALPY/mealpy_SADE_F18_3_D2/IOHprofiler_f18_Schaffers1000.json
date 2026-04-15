@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 201, "best": {"evals": 18, "y": 3.5515282628480467, "x": [-4.812101995636448, 1.176354970758771]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 8, "y": 6.689486613521265, "x": [-4.726124068020738, 1.704675101784022]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 58, "y": 5.3168030197699645, "x": [-4.166091437197413, 2.8533514781667346]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 156, "y": 3.3071452483218136, "x": [-4.389101271896431, 1.879364555472792]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 181, "y": 5.142342414357248, "x": [-5, 0.9544931120809435]}}
+		]}
+	]
+}

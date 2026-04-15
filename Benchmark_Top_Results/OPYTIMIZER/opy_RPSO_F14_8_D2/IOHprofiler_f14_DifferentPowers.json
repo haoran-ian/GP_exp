@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 14, 
+	"function_name": "DifferentPowers", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_RPSO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f14_DifferentPowers/IOHprofiler_f14_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 210, "best": {"evals": 177, "y": 0.008451531688284174, "x": [2.4943327988236623, -1.9929065868593354]}},
+			{"instance": 8, "evals": 210, "best": {"evals": 153, "y": 0.0012548898754699688, "x": [2.52815058870983, -1.995281900409964]}},
+			{"instance": 8, "evals": 210, "best": {"evals": 3, "y": 0.0014446503377520661, "x": [2.5273042300686255, -1.9956672647600848]}},
+			{"instance": 8, "evals": 210, "best": {"evals": 93, "y": 0.022405597227168405, "x": [2.3309604981588015, -2.0304982768913167]}},
+			{"instance": 8, "evals": 210, "best": {"evals": 158, "y": 0.07664899345618774, "x": [2.2943612515806096, -2.1139333584978486]}}
+		]}
+	]
+}

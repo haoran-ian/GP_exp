@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 13, 
+	"function_name": "SharpRidge", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ASO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f13_SharpRidge/IOHprofiler_f13_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 210, "best": {"evals": 21, "y": 72.59531078271206, "x": [0.0833080523951768, -3.3944239527025886]}},
+			{"instance": 1, "evals": 210, "best": {"evals": 9, "y": 389.73424735515516, "x": [1.0715608987985625, 3.1725730577814932]}},
+			{"instance": 1, "evals": 210, "best": {"evals": 11, "y": 563.2875400921845, "x": [5, 5]}},
+			{"instance": 1, "evals": 210, "best": {"evals": 9, "y": 563.2875400921845, "x": [5, 5]}},
+			{"instance": 1, "evals": 210, "best": {"evals": 9, "y": 563.2875400921845, "x": [5, 5]}}
+		]}
+	]
+}

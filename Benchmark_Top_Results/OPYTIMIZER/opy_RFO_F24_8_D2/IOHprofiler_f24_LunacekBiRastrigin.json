@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 24, 
+	"function_name": "LunacekBiRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_RFO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f24_LunacekBiRastrigin/IOHprofiler_f24_DIM2.dat",
+		"runs": [
+			{"instance": 8, "evals": 432, "best": {"evals": 374, "y": 1.1830026461822614, "x": [-1.1072270154087351, -1.6651795411918715]}},
+			{"instance": 8, "evals": 439, "best": {"evals": 299, "y": 1.4430889701168312, "x": [-1.1054354825078914, -1.6610754338819744]}},
+			{"instance": 8, "evals": 428, "best": {"evals": 1, "y": 1.4430889701168312, "x": [-1.1054354825078914, -1.6610754338819744]}},
+			{"instance": 8, "evals": 425, "best": {"evals": 94, "y": 1.8317485342804927, "x": [-1.057072795655358, -1.8366066721431342]}},
+			{"instance": 8, "evals": 440, "best": {"evals": 200, "y": 0.44521456086273464, "x": [-1.0453765076936719, -1.3424444968745055]}}
+		]}
+	]
+}

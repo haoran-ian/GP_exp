@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 12, 
+	"function_name": "BentCigar", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_RRA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f12_BentCigar/IOHprofiler_f12_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 732, "best": {"evals": 573, "y": 1.6926726432296249, "x": [0.6566110731495449, 0.4413450101459325]}},
+			{"instance": 4, "evals": 732, "best": {"evals": 96, "y": 1.6926434353901114, "x": [0.6565921638458273, 0.4413450101459325]}},
+			{"instance": 4, "evals": 732, "best": {"evals": 558, "y": 1.6926292322335201, "x": [0.6565921638458273, 0.44134699004259165]}},
+			{"instance": 4, "evals": 732, "best": {"evals": 1, "y": 1.6926292322335201, "x": [0.6565921638458273, 0.44134699004259165]}},
+			{"instance": 4, "evals": 732, "best": {"evals": 1, "y": 1.6926292322335201, "x": [0.6565921638458273, 0.44134699004259165]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 5, 
+	"function_name": "LinearSlope", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f5_LinearSlope/IOHprofiler_f5_DIM2.dat",
+		"runs": [
+			{"instance": 6, "evals": 201, "best": {"evals": 155, "y": 0.36337239498970675, "x": [4.636627605010293, 5]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 83, "y": 0, "x": [5, 5]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 112, "y": 0, "x": [5, 5]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 81, "y": 0, "x": [5, 5]}},
+			{"instance": 6, "evals": 201, "best": {"evals": 100, "y": 0, "x": [5, 5]}}
+		]}
+	]
+}

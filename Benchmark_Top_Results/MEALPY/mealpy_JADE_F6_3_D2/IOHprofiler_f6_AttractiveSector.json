@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 6, 
+	"function_name": "AttractiveSector", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f6_AttractiveSector/IOHprofiler_f6_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 201, "best": {"evals": 170, "y": 0.7577865260010574, "x": [0.21690023854520024, -3.014912824673618]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 199, "y": 0.2527554576706753, "x": [-0.02031085316046055, -3.3106895412403023]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 155, "y": 1.3823523072004584, "x": [0.06477459196870311, -3.699804197498669]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 69, "y": 0.2817258965457273, "x": [0.05667197542248115, -2.987527233655997]}},
+			{"instance": 3, "evals": 201, "best": {"evals": 28, "y": 0.15087578605400112, "x": [-0.022058853826942837, -3.175545954287932]}}
+		]}
+	]
+}

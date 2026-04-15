@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 16, 
+	"function_name": "Weierstrass", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ASO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f16_Weierstrass/IOHprofiler_f16_DIM2.dat",
+		"runs": [
+			{"instance": 3, "evals": 210, "best": {"evals": 187, "y": 7.305942159796809, "x": [5, 4.9991177707189856]}},
+			{"instance": 3, "evals": 210, "best": {"evals": 7, "y": 7.305942159796809, "x": [5, 4.9991177707189856]}},
+			{"instance": 3, "evals": 210, "best": {"evals": 162, "y": 7.596358340997326, "x": [5, 4.997071411322391]}},
+			{"instance": 3, "evals": 210, "best": {"evals": 164, "y": 7.685764237156719, "x": [5, 4.999775767030964]}},
+			{"instance": 3, "evals": 210, "best": {"evals": 164, "y": 7.603870235516869, "x": [5, 4.9995016436897535]}}
+		]}
+	]
+}

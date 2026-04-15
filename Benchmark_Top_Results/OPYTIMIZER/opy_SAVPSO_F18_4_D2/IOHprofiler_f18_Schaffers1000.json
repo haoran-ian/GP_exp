@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 18, 
+	"function_name": "Schaffers1000", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_SAVPSO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f18_Schaffers1000/IOHprofiler_f18_DIM2.dat",
+		"runs": [
+			{"instance": 4, "evals": 210, "best": {"evals": 95, "y": 6.358878197202802, "x": [2.361888154222971, 1.4965996726250403]}},
+			{"instance": 4, "evals": 210, "best": {"evals": 192, "y": 6.300984705988169, "x": [2.3534495883301263, 1.4912526137771964]}},
+			{"instance": 4, "evals": 210, "best": {"evals": 12, "y": 6.300984705988169, "x": [2.3534495883301263, 1.4912526137771964]}},
+			{"instance": 4, "evals": 210, "best": {"evals": 98, "y": 6.304471000859935, "x": [2.352322724624813, 1.4905385817221857]}},
+			{"instance": 4, "evals": 210, "best": {"evals": 80, "y": 6.302926212429782, "x": [2.314656234947408, 1.4666713820754338]}}
+		]}
+	]
+}

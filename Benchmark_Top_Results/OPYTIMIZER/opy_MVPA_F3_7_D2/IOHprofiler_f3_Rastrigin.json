@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 3, 
+	"function_name": "Rastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_MVPA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f3_Rastrigin/IOHprofiler_f3_DIM2.dat",
+		"runs": [
+			{"instance": 7, "evals": 390, "best": {"evals": 353, "y": 2.0892608824644068, "x": [-1.1821983008347805, -1.8722989015353058]}},
+			{"instance": 7, "evals": 390, "best": {"evals": 233, "y": 1.9900357577642125, "x": [-1.198536740488076, -1.872827385129697]}},
+			{"instance": 7, "evals": 390, "best": {"evals": 357, "y": 1.9899181408958682, "x": [-1.1980542050306064, -1.8726157672421648]}},
+			{"instance": 7, "evals": 390, "best": {"evals": 291, "y": 1.9899181141919369, "x": [-1.1980504914235894, -1.872621904705526]}},
+			{"instance": 7, "evals": 390, "best": {"evals": 338, "y": 1.989918114186585, "x": [-1.1980505361401295, -1.8726219970370548]}}
+		]}
+	]
+}

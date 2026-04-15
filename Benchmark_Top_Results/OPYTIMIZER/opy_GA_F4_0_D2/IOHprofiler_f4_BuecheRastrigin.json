@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 4, 
+	"function_name": "BuecheRastrigin", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_GA", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f4_BuecheRastrigin/IOHprofiler_f4_DIM2.dat",
+		"runs": [
+			{"instance": 0, "evals": 342, "best": {"evals": 297, "y": 9.646168323822632, "x": [1.0756325428043998, 0.5080064074033163]}},
+			{"instance": 0, "evals": 342, "best": {"evals": 88, "y": 4.252507204635132, "x": [2.2524729630692564, 0.7914335447675588]}},
+			{"instance": 0, "evals": 342, "best": {"evals": 188, "y": 2.4996779771925497, "x": [2.243066545102275, 0.4780033105314859]}},
+			{"instance": 0, "evals": 342, "best": {"evals": 1, "y": 2.4996779771925497, "x": [2.243066545102275, 0.4780033105314859]}},
+			{"instance": 0, "evals": 342, "best": {"evals": 42, "y": 2.232558781483389, "x": [2.243101508733957, 0.4698082292858201]}}
+		]}
+	]
+}

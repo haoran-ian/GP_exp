@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 19, 
+	"function_name": "GriewankRosenbrock", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_IWO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f19_GriewankRosenbrock/IOHprofiler_f19_DIM2.dat",
+		"runs": [
+			{"instance": 1, "evals": 540, "best": {"evals": 400, "y": 0.1885921056047284, "x": [-0.15257062979554892, 0.03278128133358965]}},
+			{"instance": 1, "evals": 662, "best": {"evals": 558, "y": 0.018969757647033347, "x": [-0.1596985380451604, 0.3335013027034505]}},
+			{"instance": 1, "evals": 575, "best": {"evals": 402, "y": 0.004569945839969947, "x": [-0.13418605287846597, 0.6396747437618233]}},
+			{"instance": 1, "evals": 581, "best": {"evals": 1, "y": 0.004569945839969947, "x": [-0.13418605287846597, 0.6396747437618233]}},
+			{"instance": 1, "evals": 544, "best": {"evals": 1, "y": 0.004569945839969947, "x": [-0.13418605287846597, 0.6396747437618233]}}
+		]}
+	]
+}

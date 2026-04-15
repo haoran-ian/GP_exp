@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 23, 
+	"function_name": "Katsuura", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_SADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 2,
+		"path": "data_f23_Katsuura/IOHprofiler_f23_DIM2.dat",
+		"runs": [
+			{"instance": 5, "evals": 201, "best": {"evals": 90, "y": 2.7653455987703426, "x": [-2.3221410327499306, -3.8127228104575597]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 127, "y": 1.4461198330570368, "x": [-5, -3.4751533937316545]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 54, "y": 3.2385899469350568, "x": [0.6761345626237294, -0.17776294453738073]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 18, "y": 1.6371617348673855, "x": [-1.2200595867111086, -4.077829911282757]}},
+			{"instance": 5, "evals": 201, "best": {"evals": 100, "y": 3.1793266008505503, "x": [5, 0.24362355293740245]}}
+		]}
+	]
+}
