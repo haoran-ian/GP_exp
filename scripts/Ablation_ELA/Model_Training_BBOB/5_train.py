@@ -14,13 +14,13 @@ MODEL_SAVE_PATH = "models/sota_as_models.joblib"
 
 def train_algorithm_selection_models():
     if not os.path.exists(ELA_PATH) or not os.path.exists(PERF_PATH):
-        print("❌ 错误：找不到特征文件或性能文件，请确保之前的 Pipeline 已运行。")
+        print("[!]Error: The feature file or performance file cannot be found. ")
         return
 
     ela_df = pd.read_csv(ELA_PATH)
     perf_df = pd.read_csv(PERF_PATH)
     bbob_ela = ela_df[ela_df['fid'].between(1, 24)].copy()
-    print("🎯 正在识别每个 BBOB 实例的最优算法 (Minimize AUC)...")
+    print("Identifying the optimal algorithm for each BBOB instance")
     best_alg_per_instance = perf_df[perf_df['fid'].between(1, 24)].copy()
     idx = best_alg_per_instance.groupby(['fid', 'iid', 'dim'])[
         'auc_mean'].idxmin()
@@ -43,7 +43,7 @@ def train_algorithm_selection_models():
     y_clf = train_df_clf['target_best_alg']
     le = LabelEncoder()
     y_clf_encoded = le.fit_transform(y_clf)
-    print("\n🚀 正在训练分类模型 (算法选择器)...")
+    print("\nTraining a classification model (algorithm selector)...")
     clf = RandomForestClassifier(
         n_estimators=200, max_features='log2', n_jobs=-1, random_state=42)
     logo = LeaveOneGroupOut()
@@ -51,44 +51,40 @@ def train_algorithm_selection_models():
 
     y_pred_clf = cross_val_predict(
         clf, X_clf, y_clf_encoded, groups=groups_clf, cv=logo)
-    print(f"✅ 分类模型 LOFO 准确率: {accuracy_score(y_clf_encoded, y_pred_clf):.4f}")
+    print(
+        f"Accuracy of the LOFO classification model: {accuracy_score(y_clf_encoded, y_pred_clf):.4f}")
     clf.fit(X_clf, y_clf_encoded)
-    print("\n📈 正在训练回归模型 (性能预测器)...")
+    print("\nTraining a regression model (performance predictor)...")
 
-    # 1. 准备原始特征和 One-hot 算法名
     X_reg_raw = train_df_reg[feature_cols + ['algname']]
     X_reg_encoded = pd.get_dummies(X_reg_raw, columns=['algname'])
 
-    # 2. 【核心修复】深度清洗矩阵 X
-    # 先将 inf 替换为 NaN，然后填充中位数，最后对于全空列补 0
     X_reg = X_reg_encoded.replace([np.inf, -np.inf], np.nan)
 
-    # 建议分两步填充：先用列中位数填充，如果整列都是 NaN 则填充为 0
     X_reg = X_reg.fillna(X_reg.median()).fillna(0)
 
-    # 3. 检查并清理目标变量 y (防止 y 也有 inf 或 nan)
     y_reg = train_df_reg['auc_mean'].replace([np.inf, -np.inf], np.nan)
-    # 如果 y 有缺失，删除这些行（因为不能训练没有标签的数据）
     valid_idx = y_reg.notna()
     X_reg = X_reg[valid_idx]
     y_reg = y_reg[valid_idx]
     groups_reg = train_df_reg['fid'][valid_idx]
 
-    # 4. 执行预测
-    reg = RandomForestRegressor(n_estimators=200, max_features='sqrt', n_jobs=-1, random_state=42)
+    reg = RandomForestRegressor(
+        n_estimators=200, max_features='sqrt', n_jobs=-1, random_state=42)
 
     try:
-        y_pred_reg = cross_val_predict(reg, X_reg, y_reg, groups=groups_reg, cv=logo)
-        print(f"✅ 回归模型 LOFO R2 分数: {r2_score(y_reg, y_pred_reg):.4f}")
-        print(f"✅ 回归模型 LOFO MAE: {mean_absolute_error(y_reg, y_pred_reg):.4f}")
+        y_pred_reg = cross_val_predict(
+            reg, X_reg, y_reg, groups=groups_reg, cv=logo)
+        print(
+            f"Regression model LOFO R2 score: {r2_score(y_reg, y_pred_reg):.4f}")
+        print(
+            f"Regression model LOFO MAE: {mean_absolute_error(y_reg, y_pred_reg):.4f}")
     except ValueError as e:
-        print(f"❌ 依然报错: {e}")
-        # 打印出含有非有限值的列名，方便排查
+        print(f"Error: {e}")
         is_finite = np.all(np.isfinite(X_reg), axis=0)
         bad_cols = X_reg.columns[~is_finite].tolist()
-        print(f"🕵️ 发现问题列: {bad_cols}")
+        print(f"Error col: {bad_cols}")
 
-    # 5. 全量训练
     reg.fit(X_reg, y_reg)
 
     os.makedirs(os.path.dirname(MODEL_SAVE_PATH), exist_ok=True)
@@ -105,8 +101,7 @@ def train_algorithm_selection_models():
         }
     }
     joblib.dump(model_bundle, MODEL_SAVE_PATH)
-    print(f"\n💾 模型已保存至: {MODEL_SAVE_PATH}")
-    print("✨ 你现在可以使用该模型对你的自定义问题进行 ELA 特征消融预测了。")
+    print(f"\nModel saved to: {MODEL_SAVE_PATH}")
 
 
 if __name__ == "__main__":

@@ -72,7 +72,7 @@ def run_ela_pipeline():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     all_files = glob.glob(os.path.join(ATOM_DIR, "*.csv"))
     aggregated_data = {}
-    print(f"🔍 Scanning {len(all_files)} files...")
+    print(f"Scanning {len(all_files)} files...")
     counter = 0
     for f in all_files:
         counter += 1
@@ -104,9 +104,9 @@ def run_ela_pipeline():
     cleaned_df.to_csv(FINAL_CSV, index=False)
     meta_cols = ['problem_name', 'fid', 'iid', 'dim', 'seed']
     feature_cols = [c for c in cleaned_df.columns if c not in meta_cols]
-    print(f"📊 Total raw features found: {len(feature_cols)}")
-    print(f"✅ Pipeline update complete. Saved to {FINAL_CSV}")
-    print(f"📈 Total instances: {len(cleaned_df)}")
+    print(f"Total raw features found: {len(feature_cols)}")
+    print(f"Pipeline update complete. Saved to {FINAL_CSV}")
+    print(f"Total instances: {len(cleaned_df)}")
 
     return full_df
 
