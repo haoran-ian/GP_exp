@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 0, 
+	"function_name": "ManyAffine", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_BaseVCS", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 5,
+		"path": "data_f0_ManyAffine/IOHprofiler_f0_DIM5.dat",
+		"runs": [
+			{"instance": 787, "evals": 501, "best": {"evals": 262, "y": 12.478338864791567, "x": [0.40559933594623654, -0.4517646389366419, -0.26805704767843397, 0.10436247518067486, -0.0018585349996550165]}},
+			{"instance": 787, "evals": 501, "best": {"evals": 309, "y": 8.542140503910362, "x": [5, -5, -5, 3.872053781996202, 2.8254556662120907]}},
+			{"instance": 787, "evals": 501, "best": {"evals": 52, "y": 5.927726955603847, "x": [2.7887976864165984, -1.040770899125913, -5, 3.223449040684798, -3.2245779904484086]}},
+			{"instance": 787, "evals": 501, "best": {"evals": 89, "y": 7.334617682334095, "x": [5, -3.694512192322299, -2.7664353725898216, 0.818437344728318, -1.9461135754214065]}},
+			{"instance": 787, "evals": 501, "best": {"evals": 313, "y": 5.16705449737385, "x": [5, -5, -1.4742126413929104, 5, -5]}}
+		]}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 0, 
+	"function_name": "ManyAffine", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_GCO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 5,
+		"path": "data_f0_ManyAffine/IOHprofiler_f0_DIM5.dat",
+		"runs": [
+			{"instance": 769, "evals": 990, "best": {"evals": 938, "y": 2.208613167686512, "x": [1.176354970758771, 4.0773658332077, 1.1693399687475692, 5, 1.7387555625751483]}},
+			{"instance": 769, "evals": 990, "best": {"evals": 706, "y": 4.028579551115447, "x": [-5, 3.1993010958487202, 5, 5, 3.804638791115138]}},
+			{"instance": 769, "evals": 990, "best": {"evals": 882, "y": 3.024058898871263, "x": [-5, 5, -0.5279284333222751, 4.386563990972835, 3.3998943883959076]}},
+			{"instance": 769, "evals": 990, "best": {"evals": 407, "y": 2.770618197354386, "x": [-3.7070613539114583, 3.798780485020969, -3.1218517507612176, 5, 5]}},
+			{"instance": 769, "evals": 990, "best": {"evals": 653, "y": 3.755963640037986, "x": [-2.806395415952345, 2.8697932228934016, 5, 5, -0.4144298663000685]}}
+		]}
+	]
+}

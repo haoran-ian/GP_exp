@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 0, 
+	"function_name": "ManyAffine", 
+	"maximization": false, 
+	"algorithm": {"name": "opy_ASO", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 5,
+		"path": "data_f0_ManyAffine/IOHprofiler_f0_DIM5.dat",
+		"runs": [
+			{"instance": 844, "evals": 510, "best": {"evals": 321, "y": 15.850293081332616, "x": [-5, -5, 3.802427536251562, -5, 5]}},
+			{"instance": 844, "evals": 510, "best": {"evals": 20, "y": 15.87494856197998, "x": [-2.6297301975697227, 4.033795205622537, 0.7367948667228585, -4.97129672968841, 1.1714491362072383]}},
+			{"instance": 844, "evals": 510, "best": {"evals": 322, "y": 24.552205148819475, "x": [1.7064536009160705, -5, 5, -0.21174019422194057, -5]}},
+			{"instance": 844, "evals": 510, "best": {"evals": 279, "y": 15.007803346737333, "x": [-5, -5, 1.1994805893035174, 5, 0.8297582572140447]}},
+			{"instance": 844, "evals": 510, "best": {"evals": 213, "y": 9.96345435443624, "x": [-0.8508729138276045, 3.185969010309604, -5, -1.51175461600922, 0.7342344372478973]}}
+		]}
+	]
+}

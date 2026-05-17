@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 0, 
+	"function_name": "ManyAffine", 
+	"maximization": false, 
+	"algorithm": {"name": "modde_lshade", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 5,
+		"path": "data_f0_ManyAffine/IOHprofiler_f0_DIM5.dat",
+		"runs": [
+			{"instance": 954, "evals": 515, "best": {"evals": 267, "y": 6.2321216870176706, "x": [0.6832580824715855, -5, 0.8804533050640329, -2.609120894074475, 3.1392039205683844]}},
+			{"instance": 954, "evals": 515, "best": {"evals": 447, "y": 6.423799333648073, "x": [0.7389896701263376, -5, -1.4748621368839459, -3.341445817671225, 5]}},
+			{"instance": 954, "evals": 515, "best": {"evals": 481, "y": 8.107191589099811, "x": [0.6514455121876228, -5, -3.77893098713842, -5, 2.8215492854872224]}},
+			{"instance": 954, "evals": 515, "best": {"evals": 474, "y": 4.558238817827059, "x": [5, -5, 0.8821459202090427, -1.7915189925841517, 2.9460020776639997]}},
+			{"instance": 954, "evals": 515, "best": {"evals": 418, "y": 6.983885293299108, "x": [5, -5, -3.0324739222040016, -5, 5]}}
+		]}
+	]
+}

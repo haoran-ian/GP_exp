@@ -1,0 +1,20 @@
+{
+	"version": "0.3.14", 
+	"suite": "unknown_suite", 
+	"function_id": 0, 
+	"function_name": "ManyAffine", 
+	"maximization": false, 
+	"algorithm": {"name": "mealpy_JADE", "info": "algorithm_info"},
+	"attributes": ["evaluations", "raw_y"],
+	"scenarios": [
+		{"dimension": 5,
+		"path": "data_f0_ManyAffine/IOHprofiler_f0_DIM5.dat",
+		"runs": [
+			{"instance": 192, "evals": 501, "best": {"evals": 411, "y": 1.2102387835916184e-05, "x": [5, 4.3852500230680835, -5, 3.7732717796100452, -2.4290363137084574]}},
+			{"instance": 192, "evals": 501, "best": {"evals": 319, "y": 2.218786270248007e-05, "x": [5, 5, -5, 0.6581423351712217, -2.158193608246882]}},
+			{"instance": 192, "evals": 501, "best": {"evals": 334, "y": 1.6466548543206238e-05, "x": [4.536599623823227, 4.607576634132103, -5, 2.836850258964449, 1.4032793543582827]}},
+			{"instance": 192, "evals": 501, "best": {"evals": 372, "y": 1.2480847234210979e-05, "x": [5, 5, -5, 2.8162419567355026, -1.2515562599671328]}},
+			{"instance": 192, "evals": 501, "best": {"evals": 268, "y": 1.8769188988561464e-05, "x": [3.4370699399065536, 2.147995302406814, -5, 0.22505645720938583, -0.7295582850054343]}}
+		]}
+	]
+}
