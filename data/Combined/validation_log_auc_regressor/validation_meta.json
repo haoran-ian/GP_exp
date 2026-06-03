@@ -1,0 +1,41 @@
+{
+  "model_type": "regressor_only_algorithm_selection",
+  "target_transform": "log1p",
+  "auc_cleaning": {
+    "auc_min_positive": 1e-300,
+    "auc_abs_max": 1e+100,
+    "auc_source_upper_quantile": 0.995,
+    "auc_problem_upper_quantile": null,
+    "drop_abnormal_auc": true
+  },
+  "train_sources": [
+    "BBOB",
+    "MABBOB",
+    "LLM"
+  ],
+  "regressor_rows": 90646,
+  "n_features": 53,
+  "n_algorithms": 41,
+  "n_splits": 5,
+  "cv_group_definition": "BBOB grouped by fid; MABBOB/LLM grouped by iid",
+  "validation_metrics_file": "data/Combined/validation_log_auc_regressor/validation_metrics_summary.csv",
+  "validation_outputs_dir": "data/Combined/validation_log_auc_regressor",
+  "target_summary_file": "data/Combined/validation_log_auc_regressor/target_auc_summary_after_filtering.csv",
+  "regressor_log_target.r2": 0.6141324962335766,
+  "regressor_log_target.mae": 0.5735949651368611,
+  "regressor_log_target.rmse": 2.0152247053280288,
+  "regressor_log_target.spearman": 0.5928757041894701,
+  "regressor_log_target.baseline_alg_mean_mae": 0.6078899631808992,
+  "regressor_log_target.baseline_alg_mean_rmse": 3.2421195422331412,
+  "regressor_log_target.mae_improvement_over_alg_mean_baseline": 0.034294998044038016,
+  "regressor_raw_diagnostic.mae": 1.4148179447818276e+47,
+  "regressor_raw_diagnostic.baseline_alg_mean_mae": 1.4148179447818276e+47,
+  "selector_from_regressor.oracle_match_accuracy": 0.19984326018808776,
+  "selector_from_regressor.mean_log_regret_vs_oracle": 0.2214619556198308,
+  "selector_from_regressor.median_log_regret_vs_oracle": 0.024227240592362375,
+  "selector_from_regressor.mean_fixed_baseline_log_regret_vs_oracle": 0.3929928522787215,
+  "selector_from_regressor.median_fixed_baseline_log_regret_vs_oracle": 0.08608239816593771,
+  "selector_from_regressor.mean_log_regret_improvement_over_fixed_baseline": 0.17153089665889068,
+  "selector_from_regressor.mean_relative_regret_vs_oracle": 1.5693196348880136e+18,
+  "selector_from_regressor.median_relative_regret_vs_oracle": 0.6517616224900988
+}
