@@ -75,6 +75,8 @@ def run_ela_pipeline():
     print(f"Scanning {len(all_files)} files...")
     counter = 0
     for f in all_files:
+        if not f.startswith("data/Ablation_ELA/atom/ProblemName.PHOTONIC_20LAYERS_BRAGG"):
+            continue
         counter += 1
         if counter % 1000 == 0:
             print(counter)

@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # fmt: on
 
 
-MODEL_PATH = "data/Combined/models/bbob_mabbob_llm_log_auc_regressor_as_model.joblib"
+MODEL_PATH = "data/Combined/models/bbob_mabbob_llm_mixed_auc_source_normalized_regressor_as_model.joblib"
 ELA_PATH = "data/Ablation_ELA/Processed_ELA_Pipeline/pipeline_aligned_ela.csv"
 PERF_PATH = "data/Ablation_ELA/algorithm_auc_performance.csv"
 
@@ -183,6 +183,7 @@ def load_inputs():
         how="inner",
         suffixes=("_perf", ""),
     )
+    print(ela_df)
 
     if "problem_name" not in real_df.columns:
         if "problem_name_perf" in real_df.columns:

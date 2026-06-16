@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-MODEL_PATH = "data/Combined/models/bbob_mabbob_llm_log_auc_regressor_as_model.joblib"
+MODEL_PATH = "data/Combined/models/bbob_mabbob_llm_mixed_auc_source_normalized_regressor_as_model.joblib"
 ELA_PATH = "data/Ablation_ELA/Processed_ELA_Pipeline/pipeline_aligned_ela.csv"
 
 OUT_DIR = "results/Combined/"

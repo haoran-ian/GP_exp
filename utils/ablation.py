@@ -1,5 +1,10 @@
 # fmt; off
 import os
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
+os.environ.setdefault("MKL_NUM_THREADS", "1")
+os.environ.setdefault("VECLIB_MAXIMUM_THREADS", "1")
+os.environ.setdefault("NUMEXPR_NUM_THREADS", "1")
 import joblib
 import numpy as np
 import pandas as pd
@@ -7,11 +12,33 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 # fmt: on
 
-MODEL_PATH = "data/Combined/models/bbob_mabbob_llm_log_auc_regressor_as_model.joblib"
+MODEL_PATH = "data/Combined/models/bbob_mabbob_llm_mixed_auc_source_normalized_regressor_as_model.joblib"
 bundle = joblib.load(MODEL_PATH)
 reg = bundle['regressor']
 feature_cols = bundle['feature_cols']
 reg_feature_cols = bundle['reg_feature_cols']
+
+
+def force_single_thread_model(model):
+    """Force sklearn estimators/pipelines to use one joblib worker."""
+    if hasattr(model, "get_params") and hasattr(model, "set_params"):
+        params = model.get_params()
+        if "n_jobs" in params:
+            model.set_params(n_jobs=1)
+
+        # This also handles nested estimators such as Pipeline steps:
+        # e.g. regressor__n_jobs, model__n_jobs, etc.
+        nested_n_jobs = {
+            key: 1 for key in params
+            if key.endswith("__n_jobs")
+        }
+        if nested_n_jobs:
+            model.set_params(**nested_n_jobs)
+
+    return model
+
+
+reg = force_single_thread_model(reg)
 
 ela_df = pd.read_csv(
     "data/Ablation_ELA/Processed_ELA_Pipeline/pipeline_aligned_ela.csv")

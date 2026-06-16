@@ -14,9 +14,7 @@ from sklearn.model_selection import GroupKFold
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 # fmt: on
 
-warnings.filterwarnings("ignore")
-
-
+warnings.filterwarnings("ignore") 
 # ============================================================
 # 1. Paths
 # ============================================================
