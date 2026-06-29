@@ -4,12 +4,13 @@ import sys
 import warnings
 import pandas as pd
 sys.path.insert(0, os.getcwd())
-from problems.fluid_dynamics.problem import get_pipes_topology_problem
-from problems.meta_surface.problem import get_meta_surface_problem
-from problems.lens_opt.problem import get_lens_opt_problem
+# from problems.fluid_dynamics.problem import get_pipes_topology_problem
+# from problems.meta_surface.problem import get_meta_surface_problem
+# from problems.lens_opt.problem import get_lens_opt_problem
 from problems.photovotaic_problems.problem import get_photonic_problem, PROBLEM_TYPE
 from gp_fgenerator.sampling import sampling
-from gp_fgenerator.gp_fgenerator import GP_func_generator
+# from gp_fgenerator.gp_fgenerator_ import GP_func_generator
+from gp_fgenerator.gp_fgenerator_feature_set import GP_func_generator
 from gp_fgenerator.utils import read_pickle
 # fmt: on
 
@@ -19,20 +20,19 @@ warnings.filterwarnings('ignore', category=UserWarning)
 
 if __name__ == "__main__":
     ############################################################################
-    # exp_params =
-    # [10, PROBLEM_TYPE.BRAGG, "photonic_10layers_bragg"],
+    # exp_params = [10, PROBLEM_TYPE.BRAGG, "photonic_10layers_bragg"]
     # exp_params = [20, PROBLEM_TYPE.BRAGG, "photonic_20layers_bragg"]
-    # [1, PROBLEM_TYPE.ELLIPSOMETRY, "photonic_2layers_ellipsometry"],
+    exp_params = [1, PROBLEM_TYPE.ELLIPSOMETRY, "photonic_2layers_ellipsometry"]
     # [10, PROBLEM_TYPE.PHOTOVOLTAIC, "photonic_10layers_photovoltaic"],
     # exp_params = [20, PROBLEM_TYPE.PHOTOVOLTAIC,
     #               "photonic_20layers_photovoltaic"]
     # for param in exp_params:
-    # problem_label = exp_params[2]
-    # problem = get_photonic_problem(num_layers=exp_params[0],
-    #                                problem_type=exp_params[1])
+    problem_label = exp_params[2]
+    problem = get_photonic_problem(num_layers=exp_params[0],
+                                problem_type=exp_params[1])
     ############################################################################
-    problem_label = 'lens_opt'
-    problem = get_lens_opt_problem()
+    # problem_label = 'lens_opt'
+    # problem = get_lens_opt_problem()
     ############################################################################
     path = f'data/ELA/ela_{problem_label}'
     dim = problem.meta_data.n_variables
@@ -57,7 +57,7 @@ if __name__ == "__main__":
                                 ela_weight={},
                                 dist_metric=dist_metric,
                                 problem_label=problem_label,
-                                filepath_save=f'data/GP_results/{problem_label}',
+                                filepath_save=f'data/GP_results/{problem_label}_exclude_pca_disp_distr',
                                 tree_size=(3, 12),
                                 population=50,
                                 cxpb=0.5,
@@ -65,5 +65,6 @@ if __name__ == "__main__":
                                 ngen=50,
                                 nhof=1,
                                 seed=r,
+                                exclude_ela_groups=["pca", "disp", "ela_distr"],
                                 verbose=True)
     hof, pop = GP_fgen()
