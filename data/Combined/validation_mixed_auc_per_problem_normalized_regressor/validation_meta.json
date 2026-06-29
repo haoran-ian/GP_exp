@@ -1,0 +1,62 @@
+{
+  "model_type": "regressor_only_algorithm_selection",
+  "target_transform": "mixed_raw_log_per_problem_normalized_auc",
+  "normalization_method": "minmax",
+  "normalization_level": "problem_instance",
+  "problem_key_definition": [
+    "problem_type",
+    "fid",
+    "iid",
+    "dim"
+  ],
+  "problem_normalizer_params_file": "data/Combined/validation_mixed_auc_per_problem_normalized_regressor/per_problem_auc_normalizer_params.json",
+  "auc_handling": {
+    "BBOB": {
+      "transform": "raw",
+      "abnormal_auc_filtering": false,
+      "drop_nonfinite_auc_only": true
+    },
+    "MABBOB": {
+      "transform": "raw",
+      "abnormal_auc_filtering": false,
+      "drop_nonfinite_auc_only": true
+    },
+    "LLM": {
+      "transform": "log1p",
+      "abnormal_auc_filtering": true,
+      "llm_auc_abs_max": 1e+100,
+      "llm_auc_upper_quantile": 0.995,
+      "drop_llm_abnormal_auc": true
+    }
+  },
+  "train_sources": [
+    "BBOB",
+    "MABBOB",
+    "LLM"
+  ],
+  "regressor_rows": 193333,
+  "n_problem_normalizers": 1276,
+  "n_features": 53,
+  "n_algorithms": 41,
+  "n_splits": 5,
+  "cv_group_definition": "BBOB grouped by fid; MABBOB/LLM grouped by iid",
+  "validation_metrics_file": "data/Combined/validation_mixed_auc_per_problem_normalized_regressor/validation_metrics_summary.csv",
+  "validation_outputs_dir": "data/Combined/validation_mixed_auc_per_problem_normalized_regressor",
+  "target_summary_file": "data/Combined/validation_mixed_auc_per_problem_normalized_regressor/target_auc_summary_after_per_problem_normalization.csv",
+  "regressor_per_problem_normalized_target.r2": 0.7623080343552131,
+  "regressor_per_problem_normalized_target.mae": 0.1224665421383506,
+  "regressor_per_problem_normalized_target.rmse": 0.16996841774718088,
+  "regressor_per_problem_normalized_target.spearman": 0.813327375864792,
+  "regressor_per_problem_normalized_target.baseline_alg_mean_mae": 0.18454395653966665,
+  "regressor_per_problem_normalized_target.baseline_alg_mean_rmse": 0.2418522397361556,
+  "regressor_per_problem_normalized_target.mae_improvement_over_alg_mean_baseline": 0.06207741440131605,
+  "regressor_raw_diagnostic.mae": 6.633507337966878e+46,
+  "regressor_raw_diagnostic.baseline_alg_mean_mae": 6.633507338403912e+46,
+  "selector_from_regressor.oracle_match_accuracy": 0.2225705329153605,
+  "selector_from_regressor.mean_normalized_regret_vs_oracle": 0.09652172710571633,
+  "selector_from_regressor.median_normalized_regret_vs_oracle": 0.018487633112273957,
+  "selector_from_regressor.mean_fixed_baseline_normalized_regret_vs_oracle": 0.10263207477939604,
+  "selector_from_regressor.mean_normalized_regret_improvement_over_fixed_baseline": 0.006110347673679711,
+  "selector_from_regressor.mean_relative_regret_vs_oracle": 1.5693196431498806e+18,
+  "selector_from_regressor.median_relative_regret_vs_oracle": 0.4342039523601985
+}
