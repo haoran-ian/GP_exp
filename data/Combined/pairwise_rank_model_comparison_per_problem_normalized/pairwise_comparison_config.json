@@ -1,0 +1,17 @@
+{
+  "random_seed": 42,
+  "n_splits": 5,
+  "target_transform": "mixed_raw_log_per_problem_normalized_auc",
+  "normalization_method": "minmax",
+  "add_reversed_pairs": true,
+  "max_pairs_per_problem": null,
+  "models_run": [
+    "PairwiseRandomForest",
+    "PairwiseExtraTrees",
+    "PairwiseHistGradientBoosting",
+    "PairwiseLightGBM",
+    "PairwiseXGBoost",
+    "PairwiseCatBoost"
+  ],
+  "primary_leaderboard_sort": "mean_normalized_regret_vs_oracle ascending, oracle_match_accuracy descending, mean_top3_overlap descending"
+}

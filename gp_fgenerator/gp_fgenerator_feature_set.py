@@ -92,21 +92,51 @@ def normalize_ela_group_name(group_name: str) -> str:
     return aliases.get(g, g)
 
 
-def to_plain_dict(x):
+def get_feature_names_from_target_vector(target_vector, list_ela):
     """
-    Convert common vector containers to a plain dict when possible.
+    Get exact ELA feature names without changing target_vector type.
+
+    Important:
+    The original compute_ela.py expects target_ela to be a pandas Series
+    in code such as:
+
+        target_ela = target_ela[list_ela]
+
+    Therefore we must NOT convert a pd.Series target_vector into dict.
     """
-    if x is None:
-        return {}
+    if isinstance(target_vector, pd.Series):
+        return [str(x) for x in target_vector.index.tolist()]
 
-    if isinstance(x, dict):
-        return dict(x)
+    if isinstance(target_vector, pd.DataFrame):
+        return [str(x) for x in target_vector.columns.tolist()]
 
-    if isinstance(x, pd.Series):
-        return x.to_dict()
+    if isinstance(target_vector, dict):
+        return [str(x) for x in target_vector.keys()]
 
-    # Keep unsupported formats unchanged elsewhere.
-    return x
+    # Fallback for uncommon formats.
+    return [str(x) for x in list_ela]
+
+
+def filter_target_vector_preserve_type(target_vector, selected_features):
+    """
+    Filter target_vector while preserving its original type whenever possible.
+    """
+    selected_features = list(selected_features)
+
+    if isinstance(target_vector, pd.Series):
+        keep = [f for f in selected_features if f in target_vector.index]
+        return target_vector.loc[keep]
+
+    if isinstance(target_vector, pd.DataFrame):
+        keep = [f for f in selected_features if f in target_vector.columns]
+        return target_vector.loc[:, keep]
+
+    if isinstance(target_vector, dict):
+        return {f: target_vector[f] for f in selected_features if f in target_vector}
+
+    # If the object is an unsupported custom type, return as-is.
+    # This is safer than converting it.
+    return target_vector
 
 
 class GP_func_generator:
@@ -258,10 +288,8 @@ class GP_func_generator:
 
         if self.verbose:
             print("[GPFG] ELA feature-set configuration:")
-            print(
-                f"  feature_set_name: {self.feature_set_name if self.feature_set_name else '<unnamed>'}")
-            print(
-                f"  selected feature count: {len(self.selected_ela_features)}")
+            print(f"  feature_set_name: {self.feature_set_name if self.feature_set_name else '<unnamed>'}")
+            print(f"  selected feature count: {len(self.selected_ela_features)}")
             print(f"  selected groups: {sorted(self.selected_ela_groups)}")
 
     def _prepare_ela_feature_set(self,
@@ -282,19 +310,13 @@ class GP_func_generator:
         that if a feature set excludes, for example, dispersion and PCA, every
         one of those objects is filtered accordingly before symb_regr sees them.
         """
-        target_dict = to_plain_dict(target_vector)
         ela_min = dict(ela_min) if ela_min is not None else {}
         ela_max = dict(ela_max) if ela_max is not None else {}
         ela_weight = dict(ela_weight) if ela_weight is not None else {}
 
-        # Determine the universe of exact feature names.
-        # Usually target_vector is a dict/Series keyed by exact ELA feature names.
-        if isinstance(target_dict, dict):
-            all_features = list(target_dict.keys())
-        else:
-            # Fallback: if target_vector is not keyed, use list_ela as the feature list.
-            all_features = list(list_ela)
-
+        # Determine the universe of exact feature names without changing
+        # the target_vector type.
+        all_features = get_feature_names_from_target_vector(target_vector, list_ela)
         all_features = [str(f) for f in all_features]
 
         selected = set(all_features)
@@ -306,16 +328,12 @@ class GP_func_generator:
             selected -= set(str(f) for f in exclude_ela_features)
 
         if use_ela_groups is not None:
-            allowed_groups = set(normalize_ela_group_name(g)
-                                 for g in use_ela_groups)
-            selected = {f for f in selected if infer_ela_group(
-                f) in allowed_groups}
+            allowed_groups = set(normalize_ela_group_name(g) for g in use_ela_groups)
+            selected = {f for f in selected if infer_ela_group(f) in allowed_groups}
 
         if exclude_ela_groups is not None:
-            excluded_groups = set(normalize_ela_group_name(g)
-                                  for g in exclude_ela_groups)
-            selected = {f for f in selected if infer_ela_group(
-                f) not in excluded_groups}
+            excluded_groups = set(normalize_ela_group_name(g) for g in exclude_ela_groups)
+            selected = {f for f in selected if infer_ela_group(f) not in excluded_groups}
 
         selected_features = [f for f in all_features if f in selected]
 
@@ -327,47 +345,28 @@ class GP_func_generator:
 
         selected_groups = set(infer_ela_group(f) for f in selected_features)
 
-        # Filter target vector.
-        if isinstance(target_dict, dict):
-            filtered_target_vector = {
-                f: target_dict[f] for f in selected_features if f in target_dict}
-        else:
-            # For non-dict target_vector, fall back to the original object.
-            # Exact filtering is not safe without feature names.
-            filtered_target_vector = target_vector
+        # Filter target vector while preserving its original type.
+        # If target_vector was pd.Series, this remains pd.Series.
+        filtered_target_vector = filter_target_vector_preserve_type(target_vector, selected_features)
 
         # Filter normalization and weight dictionaries.
-        filtered_ela_min = {f: ela_min[f]
-                            for f in selected_features if f in ela_min}
-        filtered_ela_max = {f: ela_max[f]
-                            for f in selected_features if f in ela_max}
-        filtered_ela_weight = {f: ela_weight[f]
-                               for f in selected_features if f in ela_weight}
+        filtered_ela_min = {f: ela_min[f] for f in selected_features if f in ela_min}
+        filtered_ela_max = {f: ela_max[f] for f in selected_features if f in ela_max}
+        filtered_ela_weight = {f: ela_weight[f] for f in selected_features if f in ela_weight}
 
         # Filter list_ela.
         #
-        # There are two common conventions:
-        #   1. list_ela contains exact feature names.
-        #   2. list_ela contains feature groups requested from the ELA calculator.
+        # IMPORTANT:
+        # compute_ela.process_ela uses:
         #
-        # We support both. If entries match exact features, keep exact selected
-        # features. Otherwise, keep only selected groups.
-        list_ela_as_str = [str(x) for x in list_ela]
-
-        if any(x in all_features for x in list_ela_as_str):
-            filtered_list_ela = [
-                x for x in list_ela_as_str if x in selected_features]
-        else:
-            normalized_list_groups = [
-                normalize_ela_group_name(x) for x in list_ela_as_str]
-            filtered_list_ela = []
-            for original, normalized in zip(list_ela_as_str, normalized_list_groups):
-                if normalized in selected_groups:
-                    filtered_list_ela.append(original)
-
-            # If original list_ela was empty or incompatible, use selected group names.
-            if not filtered_list_ela:
-                filtered_list_ela = sorted(selected_groups)
+        #     target_ela = target_ela[list_ela]
+        #
+        # Therefore list_ela must be a flat list of exact feature names.
+        # Passing groups, nested lists, or mixed structures will crash with
+        # "TypeError: unhashable type: 'list'".
+        #
+        # So we always pass the filtered exact feature names here.
+        filtered_list_ela = list(selected_features)
 
         return (
             filtered_target_vector,
@@ -389,8 +388,7 @@ class GP_func_generator:
             })
 
         df = pd.DataFrame(rows)
-        df.to_csv(os.path.join(self.filepath_save,
-                  "feature_set_used.csv"), index=False)
+        df.to_csv(os.path.join(self.filepath_save, "feature_set_used.csv"), index=False)
 
         config = {
             "feature_set_name": self.feature_set_name,
@@ -428,8 +426,7 @@ class GP_func_generator:
 
         self.err[fitness_[0]] += 1
         self.result = pd.concat(
-            [self.result, fitness2df(
-                str(individual), fitness_, label=f'{self.neval}')],
+            [self.result, fitness2df(str(individual), fitness_, label=f'{self.neval}')],
             axis=0,
             ignore_index=True,
         )
@@ -464,8 +461,7 @@ class GP_func_generator:
         if not hasattr(creator, "FitnessMin"):
             creator.create("FitnessMin", base.Fitness, weights=(self.weight,))
         if not hasattr(creator, "Individual"):
-            creator.create("Individual", gp.PrimitiveTree,
-                           fitness=creator.FitnessMin)
+            creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
 
         self.toolbox = base.Toolbox()
         self.toolbox.register("map", futures.map)
@@ -476,23 +472,18 @@ class GP_func_generator:
             min_=self.tree_size[0],
             max_=self.tree_size[1],
         )
-        self.toolbox.register("individual", tools.initIterate,
-                              creator.Individual, self.toolbox.expr)
-        self.toolbox.register("population", tools.initRepeat,
-                              list, self.toolbox.individual)
+        self.toolbox.register("individual", tools.initIterate, creator.Individual, self.toolbox.expr)
+        self.toolbox.register("population", tools.initRepeat, list, self.toolbox.individual)
         self.toolbox.register("compile", gp.compile, pset=pset)
 
         self.toolbox.register("evaluate", self.evalSymbReg, points=self.doe_x)
         self.toolbox.register("select", tools.selTournament, tournsize=5)
         self.toolbox.register("mate", gp.cxOnePoint)
         self.toolbox.register("expr_mut", gp.genFull, min_=0, max_=2)
-        self.toolbox.register("mutate", gp.mutUniform,
-                              expr=self.toolbox.expr_mut, pset=pset)
+        self.toolbox.register("mutate", gp.mutUniform, expr=self.toolbox.expr_mut, pset=pset)
 
-        self.toolbox.decorate("mate", gp.staticLimit(
-            key=operator.attrgetter("height"), max_value=17))
-        self.toolbox.decorate("mutate", gp.staticLimit(
-            key=operator.attrgetter("height"), max_value=17))
+        self.toolbox.decorate("mate", gp.staticLimit(key=operator.attrgetter("height"), max_value=17))
+        self.toolbox.decorate("mutate", gp.staticLimit(key=operator.attrgetter("height"), max_value=17))
 
         pop = self.toolbox.population(n=self.population)
         hof = tools.HallOfFame(self.nhof)

@@ -1,0 +1,24 @@
+{
+  "distance_metric": "euclidean",
+  "k_neighbors": 5,
+  "aggregate_realworld_by_problem": true,
+  "aggregate_sources_by_problem": true,
+  "filter_llm_outliers": true,
+  "llm_outlier_quantile": 0.98,
+  "llm_outlier_distance_mode": "to_non_llm_centroid",
+  "pca_n_components_for_tsne": 30,
+  "tsne_perplexity_requested": 30,
+  "n_features": 87,
+  "counts_before_filtering": {
+    "LLM": 562,
+    "MABBOB": 240,
+    "BBOB": 24,
+    "REAL": 3
+  },
+  "counts_after_filtering": {
+    "LLM": 550,
+    "MABBOB": 240,
+    "BBOB": 24,
+    "REAL": 3
+  }
+}

@@ -20,9 +20,9 @@ warnings.filterwarnings('ignore', category=UserWarning)
 
 if __name__ == "__main__":
     ############################################################################
-    # exp_params = [10, PROBLEM_TYPE.BRAGG, "photonic_10layers_bragg"]
+    exp_params = [10, PROBLEM_TYPE.BRAGG, "photonic_10layers_bragg"]
     # exp_params = [20, PROBLEM_TYPE.BRAGG, "photonic_20layers_bragg"]
-    exp_params = [1, PROBLEM_TYPE.ELLIPSOMETRY, "photonic_2layers_ellipsometry"]
+    # exp_params = [1, PROBLEM_TYPE.ELLIPSOMETRY, "photonic_2layers_ellipsometry"]
     # [10, PROBLEM_TYPE.PHOTOVOLTAIC, "photonic_10layers_photovoltaic"],
     # exp_params = [20, PROBLEM_TYPE.PHOTOVOLTAIC,
     #               "photonic_20layers_photovoltaic"]

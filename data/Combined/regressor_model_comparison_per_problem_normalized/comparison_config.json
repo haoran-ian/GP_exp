@@ -1,0 +1,32 @@
+{
+  "random_seed": 42,
+  "n_splits": 5,
+  "target_transform": "mixed_raw_log_per_problem_normalized_auc",
+  "normalization_method": "minmax",
+  "auc_handling": {
+    "BBOB": {
+      "transform": "raw",
+      "abnormal_auc_filtering": false
+    },
+    "MABBOB": {
+      "transform": "raw",
+      "abnormal_auc_filtering": false
+    },
+    "LLM": {
+      "transform": "log1p",
+      "abnormal_auc_filtering": true,
+      "llm_auc_abs_max": 1e+100,
+      "llm_auc_upper_quantile": 0.995,
+      "drop_llm_abnormal_auc": true
+    }
+  },
+  "models_run": [
+    "RandomForest",
+    "ExtraTrees",
+    "HistGradientBoosting",
+    "LightGBM",
+    "XGBoost",
+    "CatBoost"
+  ],
+  "primary_leaderboard_sort": "mean_normalized_regret_vs_oracle ascending, oracle_match_accuracy descending, regressor_mae ascending"
+}

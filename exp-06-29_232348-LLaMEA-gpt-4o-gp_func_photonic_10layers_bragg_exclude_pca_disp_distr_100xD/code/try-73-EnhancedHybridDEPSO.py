@@ -1,0 +1,87 @@
+import numpy as np
+
+class EnhancedHybridDEPSO:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.initial_population_size = 50
+        self.final_population_size = 30
+        self.F = 0.5  # Initial DE scaling factor
+        self.CR = 0.9  # Initial crossover rate
+        self.w = 0.9  # Initial inertia weight for PSO
+        self.c1 = 1.5  # Cognitive component
+        self.c2 = 1.5  # Social component
+
+    def __call__(self, func):
+        lb, ub = func.bounds.lb, func.bounds.ub
+        pop = np.random.uniform(lb, ub, (self.initial_population_size, self.dim))
+        velocities = np.zeros((self.initial_population_size, self.dim))
+        fitness = np.array([func(ind) for ind in pop])
+        pbest = pop.copy()
+        pbest_fitness = fitness.copy()
+        gbest = pop[np.argmin(fitness)]
+        gbest_fitness = np.min(fitness)
+
+        evaluations = self.initial_population_size
+        iter_count = 0
+        max_iter = (self.budget - evaluations) // self.initial_population_size
+
+        while evaluations < self.budget:
+            iter_count += 1
+            # Linear parameter adaptation
+            self.F = 0.5 + 0.3 * (1 - iter_count / max_iter)  # Reduce F over time
+            self.w = 0.9 - 0.4 * (iter_count / max_iter)  # Reduce inertia weight over time
+            
+            # Dynamic population size adjustment
+            current_pop_size = self.initial_population_size - int(
+                (self.initial_population_size - self.final_population_size) * (iter_count / max_iter)
+            )
+            pop = pop[:current_pop_size]
+            velocities = velocities[:current_pop_size]
+            fitness = fitness[:current_pop_size]
+            pbest = pbest[:current_pop_size]
+            pbest_fitness = pbest_fitness[:current_pop_size]
+
+            # Differential Evolution Phase
+            for i in range(current_pop_size):
+                idxs = [idx for idx in range(current_pop_size) if idx != i]
+                a, b, c = pop[np.random.choice(idxs, 3, replace=False)]
+                mutant = np.clip(a + self.F * (b - c), lb, ub)
+                cross_points = np.random.rand(self.dim) < self.CR
+                if not np.any(cross_points):
+                    cross_points[np.random.randint(0, self.dim)] = True
+                trial = np.where(cross_points, mutant, pop[i])
+                trial_fitness = func(trial)
+                evaluations += 1
+                if trial_fitness < fitness[i]:
+                    pop[i] = trial
+                    fitness[i] = trial_fitness
+                    if trial_fitness < pbest_fitness[i]:
+                        pbest[i] = trial
+                        pbest_fitness[i] = trial_fitness
+                        if trial_fitness < gbest_fitness:
+                            gbest = trial
+                            gbest_fitness = trial_fitness
+
+            if evaluations >= self.budget:
+                break
+
+            # Particle Swarm Optimization Phase
+            for i in range(current_pop_size):
+                r1, r2 = np.random.rand(2, self.dim)
+                velocities[i] = (self.w * velocities[i] +
+                                 self.c1 * r1 * (pbest[i] - pop[i]) +
+                                 self.c2 * r2 * (gbest - pop[i]))
+                pop[i] = np.clip(pop[i] + velocities[i], lb, ub)
+                particle_fitness = func(pop[i])
+                evaluations += 1
+                if particle_fitness < fitness[i]:
+                    fitness[i] = particle_fitness
+                    if particle_fitness < pbest_fitness[i]:
+                        pbest[i] = pop[i]
+                        pbest_fitness[i] = particle_fitness
+                        if particle_fitness < gbest_fitness:
+                            gbest = pop[i]
+                            gbest_fitness = particle_fitness
+
+        return gbest

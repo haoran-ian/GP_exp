@@ -1,0 +1,37 @@
+{
+  "feature_set_name":"",
+  "n_selected_features":28,
+  "selected_groups":[
+    "ela_level",
+    "ela_meta",
+    "ic",
+    "nbc"
+  ],
+  "use_ela_features":null,
+  "exclude_ela_features":null,
+  "use_ela_groups":null,
+  "exclude_ela_groups":[
+    "pca",
+    "disp",
+    "ela_distr"
+  ],
+  "list_ela_passed_to_symb_regr":[
+    "ela_meta.lin_simple.intercept",
+    "ela_meta.lin_simple.coef.max",
+    "ela_meta.lin_simple.coef.max_by_min",
+    "ela_meta.lin_w_interact.adj_r2",
+    "ela_meta.quad_simple.adj_r2",
+    "ela_meta.quad_simple.cond",
+    "ela_meta.quad_w_interact.adj_r2",
+    "ela_level.mmce_lda_10",
+    "ela_level.lda_qda_10",
+    "ela_level.mmce_lda_25",
+    "ela_level.mmce_qda_25",
+    "ela_level.mmce_qda_50",
+    "ela_level.lda_qda_50",
+    "nbc.nn_nb.sd_ratio",
+    "nbc.dist_ratio.coeff_var",
+    "nbc.nb_fitness.cor",
+    "ic.h_max"
+  ]
+}

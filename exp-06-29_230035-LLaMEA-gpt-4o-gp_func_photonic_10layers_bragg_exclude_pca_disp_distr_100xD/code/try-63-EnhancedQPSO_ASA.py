@@ -1,0 +1,62 @@
+import numpy as np
+
+class EnhancedQPSO_ASA:
+    def __init__(self, budget, dim):
+        self.budget = budget
+        self.dim = dim
+        self.num_particles = min(40, 10 * dim)
+        self.inertia = 0.7
+        self.cognitive = 1.5
+        self.social = 1.5
+        self.temperature = 100.0
+        self.cooling_rate = 0.99
+        self.alpha = 0.5  # Parameter for QPSO
+
+    def __call__(self, func):
+        bounds = np.array([func.bounds.lb, func.bounds.ub])
+        particles = np.random.uniform(bounds[0], bounds[1], (self.num_particles, self.dim))
+        personal_best = particles.copy()
+        personal_best_values = np.array([func(p) for p in particles])
+        global_best = personal_best[np.argmin(personal_best_values)]
+        global_best_value = np.min(personal_best_values)
+
+        evaluations = self.num_particles
+
+        while evaluations < self.budget:
+            for i in range(self.num_particles):
+                # QPSO position update using a mean best position
+                mean_best = np.mean(personal_best, axis=0)
+                mb = (personal_best[i] + global_best) / 2
+                u = np.random.rand(self.dim)
+                b = np.abs(mb - particles[i])
+                position_update = mb + b * np.log(1.0 / u) * np.random.choice([-1, 1], size=self.dim)
+
+                # Clipping to bounds
+                particles[i] = np.clip(position_update, bounds[0], bounds[1])
+
+                # Evaluate particle
+                fitness = func(particles[i])
+                evaluations += 1
+
+                # Update personal best
+                if fitness < personal_best_values[i]:
+                    personal_best[i] = particles[i]
+                    personal_best_values[i] = fitness
+
+                    # Adaptive Simulated Annealing: probabilistic acceptance
+                    delta = personal_best_values[i] - global_best_value
+                    acceptance_prob = np.exp(-delta / (self.temperature * (1 + evaluations / self.budget)))
+                    if np.random.rand() < acceptance_prob:
+                        global_best = personal_best[i]
+                        global_best_value = personal_best_values[i]
+
+            # Update global best
+            best_particle_index = np.argmin(personal_best_values)
+            if personal_best_values[best_particle_index] < global_best_value:
+                global_best = personal_best[best_particle_index]
+                global_best_value = personal_best_values[best_particle_index]
+
+            # Cooling the temperature
+            self.temperature *= self.cooling_rate
+
+        return global_best
