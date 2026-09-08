@@ -1,0 +1,12 @@
+{
+  "input_dir": "data/Combined/source_specific_mlp_regressors",
+  "output_dir": "data/Combined/source_specific_mlp_regressors/mlp_quality_plots",
+  "model_names": [
+    "BBOB_MLP",
+    "MABBOB_MLP",
+    "LLM_MLP"
+  ],
+  "target": "per-problem-normalized target_auc",
+  "prediction_column": "pred_target_auc",
+  "true_column": "target_auc"
+}

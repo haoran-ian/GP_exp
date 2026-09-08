@@ -1,0 +1,2223 @@
+fold,feature_subset,feature,group
+0,FULL,disp.diff_mean_02,Dispersion
+0,FULL,disp.diff_mean_05,Dispersion
+0,FULL,disp.diff_mean_10,Dispersion
+0,FULL,disp.diff_mean_25,Dispersion
+0,FULL,disp.diff_median_02,Dispersion
+0,FULL,disp.diff_median_05,Dispersion
+0,FULL,disp.diff_median_10,Dispersion
+0,FULL,disp.diff_median_25,Dispersion
+0,FULL,disp.ratio_mean_02,Dispersion
+0,FULL,disp.ratio_mean_05,Dispersion
+0,FULL,disp.ratio_mean_10,Dispersion
+0,FULL,disp.ratio_mean_25,Dispersion
+0,FULL,disp.ratio_median_02,Dispersion
+0,FULL,disp.ratio_median_05,Dispersion
+0,FULL,disp.ratio_median_10,Dispersion
+0,FULL,disp.ratio_median_25,Dispersion
+0,FULL,ela_distr.kurtosis,Distribution
+0,FULL,ela_distr.number_of_peaks,Distribution
+0,FULL,ela_distr.skewness,Distribution
+0,FULL,ela_level.lda_qda_10,Level-set
+0,FULL,ela_level.lda_qda_25,Level-set
+0,FULL,ela_level.lda_qda_50,Level-set
+0,FULL,ela_level.mmce_lda_10,Level-set
+0,FULL,ela_level.mmce_lda_25,Level-set
+0,FULL,ela_level.mmce_lda_50,Level-set
+0,FULL,ela_level.mmce_qda_10,Level-set
+0,FULL,ela_level.mmce_qda_25,Level-set
+0,FULL,ela_level.mmce_qda_50,Level-set
+0,FULL,ela_meta.lin_simple.adj_r2,Meta-model
+0,FULL,ela_meta.lin_simple.coef.max,Meta-model
+0,FULL,ela_meta.lin_simple.coef.max_by_min,Meta-model
+0,FULL,ela_meta.lin_simple.coef.min,Meta-model
+0,FULL,ela_meta.lin_simple.intercept,Meta-model
+0,FULL,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,FULL,ela_meta.quad_simple.adj_r2,Meta-model
+0,FULL,ela_meta.quad_simple.cond,Meta-model
+0,FULL,ela_meta.quad_w_interact.adj_r2,Meta-model
+0,FULL,ic.eps_max,Info. Content
+0,FULL,ic.eps_ratio,Info. Content
+0,FULL,ic.eps_s,Info. Content
+0,FULL,ic.h_max,Info. Content
+0,FULL,ic.m0,Info. Content
+0,FULL,nbc.dist_ratio.coeff_var,Nearest Better
+0,FULL,nbc.nb_fitness.cor,Nearest Better
+0,FULL,nbc.nn_nb.cor,Nearest Better
+0,FULL,nbc.nn_nb.mean_ratio,Nearest Better
+0,FULL,nbc.nn_nb.sd_ratio,Nearest Better
+0,FULL,pca.expl_var.cor_init,PCA
+0,FULL,pca.expl_var.cov_init,PCA
+0,FULL,pca.expl_var_PC1.cor_init,PCA
+0,FULL,pca.expl_var_PC1.cor_x,PCA
+0,FULL,pca.expl_var_PC1.cov_init,PCA
+0,FULL,pca.expl_var_PC1.cov_x,PCA
+0,TOP_10,disp.ratio_mean_02,Dispersion
+0,TOP_10,ela_distr.skewness,Distribution
+0,TOP_10,ela_level.mmce_qda_25,Level-set
+0,TOP_10,ela_meta.lin_simple.adj_r2,Meta-model
+0,TOP_10,ela_meta.lin_simple.intercept,Meta-model
+0,TOP_10,ic.m0,Info. Content
+0,TOP_10,nbc.nb_fitness.cor,Nearest Better
+0,TOP_10,nbc.nn_nb.mean_ratio,Nearest Better
+0,TOP_10,nbc.nn_nb.sd_ratio,Nearest Better
+0,TOP_10,pca.expl_var.cor_init,PCA
+0,TOP_20,disp.diff_mean_02,Dispersion
+0,TOP_20,disp.ratio_mean_02,Dispersion
+0,TOP_20,ela_distr.skewness,Distribution
+0,TOP_20,ela_level.lda_qda_10,Level-set
+0,TOP_20,ela_level.mmce_lda_50,Level-set
+0,TOP_20,ela_level.mmce_qda_10,Level-set
+0,TOP_20,ela_level.mmce_qda_25,Level-set
+0,TOP_20,ela_level.mmce_qda_50,Level-set
+0,TOP_20,ela_meta.lin_simple.adj_r2,Meta-model
+0,TOP_20,ela_meta.lin_simple.coef.max,Meta-model
+0,TOP_20,ela_meta.lin_simple.intercept,Meta-model
+0,TOP_20,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,TOP_20,ela_meta.quad_simple.adj_r2,Meta-model
+0,TOP_20,ic.h_max,Info. Content
+0,TOP_20,ic.m0,Info. Content
+0,TOP_20,nbc.nb_fitness.cor,Nearest Better
+0,TOP_20,nbc.nn_nb.mean_ratio,Nearest Better
+0,TOP_20,nbc.nn_nb.sd_ratio,Nearest Better
+0,TOP_20,pca.expl_var.cor_init,PCA
+0,TOP_20,pca.expl_var_PC1.cor_init,PCA
+0,TOP_30,disp.diff_mean_02,Dispersion
+0,TOP_30,disp.ratio_mean_02,Dispersion
+0,TOP_30,ela_distr.kurtosis,Distribution
+0,TOP_30,ela_distr.skewness,Distribution
+0,TOP_30,ela_level.lda_qda_10,Level-set
+0,TOP_30,ela_level.lda_qda_25,Level-set
+0,TOP_30,ela_level.lda_qda_50,Level-set
+0,TOP_30,ela_level.mmce_lda_10,Level-set
+0,TOP_30,ela_level.mmce_lda_25,Level-set
+0,TOP_30,ela_level.mmce_lda_50,Level-set
+0,TOP_30,ela_level.mmce_qda_10,Level-set
+0,TOP_30,ela_level.mmce_qda_25,Level-set
+0,TOP_30,ela_level.mmce_qda_50,Level-set
+0,TOP_30,ela_meta.lin_simple.adj_r2,Meta-model
+0,TOP_30,ela_meta.lin_simple.coef.max,Meta-model
+0,TOP_30,ela_meta.lin_simple.coef.min,Meta-model
+0,TOP_30,ela_meta.lin_simple.intercept,Meta-model
+0,TOP_30,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,TOP_30,ela_meta.quad_simple.adj_r2,Meta-model
+0,TOP_30,ela_meta.quad_simple.cond,Meta-model
+0,TOP_30,ela_meta.quad_w_interact.adj_r2,Meta-model
+0,TOP_30,ic.eps_max,Info. Content
+0,TOP_30,ic.h_max,Info. Content
+0,TOP_30,ic.m0,Info. Content
+0,TOP_30,nbc.nb_fitness.cor,Nearest Better
+0,TOP_30,nbc.nn_nb.cor,Nearest Better
+0,TOP_30,nbc.nn_nb.mean_ratio,Nearest Better
+0,TOP_30,nbc.nn_nb.sd_ratio,Nearest Better
+0,TOP_30,pca.expl_var.cor_init,PCA
+0,TOP_30,pca.expl_var_PC1.cor_init,PCA
+0,TOP_40,disp.diff_mean_02,Dispersion
+0,TOP_40,disp.diff_mean_05,Dispersion
+0,TOP_40,disp.diff_median_02,Dispersion
+0,TOP_40,disp.diff_median_10,Dispersion
+0,TOP_40,disp.ratio_mean_02,Dispersion
+0,TOP_40,disp.ratio_mean_05,Dispersion
+0,TOP_40,disp.ratio_mean_10,Dispersion
+0,TOP_40,disp.ratio_median_02,Dispersion
+0,TOP_40,disp.ratio_median_05,Dispersion
+0,TOP_40,ela_distr.kurtosis,Distribution
+0,TOP_40,ela_distr.number_of_peaks,Distribution
+0,TOP_40,ela_distr.skewness,Distribution
+0,TOP_40,ela_level.lda_qda_10,Level-set
+0,TOP_40,ela_level.lda_qda_25,Level-set
+0,TOP_40,ela_level.lda_qda_50,Level-set
+0,TOP_40,ela_level.mmce_lda_10,Level-set
+0,TOP_40,ela_level.mmce_lda_25,Level-set
+0,TOP_40,ela_level.mmce_lda_50,Level-set
+0,TOP_40,ela_level.mmce_qda_10,Level-set
+0,TOP_40,ela_level.mmce_qda_25,Level-set
+0,TOP_40,ela_level.mmce_qda_50,Level-set
+0,TOP_40,ela_meta.lin_simple.adj_r2,Meta-model
+0,TOP_40,ela_meta.lin_simple.coef.max,Meta-model
+0,TOP_40,ela_meta.lin_simple.coef.max_by_min,Meta-model
+0,TOP_40,ela_meta.lin_simple.coef.min,Meta-model
+0,TOP_40,ela_meta.lin_simple.intercept,Meta-model
+0,TOP_40,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,TOP_40,ela_meta.quad_simple.adj_r2,Meta-model
+0,TOP_40,ela_meta.quad_simple.cond,Meta-model
+0,TOP_40,ela_meta.quad_w_interact.adj_r2,Meta-model
+0,TOP_40,ic.eps_max,Info. Content
+0,TOP_40,ic.h_max,Info. Content
+0,TOP_40,ic.m0,Info. Content
+0,TOP_40,nbc.dist_ratio.coeff_var,Nearest Better
+0,TOP_40,nbc.nb_fitness.cor,Nearest Better
+0,TOP_40,nbc.nn_nb.cor,Nearest Better
+0,TOP_40,nbc.nn_nb.mean_ratio,Nearest Better
+0,TOP_40,nbc.nn_nb.sd_ratio,Nearest Better
+0,TOP_40,pca.expl_var.cor_init,PCA
+0,TOP_40,pca.expl_var_PC1.cor_init,PCA
+0,TOP_50,disp.diff_mean_02,Dispersion
+0,TOP_50,disp.diff_mean_05,Dispersion
+0,TOP_50,disp.diff_mean_10,Dispersion
+0,TOP_50,disp.diff_mean_25,Dispersion
+0,TOP_50,disp.diff_median_02,Dispersion
+0,TOP_50,disp.diff_median_05,Dispersion
+0,TOP_50,disp.diff_median_10,Dispersion
+0,TOP_50,disp.diff_median_25,Dispersion
+0,TOP_50,disp.ratio_mean_02,Dispersion
+0,TOP_50,disp.ratio_mean_05,Dispersion
+0,TOP_50,disp.ratio_mean_10,Dispersion
+0,TOP_50,disp.ratio_mean_25,Dispersion
+0,TOP_50,disp.ratio_median_02,Dispersion
+0,TOP_50,disp.ratio_median_05,Dispersion
+0,TOP_50,disp.ratio_median_10,Dispersion
+0,TOP_50,disp.ratio_median_25,Dispersion
+0,TOP_50,ela_distr.kurtosis,Distribution
+0,TOP_50,ela_distr.number_of_peaks,Distribution
+0,TOP_50,ela_distr.skewness,Distribution
+0,TOP_50,ela_level.lda_qda_10,Level-set
+0,TOP_50,ela_level.lda_qda_25,Level-set
+0,TOP_50,ela_level.lda_qda_50,Level-set
+0,TOP_50,ela_level.mmce_lda_10,Level-set
+0,TOP_50,ela_level.mmce_lda_25,Level-set
+0,TOP_50,ela_level.mmce_lda_50,Level-set
+0,TOP_50,ela_level.mmce_qda_10,Level-set
+0,TOP_50,ela_level.mmce_qda_25,Level-set
+0,TOP_50,ela_level.mmce_qda_50,Level-set
+0,TOP_50,ela_meta.lin_simple.adj_r2,Meta-model
+0,TOP_50,ela_meta.lin_simple.coef.max,Meta-model
+0,TOP_50,ela_meta.lin_simple.coef.max_by_min,Meta-model
+0,TOP_50,ela_meta.lin_simple.coef.min,Meta-model
+0,TOP_50,ela_meta.lin_simple.intercept,Meta-model
+0,TOP_50,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,TOP_50,ela_meta.quad_simple.adj_r2,Meta-model
+0,TOP_50,ela_meta.quad_simple.cond,Meta-model
+0,TOP_50,ela_meta.quad_w_interact.adj_r2,Meta-model
+0,TOP_50,ic.eps_max,Info. Content
+0,TOP_50,ic.eps_ratio,Info. Content
+0,TOP_50,ic.eps_s,Info. Content
+0,TOP_50,ic.h_max,Info. Content
+0,TOP_50,ic.m0,Info. Content
+0,TOP_50,nbc.dist_ratio.coeff_var,Nearest Better
+0,TOP_50,nbc.nb_fitness.cor,Nearest Better
+0,TOP_50,nbc.nn_nb.cor,Nearest Better
+0,TOP_50,nbc.nn_nb.mean_ratio,Nearest Better
+0,TOP_50,nbc.nn_nb.sd_ratio,Nearest Better
+0,TOP_50,pca.expl_var.cor_init,PCA
+0,TOP_50,pca.expl_var_PC1.cor_init,PCA
+0,TOP_50,pca.expl_var_PC1.cor_x,PCA
+0,POSITIVE_IMPORTANCE,disp.diff_mean_02,Dispersion
+0,POSITIVE_IMPORTANCE,disp.diff_mean_05,Dispersion
+0,POSITIVE_IMPORTANCE,disp.diff_mean_10,Dispersion
+0,POSITIVE_IMPORTANCE,disp.diff_mean_25,Dispersion
+0,POSITIVE_IMPORTANCE,disp.diff_median_02,Dispersion
+0,POSITIVE_IMPORTANCE,disp.diff_median_05,Dispersion
+0,POSITIVE_IMPORTANCE,disp.diff_median_10,Dispersion
+0,POSITIVE_IMPORTANCE,disp.diff_median_25,Dispersion
+0,POSITIVE_IMPORTANCE,disp.ratio_mean_02,Dispersion
+0,POSITIVE_IMPORTANCE,disp.ratio_mean_05,Dispersion
+0,POSITIVE_IMPORTANCE,disp.ratio_mean_10,Dispersion
+0,POSITIVE_IMPORTANCE,disp.ratio_mean_25,Dispersion
+0,POSITIVE_IMPORTANCE,disp.ratio_median_02,Dispersion
+0,POSITIVE_IMPORTANCE,disp.ratio_median_05,Dispersion
+0,POSITIVE_IMPORTANCE,disp.ratio_median_10,Dispersion
+0,POSITIVE_IMPORTANCE,disp.ratio_median_25,Dispersion
+0,POSITIVE_IMPORTANCE,ela_distr.kurtosis,Distribution
+0,POSITIVE_IMPORTANCE,ela_distr.number_of_peaks,Distribution
+0,POSITIVE_IMPORTANCE,ela_distr.skewness,Distribution
+0,POSITIVE_IMPORTANCE,ela_level.lda_qda_10,Level-set
+0,POSITIVE_IMPORTANCE,ela_level.lda_qda_25,Level-set
+0,POSITIVE_IMPORTANCE,ela_level.lda_qda_50,Level-set
+0,POSITIVE_IMPORTANCE,ela_level.mmce_lda_10,Level-set
+0,POSITIVE_IMPORTANCE,ela_level.mmce_lda_25,Level-set
+0,POSITIVE_IMPORTANCE,ela_level.mmce_lda_50,Level-set
+0,POSITIVE_IMPORTANCE,ela_level.mmce_qda_10,Level-set
+0,POSITIVE_IMPORTANCE,ela_level.mmce_qda_25,Level-set
+0,POSITIVE_IMPORTANCE,ela_level.mmce_qda_50,Level-set
+0,POSITIVE_IMPORTANCE,ela_meta.lin_simple.adj_r2,Meta-model
+0,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max,Meta-model
+0,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max_by_min,Meta-model
+0,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.min,Meta-model
+0,POSITIVE_IMPORTANCE,ela_meta.lin_simple.intercept,Meta-model
+0,POSITIVE_IMPORTANCE,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,POSITIVE_IMPORTANCE,ela_meta.quad_simple.adj_r2,Meta-model
+0,POSITIVE_IMPORTANCE,ela_meta.quad_simple.cond,Meta-model
+0,POSITIVE_IMPORTANCE,ela_meta.quad_w_interact.adj_r2,Meta-model
+0,POSITIVE_IMPORTANCE,ic.eps_max,Info. Content
+0,POSITIVE_IMPORTANCE,ic.eps_ratio,Info. Content
+0,POSITIVE_IMPORTANCE,ic.eps_s,Info. Content
+0,POSITIVE_IMPORTANCE,ic.h_max,Info. Content
+0,POSITIVE_IMPORTANCE,ic.m0,Info. Content
+0,POSITIVE_IMPORTANCE,nbc.dist_ratio.coeff_var,Nearest Better
+0,POSITIVE_IMPORTANCE,nbc.nb_fitness.cor,Nearest Better
+0,POSITIVE_IMPORTANCE,nbc.nn_nb.cor,Nearest Better
+0,POSITIVE_IMPORTANCE,nbc.nn_nb.mean_ratio,Nearest Better
+0,POSITIVE_IMPORTANCE,nbc.nn_nb.sd_ratio,Nearest Better
+0,POSITIVE_IMPORTANCE,pca.expl_var.cor_init,PCA
+0,POSITIVE_IMPORTANCE,pca.expl_var.cov_init,PCA
+0,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_init,PCA
+0,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_x,PCA
+0,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_init,PCA
+0,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_x,PCA
+0,GROUP_TOP_1,disp.diff_mean_02,Dispersion
+0,GROUP_TOP_1,disp.diff_mean_05,Dispersion
+0,GROUP_TOP_1,disp.diff_mean_10,Dispersion
+0,GROUP_TOP_1,disp.diff_mean_25,Dispersion
+0,GROUP_TOP_1,disp.diff_median_02,Dispersion
+0,GROUP_TOP_1,disp.diff_median_05,Dispersion
+0,GROUP_TOP_1,disp.diff_median_10,Dispersion
+0,GROUP_TOP_1,disp.diff_median_25,Dispersion
+0,GROUP_TOP_1,disp.ratio_mean_02,Dispersion
+0,GROUP_TOP_1,disp.ratio_mean_05,Dispersion
+0,GROUP_TOP_1,disp.ratio_mean_10,Dispersion
+0,GROUP_TOP_1,disp.ratio_mean_25,Dispersion
+0,GROUP_TOP_1,disp.ratio_median_02,Dispersion
+0,GROUP_TOP_1,disp.ratio_median_05,Dispersion
+0,GROUP_TOP_1,disp.ratio_median_10,Dispersion
+0,GROUP_TOP_1,disp.ratio_median_25,Dispersion
+0,GROUP_TOP_2,disp.diff_mean_02,Dispersion
+0,GROUP_TOP_2,disp.diff_mean_05,Dispersion
+0,GROUP_TOP_2,disp.diff_mean_10,Dispersion
+0,GROUP_TOP_2,disp.diff_mean_25,Dispersion
+0,GROUP_TOP_2,disp.diff_median_02,Dispersion
+0,GROUP_TOP_2,disp.diff_median_05,Dispersion
+0,GROUP_TOP_2,disp.diff_median_10,Dispersion
+0,GROUP_TOP_2,disp.diff_median_25,Dispersion
+0,GROUP_TOP_2,disp.ratio_mean_02,Dispersion
+0,GROUP_TOP_2,disp.ratio_mean_05,Dispersion
+0,GROUP_TOP_2,disp.ratio_mean_10,Dispersion
+0,GROUP_TOP_2,disp.ratio_mean_25,Dispersion
+0,GROUP_TOP_2,disp.ratio_median_02,Dispersion
+0,GROUP_TOP_2,disp.ratio_median_05,Dispersion
+0,GROUP_TOP_2,disp.ratio_median_10,Dispersion
+0,GROUP_TOP_2,disp.ratio_median_25,Dispersion
+0,GROUP_TOP_2,ela_level.lda_qda_10,Level-set
+0,GROUP_TOP_2,ela_level.lda_qda_25,Level-set
+0,GROUP_TOP_2,ela_level.lda_qda_50,Level-set
+0,GROUP_TOP_2,ela_level.mmce_lda_10,Level-set
+0,GROUP_TOP_2,ela_level.mmce_lda_25,Level-set
+0,GROUP_TOP_2,ela_level.mmce_lda_50,Level-set
+0,GROUP_TOP_2,ela_level.mmce_qda_10,Level-set
+0,GROUP_TOP_2,ela_level.mmce_qda_25,Level-set
+0,GROUP_TOP_2,ela_level.mmce_qda_50,Level-set
+0,GROUP_TOP_3,disp.diff_mean_02,Dispersion
+0,GROUP_TOP_3,disp.diff_mean_05,Dispersion
+0,GROUP_TOP_3,disp.diff_mean_10,Dispersion
+0,GROUP_TOP_3,disp.diff_mean_25,Dispersion
+0,GROUP_TOP_3,disp.diff_median_02,Dispersion
+0,GROUP_TOP_3,disp.diff_median_05,Dispersion
+0,GROUP_TOP_3,disp.diff_median_10,Dispersion
+0,GROUP_TOP_3,disp.diff_median_25,Dispersion
+0,GROUP_TOP_3,disp.ratio_mean_02,Dispersion
+0,GROUP_TOP_3,disp.ratio_mean_05,Dispersion
+0,GROUP_TOP_3,disp.ratio_mean_10,Dispersion
+0,GROUP_TOP_3,disp.ratio_mean_25,Dispersion
+0,GROUP_TOP_3,disp.ratio_median_02,Dispersion
+0,GROUP_TOP_3,disp.ratio_median_05,Dispersion
+0,GROUP_TOP_3,disp.ratio_median_10,Dispersion
+0,GROUP_TOP_3,disp.ratio_median_25,Dispersion
+0,GROUP_TOP_3,ela_level.lda_qda_10,Level-set
+0,GROUP_TOP_3,ela_level.lda_qda_25,Level-set
+0,GROUP_TOP_3,ela_level.lda_qda_50,Level-set
+0,GROUP_TOP_3,ela_level.mmce_lda_10,Level-set
+0,GROUP_TOP_3,ela_level.mmce_lda_25,Level-set
+0,GROUP_TOP_3,ela_level.mmce_lda_50,Level-set
+0,GROUP_TOP_3,ela_level.mmce_qda_10,Level-set
+0,GROUP_TOP_3,ela_level.mmce_qda_25,Level-set
+0,GROUP_TOP_3,ela_level.mmce_qda_50,Level-set
+0,GROUP_TOP_3,ela_meta.lin_simple.adj_r2,Meta-model
+0,GROUP_TOP_3,ela_meta.lin_simple.coef.max,Meta-model
+0,GROUP_TOP_3,ela_meta.lin_simple.coef.max_by_min,Meta-model
+0,GROUP_TOP_3,ela_meta.lin_simple.coef.min,Meta-model
+0,GROUP_TOP_3,ela_meta.lin_simple.intercept,Meta-model
+0,GROUP_TOP_3,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,GROUP_TOP_3,ela_meta.quad_simple.adj_r2,Meta-model
+0,GROUP_TOP_3,ela_meta.quad_simple.cond,Meta-model
+0,GROUP_TOP_3,ela_meta.quad_w_interact.adj_r2,Meta-model
+0,NO_PCA,disp.diff_mean_02,Dispersion
+0,NO_PCA,disp.diff_mean_05,Dispersion
+0,NO_PCA,disp.diff_mean_10,Dispersion
+0,NO_PCA,disp.diff_mean_25,Dispersion
+0,NO_PCA,disp.diff_median_02,Dispersion
+0,NO_PCA,disp.diff_median_05,Dispersion
+0,NO_PCA,disp.diff_median_10,Dispersion
+0,NO_PCA,disp.diff_median_25,Dispersion
+0,NO_PCA,disp.ratio_mean_02,Dispersion
+0,NO_PCA,disp.ratio_mean_05,Dispersion
+0,NO_PCA,disp.ratio_mean_10,Dispersion
+0,NO_PCA,disp.ratio_mean_25,Dispersion
+0,NO_PCA,disp.ratio_median_02,Dispersion
+0,NO_PCA,disp.ratio_median_05,Dispersion
+0,NO_PCA,disp.ratio_median_10,Dispersion
+0,NO_PCA,disp.ratio_median_25,Dispersion
+0,NO_PCA,ela_distr.kurtosis,Distribution
+0,NO_PCA,ela_distr.number_of_peaks,Distribution
+0,NO_PCA,ela_distr.skewness,Distribution
+0,NO_PCA,ela_level.lda_qda_10,Level-set
+0,NO_PCA,ela_level.lda_qda_25,Level-set
+0,NO_PCA,ela_level.lda_qda_50,Level-set
+0,NO_PCA,ela_level.mmce_lda_10,Level-set
+0,NO_PCA,ela_level.mmce_lda_25,Level-set
+0,NO_PCA,ela_level.mmce_lda_50,Level-set
+0,NO_PCA,ela_level.mmce_qda_10,Level-set
+0,NO_PCA,ela_level.mmce_qda_25,Level-set
+0,NO_PCA,ela_level.mmce_qda_50,Level-set
+0,NO_PCA,ela_meta.lin_simple.adj_r2,Meta-model
+0,NO_PCA,ela_meta.lin_simple.coef.max,Meta-model
+0,NO_PCA,ela_meta.lin_simple.coef.max_by_min,Meta-model
+0,NO_PCA,ela_meta.lin_simple.coef.min,Meta-model
+0,NO_PCA,ela_meta.lin_simple.intercept,Meta-model
+0,NO_PCA,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,NO_PCA,ela_meta.quad_simple.adj_r2,Meta-model
+0,NO_PCA,ela_meta.quad_simple.cond,Meta-model
+0,NO_PCA,ela_meta.quad_w_interact.adj_r2,Meta-model
+0,NO_PCA,ic.eps_max,Info. Content
+0,NO_PCA,ic.eps_ratio,Info. Content
+0,NO_PCA,ic.eps_s,Info. Content
+0,NO_PCA,ic.h_max,Info. Content
+0,NO_PCA,ic.m0,Info. Content
+0,NO_PCA,nbc.dist_ratio.coeff_var,Nearest Better
+0,NO_PCA,nbc.nb_fitness.cor,Nearest Better
+0,NO_PCA,nbc.nn_nb.cor,Nearest Better
+0,NO_PCA,nbc.nn_nb.mean_ratio,Nearest Better
+0,NO_PCA,nbc.nn_nb.sd_ratio,Nearest Better
+0,NO_DISP,ela_distr.kurtosis,Distribution
+0,NO_DISP,ela_distr.number_of_peaks,Distribution
+0,NO_DISP,ela_distr.skewness,Distribution
+0,NO_DISP,ela_level.lda_qda_10,Level-set
+0,NO_DISP,ela_level.lda_qda_25,Level-set
+0,NO_DISP,ela_level.lda_qda_50,Level-set
+0,NO_DISP,ela_level.mmce_lda_10,Level-set
+0,NO_DISP,ela_level.mmce_lda_25,Level-set
+0,NO_DISP,ela_level.mmce_lda_50,Level-set
+0,NO_DISP,ela_level.mmce_qda_10,Level-set
+0,NO_DISP,ela_level.mmce_qda_25,Level-set
+0,NO_DISP,ela_level.mmce_qda_50,Level-set
+0,NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+0,NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+0,NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+0,NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+0,NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+0,NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+0,NO_DISP,ela_meta.quad_simple.cond,Meta-model
+0,NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+0,NO_DISP,ic.eps_max,Info. Content
+0,NO_DISP,ic.eps_ratio,Info. Content
+0,NO_DISP,ic.eps_s,Info. Content
+0,NO_DISP,ic.h_max,Info. Content
+0,NO_DISP,ic.m0,Info. Content
+0,NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+0,NO_DISP,nbc.nb_fitness.cor,Nearest Better
+0,NO_DISP,nbc.nn_nb.cor,Nearest Better
+0,NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+0,NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better
+0,NO_DISP,pca.expl_var.cor_init,PCA
+0,NO_DISP,pca.expl_var.cov_init,PCA
+0,NO_DISP,pca.expl_var_PC1.cor_init,PCA
+0,NO_DISP,pca.expl_var_PC1.cor_x,PCA
+0,NO_DISP,pca.expl_var_PC1.cov_init,PCA
+0,NO_DISP,pca.expl_var_PC1.cov_x,PCA
+0,NO_PCA_NO_DISP,ela_distr.kurtosis,Distribution
+0,NO_PCA_NO_DISP,ela_distr.number_of_peaks,Distribution
+0,NO_PCA_NO_DISP,ela_distr.skewness,Distribution
+0,NO_PCA_NO_DISP,ela_level.lda_qda_10,Level-set
+0,NO_PCA_NO_DISP,ela_level.lda_qda_25,Level-set
+0,NO_PCA_NO_DISP,ela_level.lda_qda_50,Level-set
+0,NO_PCA_NO_DISP,ela_level.mmce_lda_10,Level-set
+0,NO_PCA_NO_DISP,ela_level.mmce_lda_25,Level-set
+0,NO_PCA_NO_DISP,ela_level.mmce_lda_50,Level-set
+0,NO_PCA_NO_DISP,ela_level.mmce_qda_10,Level-set
+0,NO_PCA_NO_DISP,ela_level.mmce_qda_25,Level-set
+0,NO_PCA_NO_DISP,ela_level.mmce_qda_50,Level-set
+0,NO_PCA_NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+0,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+0,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+0,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+0,NO_PCA_NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+0,NO_PCA_NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+0,NO_PCA_NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+0,NO_PCA_NO_DISP,ela_meta.quad_simple.cond,Meta-model
+0,NO_PCA_NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+0,NO_PCA_NO_DISP,ic.eps_max,Info. Content
+0,NO_PCA_NO_DISP,ic.eps_ratio,Info. Content
+0,NO_PCA_NO_DISP,ic.eps_s,Info. Content
+0,NO_PCA_NO_DISP,ic.h_max,Info. Content
+0,NO_PCA_NO_DISP,ic.m0,Info. Content
+0,NO_PCA_NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+0,NO_PCA_NO_DISP,nbc.nb_fitness.cor,Nearest Better
+0,NO_PCA_NO_DISP,nbc.nn_nb.cor,Nearest Better
+0,NO_PCA_NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+0,NO_PCA_NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better
+1,FULL,disp.diff_mean_02,Dispersion
+1,FULL,disp.diff_mean_05,Dispersion
+1,FULL,disp.diff_mean_10,Dispersion
+1,FULL,disp.diff_mean_25,Dispersion
+1,FULL,disp.diff_median_02,Dispersion
+1,FULL,disp.diff_median_05,Dispersion
+1,FULL,disp.diff_median_10,Dispersion
+1,FULL,disp.diff_median_25,Dispersion
+1,FULL,disp.ratio_mean_02,Dispersion
+1,FULL,disp.ratio_mean_05,Dispersion
+1,FULL,disp.ratio_mean_10,Dispersion
+1,FULL,disp.ratio_mean_25,Dispersion
+1,FULL,disp.ratio_median_02,Dispersion
+1,FULL,disp.ratio_median_05,Dispersion
+1,FULL,disp.ratio_median_10,Dispersion
+1,FULL,disp.ratio_median_25,Dispersion
+1,FULL,ela_distr.kurtosis,Distribution
+1,FULL,ela_distr.number_of_peaks,Distribution
+1,FULL,ela_distr.skewness,Distribution
+1,FULL,ela_level.lda_qda_10,Level-set
+1,FULL,ela_level.lda_qda_25,Level-set
+1,FULL,ela_level.lda_qda_50,Level-set
+1,FULL,ela_level.mmce_lda_10,Level-set
+1,FULL,ela_level.mmce_lda_25,Level-set
+1,FULL,ela_level.mmce_lda_50,Level-set
+1,FULL,ela_level.mmce_qda_10,Level-set
+1,FULL,ela_level.mmce_qda_25,Level-set
+1,FULL,ela_level.mmce_qda_50,Level-set
+1,FULL,ela_meta.lin_simple.adj_r2,Meta-model
+1,FULL,ela_meta.lin_simple.coef.max,Meta-model
+1,FULL,ela_meta.lin_simple.coef.max_by_min,Meta-model
+1,FULL,ela_meta.lin_simple.coef.min,Meta-model
+1,FULL,ela_meta.lin_simple.intercept,Meta-model
+1,FULL,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,FULL,ela_meta.quad_simple.adj_r2,Meta-model
+1,FULL,ela_meta.quad_simple.cond,Meta-model
+1,FULL,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,FULL,ic.eps_max,Info. Content
+1,FULL,ic.eps_ratio,Info. Content
+1,FULL,ic.eps_s,Info. Content
+1,FULL,ic.h_max,Info. Content
+1,FULL,ic.m0,Info. Content
+1,FULL,nbc.dist_ratio.coeff_var,Nearest Better
+1,FULL,nbc.nb_fitness.cor,Nearest Better
+1,FULL,nbc.nn_nb.cor,Nearest Better
+1,FULL,nbc.nn_nb.mean_ratio,Nearest Better
+1,FULL,nbc.nn_nb.sd_ratio,Nearest Better
+1,FULL,pca.expl_var.cor_init,PCA
+1,FULL,pca.expl_var.cov_init,PCA
+1,FULL,pca.expl_var_PC1.cor_init,PCA
+1,FULL,pca.expl_var_PC1.cor_x,PCA
+1,FULL,pca.expl_var_PC1.cov_init,PCA
+1,FULL,pca.expl_var_PC1.cov_x,PCA
+1,TOP_10,disp.ratio_mean_02,Dispersion
+1,TOP_10,ela_distr.skewness,Distribution
+1,TOP_10,ela_meta.lin_simple.intercept,Meta-model
+1,TOP_10,ic.h_max,Info. Content
+1,TOP_10,ic.m0,Info. Content
+1,TOP_10,nbc.nb_fitness.cor,Nearest Better
+1,TOP_10,nbc.nn_nb.mean_ratio,Nearest Better
+1,TOP_10,nbc.nn_nb.sd_ratio,Nearest Better
+1,TOP_10,pca.expl_var.cor_init,PCA
+1,TOP_10,pca.expl_var_PC1.cor_init,PCA
+1,TOP_20,disp.diff_mean_02,Dispersion
+1,TOP_20,disp.ratio_mean_02,Dispersion
+1,TOP_20,ela_distr.skewness,Distribution
+1,TOP_20,ela_level.mmce_lda_50,Level-set
+1,TOP_20,ela_level.mmce_qda_10,Level-set
+1,TOP_20,ela_level.mmce_qda_25,Level-set
+1,TOP_20,ela_level.mmce_qda_50,Level-set
+1,TOP_20,ela_meta.lin_simple.adj_r2,Meta-model
+1,TOP_20,ela_meta.lin_simple.coef.max,Meta-model
+1,TOP_20,ela_meta.lin_simple.intercept,Meta-model
+1,TOP_20,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,TOP_20,ela_meta.quad_simple.adj_r2,Meta-model
+1,TOP_20,ic.eps_max,Info. Content
+1,TOP_20,ic.h_max,Info. Content
+1,TOP_20,ic.m0,Info. Content
+1,TOP_20,nbc.nb_fitness.cor,Nearest Better
+1,TOP_20,nbc.nn_nb.mean_ratio,Nearest Better
+1,TOP_20,nbc.nn_nb.sd_ratio,Nearest Better
+1,TOP_20,pca.expl_var.cor_init,PCA
+1,TOP_20,pca.expl_var_PC1.cor_init,PCA
+1,TOP_30,disp.diff_mean_02,Dispersion
+1,TOP_30,disp.ratio_mean_02,Dispersion
+1,TOP_30,ela_distr.kurtosis,Distribution
+1,TOP_30,ela_distr.skewness,Distribution
+1,TOP_30,ela_level.lda_qda_10,Level-set
+1,TOP_30,ela_level.lda_qda_25,Level-set
+1,TOP_30,ela_level.lda_qda_50,Level-set
+1,TOP_30,ela_level.mmce_lda_10,Level-set
+1,TOP_30,ela_level.mmce_lda_25,Level-set
+1,TOP_30,ela_level.mmce_lda_50,Level-set
+1,TOP_30,ela_level.mmce_qda_10,Level-set
+1,TOP_30,ela_level.mmce_qda_25,Level-set
+1,TOP_30,ela_level.mmce_qda_50,Level-set
+1,TOP_30,ela_meta.lin_simple.adj_r2,Meta-model
+1,TOP_30,ela_meta.lin_simple.coef.max,Meta-model
+1,TOP_30,ela_meta.lin_simple.coef.min,Meta-model
+1,TOP_30,ela_meta.lin_simple.intercept,Meta-model
+1,TOP_30,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,TOP_30,ela_meta.quad_simple.adj_r2,Meta-model
+1,TOP_30,ela_meta.quad_simple.cond,Meta-model
+1,TOP_30,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,TOP_30,ic.eps_max,Info. Content
+1,TOP_30,ic.h_max,Info. Content
+1,TOP_30,ic.m0,Info. Content
+1,TOP_30,nbc.nb_fitness.cor,Nearest Better
+1,TOP_30,nbc.nn_nb.cor,Nearest Better
+1,TOP_30,nbc.nn_nb.mean_ratio,Nearest Better
+1,TOP_30,nbc.nn_nb.sd_ratio,Nearest Better
+1,TOP_30,pca.expl_var.cor_init,PCA
+1,TOP_30,pca.expl_var_PC1.cor_init,PCA
+1,TOP_40,disp.diff_mean_02,Dispersion
+1,TOP_40,disp.diff_mean_05,Dispersion
+1,TOP_40,disp.diff_mean_10,Dispersion
+1,TOP_40,disp.diff_median_05,Dispersion
+1,TOP_40,disp.diff_median_10,Dispersion
+1,TOP_40,disp.ratio_mean_02,Dispersion
+1,TOP_40,disp.ratio_mean_05,Dispersion
+1,TOP_40,disp.ratio_mean_10,Dispersion
+1,TOP_40,disp.ratio_median_05,Dispersion
+1,TOP_40,disp.ratio_median_10,Dispersion
+1,TOP_40,ela_distr.kurtosis,Distribution
+1,TOP_40,ela_distr.number_of_peaks,Distribution
+1,TOP_40,ela_distr.skewness,Distribution
+1,TOP_40,ela_level.lda_qda_10,Level-set
+1,TOP_40,ela_level.lda_qda_25,Level-set
+1,TOP_40,ela_level.lda_qda_50,Level-set
+1,TOP_40,ela_level.mmce_lda_10,Level-set
+1,TOP_40,ela_level.mmce_lda_25,Level-set
+1,TOP_40,ela_level.mmce_lda_50,Level-set
+1,TOP_40,ela_level.mmce_qda_10,Level-set
+1,TOP_40,ela_level.mmce_qda_25,Level-set
+1,TOP_40,ela_level.mmce_qda_50,Level-set
+1,TOP_40,ela_meta.lin_simple.adj_r2,Meta-model
+1,TOP_40,ela_meta.lin_simple.coef.max,Meta-model
+1,TOP_40,ela_meta.lin_simple.coef.max_by_min,Meta-model
+1,TOP_40,ela_meta.lin_simple.coef.min,Meta-model
+1,TOP_40,ela_meta.lin_simple.intercept,Meta-model
+1,TOP_40,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,TOP_40,ela_meta.quad_simple.adj_r2,Meta-model
+1,TOP_40,ela_meta.quad_simple.cond,Meta-model
+1,TOP_40,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,TOP_40,ic.eps_max,Info. Content
+1,TOP_40,ic.h_max,Info. Content
+1,TOP_40,ic.m0,Info. Content
+1,TOP_40,nbc.nb_fitness.cor,Nearest Better
+1,TOP_40,nbc.nn_nb.cor,Nearest Better
+1,TOP_40,nbc.nn_nb.mean_ratio,Nearest Better
+1,TOP_40,nbc.nn_nb.sd_ratio,Nearest Better
+1,TOP_40,pca.expl_var.cor_init,PCA
+1,TOP_40,pca.expl_var_PC1.cor_init,PCA
+1,TOP_50,disp.diff_mean_02,Dispersion
+1,TOP_50,disp.diff_mean_05,Dispersion
+1,TOP_50,disp.diff_mean_10,Dispersion
+1,TOP_50,disp.diff_mean_25,Dispersion
+1,TOP_50,disp.diff_median_02,Dispersion
+1,TOP_50,disp.diff_median_05,Dispersion
+1,TOP_50,disp.diff_median_10,Dispersion
+1,TOP_50,disp.diff_median_25,Dispersion
+1,TOP_50,disp.ratio_mean_02,Dispersion
+1,TOP_50,disp.ratio_mean_05,Dispersion
+1,TOP_50,disp.ratio_mean_10,Dispersion
+1,TOP_50,disp.ratio_mean_25,Dispersion
+1,TOP_50,disp.ratio_median_02,Dispersion
+1,TOP_50,disp.ratio_median_05,Dispersion
+1,TOP_50,disp.ratio_median_10,Dispersion
+1,TOP_50,disp.ratio_median_25,Dispersion
+1,TOP_50,ela_distr.kurtosis,Distribution
+1,TOP_50,ela_distr.number_of_peaks,Distribution
+1,TOP_50,ela_distr.skewness,Distribution
+1,TOP_50,ela_level.lda_qda_10,Level-set
+1,TOP_50,ela_level.lda_qda_25,Level-set
+1,TOP_50,ela_level.lda_qda_50,Level-set
+1,TOP_50,ela_level.mmce_lda_10,Level-set
+1,TOP_50,ela_level.mmce_lda_25,Level-set
+1,TOP_50,ela_level.mmce_lda_50,Level-set
+1,TOP_50,ela_level.mmce_qda_10,Level-set
+1,TOP_50,ela_level.mmce_qda_25,Level-set
+1,TOP_50,ela_level.mmce_qda_50,Level-set
+1,TOP_50,ela_meta.lin_simple.adj_r2,Meta-model
+1,TOP_50,ela_meta.lin_simple.coef.max,Meta-model
+1,TOP_50,ela_meta.lin_simple.coef.max_by_min,Meta-model
+1,TOP_50,ela_meta.lin_simple.coef.min,Meta-model
+1,TOP_50,ela_meta.lin_simple.intercept,Meta-model
+1,TOP_50,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,TOP_50,ela_meta.quad_simple.adj_r2,Meta-model
+1,TOP_50,ela_meta.quad_simple.cond,Meta-model
+1,TOP_50,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,TOP_50,ic.eps_max,Info. Content
+1,TOP_50,ic.eps_s,Info. Content
+1,TOP_50,ic.h_max,Info. Content
+1,TOP_50,ic.m0,Info. Content
+1,TOP_50,nbc.dist_ratio.coeff_var,Nearest Better
+1,TOP_50,nbc.nb_fitness.cor,Nearest Better
+1,TOP_50,nbc.nn_nb.cor,Nearest Better
+1,TOP_50,nbc.nn_nb.mean_ratio,Nearest Better
+1,TOP_50,nbc.nn_nb.sd_ratio,Nearest Better
+1,TOP_50,pca.expl_var.cor_init,PCA
+1,TOP_50,pca.expl_var_PC1.cor_init,PCA
+1,TOP_50,pca.expl_var_PC1.cor_x,PCA
+1,TOP_50,pca.expl_var_PC1.cov_x,PCA
+1,POSITIVE_IMPORTANCE,disp.diff_mean_02,Dispersion
+1,POSITIVE_IMPORTANCE,disp.diff_mean_05,Dispersion
+1,POSITIVE_IMPORTANCE,disp.diff_mean_10,Dispersion
+1,POSITIVE_IMPORTANCE,disp.diff_mean_25,Dispersion
+1,POSITIVE_IMPORTANCE,disp.diff_median_02,Dispersion
+1,POSITIVE_IMPORTANCE,disp.diff_median_05,Dispersion
+1,POSITIVE_IMPORTANCE,disp.diff_median_10,Dispersion
+1,POSITIVE_IMPORTANCE,disp.diff_median_25,Dispersion
+1,POSITIVE_IMPORTANCE,disp.ratio_mean_02,Dispersion
+1,POSITIVE_IMPORTANCE,disp.ratio_mean_05,Dispersion
+1,POSITIVE_IMPORTANCE,disp.ratio_mean_10,Dispersion
+1,POSITIVE_IMPORTANCE,disp.ratio_mean_25,Dispersion
+1,POSITIVE_IMPORTANCE,disp.ratio_median_02,Dispersion
+1,POSITIVE_IMPORTANCE,disp.ratio_median_05,Dispersion
+1,POSITIVE_IMPORTANCE,disp.ratio_median_10,Dispersion
+1,POSITIVE_IMPORTANCE,disp.ratio_median_25,Dispersion
+1,POSITIVE_IMPORTANCE,ela_distr.kurtosis,Distribution
+1,POSITIVE_IMPORTANCE,ela_distr.number_of_peaks,Distribution
+1,POSITIVE_IMPORTANCE,ela_distr.skewness,Distribution
+1,POSITIVE_IMPORTANCE,ela_level.lda_qda_10,Level-set
+1,POSITIVE_IMPORTANCE,ela_level.lda_qda_25,Level-set
+1,POSITIVE_IMPORTANCE,ela_level.lda_qda_50,Level-set
+1,POSITIVE_IMPORTANCE,ela_level.mmce_lda_10,Level-set
+1,POSITIVE_IMPORTANCE,ela_level.mmce_lda_25,Level-set
+1,POSITIVE_IMPORTANCE,ela_level.mmce_lda_50,Level-set
+1,POSITIVE_IMPORTANCE,ela_level.mmce_qda_10,Level-set
+1,POSITIVE_IMPORTANCE,ela_level.mmce_qda_25,Level-set
+1,POSITIVE_IMPORTANCE,ela_level.mmce_qda_50,Level-set
+1,POSITIVE_IMPORTANCE,ela_meta.lin_simple.adj_r2,Meta-model
+1,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max,Meta-model
+1,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max_by_min,Meta-model
+1,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.min,Meta-model
+1,POSITIVE_IMPORTANCE,ela_meta.lin_simple.intercept,Meta-model
+1,POSITIVE_IMPORTANCE,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,POSITIVE_IMPORTANCE,ela_meta.quad_simple.adj_r2,Meta-model
+1,POSITIVE_IMPORTANCE,ela_meta.quad_simple.cond,Meta-model
+1,POSITIVE_IMPORTANCE,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,POSITIVE_IMPORTANCE,ic.eps_max,Info. Content
+1,POSITIVE_IMPORTANCE,ic.eps_ratio,Info. Content
+1,POSITIVE_IMPORTANCE,ic.eps_s,Info. Content
+1,POSITIVE_IMPORTANCE,ic.h_max,Info. Content
+1,POSITIVE_IMPORTANCE,ic.m0,Info. Content
+1,POSITIVE_IMPORTANCE,nbc.dist_ratio.coeff_var,Nearest Better
+1,POSITIVE_IMPORTANCE,nbc.nb_fitness.cor,Nearest Better
+1,POSITIVE_IMPORTANCE,nbc.nn_nb.cor,Nearest Better
+1,POSITIVE_IMPORTANCE,nbc.nn_nb.mean_ratio,Nearest Better
+1,POSITIVE_IMPORTANCE,nbc.nn_nb.sd_ratio,Nearest Better
+1,POSITIVE_IMPORTANCE,pca.expl_var.cor_init,PCA
+1,POSITIVE_IMPORTANCE,pca.expl_var.cov_init,PCA
+1,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_init,PCA
+1,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_x,PCA
+1,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_init,PCA
+1,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_x,PCA
+1,GROUP_TOP_1,disp.diff_mean_02,Dispersion
+1,GROUP_TOP_1,disp.diff_mean_05,Dispersion
+1,GROUP_TOP_1,disp.diff_mean_10,Dispersion
+1,GROUP_TOP_1,disp.diff_mean_25,Dispersion
+1,GROUP_TOP_1,disp.diff_median_02,Dispersion
+1,GROUP_TOP_1,disp.diff_median_05,Dispersion
+1,GROUP_TOP_1,disp.diff_median_10,Dispersion
+1,GROUP_TOP_1,disp.diff_median_25,Dispersion
+1,GROUP_TOP_1,disp.ratio_mean_02,Dispersion
+1,GROUP_TOP_1,disp.ratio_mean_05,Dispersion
+1,GROUP_TOP_1,disp.ratio_mean_10,Dispersion
+1,GROUP_TOP_1,disp.ratio_mean_25,Dispersion
+1,GROUP_TOP_1,disp.ratio_median_02,Dispersion
+1,GROUP_TOP_1,disp.ratio_median_05,Dispersion
+1,GROUP_TOP_1,disp.ratio_median_10,Dispersion
+1,GROUP_TOP_1,disp.ratio_median_25,Dispersion
+1,GROUP_TOP_2,disp.diff_mean_02,Dispersion
+1,GROUP_TOP_2,disp.diff_mean_05,Dispersion
+1,GROUP_TOP_2,disp.diff_mean_10,Dispersion
+1,GROUP_TOP_2,disp.diff_mean_25,Dispersion
+1,GROUP_TOP_2,disp.diff_median_02,Dispersion
+1,GROUP_TOP_2,disp.diff_median_05,Dispersion
+1,GROUP_TOP_2,disp.diff_median_10,Dispersion
+1,GROUP_TOP_2,disp.diff_median_25,Dispersion
+1,GROUP_TOP_2,disp.ratio_mean_02,Dispersion
+1,GROUP_TOP_2,disp.ratio_mean_05,Dispersion
+1,GROUP_TOP_2,disp.ratio_mean_10,Dispersion
+1,GROUP_TOP_2,disp.ratio_mean_25,Dispersion
+1,GROUP_TOP_2,disp.ratio_median_02,Dispersion
+1,GROUP_TOP_2,disp.ratio_median_05,Dispersion
+1,GROUP_TOP_2,disp.ratio_median_10,Dispersion
+1,GROUP_TOP_2,disp.ratio_median_25,Dispersion
+1,GROUP_TOP_2,ela_meta.lin_simple.adj_r2,Meta-model
+1,GROUP_TOP_2,ela_meta.lin_simple.coef.max,Meta-model
+1,GROUP_TOP_2,ela_meta.lin_simple.coef.max_by_min,Meta-model
+1,GROUP_TOP_2,ela_meta.lin_simple.coef.min,Meta-model
+1,GROUP_TOP_2,ela_meta.lin_simple.intercept,Meta-model
+1,GROUP_TOP_2,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,GROUP_TOP_2,ela_meta.quad_simple.adj_r2,Meta-model
+1,GROUP_TOP_2,ela_meta.quad_simple.cond,Meta-model
+1,GROUP_TOP_2,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,GROUP_TOP_3,disp.diff_mean_02,Dispersion
+1,GROUP_TOP_3,disp.diff_mean_05,Dispersion
+1,GROUP_TOP_3,disp.diff_mean_10,Dispersion
+1,GROUP_TOP_3,disp.diff_mean_25,Dispersion
+1,GROUP_TOP_3,disp.diff_median_02,Dispersion
+1,GROUP_TOP_3,disp.diff_median_05,Dispersion
+1,GROUP_TOP_3,disp.diff_median_10,Dispersion
+1,GROUP_TOP_3,disp.diff_median_25,Dispersion
+1,GROUP_TOP_3,disp.ratio_mean_02,Dispersion
+1,GROUP_TOP_3,disp.ratio_mean_05,Dispersion
+1,GROUP_TOP_3,disp.ratio_mean_10,Dispersion
+1,GROUP_TOP_3,disp.ratio_mean_25,Dispersion
+1,GROUP_TOP_3,disp.ratio_median_02,Dispersion
+1,GROUP_TOP_3,disp.ratio_median_05,Dispersion
+1,GROUP_TOP_3,disp.ratio_median_10,Dispersion
+1,GROUP_TOP_3,disp.ratio_median_25,Dispersion
+1,GROUP_TOP_3,ela_level.lda_qda_10,Level-set
+1,GROUP_TOP_3,ela_level.lda_qda_25,Level-set
+1,GROUP_TOP_3,ela_level.lda_qda_50,Level-set
+1,GROUP_TOP_3,ela_level.mmce_lda_10,Level-set
+1,GROUP_TOP_3,ela_level.mmce_lda_25,Level-set
+1,GROUP_TOP_3,ela_level.mmce_lda_50,Level-set
+1,GROUP_TOP_3,ela_level.mmce_qda_10,Level-set
+1,GROUP_TOP_3,ela_level.mmce_qda_25,Level-set
+1,GROUP_TOP_3,ela_level.mmce_qda_50,Level-set
+1,GROUP_TOP_3,ela_meta.lin_simple.adj_r2,Meta-model
+1,GROUP_TOP_3,ela_meta.lin_simple.coef.max,Meta-model
+1,GROUP_TOP_3,ela_meta.lin_simple.coef.max_by_min,Meta-model
+1,GROUP_TOP_3,ela_meta.lin_simple.coef.min,Meta-model
+1,GROUP_TOP_3,ela_meta.lin_simple.intercept,Meta-model
+1,GROUP_TOP_3,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,GROUP_TOP_3,ela_meta.quad_simple.adj_r2,Meta-model
+1,GROUP_TOP_3,ela_meta.quad_simple.cond,Meta-model
+1,GROUP_TOP_3,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,NO_PCA,disp.diff_mean_02,Dispersion
+1,NO_PCA,disp.diff_mean_05,Dispersion
+1,NO_PCA,disp.diff_mean_10,Dispersion
+1,NO_PCA,disp.diff_mean_25,Dispersion
+1,NO_PCA,disp.diff_median_02,Dispersion
+1,NO_PCA,disp.diff_median_05,Dispersion
+1,NO_PCA,disp.diff_median_10,Dispersion
+1,NO_PCA,disp.diff_median_25,Dispersion
+1,NO_PCA,disp.ratio_mean_02,Dispersion
+1,NO_PCA,disp.ratio_mean_05,Dispersion
+1,NO_PCA,disp.ratio_mean_10,Dispersion
+1,NO_PCA,disp.ratio_mean_25,Dispersion
+1,NO_PCA,disp.ratio_median_02,Dispersion
+1,NO_PCA,disp.ratio_median_05,Dispersion
+1,NO_PCA,disp.ratio_median_10,Dispersion
+1,NO_PCA,disp.ratio_median_25,Dispersion
+1,NO_PCA,ela_distr.kurtosis,Distribution
+1,NO_PCA,ela_distr.number_of_peaks,Distribution
+1,NO_PCA,ela_distr.skewness,Distribution
+1,NO_PCA,ela_level.lda_qda_10,Level-set
+1,NO_PCA,ela_level.lda_qda_25,Level-set
+1,NO_PCA,ela_level.lda_qda_50,Level-set
+1,NO_PCA,ela_level.mmce_lda_10,Level-set
+1,NO_PCA,ela_level.mmce_lda_25,Level-set
+1,NO_PCA,ela_level.mmce_lda_50,Level-set
+1,NO_PCA,ela_level.mmce_qda_10,Level-set
+1,NO_PCA,ela_level.mmce_qda_25,Level-set
+1,NO_PCA,ela_level.mmce_qda_50,Level-set
+1,NO_PCA,ela_meta.lin_simple.adj_r2,Meta-model
+1,NO_PCA,ela_meta.lin_simple.coef.max,Meta-model
+1,NO_PCA,ela_meta.lin_simple.coef.max_by_min,Meta-model
+1,NO_PCA,ela_meta.lin_simple.coef.min,Meta-model
+1,NO_PCA,ela_meta.lin_simple.intercept,Meta-model
+1,NO_PCA,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,NO_PCA,ela_meta.quad_simple.adj_r2,Meta-model
+1,NO_PCA,ela_meta.quad_simple.cond,Meta-model
+1,NO_PCA,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,NO_PCA,ic.eps_max,Info. Content
+1,NO_PCA,ic.eps_ratio,Info. Content
+1,NO_PCA,ic.eps_s,Info. Content
+1,NO_PCA,ic.h_max,Info. Content
+1,NO_PCA,ic.m0,Info. Content
+1,NO_PCA,nbc.dist_ratio.coeff_var,Nearest Better
+1,NO_PCA,nbc.nb_fitness.cor,Nearest Better
+1,NO_PCA,nbc.nn_nb.cor,Nearest Better
+1,NO_PCA,nbc.nn_nb.mean_ratio,Nearest Better
+1,NO_PCA,nbc.nn_nb.sd_ratio,Nearest Better
+1,NO_DISP,ela_distr.kurtosis,Distribution
+1,NO_DISP,ela_distr.number_of_peaks,Distribution
+1,NO_DISP,ela_distr.skewness,Distribution
+1,NO_DISP,ela_level.lda_qda_10,Level-set
+1,NO_DISP,ela_level.lda_qda_25,Level-set
+1,NO_DISP,ela_level.lda_qda_50,Level-set
+1,NO_DISP,ela_level.mmce_lda_10,Level-set
+1,NO_DISP,ela_level.mmce_lda_25,Level-set
+1,NO_DISP,ela_level.mmce_lda_50,Level-set
+1,NO_DISP,ela_level.mmce_qda_10,Level-set
+1,NO_DISP,ela_level.mmce_qda_25,Level-set
+1,NO_DISP,ela_level.mmce_qda_50,Level-set
+1,NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+1,NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+1,NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+1,NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+1,NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+1,NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+1,NO_DISP,ela_meta.quad_simple.cond,Meta-model
+1,NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,NO_DISP,ic.eps_max,Info. Content
+1,NO_DISP,ic.eps_ratio,Info. Content
+1,NO_DISP,ic.eps_s,Info. Content
+1,NO_DISP,ic.h_max,Info. Content
+1,NO_DISP,ic.m0,Info. Content
+1,NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+1,NO_DISP,nbc.nb_fitness.cor,Nearest Better
+1,NO_DISP,nbc.nn_nb.cor,Nearest Better
+1,NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+1,NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better
+1,NO_DISP,pca.expl_var.cor_init,PCA
+1,NO_DISP,pca.expl_var.cov_init,PCA
+1,NO_DISP,pca.expl_var_PC1.cor_init,PCA
+1,NO_DISP,pca.expl_var_PC1.cor_x,PCA
+1,NO_DISP,pca.expl_var_PC1.cov_init,PCA
+1,NO_DISP,pca.expl_var_PC1.cov_x,PCA
+1,NO_PCA_NO_DISP,ela_distr.kurtosis,Distribution
+1,NO_PCA_NO_DISP,ela_distr.number_of_peaks,Distribution
+1,NO_PCA_NO_DISP,ela_distr.skewness,Distribution
+1,NO_PCA_NO_DISP,ela_level.lda_qda_10,Level-set
+1,NO_PCA_NO_DISP,ela_level.lda_qda_25,Level-set
+1,NO_PCA_NO_DISP,ela_level.lda_qda_50,Level-set
+1,NO_PCA_NO_DISP,ela_level.mmce_lda_10,Level-set
+1,NO_PCA_NO_DISP,ela_level.mmce_lda_25,Level-set
+1,NO_PCA_NO_DISP,ela_level.mmce_lda_50,Level-set
+1,NO_PCA_NO_DISP,ela_level.mmce_qda_10,Level-set
+1,NO_PCA_NO_DISP,ela_level.mmce_qda_25,Level-set
+1,NO_PCA_NO_DISP,ela_level.mmce_qda_50,Level-set
+1,NO_PCA_NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+1,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+1,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+1,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+1,NO_PCA_NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+1,NO_PCA_NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+1,NO_PCA_NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+1,NO_PCA_NO_DISP,ela_meta.quad_simple.cond,Meta-model
+1,NO_PCA_NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+1,NO_PCA_NO_DISP,ic.eps_max,Info. Content
+1,NO_PCA_NO_DISP,ic.eps_ratio,Info. Content
+1,NO_PCA_NO_DISP,ic.eps_s,Info. Content
+1,NO_PCA_NO_DISP,ic.h_max,Info. Content
+1,NO_PCA_NO_DISP,ic.m0,Info. Content
+1,NO_PCA_NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+1,NO_PCA_NO_DISP,nbc.nb_fitness.cor,Nearest Better
+1,NO_PCA_NO_DISP,nbc.nn_nb.cor,Nearest Better
+1,NO_PCA_NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+1,NO_PCA_NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better
+2,FULL,disp.diff_mean_02,Dispersion
+2,FULL,disp.diff_mean_05,Dispersion
+2,FULL,disp.diff_mean_10,Dispersion
+2,FULL,disp.diff_mean_25,Dispersion
+2,FULL,disp.diff_median_02,Dispersion
+2,FULL,disp.diff_median_05,Dispersion
+2,FULL,disp.diff_median_10,Dispersion
+2,FULL,disp.diff_median_25,Dispersion
+2,FULL,disp.ratio_mean_02,Dispersion
+2,FULL,disp.ratio_mean_05,Dispersion
+2,FULL,disp.ratio_mean_10,Dispersion
+2,FULL,disp.ratio_mean_25,Dispersion
+2,FULL,disp.ratio_median_02,Dispersion
+2,FULL,disp.ratio_median_05,Dispersion
+2,FULL,disp.ratio_median_10,Dispersion
+2,FULL,disp.ratio_median_25,Dispersion
+2,FULL,ela_distr.kurtosis,Distribution
+2,FULL,ela_distr.number_of_peaks,Distribution
+2,FULL,ela_distr.skewness,Distribution
+2,FULL,ela_level.lda_qda_10,Level-set
+2,FULL,ela_level.lda_qda_25,Level-set
+2,FULL,ela_level.lda_qda_50,Level-set
+2,FULL,ela_level.mmce_lda_10,Level-set
+2,FULL,ela_level.mmce_lda_25,Level-set
+2,FULL,ela_level.mmce_lda_50,Level-set
+2,FULL,ela_level.mmce_qda_10,Level-set
+2,FULL,ela_level.mmce_qda_25,Level-set
+2,FULL,ela_level.mmce_qda_50,Level-set
+2,FULL,ela_meta.lin_simple.adj_r2,Meta-model
+2,FULL,ela_meta.lin_simple.coef.max,Meta-model
+2,FULL,ela_meta.lin_simple.coef.max_by_min,Meta-model
+2,FULL,ela_meta.lin_simple.coef.min,Meta-model
+2,FULL,ela_meta.lin_simple.intercept,Meta-model
+2,FULL,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,FULL,ela_meta.quad_simple.adj_r2,Meta-model
+2,FULL,ela_meta.quad_simple.cond,Meta-model
+2,FULL,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,FULL,ic.eps_max,Info. Content
+2,FULL,ic.eps_ratio,Info. Content
+2,FULL,ic.eps_s,Info. Content
+2,FULL,ic.h_max,Info. Content
+2,FULL,ic.m0,Info. Content
+2,FULL,nbc.dist_ratio.coeff_var,Nearest Better
+2,FULL,nbc.nb_fitness.cor,Nearest Better
+2,FULL,nbc.nn_nb.cor,Nearest Better
+2,FULL,nbc.nn_nb.mean_ratio,Nearest Better
+2,FULL,nbc.nn_nb.sd_ratio,Nearest Better
+2,FULL,pca.expl_var.cor_init,PCA
+2,FULL,pca.expl_var.cov_init,PCA
+2,FULL,pca.expl_var_PC1.cor_init,PCA
+2,FULL,pca.expl_var_PC1.cor_x,PCA
+2,FULL,pca.expl_var_PC1.cov_init,PCA
+2,FULL,pca.expl_var_PC1.cov_x,PCA
+2,TOP_10,disp.ratio_mean_02,Dispersion
+2,TOP_10,ela_distr.skewness,Distribution
+2,TOP_10,ela_meta.lin_simple.intercept,Meta-model
+2,TOP_10,ic.h_max,Info. Content
+2,TOP_10,ic.m0,Info. Content
+2,TOP_10,nbc.nb_fitness.cor,Nearest Better
+2,TOP_10,nbc.nn_nb.mean_ratio,Nearest Better
+2,TOP_10,nbc.nn_nb.sd_ratio,Nearest Better
+2,TOP_10,pca.expl_var.cor_init,PCA
+2,TOP_10,pca.expl_var_PC1.cor_init,PCA
+2,TOP_20,disp.diff_mean_02,Dispersion
+2,TOP_20,disp.ratio_mean_02,Dispersion
+2,TOP_20,ela_distr.skewness,Distribution
+2,TOP_20,ela_level.lda_qda_10,Level-set
+2,TOP_20,ela_level.mmce_lda_50,Level-set
+2,TOP_20,ela_level.mmce_qda_10,Level-set
+2,TOP_20,ela_level.mmce_qda_25,Level-set
+2,TOP_20,ela_level.mmce_qda_50,Level-set
+2,TOP_20,ela_meta.lin_simple.adj_r2,Meta-model
+2,TOP_20,ela_meta.lin_simple.intercept,Meta-model
+2,TOP_20,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,TOP_20,ela_meta.quad_simple.adj_r2,Meta-model
+2,TOP_20,ic.eps_max,Info. Content
+2,TOP_20,ic.h_max,Info. Content
+2,TOP_20,ic.m0,Info. Content
+2,TOP_20,nbc.nb_fitness.cor,Nearest Better
+2,TOP_20,nbc.nn_nb.mean_ratio,Nearest Better
+2,TOP_20,nbc.nn_nb.sd_ratio,Nearest Better
+2,TOP_20,pca.expl_var.cor_init,PCA
+2,TOP_20,pca.expl_var_PC1.cor_init,PCA
+2,TOP_30,disp.diff_mean_02,Dispersion
+2,TOP_30,disp.ratio_mean_02,Dispersion
+2,TOP_30,ela_distr.kurtosis,Distribution
+2,TOP_30,ela_distr.skewness,Distribution
+2,TOP_30,ela_level.lda_qda_10,Level-set
+2,TOP_30,ela_level.lda_qda_25,Level-set
+2,TOP_30,ela_level.lda_qda_50,Level-set
+2,TOP_30,ela_level.mmce_lda_10,Level-set
+2,TOP_30,ela_level.mmce_lda_25,Level-set
+2,TOP_30,ela_level.mmce_lda_50,Level-set
+2,TOP_30,ela_level.mmce_qda_10,Level-set
+2,TOP_30,ela_level.mmce_qda_25,Level-set
+2,TOP_30,ela_level.mmce_qda_50,Level-set
+2,TOP_30,ela_meta.lin_simple.adj_r2,Meta-model
+2,TOP_30,ela_meta.lin_simple.coef.max,Meta-model
+2,TOP_30,ela_meta.lin_simple.coef.min,Meta-model
+2,TOP_30,ela_meta.lin_simple.intercept,Meta-model
+2,TOP_30,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,TOP_30,ela_meta.quad_simple.adj_r2,Meta-model
+2,TOP_30,ela_meta.quad_simple.cond,Meta-model
+2,TOP_30,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,TOP_30,ic.eps_max,Info. Content
+2,TOP_30,ic.h_max,Info. Content
+2,TOP_30,ic.m0,Info. Content
+2,TOP_30,nbc.nb_fitness.cor,Nearest Better
+2,TOP_30,nbc.nn_nb.cor,Nearest Better
+2,TOP_30,nbc.nn_nb.mean_ratio,Nearest Better
+2,TOP_30,nbc.nn_nb.sd_ratio,Nearest Better
+2,TOP_30,pca.expl_var.cor_init,PCA
+2,TOP_30,pca.expl_var_PC1.cor_init,PCA
+2,TOP_40,disp.diff_mean_02,Dispersion
+2,TOP_40,disp.diff_mean_05,Dispersion
+2,TOP_40,disp.diff_mean_10,Dispersion
+2,TOP_40,disp.diff_median_02,Dispersion
+2,TOP_40,disp.diff_median_05,Dispersion
+2,TOP_40,disp.ratio_mean_02,Dispersion
+2,TOP_40,disp.ratio_mean_05,Dispersion
+2,TOP_40,disp.ratio_mean_10,Dispersion
+2,TOP_40,disp.ratio_median_02,Dispersion
+2,TOP_40,disp.ratio_median_05,Dispersion
+2,TOP_40,ela_distr.kurtosis,Distribution
+2,TOP_40,ela_distr.number_of_peaks,Distribution
+2,TOP_40,ela_distr.skewness,Distribution
+2,TOP_40,ela_level.lda_qda_10,Level-set
+2,TOP_40,ela_level.lda_qda_25,Level-set
+2,TOP_40,ela_level.lda_qda_50,Level-set
+2,TOP_40,ela_level.mmce_lda_10,Level-set
+2,TOP_40,ela_level.mmce_lda_25,Level-set
+2,TOP_40,ela_level.mmce_lda_50,Level-set
+2,TOP_40,ela_level.mmce_qda_10,Level-set
+2,TOP_40,ela_level.mmce_qda_25,Level-set
+2,TOP_40,ela_level.mmce_qda_50,Level-set
+2,TOP_40,ela_meta.lin_simple.adj_r2,Meta-model
+2,TOP_40,ela_meta.lin_simple.coef.max,Meta-model
+2,TOP_40,ela_meta.lin_simple.coef.max_by_min,Meta-model
+2,TOP_40,ela_meta.lin_simple.coef.min,Meta-model
+2,TOP_40,ela_meta.lin_simple.intercept,Meta-model
+2,TOP_40,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,TOP_40,ela_meta.quad_simple.adj_r2,Meta-model
+2,TOP_40,ela_meta.quad_simple.cond,Meta-model
+2,TOP_40,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,TOP_40,ic.eps_max,Info. Content
+2,TOP_40,ic.h_max,Info. Content
+2,TOP_40,ic.m0,Info. Content
+2,TOP_40,nbc.nb_fitness.cor,Nearest Better
+2,TOP_40,nbc.nn_nb.cor,Nearest Better
+2,TOP_40,nbc.nn_nb.mean_ratio,Nearest Better
+2,TOP_40,nbc.nn_nb.sd_ratio,Nearest Better
+2,TOP_40,pca.expl_var.cor_init,PCA
+2,TOP_40,pca.expl_var_PC1.cor_init,PCA
+2,TOP_50,disp.diff_mean_02,Dispersion
+2,TOP_50,disp.diff_mean_05,Dispersion
+2,TOP_50,disp.diff_mean_10,Dispersion
+2,TOP_50,disp.diff_mean_25,Dispersion
+2,TOP_50,disp.diff_median_02,Dispersion
+2,TOP_50,disp.diff_median_05,Dispersion
+2,TOP_50,disp.diff_median_10,Dispersion
+2,TOP_50,disp.diff_median_25,Dispersion
+2,TOP_50,disp.ratio_mean_02,Dispersion
+2,TOP_50,disp.ratio_mean_05,Dispersion
+2,TOP_50,disp.ratio_mean_10,Dispersion
+2,TOP_50,disp.ratio_mean_25,Dispersion
+2,TOP_50,disp.ratio_median_02,Dispersion
+2,TOP_50,disp.ratio_median_05,Dispersion
+2,TOP_50,disp.ratio_median_10,Dispersion
+2,TOP_50,disp.ratio_median_25,Dispersion
+2,TOP_50,ela_distr.kurtosis,Distribution
+2,TOP_50,ela_distr.number_of_peaks,Distribution
+2,TOP_50,ela_distr.skewness,Distribution
+2,TOP_50,ela_level.lda_qda_10,Level-set
+2,TOP_50,ela_level.lda_qda_25,Level-set
+2,TOP_50,ela_level.lda_qda_50,Level-set
+2,TOP_50,ela_level.mmce_lda_10,Level-set
+2,TOP_50,ela_level.mmce_lda_25,Level-set
+2,TOP_50,ela_level.mmce_lda_50,Level-set
+2,TOP_50,ela_level.mmce_qda_10,Level-set
+2,TOP_50,ela_level.mmce_qda_25,Level-set
+2,TOP_50,ela_level.mmce_qda_50,Level-set
+2,TOP_50,ela_meta.lin_simple.adj_r2,Meta-model
+2,TOP_50,ela_meta.lin_simple.coef.max,Meta-model
+2,TOP_50,ela_meta.lin_simple.coef.max_by_min,Meta-model
+2,TOP_50,ela_meta.lin_simple.coef.min,Meta-model
+2,TOP_50,ela_meta.lin_simple.intercept,Meta-model
+2,TOP_50,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,TOP_50,ela_meta.quad_simple.adj_r2,Meta-model
+2,TOP_50,ela_meta.quad_simple.cond,Meta-model
+2,TOP_50,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,TOP_50,ic.eps_max,Info. Content
+2,TOP_50,ic.eps_ratio,Info. Content
+2,TOP_50,ic.eps_s,Info. Content
+2,TOP_50,ic.h_max,Info. Content
+2,TOP_50,ic.m0,Info. Content
+2,TOP_50,nbc.dist_ratio.coeff_var,Nearest Better
+2,TOP_50,nbc.nb_fitness.cor,Nearest Better
+2,TOP_50,nbc.nn_nb.cor,Nearest Better
+2,TOP_50,nbc.nn_nb.mean_ratio,Nearest Better
+2,TOP_50,nbc.nn_nb.sd_ratio,Nearest Better
+2,TOP_50,pca.expl_var.cor_init,PCA
+2,TOP_50,pca.expl_var_PC1.cor_init,PCA
+2,TOP_50,pca.expl_var_PC1.cor_x,PCA
+2,POSITIVE_IMPORTANCE,disp.diff_mean_02,Dispersion
+2,POSITIVE_IMPORTANCE,disp.diff_mean_05,Dispersion
+2,POSITIVE_IMPORTANCE,disp.diff_mean_10,Dispersion
+2,POSITIVE_IMPORTANCE,disp.diff_mean_25,Dispersion
+2,POSITIVE_IMPORTANCE,disp.diff_median_02,Dispersion
+2,POSITIVE_IMPORTANCE,disp.diff_median_05,Dispersion
+2,POSITIVE_IMPORTANCE,disp.diff_median_10,Dispersion
+2,POSITIVE_IMPORTANCE,disp.diff_median_25,Dispersion
+2,POSITIVE_IMPORTANCE,disp.ratio_mean_02,Dispersion
+2,POSITIVE_IMPORTANCE,disp.ratio_mean_05,Dispersion
+2,POSITIVE_IMPORTANCE,disp.ratio_mean_10,Dispersion
+2,POSITIVE_IMPORTANCE,disp.ratio_mean_25,Dispersion
+2,POSITIVE_IMPORTANCE,disp.ratio_median_02,Dispersion
+2,POSITIVE_IMPORTANCE,disp.ratio_median_05,Dispersion
+2,POSITIVE_IMPORTANCE,disp.ratio_median_10,Dispersion
+2,POSITIVE_IMPORTANCE,disp.ratio_median_25,Dispersion
+2,POSITIVE_IMPORTANCE,ela_distr.kurtosis,Distribution
+2,POSITIVE_IMPORTANCE,ela_distr.number_of_peaks,Distribution
+2,POSITIVE_IMPORTANCE,ela_distr.skewness,Distribution
+2,POSITIVE_IMPORTANCE,ela_level.lda_qda_10,Level-set
+2,POSITIVE_IMPORTANCE,ela_level.lda_qda_25,Level-set
+2,POSITIVE_IMPORTANCE,ela_level.lda_qda_50,Level-set
+2,POSITIVE_IMPORTANCE,ela_level.mmce_lda_10,Level-set
+2,POSITIVE_IMPORTANCE,ela_level.mmce_lda_25,Level-set
+2,POSITIVE_IMPORTANCE,ela_level.mmce_lda_50,Level-set
+2,POSITIVE_IMPORTANCE,ela_level.mmce_qda_10,Level-set
+2,POSITIVE_IMPORTANCE,ela_level.mmce_qda_25,Level-set
+2,POSITIVE_IMPORTANCE,ela_level.mmce_qda_50,Level-set
+2,POSITIVE_IMPORTANCE,ela_meta.lin_simple.adj_r2,Meta-model
+2,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max,Meta-model
+2,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max_by_min,Meta-model
+2,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.min,Meta-model
+2,POSITIVE_IMPORTANCE,ela_meta.lin_simple.intercept,Meta-model
+2,POSITIVE_IMPORTANCE,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,POSITIVE_IMPORTANCE,ela_meta.quad_simple.adj_r2,Meta-model
+2,POSITIVE_IMPORTANCE,ela_meta.quad_simple.cond,Meta-model
+2,POSITIVE_IMPORTANCE,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,POSITIVE_IMPORTANCE,ic.eps_max,Info. Content
+2,POSITIVE_IMPORTANCE,ic.eps_ratio,Info. Content
+2,POSITIVE_IMPORTANCE,ic.eps_s,Info. Content
+2,POSITIVE_IMPORTANCE,ic.h_max,Info. Content
+2,POSITIVE_IMPORTANCE,ic.m0,Info. Content
+2,POSITIVE_IMPORTANCE,nbc.dist_ratio.coeff_var,Nearest Better
+2,POSITIVE_IMPORTANCE,nbc.nb_fitness.cor,Nearest Better
+2,POSITIVE_IMPORTANCE,nbc.nn_nb.cor,Nearest Better
+2,POSITIVE_IMPORTANCE,nbc.nn_nb.mean_ratio,Nearest Better
+2,POSITIVE_IMPORTANCE,nbc.nn_nb.sd_ratio,Nearest Better
+2,POSITIVE_IMPORTANCE,pca.expl_var.cor_init,PCA
+2,POSITIVE_IMPORTANCE,pca.expl_var.cov_init,PCA
+2,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_init,PCA
+2,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_x,PCA
+2,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_init,PCA
+2,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_x,PCA
+2,GROUP_TOP_1,disp.diff_mean_02,Dispersion
+2,GROUP_TOP_1,disp.diff_mean_05,Dispersion
+2,GROUP_TOP_1,disp.diff_mean_10,Dispersion
+2,GROUP_TOP_1,disp.diff_mean_25,Dispersion
+2,GROUP_TOP_1,disp.diff_median_02,Dispersion
+2,GROUP_TOP_1,disp.diff_median_05,Dispersion
+2,GROUP_TOP_1,disp.diff_median_10,Dispersion
+2,GROUP_TOP_1,disp.diff_median_25,Dispersion
+2,GROUP_TOP_1,disp.ratio_mean_02,Dispersion
+2,GROUP_TOP_1,disp.ratio_mean_05,Dispersion
+2,GROUP_TOP_1,disp.ratio_mean_10,Dispersion
+2,GROUP_TOP_1,disp.ratio_mean_25,Dispersion
+2,GROUP_TOP_1,disp.ratio_median_02,Dispersion
+2,GROUP_TOP_1,disp.ratio_median_05,Dispersion
+2,GROUP_TOP_1,disp.ratio_median_10,Dispersion
+2,GROUP_TOP_1,disp.ratio_median_25,Dispersion
+2,GROUP_TOP_2,disp.diff_mean_02,Dispersion
+2,GROUP_TOP_2,disp.diff_mean_05,Dispersion
+2,GROUP_TOP_2,disp.diff_mean_10,Dispersion
+2,GROUP_TOP_2,disp.diff_mean_25,Dispersion
+2,GROUP_TOP_2,disp.diff_median_02,Dispersion
+2,GROUP_TOP_2,disp.diff_median_05,Dispersion
+2,GROUP_TOP_2,disp.diff_median_10,Dispersion
+2,GROUP_TOP_2,disp.diff_median_25,Dispersion
+2,GROUP_TOP_2,disp.ratio_mean_02,Dispersion
+2,GROUP_TOP_2,disp.ratio_mean_05,Dispersion
+2,GROUP_TOP_2,disp.ratio_mean_10,Dispersion
+2,GROUP_TOP_2,disp.ratio_mean_25,Dispersion
+2,GROUP_TOP_2,disp.ratio_median_02,Dispersion
+2,GROUP_TOP_2,disp.ratio_median_05,Dispersion
+2,GROUP_TOP_2,disp.ratio_median_10,Dispersion
+2,GROUP_TOP_2,disp.ratio_median_25,Dispersion
+2,GROUP_TOP_2,ela_meta.lin_simple.adj_r2,Meta-model
+2,GROUP_TOP_2,ela_meta.lin_simple.coef.max,Meta-model
+2,GROUP_TOP_2,ela_meta.lin_simple.coef.max_by_min,Meta-model
+2,GROUP_TOP_2,ela_meta.lin_simple.coef.min,Meta-model
+2,GROUP_TOP_2,ela_meta.lin_simple.intercept,Meta-model
+2,GROUP_TOP_2,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,GROUP_TOP_2,ela_meta.quad_simple.adj_r2,Meta-model
+2,GROUP_TOP_2,ela_meta.quad_simple.cond,Meta-model
+2,GROUP_TOP_2,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,GROUP_TOP_3,disp.diff_mean_02,Dispersion
+2,GROUP_TOP_3,disp.diff_mean_05,Dispersion
+2,GROUP_TOP_3,disp.diff_mean_10,Dispersion
+2,GROUP_TOP_3,disp.diff_mean_25,Dispersion
+2,GROUP_TOP_3,disp.diff_median_02,Dispersion
+2,GROUP_TOP_3,disp.diff_median_05,Dispersion
+2,GROUP_TOP_3,disp.diff_median_10,Dispersion
+2,GROUP_TOP_3,disp.diff_median_25,Dispersion
+2,GROUP_TOP_3,disp.ratio_mean_02,Dispersion
+2,GROUP_TOP_3,disp.ratio_mean_05,Dispersion
+2,GROUP_TOP_3,disp.ratio_mean_10,Dispersion
+2,GROUP_TOP_3,disp.ratio_mean_25,Dispersion
+2,GROUP_TOP_3,disp.ratio_median_02,Dispersion
+2,GROUP_TOP_3,disp.ratio_median_05,Dispersion
+2,GROUP_TOP_3,disp.ratio_median_10,Dispersion
+2,GROUP_TOP_3,disp.ratio_median_25,Dispersion
+2,GROUP_TOP_3,ela_level.lda_qda_10,Level-set
+2,GROUP_TOP_3,ela_level.lda_qda_25,Level-set
+2,GROUP_TOP_3,ela_level.lda_qda_50,Level-set
+2,GROUP_TOP_3,ela_level.mmce_lda_10,Level-set
+2,GROUP_TOP_3,ela_level.mmce_lda_25,Level-set
+2,GROUP_TOP_3,ela_level.mmce_lda_50,Level-set
+2,GROUP_TOP_3,ela_level.mmce_qda_10,Level-set
+2,GROUP_TOP_3,ela_level.mmce_qda_25,Level-set
+2,GROUP_TOP_3,ela_level.mmce_qda_50,Level-set
+2,GROUP_TOP_3,ela_meta.lin_simple.adj_r2,Meta-model
+2,GROUP_TOP_3,ela_meta.lin_simple.coef.max,Meta-model
+2,GROUP_TOP_3,ela_meta.lin_simple.coef.max_by_min,Meta-model
+2,GROUP_TOP_3,ela_meta.lin_simple.coef.min,Meta-model
+2,GROUP_TOP_3,ela_meta.lin_simple.intercept,Meta-model
+2,GROUP_TOP_3,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,GROUP_TOP_3,ela_meta.quad_simple.adj_r2,Meta-model
+2,GROUP_TOP_3,ela_meta.quad_simple.cond,Meta-model
+2,GROUP_TOP_3,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,NO_PCA,disp.diff_mean_02,Dispersion
+2,NO_PCA,disp.diff_mean_05,Dispersion
+2,NO_PCA,disp.diff_mean_10,Dispersion
+2,NO_PCA,disp.diff_mean_25,Dispersion
+2,NO_PCA,disp.diff_median_02,Dispersion
+2,NO_PCA,disp.diff_median_05,Dispersion
+2,NO_PCA,disp.diff_median_10,Dispersion
+2,NO_PCA,disp.diff_median_25,Dispersion
+2,NO_PCA,disp.ratio_mean_02,Dispersion
+2,NO_PCA,disp.ratio_mean_05,Dispersion
+2,NO_PCA,disp.ratio_mean_10,Dispersion
+2,NO_PCA,disp.ratio_mean_25,Dispersion
+2,NO_PCA,disp.ratio_median_02,Dispersion
+2,NO_PCA,disp.ratio_median_05,Dispersion
+2,NO_PCA,disp.ratio_median_10,Dispersion
+2,NO_PCA,disp.ratio_median_25,Dispersion
+2,NO_PCA,ela_distr.kurtosis,Distribution
+2,NO_PCA,ela_distr.number_of_peaks,Distribution
+2,NO_PCA,ela_distr.skewness,Distribution
+2,NO_PCA,ela_level.lda_qda_10,Level-set
+2,NO_PCA,ela_level.lda_qda_25,Level-set
+2,NO_PCA,ela_level.lda_qda_50,Level-set
+2,NO_PCA,ela_level.mmce_lda_10,Level-set
+2,NO_PCA,ela_level.mmce_lda_25,Level-set
+2,NO_PCA,ela_level.mmce_lda_50,Level-set
+2,NO_PCA,ela_level.mmce_qda_10,Level-set
+2,NO_PCA,ela_level.mmce_qda_25,Level-set
+2,NO_PCA,ela_level.mmce_qda_50,Level-set
+2,NO_PCA,ela_meta.lin_simple.adj_r2,Meta-model
+2,NO_PCA,ela_meta.lin_simple.coef.max,Meta-model
+2,NO_PCA,ela_meta.lin_simple.coef.max_by_min,Meta-model
+2,NO_PCA,ela_meta.lin_simple.coef.min,Meta-model
+2,NO_PCA,ela_meta.lin_simple.intercept,Meta-model
+2,NO_PCA,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,NO_PCA,ela_meta.quad_simple.adj_r2,Meta-model
+2,NO_PCA,ela_meta.quad_simple.cond,Meta-model
+2,NO_PCA,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,NO_PCA,ic.eps_max,Info. Content
+2,NO_PCA,ic.eps_ratio,Info. Content
+2,NO_PCA,ic.eps_s,Info. Content
+2,NO_PCA,ic.h_max,Info. Content
+2,NO_PCA,ic.m0,Info. Content
+2,NO_PCA,nbc.dist_ratio.coeff_var,Nearest Better
+2,NO_PCA,nbc.nb_fitness.cor,Nearest Better
+2,NO_PCA,nbc.nn_nb.cor,Nearest Better
+2,NO_PCA,nbc.nn_nb.mean_ratio,Nearest Better
+2,NO_PCA,nbc.nn_nb.sd_ratio,Nearest Better
+2,NO_DISP,ela_distr.kurtosis,Distribution
+2,NO_DISP,ela_distr.number_of_peaks,Distribution
+2,NO_DISP,ela_distr.skewness,Distribution
+2,NO_DISP,ela_level.lda_qda_10,Level-set
+2,NO_DISP,ela_level.lda_qda_25,Level-set
+2,NO_DISP,ela_level.lda_qda_50,Level-set
+2,NO_DISP,ela_level.mmce_lda_10,Level-set
+2,NO_DISP,ela_level.mmce_lda_25,Level-set
+2,NO_DISP,ela_level.mmce_lda_50,Level-set
+2,NO_DISP,ela_level.mmce_qda_10,Level-set
+2,NO_DISP,ela_level.mmce_qda_25,Level-set
+2,NO_DISP,ela_level.mmce_qda_50,Level-set
+2,NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+2,NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+2,NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+2,NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+2,NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+2,NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+2,NO_DISP,ela_meta.quad_simple.cond,Meta-model
+2,NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,NO_DISP,ic.eps_max,Info. Content
+2,NO_DISP,ic.eps_ratio,Info. Content
+2,NO_DISP,ic.eps_s,Info. Content
+2,NO_DISP,ic.h_max,Info. Content
+2,NO_DISP,ic.m0,Info. Content
+2,NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+2,NO_DISP,nbc.nb_fitness.cor,Nearest Better
+2,NO_DISP,nbc.nn_nb.cor,Nearest Better
+2,NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+2,NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better
+2,NO_DISP,pca.expl_var.cor_init,PCA
+2,NO_DISP,pca.expl_var.cov_init,PCA
+2,NO_DISP,pca.expl_var_PC1.cor_init,PCA
+2,NO_DISP,pca.expl_var_PC1.cor_x,PCA
+2,NO_DISP,pca.expl_var_PC1.cov_init,PCA
+2,NO_DISP,pca.expl_var_PC1.cov_x,PCA
+2,NO_PCA_NO_DISP,ela_distr.kurtosis,Distribution
+2,NO_PCA_NO_DISP,ela_distr.number_of_peaks,Distribution
+2,NO_PCA_NO_DISP,ela_distr.skewness,Distribution
+2,NO_PCA_NO_DISP,ela_level.lda_qda_10,Level-set
+2,NO_PCA_NO_DISP,ela_level.lda_qda_25,Level-set
+2,NO_PCA_NO_DISP,ela_level.lda_qda_50,Level-set
+2,NO_PCA_NO_DISP,ela_level.mmce_lda_10,Level-set
+2,NO_PCA_NO_DISP,ela_level.mmce_lda_25,Level-set
+2,NO_PCA_NO_DISP,ela_level.mmce_lda_50,Level-set
+2,NO_PCA_NO_DISP,ela_level.mmce_qda_10,Level-set
+2,NO_PCA_NO_DISP,ela_level.mmce_qda_25,Level-set
+2,NO_PCA_NO_DISP,ela_level.mmce_qda_50,Level-set
+2,NO_PCA_NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+2,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+2,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+2,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+2,NO_PCA_NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+2,NO_PCA_NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+2,NO_PCA_NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+2,NO_PCA_NO_DISP,ela_meta.quad_simple.cond,Meta-model
+2,NO_PCA_NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+2,NO_PCA_NO_DISP,ic.eps_max,Info. Content
+2,NO_PCA_NO_DISP,ic.eps_ratio,Info. Content
+2,NO_PCA_NO_DISP,ic.eps_s,Info. Content
+2,NO_PCA_NO_DISP,ic.h_max,Info. Content
+2,NO_PCA_NO_DISP,ic.m0,Info. Content
+2,NO_PCA_NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+2,NO_PCA_NO_DISP,nbc.nb_fitness.cor,Nearest Better
+2,NO_PCA_NO_DISP,nbc.nn_nb.cor,Nearest Better
+2,NO_PCA_NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+2,NO_PCA_NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better
+3,FULL,disp.diff_mean_02,Dispersion
+3,FULL,disp.diff_mean_05,Dispersion
+3,FULL,disp.diff_mean_10,Dispersion
+3,FULL,disp.diff_mean_25,Dispersion
+3,FULL,disp.diff_median_02,Dispersion
+3,FULL,disp.diff_median_05,Dispersion
+3,FULL,disp.diff_median_10,Dispersion
+3,FULL,disp.diff_median_25,Dispersion
+3,FULL,disp.ratio_mean_02,Dispersion
+3,FULL,disp.ratio_mean_05,Dispersion
+3,FULL,disp.ratio_mean_10,Dispersion
+3,FULL,disp.ratio_mean_25,Dispersion
+3,FULL,disp.ratio_median_02,Dispersion
+3,FULL,disp.ratio_median_05,Dispersion
+3,FULL,disp.ratio_median_10,Dispersion
+3,FULL,disp.ratio_median_25,Dispersion
+3,FULL,ela_distr.kurtosis,Distribution
+3,FULL,ela_distr.number_of_peaks,Distribution
+3,FULL,ela_distr.skewness,Distribution
+3,FULL,ela_level.lda_qda_10,Level-set
+3,FULL,ela_level.lda_qda_25,Level-set
+3,FULL,ela_level.lda_qda_50,Level-set
+3,FULL,ela_level.mmce_lda_10,Level-set
+3,FULL,ela_level.mmce_lda_25,Level-set
+3,FULL,ela_level.mmce_lda_50,Level-set
+3,FULL,ela_level.mmce_qda_10,Level-set
+3,FULL,ela_level.mmce_qda_25,Level-set
+3,FULL,ela_level.mmce_qda_50,Level-set
+3,FULL,ela_meta.lin_simple.adj_r2,Meta-model
+3,FULL,ela_meta.lin_simple.coef.max,Meta-model
+3,FULL,ela_meta.lin_simple.coef.max_by_min,Meta-model
+3,FULL,ela_meta.lin_simple.coef.min,Meta-model
+3,FULL,ela_meta.lin_simple.intercept,Meta-model
+3,FULL,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,FULL,ela_meta.quad_simple.adj_r2,Meta-model
+3,FULL,ela_meta.quad_simple.cond,Meta-model
+3,FULL,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,FULL,ic.eps_max,Info. Content
+3,FULL,ic.eps_ratio,Info. Content
+3,FULL,ic.eps_s,Info. Content
+3,FULL,ic.h_max,Info. Content
+3,FULL,ic.m0,Info. Content
+3,FULL,nbc.dist_ratio.coeff_var,Nearest Better
+3,FULL,nbc.nb_fitness.cor,Nearest Better
+3,FULL,nbc.nn_nb.cor,Nearest Better
+3,FULL,nbc.nn_nb.mean_ratio,Nearest Better
+3,FULL,nbc.nn_nb.sd_ratio,Nearest Better
+3,FULL,pca.expl_var.cor_init,PCA
+3,FULL,pca.expl_var.cov_init,PCA
+3,FULL,pca.expl_var_PC1.cor_init,PCA
+3,FULL,pca.expl_var_PC1.cor_x,PCA
+3,FULL,pca.expl_var_PC1.cov_init,PCA
+3,FULL,pca.expl_var_PC1.cov_x,PCA
+3,TOP_10,disp.ratio_mean_02,Dispersion
+3,TOP_10,ela_meta.lin_simple.intercept,Meta-model
+3,TOP_10,ic.eps_max,Info. Content
+3,TOP_10,ic.h_max,Info. Content
+3,TOP_10,ic.m0,Info. Content
+3,TOP_10,nbc.nb_fitness.cor,Nearest Better
+3,TOP_10,nbc.nn_nb.mean_ratio,Nearest Better
+3,TOP_10,nbc.nn_nb.sd_ratio,Nearest Better
+3,TOP_10,pca.expl_var.cor_init,PCA
+3,TOP_10,pca.expl_var_PC1.cor_init,PCA
+3,TOP_20,disp.diff_mean_02,Dispersion
+3,TOP_20,disp.ratio_mean_02,Dispersion
+3,TOP_20,ela_distr.skewness,Distribution
+3,TOP_20,ela_level.lda_qda_50,Level-set
+3,TOP_20,ela_level.mmce_lda_50,Level-set
+3,TOP_20,ela_level.mmce_qda_50,Level-set
+3,TOP_20,ela_meta.lin_simple.adj_r2,Meta-model
+3,TOP_20,ela_meta.lin_simple.coef.max,Meta-model
+3,TOP_20,ela_meta.lin_simple.intercept,Meta-model
+3,TOP_20,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,TOP_20,ela_meta.quad_simple.adj_r2,Meta-model
+3,TOP_20,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,TOP_20,ic.eps_max,Info. Content
+3,TOP_20,ic.h_max,Info. Content
+3,TOP_20,ic.m0,Info. Content
+3,TOP_20,nbc.nb_fitness.cor,Nearest Better
+3,TOP_20,nbc.nn_nb.mean_ratio,Nearest Better
+3,TOP_20,nbc.nn_nb.sd_ratio,Nearest Better
+3,TOP_20,pca.expl_var.cor_init,PCA
+3,TOP_20,pca.expl_var_PC1.cor_init,PCA
+3,TOP_30,disp.diff_mean_02,Dispersion
+3,TOP_30,disp.ratio_mean_02,Dispersion
+3,TOP_30,ela_distr.kurtosis,Distribution
+3,TOP_30,ela_distr.skewness,Distribution
+3,TOP_30,ela_level.lda_qda_10,Level-set
+3,TOP_30,ela_level.lda_qda_25,Level-set
+3,TOP_30,ela_level.lda_qda_50,Level-set
+3,TOP_30,ela_level.mmce_lda_25,Level-set
+3,TOP_30,ela_level.mmce_lda_50,Level-set
+3,TOP_30,ela_level.mmce_qda_10,Level-set
+3,TOP_30,ela_level.mmce_qda_25,Level-set
+3,TOP_30,ela_level.mmce_qda_50,Level-set
+3,TOP_30,ela_meta.lin_simple.adj_r2,Meta-model
+3,TOP_30,ela_meta.lin_simple.coef.max,Meta-model
+3,TOP_30,ela_meta.lin_simple.coef.max_by_min,Meta-model
+3,TOP_30,ela_meta.lin_simple.coef.min,Meta-model
+3,TOP_30,ela_meta.lin_simple.intercept,Meta-model
+3,TOP_30,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,TOP_30,ela_meta.quad_simple.adj_r2,Meta-model
+3,TOP_30,ela_meta.quad_simple.cond,Meta-model
+3,TOP_30,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,TOP_30,ic.eps_max,Info. Content
+3,TOP_30,ic.h_max,Info. Content
+3,TOP_30,ic.m0,Info. Content
+3,TOP_30,nbc.nb_fitness.cor,Nearest Better
+3,TOP_30,nbc.nn_nb.cor,Nearest Better
+3,TOP_30,nbc.nn_nb.mean_ratio,Nearest Better
+3,TOP_30,nbc.nn_nb.sd_ratio,Nearest Better
+3,TOP_30,pca.expl_var.cor_init,PCA
+3,TOP_30,pca.expl_var_PC1.cor_init,PCA
+3,TOP_40,disp.diff_mean_02,Dispersion
+3,TOP_40,disp.diff_mean_05,Dispersion
+3,TOP_40,disp.diff_mean_10,Dispersion
+3,TOP_40,disp.diff_median_05,Dispersion
+3,TOP_40,disp.diff_median_10,Dispersion
+3,TOP_40,disp.ratio_mean_02,Dispersion
+3,TOP_40,disp.ratio_mean_05,Dispersion
+3,TOP_40,disp.ratio_mean_10,Dispersion
+3,TOP_40,disp.ratio_mean_25,Dispersion
+3,TOP_40,disp.ratio_median_02,Dispersion
+3,TOP_40,disp.ratio_median_05,Dispersion
+3,TOP_40,ela_distr.kurtosis,Distribution
+3,TOP_40,ela_distr.number_of_peaks,Distribution
+3,TOP_40,ela_distr.skewness,Distribution
+3,TOP_40,ela_level.lda_qda_10,Level-set
+3,TOP_40,ela_level.lda_qda_25,Level-set
+3,TOP_40,ela_level.lda_qda_50,Level-set
+3,TOP_40,ela_level.mmce_lda_25,Level-set
+3,TOP_40,ela_level.mmce_lda_50,Level-set
+3,TOP_40,ela_level.mmce_qda_10,Level-set
+3,TOP_40,ela_level.mmce_qda_25,Level-set
+3,TOP_40,ela_level.mmce_qda_50,Level-set
+3,TOP_40,ela_meta.lin_simple.adj_r2,Meta-model
+3,TOP_40,ela_meta.lin_simple.coef.max,Meta-model
+3,TOP_40,ela_meta.lin_simple.coef.max_by_min,Meta-model
+3,TOP_40,ela_meta.lin_simple.coef.min,Meta-model
+3,TOP_40,ela_meta.lin_simple.intercept,Meta-model
+3,TOP_40,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,TOP_40,ela_meta.quad_simple.adj_r2,Meta-model
+3,TOP_40,ela_meta.quad_simple.cond,Meta-model
+3,TOP_40,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,TOP_40,ic.eps_max,Info. Content
+3,TOP_40,ic.h_max,Info. Content
+3,TOP_40,ic.m0,Info. Content
+3,TOP_40,nbc.nb_fitness.cor,Nearest Better
+3,TOP_40,nbc.nn_nb.cor,Nearest Better
+3,TOP_40,nbc.nn_nb.mean_ratio,Nearest Better
+3,TOP_40,nbc.nn_nb.sd_ratio,Nearest Better
+3,TOP_40,pca.expl_var.cor_init,PCA
+3,TOP_40,pca.expl_var_PC1.cor_init,PCA
+3,TOP_50,disp.diff_mean_02,Dispersion
+3,TOP_50,disp.diff_mean_05,Dispersion
+3,TOP_50,disp.diff_mean_10,Dispersion
+3,TOP_50,disp.diff_mean_25,Dispersion
+3,TOP_50,disp.diff_median_02,Dispersion
+3,TOP_50,disp.diff_median_05,Dispersion
+3,TOP_50,disp.diff_median_10,Dispersion
+3,TOP_50,disp.diff_median_25,Dispersion
+3,TOP_50,disp.ratio_mean_02,Dispersion
+3,TOP_50,disp.ratio_mean_05,Dispersion
+3,TOP_50,disp.ratio_mean_10,Dispersion
+3,TOP_50,disp.ratio_mean_25,Dispersion
+3,TOP_50,disp.ratio_median_02,Dispersion
+3,TOP_50,disp.ratio_median_05,Dispersion
+3,TOP_50,disp.ratio_median_10,Dispersion
+3,TOP_50,disp.ratio_median_25,Dispersion
+3,TOP_50,ela_distr.kurtosis,Distribution
+3,TOP_50,ela_distr.number_of_peaks,Distribution
+3,TOP_50,ela_distr.skewness,Distribution
+3,TOP_50,ela_level.lda_qda_10,Level-set
+3,TOP_50,ela_level.lda_qda_25,Level-set
+3,TOP_50,ela_level.lda_qda_50,Level-set
+3,TOP_50,ela_level.mmce_lda_10,Level-set
+3,TOP_50,ela_level.mmce_lda_25,Level-set
+3,TOP_50,ela_level.mmce_lda_50,Level-set
+3,TOP_50,ela_level.mmce_qda_10,Level-set
+3,TOP_50,ela_level.mmce_qda_25,Level-set
+3,TOP_50,ela_level.mmce_qda_50,Level-set
+3,TOP_50,ela_meta.lin_simple.adj_r2,Meta-model
+3,TOP_50,ela_meta.lin_simple.coef.max,Meta-model
+3,TOP_50,ela_meta.lin_simple.coef.max_by_min,Meta-model
+3,TOP_50,ela_meta.lin_simple.coef.min,Meta-model
+3,TOP_50,ela_meta.lin_simple.intercept,Meta-model
+3,TOP_50,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,TOP_50,ela_meta.quad_simple.adj_r2,Meta-model
+3,TOP_50,ela_meta.quad_simple.cond,Meta-model
+3,TOP_50,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,TOP_50,ic.eps_max,Info. Content
+3,TOP_50,ic.eps_ratio,Info. Content
+3,TOP_50,ic.eps_s,Info. Content
+3,TOP_50,ic.h_max,Info. Content
+3,TOP_50,ic.m0,Info. Content
+3,TOP_50,nbc.dist_ratio.coeff_var,Nearest Better
+3,TOP_50,nbc.nb_fitness.cor,Nearest Better
+3,TOP_50,nbc.nn_nb.cor,Nearest Better
+3,TOP_50,nbc.nn_nb.mean_ratio,Nearest Better
+3,TOP_50,nbc.nn_nb.sd_ratio,Nearest Better
+3,TOP_50,pca.expl_var.cor_init,PCA
+3,TOP_50,pca.expl_var_PC1.cor_init,PCA
+3,TOP_50,pca.expl_var_PC1.cov_init,PCA
+3,POSITIVE_IMPORTANCE,disp.diff_mean_02,Dispersion
+3,POSITIVE_IMPORTANCE,disp.diff_mean_05,Dispersion
+3,POSITIVE_IMPORTANCE,disp.diff_mean_10,Dispersion
+3,POSITIVE_IMPORTANCE,disp.diff_mean_25,Dispersion
+3,POSITIVE_IMPORTANCE,disp.diff_median_02,Dispersion
+3,POSITIVE_IMPORTANCE,disp.diff_median_05,Dispersion
+3,POSITIVE_IMPORTANCE,disp.diff_median_10,Dispersion
+3,POSITIVE_IMPORTANCE,disp.diff_median_25,Dispersion
+3,POSITIVE_IMPORTANCE,disp.ratio_mean_02,Dispersion
+3,POSITIVE_IMPORTANCE,disp.ratio_mean_05,Dispersion
+3,POSITIVE_IMPORTANCE,disp.ratio_mean_10,Dispersion
+3,POSITIVE_IMPORTANCE,disp.ratio_mean_25,Dispersion
+3,POSITIVE_IMPORTANCE,disp.ratio_median_02,Dispersion
+3,POSITIVE_IMPORTANCE,disp.ratio_median_05,Dispersion
+3,POSITIVE_IMPORTANCE,disp.ratio_median_10,Dispersion
+3,POSITIVE_IMPORTANCE,disp.ratio_median_25,Dispersion
+3,POSITIVE_IMPORTANCE,ela_distr.kurtosis,Distribution
+3,POSITIVE_IMPORTANCE,ela_distr.number_of_peaks,Distribution
+3,POSITIVE_IMPORTANCE,ela_distr.skewness,Distribution
+3,POSITIVE_IMPORTANCE,ela_level.lda_qda_10,Level-set
+3,POSITIVE_IMPORTANCE,ela_level.lda_qda_25,Level-set
+3,POSITIVE_IMPORTANCE,ela_level.lda_qda_50,Level-set
+3,POSITIVE_IMPORTANCE,ela_level.mmce_lda_10,Level-set
+3,POSITIVE_IMPORTANCE,ela_level.mmce_lda_25,Level-set
+3,POSITIVE_IMPORTANCE,ela_level.mmce_lda_50,Level-set
+3,POSITIVE_IMPORTANCE,ela_level.mmce_qda_10,Level-set
+3,POSITIVE_IMPORTANCE,ela_level.mmce_qda_25,Level-set
+3,POSITIVE_IMPORTANCE,ela_level.mmce_qda_50,Level-set
+3,POSITIVE_IMPORTANCE,ela_meta.lin_simple.adj_r2,Meta-model
+3,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max,Meta-model
+3,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max_by_min,Meta-model
+3,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.min,Meta-model
+3,POSITIVE_IMPORTANCE,ela_meta.lin_simple.intercept,Meta-model
+3,POSITIVE_IMPORTANCE,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,POSITIVE_IMPORTANCE,ela_meta.quad_simple.adj_r2,Meta-model
+3,POSITIVE_IMPORTANCE,ela_meta.quad_simple.cond,Meta-model
+3,POSITIVE_IMPORTANCE,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,POSITIVE_IMPORTANCE,ic.eps_max,Info. Content
+3,POSITIVE_IMPORTANCE,ic.eps_ratio,Info. Content
+3,POSITIVE_IMPORTANCE,ic.eps_s,Info. Content
+3,POSITIVE_IMPORTANCE,ic.h_max,Info. Content
+3,POSITIVE_IMPORTANCE,ic.m0,Info. Content
+3,POSITIVE_IMPORTANCE,nbc.dist_ratio.coeff_var,Nearest Better
+3,POSITIVE_IMPORTANCE,nbc.nb_fitness.cor,Nearest Better
+3,POSITIVE_IMPORTANCE,nbc.nn_nb.cor,Nearest Better
+3,POSITIVE_IMPORTANCE,nbc.nn_nb.mean_ratio,Nearest Better
+3,POSITIVE_IMPORTANCE,nbc.nn_nb.sd_ratio,Nearest Better
+3,POSITIVE_IMPORTANCE,pca.expl_var.cor_init,PCA
+3,POSITIVE_IMPORTANCE,pca.expl_var.cov_init,PCA
+3,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_init,PCA
+3,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_x,PCA
+3,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_init,PCA
+3,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_x,PCA
+3,GROUP_TOP_1,disp.diff_mean_02,Dispersion
+3,GROUP_TOP_1,disp.diff_mean_05,Dispersion
+3,GROUP_TOP_1,disp.diff_mean_10,Dispersion
+3,GROUP_TOP_1,disp.diff_mean_25,Dispersion
+3,GROUP_TOP_1,disp.diff_median_02,Dispersion
+3,GROUP_TOP_1,disp.diff_median_05,Dispersion
+3,GROUP_TOP_1,disp.diff_median_10,Dispersion
+3,GROUP_TOP_1,disp.diff_median_25,Dispersion
+3,GROUP_TOP_1,disp.ratio_mean_02,Dispersion
+3,GROUP_TOP_1,disp.ratio_mean_05,Dispersion
+3,GROUP_TOP_1,disp.ratio_mean_10,Dispersion
+3,GROUP_TOP_1,disp.ratio_mean_25,Dispersion
+3,GROUP_TOP_1,disp.ratio_median_02,Dispersion
+3,GROUP_TOP_1,disp.ratio_median_05,Dispersion
+3,GROUP_TOP_1,disp.ratio_median_10,Dispersion
+3,GROUP_TOP_1,disp.ratio_median_25,Dispersion
+3,GROUP_TOP_2,disp.diff_mean_02,Dispersion
+3,GROUP_TOP_2,disp.diff_mean_05,Dispersion
+3,GROUP_TOP_2,disp.diff_mean_10,Dispersion
+3,GROUP_TOP_2,disp.diff_mean_25,Dispersion
+3,GROUP_TOP_2,disp.diff_median_02,Dispersion
+3,GROUP_TOP_2,disp.diff_median_05,Dispersion
+3,GROUP_TOP_2,disp.diff_median_10,Dispersion
+3,GROUP_TOP_2,disp.diff_median_25,Dispersion
+3,GROUP_TOP_2,disp.ratio_mean_02,Dispersion
+3,GROUP_TOP_2,disp.ratio_mean_05,Dispersion
+3,GROUP_TOP_2,disp.ratio_mean_10,Dispersion
+3,GROUP_TOP_2,disp.ratio_mean_25,Dispersion
+3,GROUP_TOP_2,disp.ratio_median_02,Dispersion
+3,GROUP_TOP_2,disp.ratio_median_05,Dispersion
+3,GROUP_TOP_2,disp.ratio_median_10,Dispersion
+3,GROUP_TOP_2,disp.ratio_median_25,Dispersion
+3,GROUP_TOP_2,nbc.dist_ratio.coeff_var,Nearest Better
+3,GROUP_TOP_2,nbc.nb_fitness.cor,Nearest Better
+3,GROUP_TOP_2,nbc.nn_nb.cor,Nearest Better
+3,GROUP_TOP_2,nbc.nn_nb.mean_ratio,Nearest Better
+3,GROUP_TOP_2,nbc.nn_nb.sd_ratio,Nearest Better
+3,GROUP_TOP_3,disp.diff_mean_02,Dispersion
+3,GROUP_TOP_3,disp.diff_mean_05,Dispersion
+3,GROUP_TOP_3,disp.diff_mean_10,Dispersion
+3,GROUP_TOP_3,disp.diff_mean_25,Dispersion
+3,GROUP_TOP_3,disp.diff_median_02,Dispersion
+3,GROUP_TOP_3,disp.diff_median_05,Dispersion
+3,GROUP_TOP_3,disp.diff_median_10,Dispersion
+3,GROUP_TOP_3,disp.diff_median_25,Dispersion
+3,GROUP_TOP_3,disp.ratio_mean_02,Dispersion
+3,GROUP_TOP_3,disp.ratio_mean_05,Dispersion
+3,GROUP_TOP_3,disp.ratio_mean_10,Dispersion
+3,GROUP_TOP_3,disp.ratio_mean_25,Dispersion
+3,GROUP_TOP_3,disp.ratio_median_02,Dispersion
+3,GROUP_TOP_3,disp.ratio_median_05,Dispersion
+3,GROUP_TOP_3,disp.ratio_median_10,Dispersion
+3,GROUP_TOP_3,disp.ratio_median_25,Dispersion
+3,GROUP_TOP_3,ela_meta.lin_simple.adj_r2,Meta-model
+3,GROUP_TOP_3,ela_meta.lin_simple.coef.max,Meta-model
+3,GROUP_TOP_3,ela_meta.lin_simple.coef.max_by_min,Meta-model
+3,GROUP_TOP_3,ela_meta.lin_simple.coef.min,Meta-model
+3,GROUP_TOP_3,ela_meta.lin_simple.intercept,Meta-model
+3,GROUP_TOP_3,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,GROUP_TOP_3,ela_meta.quad_simple.adj_r2,Meta-model
+3,GROUP_TOP_3,ela_meta.quad_simple.cond,Meta-model
+3,GROUP_TOP_3,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,GROUP_TOP_3,nbc.dist_ratio.coeff_var,Nearest Better
+3,GROUP_TOP_3,nbc.nb_fitness.cor,Nearest Better
+3,GROUP_TOP_3,nbc.nn_nb.cor,Nearest Better
+3,GROUP_TOP_3,nbc.nn_nb.mean_ratio,Nearest Better
+3,GROUP_TOP_3,nbc.nn_nb.sd_ratio,Nearest Better
+3,NO_PCA,disp.diff_mean_02,Dispersion
+3,NO_PCA,disp.diff_mean_05,Dispersion
+3,NO_PCA,disp.diff_mean_10,Dispersion
+3,NO_PCA,disp.diff_mean_25,Dispersion
+3,NO_PCA,disp.diff_median_02,Dispersion
+3,NO_PCA,disp.diff_median_05,Dispersion
+3,NO_PCA,disp.diff_median_10,Dispersion
+3,NO_PCA,disp.diff_median_25,Dispersion
+3,NO_PCA,disp.ratio_mean_02,Dispersion
+3,NO_PCA,disp.ratio_mean_05,Dispersion
+3,NO_PCA,disp.ratio_mean_10,Dispersion
+3,NO_PCA,disp.ratio_mean_25,Dispersion
+3,NO_PCA,disp.ratio_median_02,Dispersion
+3,NO_PCA,disp.ratio_median_05,Dispersion
+3,NO_PCA,disp.ratio_median_10,Dispersion
+3,NO_PCA,disp.ratio_median_25,Dispersion
+3,NO_PCA,ela_distr.kurtosis,Distribution
+3,NO_PCA,ela_distr.number_of_peaks,Distribution
+3,NO_PCA,ela_distr.skewness,Distribution
+3,NO_PCA,ela_level.lda_qda_10,Level-set
+3,NO_PCA,ela_level.lda_qda_25,Level-set
+3,NO_PCA,ela_level.lda_qda_50,Level-set
+3,NO_PCA,ela_level.mmce_lda_10,Level-set
+3,NO_PCA,ela_level.mmce_lda_25,Level-set
+3,NO_PCA,ela_level.mmce_lda_50,Level-set
+3,NO_PCA,ela_level.mmce_qda_10,Level-set
+3,NO_PCA,ela_level.mmce_qda_25,Level-set
+3,NO_PCA,ela_level.mmce_qda_50,Level-set
+3,NO_PCA,ela_meta.lin_simple.adj_r2,Meta-model
+3,NO_PCA,ela_meta.lin_simple.coef.max,Meta-model
+3,NO_PCA,ela_meta.lin_simple.coef.max_by_min,Meta-model
+3,NO_PCA,ela_meta.lin_simple.coef.min,Meta-model
+3,NO_PCA,ela_meta.lin_simple.intercept,Meta-model
+3,NO_PCA,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,NO_PCA,ela_meta.quad_simple.adj_r2,Meta-model
+3,NO_PCA,ela_meta.quad_simple.cond,Meta-model
+3,NO_PCA,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,NO_PCA,ic.eps_max,Info. Content
+3,NO_PCA,ic.eps_ratio,Info. Content
+3,NO_PCA,ic.eps_s,Info. Content
+3,NO_PCA,ic.h_max,Info. Content
+3,NO_PCA,ic.m0,Info. Content
+3,NO_PCA,nbc.dist_ratio.coeff_var,Nearest Better
+3,NO_PCA,nbc.nb_fitness.cor,Nearest Better
+3,NO_PCA,nbc.nn_nb.cor,Nearest Better
+3,NO_PCA,nbc.nn_nb.mean_ratio,Nearest Better
+3,NO_PCA,nbc.nn_nb.sd_ratio,Nearest Better
+3,NO_DISP,ela_distr.kurtosis,Distribution
+3,NO_DISP,ela_distr.number_of_peaks,Distribution
+3,NO_DISP,ela_distr.skewness,Distribution
+3,NO_DISP,ela_level.lda_qda_10,Level-set
+3,NO_DISP,ela_level.lda_qda_25,Level-set
+3,NO_DISP,ela_level.lda_qda_50,Level-set
+3,NO_DISP,ela_level.mmce_lda_10,Level-set
+3,NO_DISP,ela_level.mmce_lda_25,Level-set
+3,NO_DISP,ela_level.mmce_lda_50,Level-set
+3,NO_DISP,ela_level.mmce_qda_10,Level-set
+3,NO_DISP,ela_level.mmce_qda_25,Level-set
+3,NO_DISP,ela_level.mmce_qda_50,Level-set
+3,NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+3,NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+3,NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+3,NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+3,NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+3,NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+3,NO_DISP,ela_meta.quad_simple.cond,Meta-model
+3,NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,NO_DISP,ic.eps_max,Info. Content
+3,NO_DISP,ic.eps_ratio,Info. Content
+3,NO_DISP,ic.eps_s,Info. Content
+3,NO_DISP,ic.h_max,Info. Content
+3,NO_DISP,ic.m0,Info. Content
+3,NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+3,NO_DISP,nbc.nb_fitness.cor,Nearest Better
+3,NO_DISP,nbc.nn_nb.cor,Nearest Better
+3,NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+3,NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better
+3,NO_DISP,pca.expl_var.cor_init,PCA
+3,NO_DISP,pca.expl_var.cov_init,PCA
+3,NO_DISP,pca.expl_var_PC1.cor_init,PCA
+3,NO_DISP,pca.expl_var_PC1.cor_x,PCA
+3,NO_DISP,pca.expl_var_PC1.cov_init,PCA
+3,NO_DISP,pca.expl_var_PC1.cov_x,PCA
+3,NO_PCA_NO_DISP,ela_distr.kurtosis,Distribution
+3,NO_PCA_NO_DISP,ela_distr.number_of_peaks,Distribution
+3,NO_PCA_NO_DISP,ela_distr.skewness,Distribution
+3,NO_PCA_NO_DISP,ela_level.lda_qda_10,Level-set
+3,NO_PCA_NO_DISP,ela_level.lda_qda_25,Level-set
+3,NO_PCA_NO_DISP,ela_level.lda_qda_50,Level-set
+3,NO_PCA_NO_DISP,ela_level.mmce_lda_10,Level-set
+3,NO_PCA_NO_DISP,ela_level.mmce_lda_25,Level-set
+3,NO_PCA_NO_DISP,ela_level.mmce_lda_50,Level-set
+3,NO_PCA_NO_DISP,ela_level.mmce_qda_10,Level-set
+3,NO_PCA_NO_DISP,ela_level.mmce_qda_25,Level-set
+3,NO_PCA_NO_DISP,ela_level.mmce_qda_50,Level-set
+3,NO_PCA_NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+3,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+3,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+3,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+3,NO_PCA_NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+3,NO_PCA_NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+3,NO_PCA_NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+3,NO_PCA_NO_DISP,ela_meta.quad_simple.cond,Meta-model
+3,NO_PCA_NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+3,NO_PCA_NO_DISP,ic.eps_max,Info. Content
+3,NO_PCA_NO_DISP,ic.eps_ratio,Info. Content
+3,NO_PCA_NO_DISP,ic.eps_s,Info. Content
+3,NO_PCA_NO_DISP,ic.h_max,Info. Content
+3,NO_PCA_NO_DISP,ic.m0,Info. Content
+3,NO_PCA_NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+3,NO_PCA_NO_DISP,nbc.nb_fitness.cor,Nearest Better
+3,NO_PCA_NO_DISP,nbc.nn_nb.cor,Nearest Better
+3,NO_PCA_NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+3,NO_PCA_NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better
+4,FULL,disp.diff_mean_02,Dispersion
+4,FULL,disp.diff_mean_05,Dispersion
+4,FULL,disp.diff_mean_10,Dispersion
+4,FULL,disp.diff_mean_25,Dispersion
+4,FULL,disp.diff_median_02,Dispersion
+4,FULL,disp.diff_median_05,Dispersion
+4,FULL,disp.diff_median_10,Dispersion
+4,FULL,disp.diff_median_25,Dispersion
+4,FULL,disp.ratio_mean_02,Dispersion
+4,FULL,disp.ratio_mean_05,Dispersion
+4,FULL,disp.ratio_mean_10,Dispersion
+4,FULL,disp.ratio_mean_25,Dispersion
+4,FULL,disp.ratio_median_02,Dispersion
+4,FULL,disp.ratio_median_05,Dispersion
+4,FULL,disp.ratio_median_10,Dispersion
+4,FULL,disp.ratio_median_25,Dispersion
+4,FULL,ela_distr.kurtosis,Distribution
+4,FULL,ela_distr.number_of_peaks,Distribution
+4,FULL,ela_distr.skewness,Distribution
+4,FULL,ela_level.lda_qda_10,Level-set
+4,FULL,ela_level.lda_qda_25,Level-set
+4,FULL,ela_level.lda_qda_50,Level-set
+4,FULL,ela_level.mmce_lda_10,Level-set
+4,FULL,ela_level.mmce_lda_25,Level-set
+4,FULL,ela_level.mmce_lda_50,Level-set
+4,FULL,ela_level.mmce_qda_10,Level-set
+4,FULL,ela_level.mmce_qda_25,Level-set
+4,FULL,ela_level.mmce_qda_50,Level-set
+4,FULL,ela_meta.lin_simple.adj_r2,Meta-model
+4,FULL,ela_meta.lin_simple.coef.max,Meta-model
+4,FULL,ela_meta.lin_simple.coef.max_by_min,Meta-model
+4,FULL,ela_meta.lin_simple.coef.min,Meta-model
+4,FULL,ela_meta.lin_simple.intercept,Meta-model
+4,FULL,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,FULL,ela_meta.quad_simple.adj_r2,Meta-model
+4,FULL,ela_meta.quad_simple.cond,Meta-model
+4,FULL,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,FULL,ic.eps_max,Info. Content
+4,FULL,ic.eps_ratio,Info. Content
+4,FULL,ic.eps_s,Info. Content
+4,FULL,ic.h_max,Info. Content
+4,FULL,ic.m0,Info. Content
+4,FULL,nbc.dist_ratio.coeff_var,Nearest Better
+4,FULL,nbc.nb_fitness.cor,Nearest Better
+4,FULL,nbc.nn_nb.cor,Nearest Better
+4,FULL,nbc.nn_nb.mean_ratio,Nearest Better
+4,FULL,nbc.nn_nb.sd_ratio,Nearest Better
+4,FULL,pca.expl_var.cor_init,PCA
+4,FULL,pca.expl_var.cov_init,PCA
+4,FULL,pca.expl_var_PC1.cor_init,PCA
+4,FULL,pca.expl_var_PC1.cor_x,PCA
+4,FULL,pca.expl_var_PC1.cov_init,PCA
+4,FULL,pca.expl_var_PC1.cov_x,PCA
+4,TOP_10,disp.ratio_mean_02,Dispersion
+4,TOP_10,ela_distr.skewness,Distribution
+4,TOP_10,ela_meta.lin_simple.adj_r2,Meta-model
+4,TOP_10,ela_meta.lin_simple.intercept,Meta-model
+4,TOP_10,ic.m0,Info. Content
+4,TOP_10,nbc.nb_fitness.cor,Nearest Better
+4,TOP_10,nbc.nn_nb.mean_ratio,Nearest Better
+4,TOP_10,nbc.nn_nb.sd_ratio,Nearest Better
+4,TOP_10,pca.expl_var.cor_init,PCA
+4,TOP_10,pca.expl_var_PC1.cor_init,PCA
+4,TOP_20,disp.diff_mean_02,Dispersion
+4,TOP_20,disp.ratio_mean_02,Dispersion
+4,TOP_20,ela_distr.skewness,Distribution
+4,TOP_20,ela_level.lda_qda_10,Level-set
+4,TOP_20,ela_level.mmce_qda_10,Level-set
+4,TOP_20,ela_level.mmce_qda_25,Level-set
+4,TOP_20,ela_level.mmce_qda_50,Level-set
+4,TOP_20,ela_meta.lin_simple.adj_r2,Meta-model
+4,TOP_20,ela_meta.lin_simple.coef.max,Meta-model
+4,TOP_20,ela_meta.lin_simple.intercept,Meta-model
+4,TOP_20,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,TOP_20,ela_meta.quad_simple.adj_r2,Meta-model
+4,TOP_20,ic.eps_max,Info. Content
+4,TOP_20,ic.h_max,Info. Content
+4,TOP_20,ic.m0,Info. Content
+4,TOP_20,nbc.nb_fitness.cor,Nearest Better
+4,TOP_20,nbc.nn_nb.mean_ratio,Nearest Better
+4,TOP_20,nbc.nn_nb.sd_ratio,Nearest Better
+4,TOP_20,pca.expl_var.cor_init,PCA
+4,TOP_20,pca.expl_var_PC1.cor_init,PCA
+4,TOP_30,disp.diff_mean_02,Dispersion
+4,TOP_30,disp.ratio_mean_02,Dispersion
+4,TOP_30,ela_distr.kurtosis,Distribution
+4,TOP_30,ela_distr.skewness,Distribution
+4,TOP_30,ela_level.lda_qda_10,Level-set
+4,TOP_30,ela_level.lda_qda_25,Level-set
+4,TOP_30,ela_level.lda_qda_50,Level-set
+4,TOP_30,ela_level.mmce_lda_10,Level-set
+4,TOP_30,ela_level.mmce_lda_25,Level-set
+4,TOP_30,ela_level.mmce_lda_50,Level-set
+4,TOP_30,ela_level.mmce_qda_10,Level-set
+4,TOP_30,ela_level.mmce_qda_25,Level-set
+4,TOP_30,ela_level.mmce_qda_50,Level-set
+4,TOP_30,ela_meta.lin_simple.adj_r2,Meta-model
+4,TOP_30,ela_meta.lin_simple.coef.max,Meta-model
+4,TOP_30,ela_meta.lin_simple.coef.min,Meta-model
+4,TOP_30,ela_meta.lin_simple.intercept,Meta-model
+4,TOP_30,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,TOP_30,ela_meta.quad_simple.adj_r2,Meta-model
+4,TOP_30,ela_meta.quad_simple.cond,Meta-model
+4,TOP_30,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,TOP_30,ic.eps_max,Info. Content
+4,TOP_30,ic.h_max,Info. Content
+4,TOP_30,ic.m0,Info. Content
+4,TOP_30,nbc.nb_fitness.cor,Nearest Better
+4,TOP_30,nbc.nn_nb.cor,Nearest Better
+4,TOP_30,nbc.nn_nb.mean_ratio,Nearest Better
+4,TOP_30,nbc.nn_nb.sd_ratio,Nearest Better
+4,TOP_30,pca.expl_var.cor_init,PCA
+4,TOP_30,pca.expl_var_PC1.cor_init,PCA
+4,TOP_40,disp.diff_mean_02,Dispersion
+4,TOP_40,disp.diff_mean_05,Dispersion
+4,TOP_40,disp.diff_mean_10,Dispersion
+4,TOP_40,disp.diff_median_05,Dispersion
+4,TOP_40,disp.diff_median_10,Dispersion
+4,TOP_40,disp.ratio_mean_02,Dispersion
+4,TOP_40,disp.ratio_mean_05,Dispersion
+4,TOP_40,disp.ratio_mean_10,Dispersion
+4,TOP_40,disp.ratio_median_02,Dispersion
+4,TOP_40,disp.ratio_median_05,Dispersion
+4,TOP_40,ela_distr.kurtosis,Distribution
+4,TOP_40,ela_distr.number_of_peaks,Distribution
+4,TOP_40,ela_distr.skewness,Distribution
+4,TOP_40,ela_level.lda_qda_10,Level-set
+4,TOP_40,ela_level.lda_qda_25,Level-set
+4,TOP_40,ela_level.lda_qda_50,Level-set
+4,TOP_40,ela_level.mmce_lda_10,Level-set
+4,TOP_40,ela_level.mmce_lda_25,Level-set
+4,TOP_40,ela_level.mmce_lda_50,Level-set
+4,TOP_40,ela_level.mmce_qda_10,Level-set
+4,TOP_40,ela_level.mmce_qda_25,Level-set
+4,TOP_40,ela_level.mmce_qda_50,Level-set
+4,TOP_40,ela_meta.lin_simple.adj_r2,Meta-model
+4,TOP_40,ela_meta.lin_simple.coef.max,Meta-model
+4,TOP_40,ela_meta.lin_simple.coef.max_by_min,Meta-model
+4,TOP_40,ela_meta.lin_simple.coef.min,Meta-model
+4,TOP_40,ela_meta.lin_simple.intercept,Meta-model
+4,TOP_40,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,TOP_40,ela_meta.quad_simple.adj_r2,Meta-model
+4,TOP_40,ela_meta.quad_simple.cond,Meta-model
+4,TOP_40,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,TOP_40,ic.eps_max,Info. Content
+4,TOP_40,ic.h_max,Info. Content
+4,TOP_40,ic.m0,Info. Content
+4,TOP_40,nbc.nb_fitness.cor,Nearest Better
+4,TOP_40,nbc.nn_nb.cor,Nearest Better
+4,TOP_40,nbc.nn_nb.mean_ratio,Nearest Better
+4,TOP_40,nbc.nn_nb.sd_ratio,Nearest Better
+4,TOP_40,pca.expl_var.cor_init,PCA
+4,TOP_40,pca.expl_var_PC1.cor_init,PCA
+4,TOP_50,disp.diff_mean_02,Dispersion
+4,TOP_50,disp.diff_mean_05,Dispersion
+4,TOP_50,disp.diff_mean_10,Dispersion
+4,TOP_50,disp.diff_mean_25,Dispersion
+4,TOP_50,disp.diff_median_02,Dispersion
+4,TOP_50,disp.diff_median_05,Dispersion
+4,TOP_50,disp.diff_median_10,Dispersion
+4,TOP_50,disp.diff_median_25,Dispersion
+4,TOP_50,disp.ratio_mean_02,Dispersion
+4,TOP_50,disp.ratio_mean_05,Dispersion
+4,TOP_50,disp.ratio_mean_10,Dispersion
+4,TOP_50,disp.ratio_mean_25,Dispersion
+4,TOP_50,disp.ratio_median_02,Dispersion
+4,TOP_50,disp.ratio_median_05,Dispersion
+4,TOP_50,disp.ratio_median_10,Dispersion
+4,TOP_50,disp.ratio_median_25,Dispersion
+4,TOP_50,ela_distr.kurtosis,Distribution
+4,TOP_50,ela_distr.number_of_peaks,Distribution
+4,TOP_50,ela_distr.skewness,Distribution
+4,TOP_50,ela_level.lda_qda_10,Level-set
+4,TOP_50,ela_level.lda_qda_25,Level-set
+4,TOP_50,ela_level.lda_qda_50,Level-set
+4,TOP_50,ela_level.mmce_lda_10,Level-set
+4,TOP_50,ela_level.mmce_lda_25,Level-set
+4,TOP_50,ela_level.mmce_lda_50,Level-set
+4,TOP_50,ela_level.mmce_qda_10,Level-set
+4,TOP_50,ela_level.mmce_qda_25,Level-set
+4,TOP_50,ela_level.mmce_qda_50,Level-set
+4,TOP_50,ela_meta.lin_simple.adj_r2,Meta-model
+4,TOP_50,ela_meta.lin_simple.coef.max,Meta-model
+4,TOP_50,ela_meta.lin_simple.coef.max_by_min,Meta-model
+4,TOP_50,ela_meta.lin_simple.coef.min,Meta-model
+4,TOP_50,ela_meta.lin_simple.intercept,Meta-model
+4,TOP_50,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,TOP_50,ela_meta.quad_simple.adj_r2,Meta-model
+4,TOP_50,ela_meta.quad_simple.cond,Meta-model
+4,TOP_50,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,TOP_50,ic.eps_max,Info. Content
+4,TOP_50,ic.eps_ratio,Info. Content
+4,TOP_50,ic.eps_s,Info. Content
+4,TOP_50,ic.h_max,Info. Content
+4,TOP_50,ic.m0,Info. Content
+4,TOP_50,nbc.dist_ratio.coeff_var,Nearest Better
+4,TOP_50,nbc.nb_fitness.cor,Nearest Better
+4,TOP_50,nbc.nn_nb.cor,Nearest Better
+4,TOP_50,nbc.nn_nb.mean_ratio,Nearest Better
+4,TOP_50,nbc.nn_nb.sd_ratio,Nearest Better
+4,TOP_50,pca.expl_var.cor_init,PCA
+4,TOP_50,pca.expl_var_PC1.cor_init,PCA
+4,TOP_50,pca.expl_var_PC1.cov_x,PCA
+4,POSITIVE_IMPORTANCE,disp.diff_mean_02,Dispersion
+4,POSITIVE_IMPORTANCE,disp.diff_mean_05,Dispersion
+4,POSITIVE_IMPORTANCE,disp.diff_mean_10,Dispersion
+4,POSITIVE_IMPORTANCE,disp.diff_mean_25,Dispersion
+4,POSITIVE_IMPORTANCE,disp.diff_median_02,Dispersion
+4,POSITIVE_IMPORTANCE,disp.diff_median_05,Dispersion
+4,POSITIVE_IMPORTANCE,disp.diff_median_10,Dispersion
+4,POSITIVE_IMPORTANCE,disp.diff_median_25,Dispersion
+4,POSITIVE_IMPORTANCE,disp.ratio_mean_02,Dispersion
+4,POSITIVE_IMPORTANCE,disp.ratio_mean_05,Dispersion
+4,POSITIVE_IMPORTANCE,disp.ratio_mean_10,Dispersion
+4,POSITIVE_IMPORTANCE,disp.ratio_mean_25,Dispersion
+4,POSITIVE_IMPORTANCE,disp.ratio_median_02,Dispersion
+4,POSITIVE_IMPORTANCE,disp.ratio_median_05,Dispersion
+4,POSITIVE_IMPORTANCE,disp.ratio_median_10,Dispersion
+4,POSITIVE_IMPORTANCE,disp.ratio_median_25,Dispersion
+4,POSITIVE_IMPORTANCE,ela_distr.kurtosis,Distribution
+4,POSITIVE_IMPORTANCE,ela_distr.number_of_peaks,Distribution
+4,POSITIVE_IMPORTANCE,ela_distr.skewness,Distribution
+4,POSITIVE_IMPORTANCE,ela_level.lda_qda_10,Level-set
+4,POSITIVE_IMPORTANCE,ela_level.lda_qda_25,Level-set
+4,POSITIVE_IMPORTANCE,ela_level.lda_qda_50,Level-set
+4,POSITIVE_IMPORTANCE,ela_level.mmce_lda_10,Level-set
+4,POSITIVE_IMPORTANCE,ela_level.mmce_lda_25,Level-set
+4,POSITIVE_IMPORTANCE,ela_level.mmce_lda_50,Level-set
+4,POSITIVE_IMPORTANCE,ela_level.mmce_qda_10,Level-set
+4,POSITIVE_IMPORTANCE,ela_level.mmce_qda_25,Level-set
+4,POSITIVE_IMPORTANCE,ela_level.mmce_qda_50,Level-set
+4,POSITIVE_IMPORTANCE,ela_meta.lin_simple.adj_r2,Meta-model
+4,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max,Meta-model
+4,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.max_by_min,Meta-model
+4,POSITIVE_IMPORTANCE,ela_meta.lin_simple.coef.min,Meta-model
+4,POSITIVE_IMPORTANCE,ela_meta.lin_simple.intercept,Meta-model
+4,POSITIVE_IMPORTANCE,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,POSITIVE_IMPORTANCE,ela_meta.quad_simple.adj_r2,Meta-model
+4,POSITIVE_IMPORTANCE,ela_meta.quad_simple.cond,Meta-model
+4,POSITIVE_IMPORTANCE,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,POSITIVE_IMPORTANCE,ic.eps_max,Info. Content
+4,POSITIVE_IMPORTANCE,ic.eps_ratio,Info. Content
+4,POSITIVE_IMPORTANCE,ic.eps_s,Info. Content
+4,POSITIVE_IMPORTANCE,ic.h_max,Info. Content
+4,POSITIVE_IMPORTANCE,ic.m0,Info. Content
+4,POSITIVE_IMPORTANCE,nbc.dist_ratio.coeff_var,Nearest Better
+4,POSITIVE_IMPORTANCE,nbc.nb_fitness.cor,Nearest Better
+4,POSITIVE_IMPORTANCE,nbc.nn_nb.cor,Nearest Better
+4,POSITIVE_IMPORTANCE,nbc.nn_nb.mean_ratio,Nearest Better
+4,POSITIVE_IMPORTANCE,nbc.nn_nb.sd_ratio,Nearest Better
+4,POSITIVE_IMPORTANCE,pca.expl_var.cor_init,PCA
+4,POSITIVE_IMPORTANCE,pca.expl_var.cov_init,PCA
+4,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_init,PCA
+4,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cor_x,PCA
+4,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_init,PCA
+4,POSITIVE_IMPORTANCE,pca.expl_var_PC1.cov_x,PCA
+4,GROUP_TOP_1,disp.diff_mean_02,Dispersion
+4,GROUP_TOP_1,disp.diff_mean_05,Dispersion
+4,GROUP_TOP_1,disp.diff_mean_10,Dispersion
+4,GROUP_TOP_1,disp.diff_mean_25,Dispersion
+4,GROUP_TOP_1,disp.diff_median_02,Dispersion
+4,GROUP_TOP_1,disp.diff_median_05,Dispersion
+4,GROUP_TOP_1,disp.diff_median_10,Dispersion
+4,GROUP_TOP_1,disp.diff_median_25,Dispersion
+4,GROUP_TOP_1,disp.ratio_mean_02,Dispersion
+4,GROUP_TOP_1,disp.ratio_mean_05,Dispersion
+4,GROUP_TOP_1,disp.ratio_mean_10,Dispersion
+4,GROUP_TOP_1,disp.ratio_mean_25,Dispersion
+4,GROUP_TOP_1,disp.ratio_median_02,Dispersion
+4,GROUP_TOP_1,disp.ratio_median_05,Dispersion
+4,GROUP_TOP_1,disp.ratio_median_10,Dispersion
+4,GROUP_TOP_1,disp.ratio_median_25,Dispersion
+4,GROUP_TOP_2,disp.diff_mean_02,Dispersion
+4,GROUP_TOP_2,disp.diff_mean_05,Dispersion
+4,GROUP_TOP_2,disp.diff_mean_10,Dispersion
+4,GROUP_TOP_2,disp.diff_mean_25,Dispersion
+4,GROUP_TOP_2,disp.diff_median_02,Dispersion
+4,GROUP_TOP_2,disp.diff_median_05,Dispersion
+4,GROUP_TOP_2,disp.diff_median_10,Dispersion
+4,GROUP_TOP_2,disp.diff_median_25,Dispersion
+4,GROUP_TOP_2,disp.ratio_mean_02,Dispersion
+4,GROUP_TOP_2,disp.ratio_mean_05,Dispersion
+4,GROUP_TOP_2,disp.ratio_mean_10,Dispersion
+4,GROUP_TOP_2,disp.ratio_mean_25,Dispersion
+4,GROUP_TOP_2,disp.ratio_median_02,Dispersion
+4,GROUP_TOP_2,disp.ratio_median_05,Dispersion
+4,GROUP_TOP_2,disp.ratio_median_10,Dispersion
+4,GROUP_TOP_2,disp.ratio_median_25,Dispersion
+4,GROUP_TOP_2,ela_meta.lin_simple.adj_r2,Meta-model
+4,GROUP_TOP_2,ela_meta.lin_simple.coef.max,Meta-model
+4,GROUP_TOP_2,ela_meta.lin_simple.coef.max_by_min,Meta-model
+4,GROUP_TOP_2,ela_meta.lin_simple.coef.min,Meta-model
+4,GROUP_TOP_2,ela_meta.lin_simple.intercept,Meta-model
+4,GROUP_TOP_2,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,GROUP_TOP_2,ela_meta.quad_simple.adj_r2,Meta-model
+4,GROUP_TOP_2,ela_meta.quad_simple.cond,Meta-model
+4,GROUP_TOP_2,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,GROUP_TOP_3,disp.diff_mean_02,Dispersion
+4,GROUP_TOP_3,disp.diff_mean_05,Dispersion
+4,GROUP_TOP_3,disp.diff_mean_10,Dispersion
+4,GROUP_TOP_3,disp.diff_mean_25,Dispersion
+4,GROUP_TOP_3,disp.diff_median_02,Dispersion
+4,GROUP_TOP_3,disp.diff_median_05,Dispersion
+4,GROUP_TOP_3,disp.diff_median_10,Dispersion
+4,GROUP_TOP_3,disp.diff_median_25,Dispersion
+4,GROUP_TOP_3,disp.ratio_mean_02,Dispersion
+4,GROUP_TOP_3,disp.ratio_mean_05,Dispersion
+4,GROUP_TOP_3,disp.ratio_mean_10,Dispersion
+4,GROUP_TOP_3,disp.ratio_mean_25,Dispersion
+4,GROUP_TOP_3,disp.ratio_median_02,Dispersion
+4,GROUP_TOP_3,disp.ratio_median_05,Dispersion
+4,GROUP_TOP_3,disp.ratio_median_10,Dispersion
+4,GROUP_TOP_3,disp.ratio_median_25,Dispersion
+4,GROUP_TOP_3,ela_level.lda_qda_10,Level-set
+4,GROUP_TOP_3,ela_level.lda_qda_25,Level-set
+4,GROUP_TOP_3,ela_level.lda_qda_50,Level-set
+4,GROUP_TOP_3,ela_level.mmce_lda_10,Level-set
+4,GROUP_TOP_3,ela_level.mmce_lda_25,Level-set
+4,GROUP_TOP_3,ela_level.mmce_lda_50,Level-set
+4,GROUP_TOP_3,ela_level.mmce_qda_10,Level-set
+4,GROUP_TOP_3,ela_level.mmce_qda_25,Level-set
+4,GROUP_TOP_3,ela_level.mmce_qda_50,Level-set
+4,GROUP_TOP_3,ela_meta.lin_simple.adj_r2,Meta-model
+4,GROUP_TOP_3,ela_meta.lin_simple.coef.max,Meta-model
+4,GROUP_TOP_3,ela_meta.lin_simple.coef.max_by_min,Meta-model
+4,GROUP_TOP_3,ela_meta.lin_simple.coef.min,Meta-model
+4,GROUP_TOP_3,ela_meta.lin_simple.intercept,Meta-model
+4,GROUP_TOP_3,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,GROUP_TOP_3,ela_meta.quad_simple.adj_r2,Meta-model
+4,GROUP_TOP_3,ela_meta.quad_simple.cond,Meta-model
+4,GROUP_TOP_3,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,NO_PCA,disp.diff_mean_02,Dispersion
+4,NO_PCA,disp.diff_mean_05,Dispersion
+4,NO_PCA,disp.diff_mean_10,Dispersion
+4,NO_PCA,disp.diff_mean_25,Dispersion
+4,NO_PCA,disp.diff_median_02,Dispersion
+4,NO_PCA,disp.diff_median_05,Dispersion
+4,NO_PCA,disp.diff_median_10,Dispersion
+4,NO_PCA,disp.diff_median_25,Dispersion
+4,NO_PCA,disp.ratio_mean_02,Dispersion
+4,NO_PCA,disp.ratio_mean_05,Dispersion
+4,NO_PCA,disp.ratio_mean_10,Dispersion
+4,NO_PCA,disp.ratio_mean_25,Dispersion
+4,NO_PCA,disp.ratio_median_02,Dispersion
+4,NO_PCA,disp.ratio_median_05,Dispersion
+4,NO_PCA,disp.ratio_median_10,Dispersion
+4,NO_PCA,disp.ratio_median_25,Dispersion
+4,NO_PCA,ela_distr.kurtosis,Distribution
+4,NO_PCA,ela_distr.number_of_peaks,Distribution
+4,NO_PCA,ela_distr.skewness,Distribution
+4,NO_PCA,ela_level.lda_qda_10,Level-set
+4,NO_PCA,ela_level.lda_qda_25,Level-set
+4,NO_PCA,ela_level.lda_qda_50,Level-set
+4,NO_PCA,ela_level.mmce_lda_10,Level-set
+4,NO_PCA,ela_level.mmce_lda_25,Level-set
+4,NO_PCA,ela_level.mmce_lda_50,Level-set
+4,NO_PCA,ela_level.mmce_qda_10,Level-set
+4,NO_PCA,ela_level.mmce_qda_25,Level-set
+4,NO_PCA,ela_level.mmce_qda_50,Level-set
+4,NO_PCA,ela_meta.lin_simple.adj_r2,Meta-model
+4,NO_PCA,ela_meta.lin_simple.coef.max,Meta-model
+4,NO_PCA,ela_meta.lin_simple.coef.max_by_min,Meta-model
+4,NO_PCA,ela_meta.lin_simple.coef.min,Meta-model
+4,NO_PCA,ela_meta.lin_simple.intercept,Meta-model
+4,NO_PCA,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,NO_PCA,ela_meta.quad_simple.adj_r2,Meta-model
+4,NO_PCA,ela_meta.quad_simple.cond,Meta-model
+4,NO_PCA,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,NO_PCA,ic.eps_max,Info. Content
+4,NO_PCA,ic.eps_ratio,Info. Content
+4,NO_PCA,ic.eps_s,Info. Content
+4,NO_PCA,ic.h_max,Info. Content
+4,NO_PCA,ic.m0,Info. Content
+4,NO_PCA,nbc.dist_ratio.coeff_var,Nearest Better
+4,NO_PCA,nbc.nb_fitness.cor,Nearest Better
+4,NO_PCA,nbc.nn_nb.cor,Nearest Better
+4,NO_PCA,nbc.nn_nb.mean_ratio,Nearest Better
+4,NO_PCA,nbc.nn_nb.sd_ratio,Nearest Better
+4,NO_DISP,ela_distr.kurtosis,Distribution
+4,NO_DISP,ela_distr.number_of_peaks,Distribution
+4,NO_DISP,ela_distr.skewness,Distribution
+4,NO_DISP,ela_level.lda_qda_10,Level-set
+4,NO_DISP,ela_level.lda_qda_25,Level-set
+4,NO_DISP,ela_level.lda_qda_50,Level-set
+4,NO_DISP,ela_level.mmce_lda_10,Level-set
+4,NO_DISP,ela_level.mmce_lda_25,Level-set
+4,NO_DISP,ela_level.mmce_lda_50,Level-set
+4,NO_DISP,ela_level.mmce_qda_10,Level-set
+4,NO_DISP,ela_level.mmce_qda_25,Level-set
+4,NO_DISP,ela_level.mmce_qda_50,Level-set
+4,NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+4,NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+4,NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+4,NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+4,NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+4,NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+4,NO_DISP,ela_meta.quad_simple.cond,Meta-model
+4,NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,NO_DISP,ic.eps_max,Info. Content
+4,NO_DISP,ic.eps_ratio,Info. Content
+4,NO_DISP,ic.eps_s,Info. Content
+4,NO_DISP,ic.h_max,Info. Content
+4,NO_DISP,ic.m0,Info. Content
+4,NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+4,NO_DISP,nbc.nb_fitness.cor,Nearest Better
+4,NO_DISP,nbc.nn_nb.cor,Nearest Better
+4,NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+4,NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better
+4,NO_DISP,pca.expl_var.cor_init,PCA
+4,NO_DISP,pca.expl_var.cov_init,PCA
+4,NO_DISP,pca.expl_var_PC1.cor_init,PCA
+4,NO_DISP,pca.expl_var_PC1.cor_x,PCA
+4,NO_DISP,pca.expl_var_PC1.cov_init,PCA
+4,NO_DISP,pca.expl_var_PC1.cov_x,PCA
+4,NO_PCA_NO_DISP,ela_distr.kurtosis,Distribution
+4,NO_PCA_NO_DISP,ela_distr.number_of_peaks,Distribution
+4,NO_PCA_NO_DISP,ela_distr.skewness,Distribution
+4,NO_PCA_NO_DISP,ela_level.lda_qda_10,Level-set
+4,NO_PCA_NO_DISP,ela_level.lda_qda_25,Level-set
+4,NO_PCA_NO_DISP,ela_level.lda_qda_50,Level-set
+4,NO_PCA_NO_DISP,ela_level.mmce_lda_10,Level-set
+4,NO_PCA_NO_DISP,ela_level.mmce_lda_25,Level-set
+4,NO_PCA_NO_DISP,ela_level.mmce_lda_50,Level-set
+4,NO_PCA_NO_DISP,ela_level.mmce_qda_10,Level-set
+4,NO_PCA_NO_DISP,ela_level.mmce_qda_25,Level-set
+4,NO_PCA_NO_DISP,ela_level.mmce_qda_50,Level-set
+4,NO_PCA_NO_DISP,ela_meta.lin_simple.adj_r2,Meta-model
+4,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max,Meta-model
+4,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.max_by_min,Meta-model
+4,NO_PCA_NO_DISP,ela_meta.lin_simple.coef.min,Meta-model
+4,NO_PCA_NO_DISP,ela_meta.lin_simple.intercept,Meta-model
+4,NO_PCA_NO_DISP,ela_meta.lin_w_interact.adj_r2,Meta-model
+4,NO_PCA_NO_DISP,ela_meta.quad_simple.adj_r2,Meta-model
+4,NO_PCA_NO_DISP,ela_meta.quad_simple.cond,Meta-model
+4,NO_PCA_NO_DISP,ela_meta.quad_w_interact.adj_r2,Meta-model
+4,NO_PCA_NO_DISP,ic.eps_max,Info. Content
+4,NO_PCA_NO_DISP,ic.eps_ratio,Info. Content
+4,NO_PCA_NO_DISP,ic.eps_s,Info. Content
+4,NO_PCA_NO_DISP,ic.h_max,Info. Content
+4,NO_PCA_NO_DISP,ic.m0,Info. Content
+4,NO_PCA_NO_DISP,nbc.dist_ratio.coeff_var,Nearest Better
+4,NO_PCA_NO_DISP,nbc.nb_fitness.cor,Nearest Better
+4,NO_PCA_NO_DISP,nbc.nn_nb.cor,Nearest Better
+4,NO_PCA_NO_DISP,nbc.nn_nb.mean_ratio,Nearest Better
+4,NO_PCA_NO_DISP,nbc.nn_nb.sd_ratio,Nearest Better

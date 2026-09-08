@@ -1,0 +1,33 @@
+{
+  "ag_presets": "medium_quality",
+  "ag_time_limit_per_fold": 900,
+  "ag_time_limit_final": 3600,
+  "ag_eval_metric": "mean_absolute_error",
+  "ag_fit_strategy": "sequential",
+  "ag_dynamic_stacking": false,
+  "ag_auto_stack": false,
+  "ag_num_bag_folds": 0,
+  "ag_num_bag_sets": 1,
+  "ag_num_stack_levels": 0,
+  "ag_use_bag_holdout": false,
+  "ag_ds_args": {
+    "memory_safe_fits": false,
+    "enable_ray_logging": false
+  },
+  "ag_hyperparameters": {
+    "GBM": {},
+    "CAT": {},
+    "XGB": {},
+    "RF": {},
+    "XT": {},
+    "KNN": {}
+  },
+  "n_splits": 5,
+  "actual_n_splits": 5,
+  "include_problem_type_as_feature": false,
+  "include_dim_as_feature": true,
+  "target_transform": "BBOB/MABBOB raw AUC; LLM filtered log1p AUC; then per-problem normalization",
+  "normalization_method": "minmax",
+  "cv_grouping": "BBOB grouped by fid; MABBOB/LLM grouped by problem_key; external test folds are not passed as tuning_data",
+  "primary_selection_metric": "mean_normalized_regret_vs_oracle"
+}

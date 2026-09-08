@@ -1,0 +1,13 @@
+{
+  "input_dir": "data/Combined/source_specific_rf_regressors",
+  "output_dir": "data/Combined/source_specific_rf_regressors/rf_quality_plots",
+  "model_names": [
+    "BBOB_RF",
+    "MABBOB_RF",
+    "LLM_RF"
+  ],
+  "target": "per-problem-normalized target_auc",
+  "prediction_column": "pred_target_auc",
+  "true_column": "target_auc",
+  "optional_comparison": "If MLP quality metrics exist, RF-vs-MLP comparison plots are also generated."
+}

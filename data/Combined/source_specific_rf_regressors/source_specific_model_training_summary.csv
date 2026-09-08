@@ -1,0 +1,4 @@
+source,model_type,model_name,n_train_rows,n_features,n_algorithms,model_path,elapsed_seconds,cv_mae,cv_rmse,cv_r2,cv_spearman,n_splits
+BBOB,RF,BBOB_RF,165604,30,41,data/Combined/source_specific_rf_regressors/BBOB_RF_regressor.joblib,22.977678537368774,0.11600400732763395,0.16659547430879623,0.7867685251969001,0.8046276210741764,5
+MABBOB,RF,MABBOB_RF,9840,52,41,data/Combined/source_specific_rf_regressors/MABBOB_RF_regressor.joblib,7.2277069091796875,0.1294887476382345,0.16979676273385486,0.4960278866739569,0.6729515511175457,5
+LLM,RF,LLM_RF,17889,53,41,data/Combined/source_specific_rf_regressors/LLM_RF_regressor.joblib,9.091827392578125,0.134150527382498,0.19058159535878372,0.4833457579386411,0.6663179643055086,5

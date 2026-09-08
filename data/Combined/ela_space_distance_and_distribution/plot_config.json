@@ -6,8 +6,10 @@
   "filter_llm_outliers": true,
   "llm_outlier_quantile": 0.98,
   "llm_outlier_distance_mode": "to_non_llm_centroid",
-  "pca_n_components_for_tsne": 30,
-  "tsne_perplexity_requested": 30,
+  "pca_n_components_for_umap": 30,
+  "umap_n_neighbors": 15,
+  "umap_min_dist": 0.1,
+  "umap_metric": "euclidean",
   "n_features": 87,
   "counts_before_filtering": {
     "LLM": 562,

@@ -1,0 +1,4 @@
+source,model_type,model_name,n_train_rows,n_features,n_algorithms,model_path,elapsed_seconds,cv_mae,cv_rmse,cv_r2,cv_spearman,n_splits
+BBOB,MLP,BBOB_MLP,165604,30,41,data/Combined/source_specific_mlp_regressors/BBOB_MLP_regressor.joblib,2447.9161229133606,0.347655030298779,1.5652115251974232,-17.822226112061816,0.6648119246561397,5
+MABBOB,MLP,MABBOB_MLP,9840,52,41,data/Combined/source_specific_mlp_regressors/MABBOB_MLP_regressor.joblib,66.79657673835754,0.14574074979195134,0.1955368859120247,0.33164826020658766,0.5736325008632698,5
+LLM,MLP,LLM_MLP,17889,53,41,data/Combined/source_specific_mlp_regressors/LLM_MLP_regressor.joblib,94.7784914970398,0.14843020960684775,0.22035961183079542,0.3092799214147912,0.5940649536871812,5

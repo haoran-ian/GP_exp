@@ -1,0 +1,17 @@
+{
+  "base_script": "8_autogluon_regressor_selection_per_problem_normalized_strict_no_ray.py",
+  "top_k_list": [
+    10,
+    20,
+    30,
+    40,
+    50
+  ],
+  "group_top_k_list": [
+    1,
+    2,
+    3
+  ],
+  "ag_presets": "medium_quality",
+  "primary_metric": "mean_normalized_regret_vs_oracle"
+}

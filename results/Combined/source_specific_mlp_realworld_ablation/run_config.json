@@ -1,0 +1,20 @@
+{
+  "run_sources": [
+    "BBOB",
+    "MABBOB",
+    "LLM"
+  ],
+  "run_models": [
+    "MLP"
+  ],
+  "normalization_method": "minmax",
+  "target_transform": "BBOB/MABBOB raw AUC; LLM log1p filtered AUC; per-problem normalization",
+  "ablation_mode": "uniform",
+  "feature_set_mode": "auto_group",
+  "n_repeats": 5,
+  "feature_set_csv": null,
+  "auto_group_feature_sets": true,
+  "include_full_feature_set": true,
+  "model_out_dir": "data/Combined/source_specific_mlp_regressors",
+  "ablation_out_dir": "results/Combined/source_specific_mlp_realworld_ablation"
+}
