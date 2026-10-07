@@ -6,7 +6,7 @@ import pandas as pd
 # fmt: on
 
 
-ROOT_DIR = "Benchmark_Top_Results_LLM"
+ROOT_DIR = "results/benchmarks/llm"
 SUB_FOLDERS = ["BASELINE", "MEALPY", "OPYTIMIZER"]
 OUTPUT_FILE = "data/LLM/llm_algorithm_auc_performance.csv"
 

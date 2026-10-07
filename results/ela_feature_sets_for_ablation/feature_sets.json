@@ -1,0 +1,572 @@
+{
+  "purpose": "Exhaustive hierarchical partitions for group-ablation studies; 5, 10, 15, and 20 denote numbers of groups, not numbers of selected features.",
+  "design": "Groups follow ELA mechanisms. Existing family ablations and five-fold permutation importance determine which broad families are split at finer resolutions.",
+  "empirical_basis": {
+    "family_importance": "Five-fold group permutation importance ranks Dispersion highest on average, followed by Meta-model, Level-set, Nearest Better, Information Content, PCA, and Distribution.",
+    "leave_family_out": "Existing RF ablations show source-dependent effects: NBC is strongest for BBOB; Level-set and Meta-model are strongest for MA-BBOB; effects are smaller and less stable for LLM. MLP ablations are scale-unstable for LLM/MA-BBOB, so they are supporting rather than primary evidence.",
+    "individual_importance": "High mean feature importance is concentrated in nbc.nn_nb.mean_ratio, nbc.nb_fitness.cor, ic.m0, pca.expl_var.cor_init, nbc.nn_nb.sd_ratio, ela_meta.lin_simple.intercept, and disp.ratio_mean_02."
+  },
+  "panels": {
+    "BBOB_FILTERED": {
+      "candidate_pool_size": 30,
+      "source": "data/Ablation_ELA/Processed_ELA_Pipeline/pipeline_aligned_ela.csv",
+      "preprocessing": "Per-problem Pearson correlation filtering had already been applied upstream; this panel uses the 30-column aligned usable pool.",
+      "partitions": {
+        "5": {
+          "rank_and_value_concentration": [
+            "disp.diff_mean_02",
+            "disp.ratio_mean_02",
+            "ela_distr.kurtosis",
+            "ela_distr.skewness",
+            "ela_distr.number_of_peaks"
+          ],
+          "level_set_separability": [
+            "ela_level.lda_qda_10",
+            "ela_level.lda_qda_25",
+            "ela_level.lda_qda_50",
+            "ela_level.mmce_lda_10",
+            "ela_level.mmce_lda_25",
+            "ela_level.mmce_lda_50",
+            "ela_level.mmce_qda_10",
+            "ela_level.mmce_qda_25",
+            "ela_level.mmce_qda_50"
+          ],
+          "global_model_structure": [
+            "ela_meta.lin_simple.adj_r2",
+            "ela_meta.lin_simple.intercept",
+            "ela_meta.lin_simple.coef.max",
+            "ela_meta.lin_simple.coef.max_by_min",
+            "ela_meta.lin_simple.coef.min",
+            "ela_meta.lin_w_interact.adj_r2",
+            "ela_meta.quad_simple.adj_r2",
+            "ela_meta.quad_w_interact.adj_r2",
+            "ela_meta.quad_simple.cond"
+          ],
+          "ruggedness_and_information": [
+            "ic.h_max",
+            "ic.m0",
+            "ic.eps_max"
+          ],
+          "local_and_global_geometry": [
+            "nbc.nb_fitness.cor",
+            "nbc.nn_nb.mean_ratio",
+            "nbc.nn_nb.sd_ratio",
+            "pca.expl_var.cor_init"
+          ]
+        },
+        "10": {
+          "dispersion": [
+            "disp.diff_mean_02",
+            "disp.ratio_mean_02"
+          ],
+          "objective_distribution": [
+            "ela_distr.kurtosis",
+            "ela_distr.skewness",
+            "ela_distr.number_of_peaks"
+          ],
+          "level_discriminability": [
+            "ela_level.lda_qda_10",
+            "ela_level.lda_qda_25",
+            "ela_level.lda_qda_50"
+          ],
+          "level_lda_error": [
+            "ela_level.mmce_lda_10",
+            "ela_level.mmce_lda_25",
+            "ela_level.mmce_lda_50"
+          ],
+          "level_qda_error": [
+            "ela_level.mmce_qda_10",
+            "ela_level.mmce_qda_25",
+            "ela_level.mmce_qda_50"
+          ],
+          "meta_linear": [
+            "ela_meta.lin_simple.adj_r2",
+            "ela_meta.lin_simple.intercept",
+            "ela_meta.lin_simple.coef.max",
+            "ela_meta.lin_simple.coef.max_by_min",
+            "ela_meta.lin_simple.coef.min"
+          ],
+          "meta_nonlinearity": [
+            "ela_meta.lin_w_interact.adj_r2",
+            "ela_meta.quad_simple.adj_r2",
+            "ela_meta.quad_w_interact.adj_r2",
+            "ela_meta.quad_simple.cond"
+          ],
+          "information_content": [
+            "ic.h_max",
+            "ic.m0",
+            "ic.eps_max"
+          ],
+          "nearest_better_geometry": [
+            "nbc.nb_fitness.cor",
+            "nbc.nn_nb.mean_ratio",
+            "nbc.nn_nb.sd_ratio"
+          ],
+          "pca_variance_structure": [
+            "pca.expl_var.cor_init"
+          ]
+        },
+        "15": {
+          "dispersion": [
+            "disp.diff_mean_02",
+            "disp.ratio_mean_02"
+          ],
+          "distribution_shape": [
+            "ela_distr.kurtosis",
+            "ela_distr.skewness"
+          ],
+          "distribution_peaks": [
+            "ela_distr.number_of_peaks"
+          ],
+          "level_discriminability": [
+            "ela_level.lda_qda_10",
+            "ela_level.lda_qda_25",
+            "ela_level.lda_qda_50"
+          ],
+          "level_lda_error": [
+            "ela_level.mmce_lda_10",
+            "ela_level.mmce_lda_25",
+            "ela_level.mmce_lda_50"
+          ],
+          "level_qda_error": [
+            "ela_level.mmce_qda_10",
+            "ela_level.mmce_qda_25",
+            "ela_level.mmce_qda_50"
+          ],
+          "meta_linear_fit": [
+            "ela_meta.lin_simple.adj_r2",
+            "ela_meta.lin_simple.intercept"
+          ],
+          "meta_linear_coefficients": [
+            "ela_meta.lin_simple.coef.max",
+            "ela_meta.lin_simple.coef.max_by_min",
+            "ela_meta.lin_simple.coef.min"
+          ],
+          "meta_nonlinear_fit": [
+            "ela_meta.lin_w_interact.adj_r2",
+            "ela_meta.quad_simple.adj_r2",
+            "ela_meta.quad_w_interact.adj_r2"
+          ],
+          "meta_conditioning": [
+            "ela_meta.quad_simple.cond"
+          ],
+          "ic_entropy": [
+            "ic.h_max",
+            "ic.m0"
+          ],
+          "ic_epsilon": [
+            "ic.eps_max"
+          ],
+          "nbc_fitness": [
+            "nbc.nb_fitness.cor"
+          ],
+          "nbc_neighbor_ratios": [
+            "nbc.nn_nb.mean_ratio",
+            "nbc.nn_nb.sd_ratio"
+          ],
+          "pca_global_variance": [
+            "pca.expl_var.cor_init"
+          ]
+        },
+        "20": {
+          "disp_difference": [
+            "disp.diff_mean_02"
+          ],
+          "disp_ratio": [
+            "disp.ratio_mean_02"
+          ],
+          "distribution_shape": [
+            "ela_distr.kurtosis",
+            "ela_distr.skewness"
+          ],
+          "distribution_peaks": [
+            "ela_distr.number_of_peaks"
+          ],
+          "level_discriminability_10": [
+            "ela_level.lda_qda_10"
+          ],
+          "level_discriminability_25_50": [
+            "ela_level.lda_qda_25",
+            "ela_level.lda_qda_50"
+          ],
+          "level_lda_error_10_25": [
+            "ela_level.mmce_lda_10",
+            "ela_level.mmce_lda_25"
+          ],
+          "level_lda_error_50": [
+            "ela_level.mmce_lda_50"
+          ],
+          "level_qda_error_10_25": [
+            "ela_level.mmce_qda_10",
+            "ela_level.mmce_qda_25"
+          ],
+          "level_qda_error_50": [
+            "ela_level.mmce_qda_50"
+          ],
+          "meta_linear_fit": [
+            "ela_meta.lin_simple.adj_r2",
+            "ela_meta.lin_simple.intercept"
+          ],
+          "meta_linear_coefficients": [
+            "ela_meta.lin_simple.coef.max",
+            "ela_meta.lin_simple.coef.max_by_min",
+            "ela_meta.lin_simple.coef.min"
+          ],
+          "meta_interaction_fit": [
+            "ela_meta.lin_w_interact.adj_r2"
+          ],
+          "meta_quadratic_fit": [
+            "ela_meta.quad_simple.adj_r2",
+            "ela_meta.quad_w_interact.adj_r2"
+          ],
+          "meta_conditioning": [
+            "ela_meta.quad_simple.cond"
+          ],
+          "ic_entropy": [
+            "ic.h_max",
+            "ic.m0"
+          ],
+          "ic_epsilon": [
+            "ic.eps_max"
+          ],
+          "nbc_fitness": [
+            "nbc.nb_fitness.cor"
+          ],
+          "nbc_neighbor_ratios": [
+            "nbc.nn_nb.mean_ratio",
+            "nbc.nn_nb.sd_ratio"
+          ],
+          "pca_global_variance": [
+            "pca.expl_var.cor_init"
+          ]
+        }
+      }
+    },
+    "MABBOB_LLM_COMMON_UNFILTERED": {
+      "candidate_pool_size": 52,
+      "sources": [
+        "data/MABBOB/mabbob_selected_ela.csv",
+        "data/LLM/llm_generated_ela.csv"
+      ],
+      "preprocessing": "No correlation filter was found. The common 52-feature usable pool is used; LLM-only pca.expl_var.cov_init is excluded for identical MA-BBOB/LLM groups.",
+      "partitions": {
+        "5": {
+          "rank_and_value_concentration": [
+            "disp.diff_mean_02",
+            "disp.diff_mean_05",
+            "disp.diff_mean_10",
+            "disp.diff_mean_25",
+            "disp.diff_median_02",
+            "disp.diff_median_05",
+            "disp.diff_median_10",
+            "disp.diff_median_25",
+            "disp.ratio_mean_02",
+            "disp.ratio_mean_05",
+            "disp.ratio_mean_10",
+            "disp.ratio_mean_25",
+            "disp.ratio_median_02",
+            "disp.ratio_median_05",
+            "disp.ratio_median_10",
+            "disp.ratio_median_25",
+            "ela_distr.kurtosis",
+            "ela_distr.skewness",
+            "ela_distr.number_of_peaks"
+          ],
+          "level_set_separability": [
+            "ela_level.lda_qda_10",
+            "ela_level.lda_qda_25",
+            "ela_level.lda_qda_50",
+            "ela_level.mmce_lda_10",
+            "ela_level.mmce_lda_25",
+            "ela_level.mmce_lda_50",
+            "ela_level.mmce_qda_10",
+            "ela_level.mmce_qda_25",
+            "ela_level.mmce_qda_50"
+          ],
+          "global_model_structure": [
+            "ela_meta.lin_simple.adj_r2",
+            "ela_meta.lin_simple.intercept",
+            "ela_meta.lin_simple.coef.max",
+            "ela_meta.lin_simple.coef.max_by_min",
+            "ela_meta.lin_simple.coef.min",
+            "ela_meta.lin_w_interact.adj_r2",
+            "ela_meta.quad_simple.adj_r2",
+            "ela_meta.quad_w_interact.adj_r2",
+            "ela_meta.quad_simple.cond"
+          ],
+          "ruggedness_and_information": [
+            "ic.h_max",
+            "ic.m0",
+            "ic.eps_max",
+            "ic.eps_ratio",
+            "ic.eps_s"
+          ],
+          "local_and_global_geometry": [
+            "nbc.dist_ratio.coeff_var",
+            "nbc.nb_fitness.cor",
+            "nbc.nn_nb.mean_ratio",
+            "nbc.nn_nb.sd_ratio",
+            "nbc.nn_nb.cor",
+            "pca.expl_var.cor_init",
+            "pca.expl_var_PC1.cor_init",
+            "pca.expl_var_PC1.cor_x",
+            "pca.expl_var_PC1.cov_init",
+            "pca.expl_var_PC1.cov_x"
+          ]
+        },
+        "10": {
+          "dispersion_differences": [
+            "disp.diff_mean_02",
+            "disp.diff_mean_05",
+            "disp.diff_mean_10",
+            "disp.diff_mean_25",
+            "disp.diff_median_02",
+            "disp.diff_median_05",
+            "disp.diff_median_10",
+            "disp.diff_median_25"
+          ],
+          "dispersion_ratios": [
+            "disp.ratio_mean_02",
+            "disp.ratio_mean_05",
+            "disp.ratio_mean_10",
+            "disp.ratio_mean_25",
+            "disp.ratio_median_02",
+            "disp.ratio_median_05",
+            "disp.ratio_median_10",
+            "disp.ratio_median_25"
+          ],
+          "objective_distribution": [
+            "ela_distr.kurtosis",
+            "ela_distr.skewness",
+            "ela_distr.number_of_peaks"
+          ],
+          "level_discriminability": [
+            "ela_level.lda_qda_10",
+            "ela_level.lda_qda_25",
+            "ela_level.lda_qda_50"
+          ],
+          "level_classification_error": [
+            "ela_level.mmce_lda_10",
+            "ela_level.mmce_lda_25",
+            "ela_level.mmce_lda_50",
+            "ela_level.mmce_qda_10",
+            "ela_level.mmce_qda_25",
+            "ela_level.mmce_qda_50"
+          ],
+          "meta_linear": [
+            "ela_meta.lin_simple.adj_r2",
+            "ela_meta.lin_simple.intercept",
+            "ela_meta.lin_simple.coef.max",
+            "ela_meta.lin_simple.coef.max_by_min",
+            "ela_meta.lin_simple.coef.min"
+          ],
+          "meta_nonlinearity": [
+            "ela_meta.lin_w_interact.adj_r2",
+            "ela_meta.quad_simple.adj_r2",
+            "ela_meta.quad_w_interact.adj_r2",
+            "ela_meta.quad_simple.cond"
+          ],
+          "information_content": [
+            "ic.h_max",
+            "ic.m0",
+            "ic.eps_max",
+            "ic.eps_ratio",
+            "ic.eps_s"
+          ],
+          "nearest_better_geometry": [
+            "nbc.dist_ratio.coeff_var",
+            "nbc.nb_fitness.cor",
+            "nbc.nn_nb.mean_ratio",
+            "nbc.nn_nb.sd_ratio",
+            "nbc.nn_nb.cor"
+          ],
+          "pca_variance_structure": [
+            "pca.expl_var.cor_init",
+            "pca.expl_var_PC1.cor_init",
+            "pca.expl_var_PC1.cor_x",
+            "pca.expl_var_PC1.cov_init",
+            "pca.expl_var_PC1.cov_x"
+          ]
+        },
+        "15": {
+          "disp_diff_mean": [
+            "disp.diff_mean_02",
+            "disp.diff_mean_05",
+            "disp.diff_mean_10",
+            "disp.diff_mean_25"
+          ],
+          "disp_diff_median": [
+            "disp.diff_median_02",
+            "disp.diff_median_05",
+            "disp.diff_median_10",
+            "disp.diff_median_25"
+          ],
+          "disp_ratio_mean": [
+            "disp.ratio_mean_02",
+            "disp.ratio_mean_05",
+            "disp.ratio_mean_10",
+            "disp.ratio_mean_25"
+          ],
+          "disp_ratio_median": [
+            "disp.ratio_median_02",
+            "disp.ratio_median_05",
+            "disp.ratio_median_10",
+            "disp.ratio_median_25"
+          ],
+          "objective_distribution": [
+            "ela_distr.kurtosis",
+            "ela_distr.skewness",
+            "ela_distr.number_of_peaks"
+          ],
+          "level_discriminability": [
+            "ela_level.lda_qda_10",
+            "ela_level.lda_qda_25",
+            "ela_level.lda_qda_50"
+          ],
+          "level_lda_error": [
+            "ela_level.mmce_lda_10",
+            "ela_level.mmce_lda_25",
+            "ela_level.mmce_lda_50"
+          ],
+          "level_qda_error": [
+            "ela_level.mmce_qda_10",
+            "ela_level.mmce_qda_25",
+            "ela_level.mmce_qda_50"
+          ],
+          "meta_linear_fit": [
+            "ela_meta.lin_simple.adj_r2",
+            "ela_meta.lin_simple.intercept"
+          ],
+          "meta_linear_coefficients": [
+            "ela_meta.lin_simple.coef.max",
+            "ela_meta.lin_simple.coef.max_by_min",
+            "ela_meta.lin_simple.coef.min"
+          ],
+          "meta_nonlinearity": [
+            "ela_meta.lin_w_interact.adj_r2",
+            "ela_meta.quad_simple.adj_r2",
+            "ela_meta.quad_w_interact.adj_r2",
+            "ela_meta.quad_simple.cond"
+          ],
+          "information_content": [
+            "ic.h_max",
+            "ic.m0",
+            "ic.eps_max",
+            "ic.eps_ratio",
+            "ic.eps_s"
+          ],
+          "nbc_fitness_distance": [
+            "nbc.dist_ratio.coeff_var",
+            "nbc.nb_fitness.cor"
+          ],
+          "nbc_neighbor_structure": [
+            "nbc.nn_nb.mean_ratio",
+            "nbc.nn_nb.sd_ratio",
+            "nbc.nn_nb.cor"
+          ],
+          "pca_variance_structure": [
+            "pca.expl_var.cor_init",
+            "pca.expl_var_PC1.cor_init",
+            "pca.expl_var_PC1.cor_x",
+            "pca.expl_var_PC1.cov_init",
+            "pca.expl_var_PC1.cov_x"
+          ]
+        },
+        "20": {
+          "disp_diff_mean": [
+            "disp.diff_mean_02",
+            "disp.diff_mean_05",
+            "disp.diff_mean_10",
+            "disp.diff_mean_25"
+          ],
+          "disp_diff_median": [
+            "disp.diff_median_02",
+            "disp.diff_median_05",
+            "disp.diff_median_10",
+            "disp.diff_median_25"
+          ],
+          "disp_ratio_mean": [
+            "disp.ratio_mean_02",
+            "disp.ratio_mean_05",
+            "disp.ratio_mean_10",
+            "disp.ratio_mean_25"
+          ],
+          "disp_ratio_median": [
+            "disp.ratio_median_02",
+            "disp.ratio_median_05",
+            "disp.ratio_median_10",
+            "disp.ratio_median_25"
+          ],
+          "distribution_shape": [
+            "ela_distr.kurtosis",
+            "ela_distr.skewness"
+          ],
+          "distribution_peaks": [
+            "ela_distr.number_of_peaks"
+          ],
+          "level_discriminability": [
+            "ela_level.lda_qda_10",
+            "ela_level.lda_qda_25",
+            "ela_level.lda_qda_50"
+          ],
+          "level_lda_error": [
+            "ela_level.mmce_lda_10",
+            "ela_level.mmce_lda_25",
+            "ela_level.mmce_lda_50"
+          ],
+          "level_qda_error": [
+            "ela_level.mmce_qda_10",
+            "ela_level.mmce_qda_25",
+            "ela_level.mmce_qda_50"
+          ],
+          "meta_linear_fit": [
+            "ela_meta.lin_simple.adj_r2",
+            "ela_meta.lin_simple.intercept"
+          ],
+          "meta_linear_coefficients": [
+            "ela_meta.lin_simple.coef.max",
+            "ela_meta.lin_simple.coef.max_by_min",
+            "ela_meta.lin_simple.coef.min"
+          ],
+          "meta_nonlinear_fit": [
+            "ela_meta.lin_w_interact.adj_r2",
+            "ela_meta.quad_simple.adj_r2",
+            "ela_meta.quad_w_interact.adj_r2"
+          ],
+          "meta_conditioning": [
+            "ela_meta.quad_simple.cond"
+          ],
+          "ic_entropy": [
+            "ic.h_max",
+            "ic.m0"
+          ],
+          "ic_epsilon": [
+            "ic.eps_max",
+            "ic.eps_ratio",
+            "ic.eps_s"
+          ],
+          "nbc_fitness_distance": [
+            "nbc.dist_ratio.coeff_var",
+            "nbc.nb_fitness.cor"
+          ],
+          "nbc_neighbor_ratios": [
+            "nbc.nn_nb.mean_ratio",
+            "nbc.nn_nb.sd_ratio"
+          ],
+          "nbc_neighbor_correlation": [
+            "nbc.nn_nb.cor"
+          ],
+          "pca_global_variance": [
+            "pca.expl_var.cor_init"
+          ],
+          "pca_pc1_variance": [
+            "pca.expl_var_PC1.cor_init",
+            "pca.expl_var_PC1.cor_x",
+            "pca.expl_var_PC1.cov_init",
+            "pca.expl_var_PC1.cov_x"
+          ]
+        }
+      }
+    }
+  }
+}

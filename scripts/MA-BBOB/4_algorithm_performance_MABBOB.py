@@ -31,7 +31,7 @@ from modde import ModularDE
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["OPENBLAS_NUM_THREADS"] = "1"
 
-DATA_FOLDER = "Benchmark_Top_Results_MABBOB"
+DATA_FOLDER = "results/benchmarks/mabbob"
 SELECTED_PATH = "data/MABBOB/selected_mabbob_instances.csv"
 MAX_THREADS = 32
 N_REPS = 5

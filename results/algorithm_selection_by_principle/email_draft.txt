@@ -1,0 +1,19 @@
+Subject: Proposed set of 8 representative optimizers
+
+Dear Professor [Name],
+
+I propose selecting these 8 algorithms from our 41-algorithm benchmark based on their search mechanisms:
+
+- ng_MultiBFGS: quasi-Newton local search.
+- ng_Powell: derivative-free direction search.
+- ng_OnePlusOne: single-parent Gaussian mutation.
+- modcma_base: covariance-adapting evolution strategy.
+- modde_base: basic differential evolution.
+- modde_lshade: adaptive DE with population reduction.
+- opy_GA: selection, crossover, and mutation.
+- opy_SAVPSO: adaptive particle-swarm velocity updates.
+
+The set covers complementary mechanisms and includes basic versus adaptive DE. Selection is based on principles rather than performance rankings.
+
+Best regards,
+[Your name]

@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 MODEL_PATH = "data/MABBOB/models/mabbob_uniform_as_models.joblib"
 ELA_PATH = "data/Ablation_ELA/Processed_ELA_Pipeline/pipeline_aligned_ela.csv"
 
-OUT_DIR = "results_mabbob_ablation"
+OUT_DIR = "results/legacy/mabbob_ablation"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 

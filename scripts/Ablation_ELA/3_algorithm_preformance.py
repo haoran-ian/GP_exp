@@ -32,7 +32,7 @@ os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["OPENBLAS_NUM_THREADS"] = "1"
 
 
-DATA_FOLDER = "Benchmark_Top_Results"
+DATA_FOLDER = "results/benchmarks/bbob"
 MAX_THREADS = 32
 
 TOP_ALGORITHMS = {

@@ -31,7 +31,7 @@ UPPER_BOUND = 5
 
 RANDOM_SEED = 42
 
-OUTDIR = "mabbob_ela_results"
+OUTDIR = "results/legacy/mabbob_ela_results"
 os.makedirs(OUTDIR, exist_ok=True)
 
 
@@ -384,12 +384,12 @@ def main():
     print("\nDone.")
     print(f"Results are in folder: {OUTDIR}")
     print("\n你下一步可以打开：")
-    print("1. mabbob_ela_results/mabbob_ela_raw.csv")
-    print("2. mabbob_ela_results/mabbob_ela_pca.csv")
-    print("3. mabbob_ela_results/selected_instances.csv")
-    print("4. mabbob_ela_results/coverage_metrics.csv")
-    print("5. mabbob_ela_results/random_selection_pca.png")
-    print("6. mabbob_ela_results/farthest_selection_pca.png")
+    print("1. results/legacy/mabbob_ela_results/mabbob_ela_raw.csv")
+    print("2. results/legacy/mabbob_ela_results/mabbob_ela_pca.csv")
+    print("3. results/legacy/mabbob_ela_results/selected_instances.csv")
+    print("4. results/legacy/mabbob_ela_results/coverage_metrics.csv")
+    print("5. results/legacy/mabbob_ela_results/random_selection_pca.png")
+    print("6. results/legacy/mabbob_ela_results/farthest_selection_pca.png")
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ MODEL_PATH = "data/Combined/models/bbob_mabbob_llm_mixed_auc_source_normalized_r
 ELA_PATH = "data/Ablation_ELA/Processed_ELA_Pipeline/pipeline_aligned_ela.csv"
 PERF_PATH = "data/Ablation_ELA/algorithm_auc_performance.csv"
 
-OUT_DIR = "results_real_world_uniform_ela_ablation_log_auc"
+OUT_DIR = "results/legacy/real_world_uniform_ela_ablation_log_auc"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 RANDOM_SEED = 42

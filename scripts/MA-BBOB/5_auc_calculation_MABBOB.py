@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-ROOT_DIR = "Benchmark_Top_Results_MABBOB"
+ROOT_DIR = "results/benchmarks/mabbob"
 SUB_FOLDERS = ["BASELINE", "MEALPY", "OPYTIMIZER"]
 OUTPUT_FILE = "data/MABBOB/mabbob_algorithm_auc_performance.csv"
 

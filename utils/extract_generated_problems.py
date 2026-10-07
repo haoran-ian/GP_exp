@@ -56,7 +56,7 @@ def class_code_to_ioh_problem(code_str: str, dim: int = 5, *,
 
 
 def extract_llm_generated_problems():
-    root_dir = "/data/hyin/GP_exp/XAI-liacs-LLaMEA-6d8b3c1"
+    root_dir = "/data/hyin/GP_exp/vendor/XAI-liacs-LLaMEA-6d8b3c1"
     dirs = os.listdir(root_dir)
     exp_dirs = [exp_dir for exp_dir in dirs if exp_dir.startswith("exp-")]
     problems = []

@@ -10,7 +10,7 @@ from scipy.stats import qmc
 from scipy.optimize import linear_sum_assignment
 
 
-MABBOB_RAW_ELA = "mabbob_ela_results/mabbob_ela_raw.csv"
+MABBOB_RAW_ELA = "results/legacy/mabbob_ela_results/mabbob_ela_raw.csv"
 
 OUT_DIR = "data/MABBOB"
 os.makedirs(OUT_DIR, exist_ok=True)

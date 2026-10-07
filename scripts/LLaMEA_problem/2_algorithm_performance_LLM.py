@@ -30,7 +30,7 @@ os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["OPENBLAS_NUM_THREADS"] = "1"
 
 
-DATA_FOLDER = "Benchmark_Top_Results_LLM"
+DATA_FOLDER = "results/benchmarks/llm"
 INDEX_FILE = "data/LLM/llm_generated_problem_index.csv"
 MAX_THREADS = 32
 N_REPS = 5

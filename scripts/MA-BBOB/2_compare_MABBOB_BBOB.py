@@ -32,7 +32,7 @@ LOWER_BOUND = -5
 UPPER_BOUND = 5
 RANDOM_SEED = 42
 
-OUTDIR = "mabbob_ela_results"
+OUTDIR = "results/legacy/mabbob_ela_results"
 os.makedirs(OUTDIR, exist_ok=True)
 
 MABBOB_RAW_PATH = os.path.join(OUTDIR, "mabbob_ela_raw.csv")

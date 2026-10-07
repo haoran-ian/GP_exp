@@ -111,9 +111,9 @@ def evaluateBBOB(solution, explogger=None, details=False):
     auc_mean = np.mean(aucs)
     auc_std = np.std(aucs)
     i = 0
-    while os.path.exists(f'currentexp/aucs-{algorithm_name}-{i}.npy'):
+    while os.path.exists(f'experiments/current/aucs-{algorithm_name}-{i}.npy'):
         i += 1
-    np.save(f'currentexp/aucs-{algorithm_name}-{i}.npy', aucs)
+    np.save(f'experiments/current/aucs-{algorithm_name}-{i}.npy', aucs)
 
     feedback = f'The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.5f} with standard deviation {auc_std:0.5f}.'
 
@@ -153,9 +153,9 @@ def evaluate_gp_func(solution, explogger=None, details=False):
     auc_mean = np.mean(aucs)
     auc_std = np.std(aucs)
     i = 0
-    while os.path.exists(f'currentexp/aucs-{algorithm_name}-{i}.npy'):
+    while os.path.exists(f'experiments/current/aucs-{algorithm_name}-{i}.npy'):
         i += 1
-    np.save(f'currentexp/aucs-{algorithm_name}-{i}.npy', aucs)
+    np.save(f'experiments/current/aucs-{algorithm_name}-{i}.npy', aucs)
 
     feedback = f'The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.5f} with standard deviation {auc_std:0.5f}.'
 

@@ -8,7 +8,7 @@ sys.path.insert(0, os.getcwd())
 from utils.problems_factory import get_example_problem, ProblemName
 # fmt: on
 
-ROOT_DIR = "Benchmark_Top_Results"
+ROOT_DIR = "results/benchmarks/bbob"
 SUB_FOLDERS = ["BASELINE", "MEALPY", "OPYTIMIZER"]
 OUTPUT_FILE = "data/Ablation_ELA/algorithm_auc_performance.csv"
 

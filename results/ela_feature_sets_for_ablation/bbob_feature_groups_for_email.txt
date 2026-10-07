@@ -1,0 +1,165 @@
+Subject: BBOB ELA feature grouping
+
+Dear Professor,
+
+For the BBOB ablation study, I grouped the 30 ELA features remaining after correlation filtering according to their underlying landscape properties. The grouping is hierarchical: the 5-group version provides broad categories, while the 10-, 15-, and 20-group versions progressively separate different statistics, models, and thresholds. Each version covers all 30 features exactly once.
+
+5 groups
+
+Group 1:
+disp.diff_mean_02, disp.ratio_mean_02, ela_distr.kurtosis, ela_distr.skewness, ela_distr.number_of_peaks
+
+Group 2:
+ela_level.lda_qda_10, ela_level.lda_qda_25, ela_level.lda_qda_50, ela_level.mmce_lda_10, ela_level.mmce_lda_25, ela_level.mmce_lda_50, ela_level.mmce_qda_10, ela_level.mmce_qda_25, ela_level.mmce_qda_50
+
+Group 3:
+ela_meta.lin_simple.adj_r2, ela_meta.lin_simple.intercept, ela_meta.lin_simple.coef.max, ela_meta.lin_simple.coef.max_by_min, ela_meta.lin_simple.coef.min, ela_meta.lin_w_interact.adj_r2, ela_meta.quad_simple.adj_r2, ela_meta.quad_w_interact.adj_r2, ela_meta.quad_simple.cond
+
+Group 4:
+ic.h_max, ic.m0, ic.eps_max
+
+Group 5:
+nbc.nb_fitness.cor, nbc.nn_nb.mean_ratio, nbc.nn_nb.sd_ratio, pca.expl_var.cor_init
+
+10 groups
+
+Group 1:
+disp.diff_mean_02, disp.ratio_mean_02
+
+Group 2:
+ela_distr.kurtosis, ela_distr.skewness, ela_distr.number_of_peaks
+
+Group 3:
+ela_level.lda_qda_10, ela_level.lda_qda_25, ela_level.lda_qda_50
+
+Group 4:
+ela_level.mmce_lda_10, ela_level.mmce_lda_25, ela_level.mmce_lda_50
+
+Group 5:
+ela_level.mmce_qda_10, ela_level.mmce_qda_25, ela_level.mmce_qda_50
+
+Group 6:
+ela_meta.lin_simple.adj_r2, ela_meta.lin_simple.intercept, ela_meta.lin_simple.coef.max, ela_meta.lin_simple.coef.max_by_min, ela_meta.lin_simple.coef.min
+
+Group 7:
+ela_meta.lin_w_interact.adj_r2, ela_meta.quad_simple.adj_r2, ela_meta.quad_w_interact.adj_r2, ela_meta.quad_simple.cond
+
+Group 8:
+ic.h_max, ic.m0, ic.eps_max
+
+Group 9:
+nbc.nb_fitness.cor, nbc.nn_nb.mean_ratio, nbc.nn_nb.sd_ratio
+
+Group 10:
+pca.expl_var.cor_init
+
+15 groups
+
+Group 1:
+disp.diff_mean_02, disp.ratio_mean_02
+
+Group 2:
+ela_distr.kurtosis, ela_distr.skewness
+
+Group 3:
+ela_distr.number_of_peaks
+
+Group 4:
+ela_level.lda_qda_10, ela_level.lda_qda_25, ela_level.lda_qda_50
+
+Group 5:
+ela_level.mmce_lda_10, ela_level.mmce_lda_25, ela_level.mmce_lda_50
+
+Group 6:
+ela_level.mmce_qda_10, ela_level.mmce_qda_25, ela_level.mmce_qda_50
+
+Group 7:
+ela_meta.lin_simple.adj_r2, ela_meta.lin_simple.intercept
+
+Group 8:
+ela_meta.lin_simple.coef.max, ela_meta.lin_simple.coef.max_by_min, ela_meta.lin_simple.coef.min
+
+Group 9:
+ela_meta.lin_w_interact.adj_r2, ela_meta.quad_simple.adj_r2, ela_meta.quad_w_interact.adj_r2
+
+Group 10:
+ela_meta.quad_simple.cond
+
+Group 11:
+ic.h_max, ic.m0
+
+Group 12:
+ic.eps_max
+
+Group 13:
+nbc.nb_fitness.cor
+
+Group 14:
+nbc.nn_nb.mean_ratio, nbc.nn_nb.sd_ratio
+
+Group 15:
+pca.expl_var.cor_init
+
+20 groups
+
+Group 1:
+disp.diff_mean_02
+
+Group 2:
+disp.ratio_mean_02
+
+Group 3:
+ela_distr.kurtosis, ela_distr.skewness
+
+Group 4:
+ela_distr.number_of_peaks
+
+Group 5:
+ela_level.lda_qda_10
+
+Group 6:
+ela_level.lda_qda_25, ela_level.lda_qda_50
+
+Group 7:
+ela_level.mmce_lda_10, ela_level.mmce_lda_25
+
+Group 8:
+ela_level.mmce_lda_50
+
+Group 9:
+ela_level.mmce_qda_10, ela_level.mmce_qda_25
+
+Group 10:
+ela_level.mmce_qda_50
+
+Group 11:
+ela_meta.lin_simple.adj_r2, ela_meta.lin_simple.intercept
+
+Group 12:
+ela_meta.lin_simple.coef.max, ela_meta.lin_simple.coef.max_by_min, ela_meta.lin_simple.coef.min
+
+Group 13:
+ela_meta.lin_w_interact.adj_r2
+
+Group 14:
+ela_meta.quad_simple.adj_r2, ela_meta.quad_w_interact.adj_r2
+
+Group 15:
+ela_meta.quad_simple.cond
+
+Group 16:
+ic.h_max, ic.m0
+
+Group 17:
+ic.eps_max
+
+Group 18:
+nbc.nb_fitness.cor
+
+Group 19:
+nbc.nn_nb.mean_ratio, nbc.nn_nb.sd_ratio
+
+Group 20:
+pca.expl_var.cor_init
+
+Best regards,
